@@ -27,7 +27,7 @@ export const Header = () => {
       px={5}
       py={5}
     >
-      <Box>
+      <Box w={"100px"}>
         <Image
           src={'/724DeskLogo.png'}
           alt={'desk-ıcon'}
@@ -35,15 +35,16 @@ export const Header = () => {
           h={'24px'}
         />
       </Box>
+      <HStack w={"full"} pl={50} gap={10}>
       {headerText.map(header => (
         <TextHeader
           key={header.key}
           heading={header.heading}
-          Link={header.Link}
+          Link={header.Link} bg={"red"}
         >
-          {header.heading}
         </TextHeader>
       ))}
+        </HStack>
       <HStack>
         <Button variant={'headerButton'} bg={'light.100'} color={'dark.100'}>
           Giriş Yap
@@ -51,17 +52,20 @@ export const Header = () => {
         <Button variant={'headerButton'} bg={'dark.200'} color={'light.100'}>
           Kayıt Ol
         </Button>
-        <Menu >
+        <Menu>
           <MenuButton
             aria-label='language'
             bg={'transparent'}
-            _hover={{ opacity: 0.8 }}
+            leftIcon={<GrLanguage />}
+            rightIcon={<ChevronDownIcon />}
+            _hover={{ opacity: 0.8, bg: 'transparent' }}
+            alignItems={'center'}
+            as={Button}
+            _active={{ bg: 'transparent' }}
           >
-            <Icon as={GrLanguage} />
             TR
-            <Icon as={ChevronDownIcon} />
           </MenuButton>
-          <MenuList bg={"#FFFFFF"} boxShadow={"2xl"}> 
+          <MenuList bg={'#FFFFFF'} boxShadow={'2xl'}>
             <LanguageButton />
           </MenuList>
         </Menu>
@@ -94,7 +98,7 @@ interface headProp extends FlexProps {
 const TextHeader = ({ ...rest }: headProp) => {
   return (
     <Link href={rest.Link}>
-      <Text cursor={'pointer'} textStyle={'headerText'} color={'dark.100'}>
+      <Text cursor={'pointer'} textStyle={'headerText'}  >
         {rest.heading}
       </Text>
     </Link>

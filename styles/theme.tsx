@@ -48,7 +48,9 @@ export const theme = extendTheme({
       fontSize: { base: "xs", md: "sm", lg: "sm" },
     },
     headerText: {
-      FontSize : { base: "xs", md: "sm" , lg: "sm", xl:"sm"}
+      fontSize: { base: "xs", md: "sm", lg: "sm", xl: "sm" },
+      fontWeight: "400",
+      color:'dark.100'
     }
   },
     components: {
