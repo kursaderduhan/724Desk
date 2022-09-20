@@ -4,14 +4,18 @@ import {
   FlexProps,
   Text,
   Button,
-  IconButton,
   Image,
   HStack,
-  Box
+  Box,
+  Menu,
+  MenuButton,
+  MenuList,
+  Icon
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { GrLanguage } from 'react-icons/gr'
-import {ChevronDownIcon} from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+import LanguageButton from '@components/LanguageButton/LanguageButton'
 export const Header = () => {
   return (
     <Flex
@@ -20,7 +24,8 @@ export const Header = () => {
       flexDirection={'row'}
       alignItems={'center'}
       justifyContent={'space-between'}
-      px={5} py={5}
+      px={5}
+      py={5}
     >
       <Box>
         <Image
@@ -40,13 +45,26 @@ export const Header = () => {
         </TextHeader>
       ))}
       <HStack>
-        <Button variant={'headerButton'} bg={"light.100"} color={'dark.100'}>
+        <Button variant={'headerButton'} bg={'light.100'} color={'dark.100'}>
           Giriş Yap
         </Button>
         <Button variant={'headerButton'} bg={'dark.200'} color={'light.100'}>
           Kayıt Ol
         </Button>
-        <Button aria-label='language' leftIcon={<GrLanguage />} rightIcon={<ChevronDownIcon/>} bg={"transparent"} _hover={{opacity:0.8}}>TR</Button>
+        <Menu >
+          <MenuButton
+            aria-label='language'
+            bg={'transparent'}
+            _hover={{ opacity: 0.8 }}
+          >
+            <Icon as={GrLanguage} />
+            TR
+            <Icon as={ChevronDownIcon} />
+          </MenuButton>
+          <MenuList bg={"#FFFFFF"} boxShadow={"2xl"}> 
+            <LanguageButton />
+          </MenuList>
+        </Menu>
       </HStack>
     </Flex>
   )
