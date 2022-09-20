@@ -15,7 +15,7 @@ import {
 import Link from 'next/link'
 import { GrLanguage } from 'react-icons/gr'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import LanguageButton from '@components/LanguageButton/LanguageButton'
+import LanguageButton from '@components/Header/LanguageButton'
 export const Header = () => {
   return (
     <Flex
