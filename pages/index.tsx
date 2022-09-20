@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 import Categories from '@components/HomePage/Categories'
+import DeskToken from '@components/HomePage/DeskToken'
 
 const Home: NextPage = () => {
   return (
@@ -75,7 +76,8 @@ const Home: NextPage = () => {
           </HStack>
         </Flex>
       </Box>
-      <Categories/>
+      <Categories />
+      <DeskToken/>
     </Layout>
   )
 }
