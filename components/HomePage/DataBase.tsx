@@ -166,11 +166,11 @@ export const DataBase = () => {
           </HStack>
         </HStack>
       </VStack>
-      <VStack pl={125}>
-        <Text fontWeight={500} fontSize={'23px'} color={'#525252'} alignSelf={"flex-start"}>
+      <VStack pl={{ md:125,xl:0}}>
+        <Text fontWeight={500} fontSize={'23px'} color={'#525252'} alignSelf={"flex-start"} px={125}>
           Destek Kanalları
         </Text>
-        <HStack>
+        <HStack gap="10">
           {categories.map(categories => (
             <Box
               key={categories.key}

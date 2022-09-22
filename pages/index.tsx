@@ -18,6 +18,7 @@ import { BsSearch } from 'react-icons/bs'
 import Categories from '@components/HomePage/Categories'
 import DeskToken from '@components/HomePage/DeskToken'
 import DataBase from '@components/HomePage/DataBase'
+import Experts from '@components/HomePage/Experts'
 
 const Home: NextPage = () => {
   return (
@@ -79,7 +80,8 @@ const Home: NextPage = () => {
       </Box>
       <Categories />
       <DeskToken />
-      <DataBase/>
+      <DataBase />
+      <Experts/>
     </Layout>
   )
 }
