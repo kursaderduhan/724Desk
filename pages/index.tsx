@@ -19,6 +19,7 @@ import Categories from '@components/HomePage/Categories'
 import DeskToken from '@components/HomePage/DeskToken'
 import DataBase from '@components/HomePage/DataBase'
 import Experts from '@components/HomePage/Experts'
+import FeedBack from '@components/HomePage/FeedBack'
 
 const Home: NextPage = () => {
   return (
@@ -81,7 +82,8 @@ const Home: NextPage = () => {
       <Categories />
       <DeskToken />
       <DataBase />
-      <Experts/>
+      <Experts />
+      <FeedBack/>
     </Layout>
   )
 }
