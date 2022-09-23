@@ -147,7 +147,7 @@ export const Categories = () => {
         </HStack>
       </VStack>
       <HStack w={'full'} justifyContent={'space-around'} py={100}>
-        <VStack alignItems={'flex-start'} w={"450px"} >
+        <VStack alignItems={'flex-start'} w={'450px'}>
           <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
             Problem Çözüm Aşamaları
           </Text>
@@ -173,7 +173,13 @@ export const Categories = () => {
               </VStack>
             </HStack>
           ))}
-          <Button bg={'#F27C00'} color={'white'} w={'176px'} h={'36px'} _hover={{opacity:0.8}} >
+          <Button
+            bg={'#F27C00'}
+            color={'white'}
+            w={'176px'}
+            h={'36px'}
+            _hover={{ opacity: 0.8 }}
+          >
             Hemen Başla
           </Button>
         </VStack>
@@ -201,7 +207,7 @@ interface itemProp {
 
 const ıtem: Array<itemProp> = [
   {
-    Image: '/hpLang.png',
+    Image: '/hplang.png',
     text: 'Birçok Dilde Destek Alın',
     color: '#005A9C',
     key: 'lang'
