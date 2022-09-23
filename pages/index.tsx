@@ -22,6 +22,7 @@ import Experts from '@components/HomePage/Experts'
 import FeedBack from '@components/HomePage/FeedBack'
 import PartnerShip from '@components/HomePage/PartnerShip'
 import ServicePocket from '@components/HomePage/ServicePocket'
+import Footer from '@components/Footer/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -96,6 +97,7 @@ const Home: NextPage = () => {
       <FeedBack />
       <PartnerShip />
       <ServicePocket />
+      <Footer/>
     </Layout>
   )
 }
