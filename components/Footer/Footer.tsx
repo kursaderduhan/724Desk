@@ -25,14 +25,15 @@ export const Footer = () => {
         alignSelf={'center'}
         zIndex={1}
         bgSize={'cover'}
-        h={'full'} boxSize={"xl"}
+        h={'full'}
+        boxSize={'xl'}
       />
       <VStack>
         <HStack
           w={'full'}
           h={'full'}
           px={'125px'}
-          py={"100px"}
+          py={'100px'}
           justifyContent={'space-between'}
         >
           <VStack alignItems={'flex-start'} gap={20} alignSelf={'flex-start'}>
@@ -111,9 +112,12 @@ export const Footer = () => {
             </VStack>
           </HStack>
         </HStack>
-        <HStack w={'full'} justifyContent={'center'} cursor={"pointer"}>
+        <HStack w={'full'} justifyContent={'center'} cursor={'pointer'}>
           <Image src={'/footerImg.png'} alt={'ımg'} w={'647px'} h={'32px'} />
         </HStack>
+        <Text fontSize={'12px'} fontWeight={400} color={'#D4D4D4'}>
+          Copyright © 724desk.com
+        </Text>
       </VStack>
     </Box>
   )
