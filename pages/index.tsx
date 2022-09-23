@@ -20,6 +20,8 @@ import DeskToken from '@components/HomePage/DeskToken'
 import DataBase from '@components/HomePage/DataBase'
 import Experts from '@components/HomePage/Experts'
 import FeedBack from '@components/HomePage/FeedBack'
+import PartnerShip from '@components/HomePage/PartnerShip'
+import ServicePocket from '@components/HomePage/ServicePocket'
 
 const Home: NextPage = () => {
   return (
@@ -72,7 +74,15 @@ const Home: NextPage = () => {
           </InputGroup>
           <HStack>
             {Item.map(item => (
-              <Button key={item.key} name={item.name} rounded={99} border={"1px solid"} borderColor={"rgba(0,0,0,0.1)"} color={"rgba(0, 0, 0, 0.5)"} fontSize={"13px"}>
+              <Button
+                key={item.key}
+                name={item.name}
+                rounded={99}
+                border={'1px solid'}
+                borderColor={'rgba(0,0,0,0.1)'}
+                color={'rgba(0, 0, 0, 0.5)'}
+                fontSize={'13px'}
+              >
                 {item.name}
               </Button>
             ))}
@@ -83,7 +93,9 @@ const Home: NextPage = () => {
       <DeskToken />
       <DataBase />
       <Experts />
-      <FeedBack/>
+      <FeedBack />
+      <PartnerShip />
+      <ServicePocket />
     </Layout>
   )
 }
