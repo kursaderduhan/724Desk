@@ -12,6 +12,7 @@ import {
   Button
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
+import Service from '@components/SerAndSol/Service'
 export const SerAndSol = () => {
   return (
     <Layout>
@@ -173,6 +174,7 @@ export const SerAndSol = () => {
           </Button>
         </VStack>
       </Container>
+      <Service/>
     </Layout>
   )
 }
