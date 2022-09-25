@@ -1,9 +1,10 @@
 import React, { memo } from 'react'
-import { HStack, VStack, Text, Image, Flex, Box } from '@chakra-ui/react'
+import { HStack, VStack, Text, Image, Flex, Box, Container } from '@chakra-ui/react'
 export const DataBase = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'} py={50}>
-      <VStack px={125} py={50}>
+      <VStack py={50}>
+      <Container maxW={"1200px"} >
         <Text
           fontSize={'23px'}
           fontWeight={500}
@@ -23,7 +24,12 @@ export const DataBase = () => {
             <Text fontWeight={500} fontSize={'33px'} color={'#333333'}>
               İşte Dev Balinaların En Çok Trade Et...
             </Text>
-            <Text color={'#666666'} fontSize={'14px'} fontWeight={400} w={"655px"}>
+            <Text
+              color={'#666666'}
+              fontSize={'14px'}
+              fontWeight={400}
+              w={'655px'}
+            >
               Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin projesinde
               devasa balina satın alımlarına şahit oldu. Balinalar CRV’yi en çok
               kullanılan akıllı sözleşmeler listesinde de ilk sıralara çıkardı.
@@ -62,7 +68,8 @@ export const DataBase = () => {
               </Text>
             </Box>
           ))}
-        </HStack>
+          </HStack>
+          </Container>
       </VStack>
       <VStack w={'full'} py={50}>
         <HStack
@@ -166,11 +173,18 @@ export const DataBase = () => {
           </HStack>
         </HStack>
       </VStack>
-      <VStack pl={{ md:125,xl:0}}>
-        <Text fontWeight={500} fontSize={'23px'} color={'#525252'} alignSelf={"flex-start"} px={125}>
+      <VStack>
+      <Container maxW={"1200px"} >
+        <Text
+          fontWeight={500}
+          fontSize={'23px'}
+          color={'#525252'}
+          alignSelf={'flex-start'}
+        >
           Destek Kanalları
-        </Text>
-        <HStack gap="10">
+          </Text>
+          </Container>
+        <HStack gap='10' w={"full"} pl="175">
           {categories.map(categories => (
             <Box
               key={categories.key}
@@ -220,7 +234,8 @@ export const DataBase = () => {
             </Box>
           ))}
         </HStack>
-      </VStack>
+       
+        </VStack>
     </Flex>
   )
 }

@@ -7,7 +7,8 @@ import {
   Image,
   Avatar,
   Box,
-  Icon
+  Icon,
+  Container
 } from '@chakra-ui/react'
 import { IoIosArrowDropdown } from 'react-icons/io'
 
@@ -17,16 +18,17 @@ export const FeedBack = () => {
       w={'full'}
       flexDirection={'column'}
       h={'full'}
-      px={125}
       py={100}
       bg={'#E5E5E5'}
       alignItems={'flex-start'}
       gap={5}
     >
-      <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
-        Geri Dönüşler
-      </Text>
-      <HStack>
+      <Container maxW={'1200px'}>
+        <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+          Geri Dönüşler
+        </Text>
+      </Container>
+      <HStack w={'full'} pl={'180px'}>
         {Item.map(item => (
           <Flex
             key={item.key}
@@ -82,62 +84,66 @@ export const FeedBack = () => {
           </Flex>
         ))}
       </HStack>
-      <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
-        Sıkça Sorulan Sorular
-      </Text>
-      <HStack
-        w={'1200px'}
-        h={'60px'}
-        bg={'white'}
-        rounded={10}
-        justifyContent={'space-between'}
-        px={10}
-      >
-        <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-          Projenin amacı nedir?
+      <Container maxW={'1200px'}>
+        <Text fontWeight={500} fontSize={'23px'} color={'#525252'} py={10}>
+          Sıkça Sorulan Sorular
         </Text>
-        <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-      </HStack>
-      <HStack
-        w={'1200px'}
-        h={'60px'}
-        bg={'white'}
-        rounded={10}
-        justifyContent={'space-between'}
-        px={10}
-      >
-        <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-          Nasıl destek hizmeti alabilirim?
-        </Text>
-        <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-      </HStack>
-      <HStack
-        w={'1200px'}
-        h={'60px'}
-        bg={'white'}
-        rounded={10}
-        justifyContent={'space-between'}
-        px={10}
-      >
-        <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-          Hizmetleriniz neleri kapsıyor?
-        </Text>
-        <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-      </HStack>
-      <HStack
-        w={'1200px'}
-        h={'60px'}
-        bg={'white'}
-        rounded={10}
-        justifyContent={'space-between'}
-        px={10}
-      >
-        <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-          Uzmanlarınızın kabiliyetlerinden ve çözüm üreteceklerinden nasıl emin
-          olabilirim?
-        </Text>
-        <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-      </HStack>
+        <VStack w={'full'} gap={2} alignItems={"flex-start"}>
+          <HStack
+            w={'1200px'}
+            h={'60px'}
+            bg={'white'}
+            rounded={10}
+            justifyContent={'space-between'}
+            px={10}
+          >
+            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
+              Projenin amacı nedir?
+            </Text>
+            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
+          </HStack>
+          <HStack
+            w={'1200px'}
+            h={'60px'}
+            bg={'white'}
+            rounded={10}
+            justifyContent={'space-between'}
+            px={10}
+          >
+            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
+              Nasıl destek hizmeti alabilirim?
+            </Text>
+            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
+          </HStack>
+          <HStack
+            w={'1200px'}
+            h={'60px'}
+            bg={'white'}
+            rounded={10}
+            justifyContent={'space-between'}
+            px={10}
+          >
+            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
+              Hizmetleriniz neleri kapsıyor?
+            </Text>
+            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
+          </HStack>
+          <HStack
+            w={'1200px'}
+            h={'60px'}
+            bg={'white'}
+            rounded={10}
+            justifyContent={'space-between'}
+            px={10}
+          >
+            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
+              Uzmanlarınızın kabiliyetlerinden ve çözüm üreteceklerinden nasıl
+              emin olabilirim?
+            </Text>
+            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
+          </HStack>
+        </VStack>
+      </Container>
     </Flex>
   )
 }

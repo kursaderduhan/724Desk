@@ -1,5 +1,13 @@
 import React, { memo } from 'react'
-import { Flex, Text, HStack, VStack, Image, Button } from '@chakra-ui/react'
+import {
+  Flex,
+  Text,
+  HStack,
+  VStack,
+  Image,
+  Button,
+  Container
+} from '@chakra-ui/react'
 export const ServicePocket = () => {
   return (
     <Flex
@@ -7,57 +15,61 @@ export const ServicePocket = () => {
       flexDirection={'column'}
       bg={'#E5E5E5'}
       justifyContent={'center'}
-      px={125}
       py={100}
       gap={10}
       alignItems={'center'}
+      pb={250}
     >
-      <Text
-        fontSize={'23px'}
-        fontWeight={'500'}
-        color={'#525252'}
-        alignSelf={'flex-start'}
-      >
-        Hizmet Paketlerimiz
-      </Text>
-      <HStack w={'full'} gap='5'>
-        {Item.map(item => (
-          <VStack
-            w={'288px'}
-            h={'500px'}
-            bg={'white'}
-            key={item.key}
-            alignItems={'flex-start'}
-            p={5}
+      <Container maxW={'1200px'}>
+        <VStack w={'full'} gap='10'>
+          <Text
+            fontSize={'23px'}
+            fontWeight={'500'}
+            color={'#525252'}
+            alignSelf={'flex-start'}
           >
-            <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
-            <Text fontSize={'33px'} fontWeight={400} color={'#C4C4C4'}>
-              {item.time}
-            </Text>
-            <Text fontSize={'23px'} fontWeight={400} color={'#333333'}>
-              {item.price}
-            </Text>
-            <HStack></HStack>
-            <Button w={'163px'} h={'36px'} alignSelf={'center'}>
-              Seç
-            </Button>
-          </VStack>
-        ))}
-      </HStack>
-      <Text fontWeight={400} fontSize={'46px'} color={'black'}>
-        Hemen Kullanmaya Başla!
-      </Text>
-      <Text color={'#666666'} fontSize={'14px'} fontWeight={400}>
-        Hemen kaydol, adımları tamamla ve kullanmaya başla.
-      </Text>
-      <Button
-        bg={'#F27C00'}
-        color={'white'}
-        _hover={{ opacity: 0.8 }}
-        w={'236px'}
-      >
-        Hemen Başla
-      </Button>
+            Hizmet Paketlerimiz
+          </Text>
+          <HStack w={'full'} gap='5'>
+            {Item.map(item => (
+              <VStack
+                w={'288px'}
+                h={'500px'}
+                bg={'white'}
+                key={item.key}
+                alignItems={'flex-start'}
+                p={5}
+              >
+                <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
+                <Text fontSize={'33px'} fontWeight={400} color={'#C4C4C4'}>
+                  {item.time}
+                </Text>
+                <Text fontSize={'23px'} fontWeight={400} color={'#333333'}>
+                  {item.price}
+                </Text>
+                <HStack></HStack>
+                <Button w={'163px'} h={'36px'} alignSelf={'center'}>
+                  Seç
+                </Button>
+              </VStack>
+            ))}
+          </HStack>
+          <Text fontWeight={400} fontSize={'46px'} color={'black'}>
+            Hemen Kullanmaya Başla!
+          </Text>
+          <Text color={'#666666'} fontSize={'14px'} fontWeight={400}>
+            Hemen kaydol, adımları tamamla ve kullanmaya başla.
+          </Text>
+          <Button
+            bg={'#F27C00'}
+            color={'white'}
+            _hover={{ opacity: 0.8 }}
+            w={'236px'}
+          >
+            Hemen Başla
+          </Button>
+        </VStack>
+      </Container>
     </Flex>
   )
 }

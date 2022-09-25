@@ -12,7 +12,8 @@ import {
   Flex,
   Image,
   Icon,
-  HStack
+  HStack,
+  Container
 } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 import Categories from '@components/HomePage/Categories'
@@ -39,56 +40,64 @@ const Home: NextPage = () => {
         bgPos={'center'}
         bgSize={'cover'}
       >
-        <Flex
-          flexDirection={'column'}
-          px={125}
-          justifyContent={'center'}
-          h={'full'}
-          gap={10}
-        >
-          <Text fontSize={'54px'}>
-            Problemlerinize <br /> Anında{' '}
-            <span style={{ color: '#F27C00' }}>
-              Çözüm <br /> Bulun!
-            </span>
-          </Text>
-          <Button bg={'#F27C00'} color={'white'} w={'242px'} gap={4}>
-            <Image
-              src={'/hpButtonIcon.png'}
-              alt={'icon'}
-              w={'21.5px'}
-              h={'21.5px'}
-            />
-            Destek Talebi Oluştur
-          </Button>
-          <InputGroup
-            size={'lg'}
-            w={'389px'}
-            rounded={5}
-            boxShadow={'xl'}
-            alignItems={'center'}
+        <Container maxW='1200px'>
+          <Flex
+            flexDirection={'column'}
+            w={'full'}
+            h={'full'}
+            gap={10}
+            py={150}
           >
-            <InputLeftElement h={'full'}>
-              <Icon as={BsSearch} />
-            </InputLeftElement>
-            <Input placeholder='Problemlerinizi yazın ve arayın'></Input>
-          </InputGroup>
-          <HStack>
-            {Item.map(item => (
-              <Button
-                key={item.key}
-                name={item.name}
-                rounded={99}
-                border={'1px solid'}
-                borderColor={'rgba(0,0,0,0.1)'}
-                color={'rgba(0, 0, 0, 0.5)'}
-                fontSize={'13px'}
-              >
-                {item.name}
-              </Button>
-            ))}
-          </HStack>
-        </Flex>
+            <Text fontSize={'54px'}>
+              Problemlerinize <br /> Anında{' '}
+              <span style={{ color: '#F27C00' }}>
+                Çözüm <br /> Bulun!
+              </span>
+            </Text>
+            <Button
+              bg={'#F27C00'}
+              color={'white'}
+              w={'242px'}
+              gap={4}
+              _hover={{ opacity: 0.8 }}
+            >
+              <Image
+                src={'/hpButtonIcon.png'}
+                alt={'icon'}
+                w={'21.5px'}
+                h={'21.5px'}
+              />
+              Destek Talebi Oluştur
+            </Button>
+            <InputGroup
+              size={'lg'}
+              w={'389px'}
+              rounded={5}
+              boxShadow={'xl'}
+              alignItems={'center'}
+            >
+              <InputLeftElement h={'full'}>
+                <Icon as={BsSearch} />
+              </InputLeftElement>
+              <Input placeholder='Problemlerinizi yazın ve arayın'></Input>
+            </InputGroup>
+            <HStack>
+              {Item.map(item => (
+                <Button
+                  key={item.key}
+                  name={item.name}
+                  rounded={99}
+                  border={'1px solid'}
+                  borderColor={'rgba(0,0,0,0.1)'}
+                  color={'rgba(0, 0, 0, 0.5)'}
+                  fontSize={'13px'}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            </HStack>
+          </Flex>
+        </Container>
       </Box>
       <Categories />
       <DeskToken />
@@ -97,7 +106,7 @@ const Home: NextPage = () => {
       <FeedBack />
       <PartnerShip />
       <ServicePocket />
-      <Footer/>
+      <Footer />
     </Layout>
   )
 }

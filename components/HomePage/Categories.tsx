@@ -6,192 +6,197 @@ import {
   Text,
   HStack,
   Box,
-  Button
+  Button,
+  Container
 } from '@chakra-ui/react'
 export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'}>
-      <HStack w={'full'} justifyContent={'space-around'}>
-        {ıtem.map(item => (
-          <VStack key={item.key}>
-            <Image src={item.Image} alt={'ımage'} w={'125px'} h={'150px'} />
-            <Text
-              color={item.color}
-              fontSize={'19px'}
-              w={180}
-              textAlign={'center'}
-            >
-              {item.text}
-            </Text>
-          </VStack>
-        ))}
-      </HStack>
-      <HStack w={'full'} justifyContent={'space-around'}>
-        <Box w={'384px'} h={'572px'} overflow={'hidden'}>
-          <Image
-            src={'/hpWomenPic.png'}
-            alt={'ımg'}
-            w={'382px'}
-            h={'574px'}
-            zIndex={1}
-          />
-          {/* <Image
+      <Container maxW={'1200px'}>
+        <HStack w={'full'} justifyContent={'space-around'}>
+          {ıtem.map(item => (
+            <VStack key={item.key}>
+              <Image src={item.Image} alt={'ımage'} w={'125px'} h={'150px'} />
+              <Text
+                color={item.color}
+                fontSize={'19px'}
+                w={180}
+                textAlign={'center'}
+              >
+                {item.text}
+              </Text>
+            </VStack>
+          ))}
+        </HStack>
+        <HStack w={'full'} justifyContent={'space-around'}>
+          <Box w={'384px'} h={'572px'} overflow={'hidden'}>
+            <Image
+              src={'/hpWomenPic.png'}
+              alt={'ımg'}
+              w={'382px'}
+              h={'574px'}
+              zIndex={1}
+            />
+            {/* <Image
             src={'/hpWomenEllipse.png'}
             alt={'ellipse'}
             pos={'absolute'}
             w={'384px'}
             h={'384px'} mb={50}
           /> */}
-        </Box>
-        <VStack alignItems={'flex-start'} fontWeight={500} w={580}>
-          <Text fontSize={'15px'} color={'#959595'}>
-            724Desk’e hoş geldiniz
-          </Text>
-          <Text fontSize={'23px'}>
-            <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
-            ve destek talebinizi <br /> karşılayabileceğiniz çevrimiçi destek
-            platformdur.
-          </Text>
-          {text.map(text => (
-            <HStack key={text.key}>
-              <Image
-                src={text.Image}
-                alt={'ımage'}
-                w={'20px'}
-                h={'16.50px'}
-                alignSelf={'flex-start'}
-                mt={1}
-              />
-              <VStack alignItems={'flex-start'}>
-                <Text fontSize={'19px'} color={'#333333'} fontWeight={500}>
-                  {text.TextHead}
-                </Text>
-                <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
-                  {text.TextDown}
-                </Text>
-              </VStack>
-            </HStack>
-          ))}
-        </VStack>
-      </HStack>
-      <VStack w={'full'} alignItems={'flex-start'} px={145}>
-        <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
-          Kategoriler
-        </Text>
-        <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
-          Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
-        </Text>
-        <HStack w={'full'} justifyContent={'space-around'}>
-          {categories.map(categories => (
-            <Box
-              key={categories.key}
-              w={'389px'}
-              h={'200px'}
-              bg={categories.bg}
-              rounded={15}
-              opacity={categories.opac}
-            >
-              <HStack w={'full'} h={'full'} pos={'relative'}>
-                <VStack
-                  alignItems={'flex-start'}
-                  justifyContent={'flex-end'}
-                  h={'full'}
-                  w={'full'}
-                  px={5}
-                >
-                  <Image
-                    src={categories.ImgLeft}
-                    alt={'ımg'}
-                    w={'42px'}
-                    h={'42px'}
-                  />
-                  <Text fontSize={'23px'} fontWeight={500}>
-                    {categories.TextHead}
+          </Box>
+          <VStack alignItems={'flex-start'} fontWeight={500} w={580}>
+            <Text fontSize={'15px'} color={'#959595'}>
+              724Desk’e hoş geldiniz
+            </Text>
+            <Text fontSize={'23px'}>
+              <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
+              ve destek talebinizi <br /> karşılayabileceğiniz çevrimiçi destek
+              platformdur.
+            </Text>
+            {text.map(text => (
+              <HStack key={text.key}>
+                <Image
+                  src={text.Image}
+                  alt={'ımage'}
+                  w={'20px'}
+                  h={'16.50px'}
+                  alignSelf={'flex-start'}
+                  mt={1}
+                />
+                <VStack alignItems={'flex-start'}>
+                  <Text fontSize={'19px'} color={'#333333'} fontWeight={500}>
+                    {text.TextHead}
                   </Text>
-                  <Text fontSize={'12px'} fontWeight={400}>
-                    {categories.Description}
+                  <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
+                    {text.TextDown}
                   </Text>
                 </VStack>
-                <Text
-                  position={'absolute'}
-                  w={'full'}
-                  display={'flex'}
-                  h={'full'}
-                  justifyContent={'flex-end'}
-                  alignItems={'flex-start'}
-                  alignSelf={'flex-start'}
-                  px={25}
-                  py={25}
-                >
-                  {categories.online}
-                </Text>
-                <Box
-                  pos={'absolute'}
-                  w={'full'}
-                  h={'full'}
-                  display={'flex'}
-                  justifyContent={'flex-end'}
-                  alignItems={'flex-start'}
-                  alignSelf={'flex-start'}
-                >
-                  <Image
-                    src={categories.ImgRight}
-                    alt={'rightImg'}
-                    w={'133px'}
-                    h={'133px'}
-                  />
-                </Box>
               </HStack>
-            </Box>
-          ))}
+            ))}
+          </VStack>
         </HStack>
-      </VStack>
-      <HStack w={'full'} justifyContent={'space-around'} py={100}>
-        <VStack alignItems={'flex-start'} w={'450px'}>
-          <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
-            Problem Çözüm Aşamaları
+        <VStack w={'full'} alignItems={'flex-start'}>
+          <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+            Kategoriler
           </Text>
-          {result.map(result => (
-            <HStack key={result.key}>
-              <Image
-                src={result.Image}
-                alt={'ımg'}
-                w={'43px'}
-                h={'43px'}
-                alignSelf={'flex-start'}
-              />
-              <VStack alignItems={'flex-start'}>
-                <Text fontSize={'10px'} fontWeight={400} color={'#666666'}>
-                  {result.area}
-                </Text>
-                <Text fontSize={'23px'} fontWeight={500} color={'black'}>
-                  {result.textHead}
-                </Text>
-                <Text fontSize={'12px'} fontWeight={400} color={'#666666'}>
-                  {result.textDown}
-                </Text>
-              </VStack>
-            </HStack>
-          ))}
-          <Button
-            bg={'#F27C00'}
-            color={'white'}
-            w={'176px'}
-            h={'36px'}
-            _hover={{ opacity: 0.8 }}
-          >
-            Hemen Başla
-          </Button>
+          <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
+            Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
+          </Text>
+          <HStack w={'full'} justifyContent={'space-between'}>
+            {categories.map(categories => (
+              <Box
+                key={categories.key}
+                w={'389px'}
+                h={'200px'}
+                bg={categories.bg}
+                rounded={15}
+                opacity={categories.opac}
+              >
+                <HStack w={'full'} h={'full'} pos={'relative'}>
+                  <VStack
+                    alignItems={'flex-start'}
+                    justifyContent={'flex-end'}
+                    h={'full'}
+                    w={'full'}
+                    px={5}
+                  >
+                    <Image
+                      src={categories.ImgLeft}
+                      alt={'ımg'}
+                      w={'42px'}
+                      h={'42px'}
+                    />
+                    <Text fontSize={'23px'} fontWeight={500}>
+                      {categories.TextHead}
+                    </Text>
+                    <Text fontSize={'12px'} fontWeight={400}>
+                      {categories.Description}
+                    </Text>
+                  </VStack>
+                  <Text
+                    position={'absolute'}
+                    w={'full'}
+                    display={'flex'}
+                    h={'full'}
+                    justifyContent={'flex-end'}
+                    alignItems={'flex-start'}
+                    alignSelf={'flex-start'}
+                    px={25}
+                    py={25}
+                  >
+                    {categories.online}
+                  </Text>
+                  <Box
+                    pos={'absolute'}
+                    w={'full'}
+                    h={'full'}
+                    display={'flex'}
+                    justifyContent={'flex-end'}
+                    alignItems={'flex-start'}
+                    alignSelf={'flex-start'}
+                  >
+                    <Image
+                      src={categories.ImgRight}
+                      alt={'rightImg'}
+                      w={'133px'}
+                      h={'133px'}
+                    />
+                  </Box>
+                </HStack>
+              </Box>
+            ))}
+          </HStack>
         </VStack>
-        <Box>
-          <Image
-            alt={'hand'}
-            src={'/hpHandPhone.png'}
-            w={'493px'}
-            h={'634px'}
-          />
-        </Box>
-      </HStack>
+        <HStack w={'full'} justifyContent={'space-between'} py={100}>
+          <VStack alignItems={'flex-start'} w={'450px'}>
+            <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
+              Problem Çözüm Aşamaları
+            </Text>
+            {result.map(result => (
+              <HStack key={result.key}>
+                <Image
+                  src={result.Image}
+                  alt={'ımg'}
+                  w={'43px'}
+                  h={'43px'}
+                  alignSelf={'flex-start'}
+                />
+                <VStack alignItems={'flex-start'}>
+                  <Text fontSize={'10px'} fontWeight={400} color={'#666666'}>
+                    {result.area}
+                  </Text>
+                  <Text fontSize={'23px'} fontWeight={500} color={'black'}>
+                    {result.textHead}
+                  </Text>
+                  <Text fontSize={'12px'} fontWeight={400} color={'#666666'}>
+                    {result.textDown}
+                  </Text>
+                </VStack>
+              </HStack>
+            ))}
+            <Box w={"full"} pl="50">
+            <Button
+              bg={'#F27C00'}
+              color={'white'}
+              w={'176px'}
+              h={'36px'}
+              _hover={{ opacity: 0.8 }}
+            >
+              Hemen Başla
+              </Button>
+              </Box>
+          </VStack>
+          <Box>
+            <Image
+              alt={'hand'}
+              src={'/hpHandPhone.png'}
+              w={'493px'}
+              h={'634px'}
+            />
+          </Box>
+        </HStack>
+      </Container>
     </Flex>
   )
 }

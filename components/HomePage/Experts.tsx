@@ -6,7 +6,8 @@ import {
   Box,
   VStack,
   Image,
-  HStack
+  HStack,
+  Container
 } from '@chakra-ui/react'
 export const Experts = () => {
   return (
@@ -15,134 +16,142 @@ export const Experts = () => {
       h={'1155px'}
       bgImage={'/experts-bg.png'}
       flexDirection={'column'}
-      px={125}
       py={100}
     >
-      <Text
-        fontSize={'23px'}
-        color={'white'}
-        fontWeight={500}
-        alignSelf={'flex-start'}
-      >
-        Uzamanlarımız
-      </Text>
-      <SimpleGrid columns={4} spacing={'15px'} w={'full'}>
-        {Item.map(ıtem => (
-          <Box
-            key={ıtem.key}
-            w={'288px'}
-            h={'408px'}
-            bg={'#505583'}
-            rounded={10}
-            py={2}
+      <Container maxW={'1200px'}>
+        <VStack w={'full'} gap={50}>
+          <Text
+            fontSize={'23px'}
+            color={'white'}
+            fontWeight={500}
+            alignSelf={'flex-start'}
           >
-            <VStack gap={3}>
-              <Flex
-                bgImage={ıtem.Image}
-                bgSize={'cover'}
-                bgPos={'center'}
-                w={'256px'}
-                h={'156px'}
-                alignItems={'flex-start'}
-                px={2}
-                justifyContent={'space-between'}
-                flexDirection={'column'}
+            Uzmanlarımız
+          </Text>
+          <SimpleGrid columns={4} spacing={'15px'} w={'full'}>
+            {Item.map(ıtem => (
+              <Box
+                key={ıtem.key}
+                w={'288px'}
+                h={'408px'}
+                bg={'#505583'}
+                rounded={10}
+                py={2}
               >
-                <HStack
-                  w={'80px'}
-                  h={'30px'}
-                  bg={'#F7FCFE'}
-                  rounded={10}
-                  justifyContent='center'
-                  opacity={0.9}
-                >
-                  <Text fontSize={'12px'} fontWeight={500}>
-                    {ıtem.online == true ? (
-                      <span style={{ color: 'green' }}>Online</span>
-                    ) : (
-                      <span style={{ color: 'red' }}>Offline</span>
-                    )}
+                <VStack gap={3}>
+                  <Flex
+                    bgImage={ıtem.Image}
+                    bgSize={'cover'}
+                    bgPos={'center'}
+                    w={'256px'}
+                    h={'156px'}
+                    alignItems={'flex-start'}
+                    px={2}
+                    justifyContent={'space-between'}
+                    flexDirection={'column'}
+                  >
+                    <HStack
+                      w={'80px'}
+                      h={'30px'}
+                      bg={'#F7FCFE'}
+                      rounded={10}
+                      justifyContent='center'
+                      opacity={0.9}
+                    >
+                      <Text fontSize={'12px'} fontWeight={500}>
+                        {ıtem.online == true ? (
+                          <span style={{ color: 'green' }}>Online</span>
+                        ) : (
+                          <span style={{ color: 'red' }}>Offline</span>
+                        )}
+                      </Text>
+                    </HStack>
+                    <HStack
+                      w={'69px'}
+                      h={'30px'}
+                      bg={'#F7FCFE'}
+                      justifyContent={'center'}
+                      display={'flex'}
+                      rounded={10}
+                      opacity={0.9}
+                    >
+                      <Text fontSize={'12px'} color={'#2C4EC6'}>
+                        {ıtem.sector}
+                      </Text>
+                    </HStack>
+                  </Flex>
+                  <Text
+                    fontSize={'19px'}
+                    fontWeight={500}
+                    color={'white'}
+                    alignSelf={'flex-start'}
+                    px='5'
+                  >
+                    {ıtem.name}
                   </Text>
-                </HStack>
-                <HStack
-                  w={'69px'}
-                  h={'30px'}
-                  bg={'#F7FCFE'}
-                  justifyContent={'center'}
-                  display={'flex'}
-                  rounded={10}
-                  opacity={0.9}
-                >
-                  <Text fontSize={'12px'} color={'#2C4EC6'}>
-                    {ıtem.sector}
+                  <Text
+                    fontSize={'14px'}
+                    fontWeight={400}
+                    color={'#C4C4C4'}
+                    alignSelf={'flex-start'}
+                    px='5'
+                  >
+                    {ıtem.expert}
                   </Text>
-                </HStack>
-              </Flex>
-              <Text
-                fontSize={'19px'}
-                fontWeight={500}
-                color={'white'}
-                alignSelf={'flex-start'}
-                px='5'
-              >
-                {ıtem.name}
-              </Text>
-              <Text
-                fontSize={'14px'}
-                fontWeight={400}
-                color={'#C4C4C4'}
-                alignSelf={'flex-start'}
-                px='5'
-              >
-                {ıtem.expert}
-              </Text>
-              <Text
-                fontSize={'14px'}
-                fontWeight={400}
-                color={'#C4C4C4'}
-                alignSelf={'flex-start'}
-                px='5'
-              >
-                {ıtem.description}
-              </Text>
-              <HStack w='full' px='5' justifyContent={'space-between'}>
-                <HStack alignItems={'flex-start'} display={'flex'}>
-                  {ıtem.phone && (
-                    <Image
-                      src={ıtem.phone}
-                      alt={'phone'}
-                      w={'24px'}
-                      h={'24px'}
-                    />
-                  )}
-                  {ıtem.mail && (
-                    <Image src={ıtem.mail} alt={'sms'} w={'24px'} h={'24px'} />
-                  )}
-                  {ıtem.message && (
-                    <Image
-                      src={ıtem.message}
-                      alt={'sms-2'}
-                      w={'24px'}
-                      h={'24px'}
-                    />
-                  )}
-                  {ıtem.telegram && (
-                    <Image
-                      src={ıtem.telegram}
-                      alt={'messenger'}
-                      w={'24px'}
-                      h={'24px'}
-                    />
-                  )}
-                </HStack>
-                <Text fontSize={'12px'} fontWeight={400} color={'white'}>
-                  {ıtem.language}
-                </Text>
-              </HStack>
-            </VStack>
-          </Box>
-        ))}
-      </SimpleGrid>
+                  <Text
+                    fontSize={'14px'}
+                    fontWeight={400}
+                    color={'#C4C4C4'}
+                    alignSelf={'flex-start'}
+                    px='5'
+                  >
+                    {ıtem.description}
+                  </Text>
+                  <HStack w='full' px='5' justifyContent={'space-between'}>
+                    <HStack alignItems={'flex-start'} display={'flex'}>
+                      {ıtem.phone && (
+                        <Image
+                          src={ıtem.phone}
+                          alt={'phone'}
+                          w={'24px'}
+                          h={'24px'}
+                        />
+                      )}
+                      {ıtem.mail && (
+                        <Image
+                          src={ıtem.mail}
+                          alt={'sms'}
+                          w={'24px'}
+                          h={'24px'}
+                        />
+                      )}
+                      {ıtem.message && (
+                        <Image
+                          src={ıtem.message}
+                          alt={'sms-2'}
+                          w={'24px'}
+                          h={'24px'}
+                        />
+                      )}
+                      {ıtem.telegram && (
+                        <Image
+                          src={ıtem.telegram}
+                          alt={'messenger'}
+                          w={'24px'}
+                          h={'24px'}
+                        />
+                      )}
+                    </HStack>
+                    <Text fontSize={'12px'} fontWeight={400} color={'white'}>
+                      {ıtem.language}
+                    </Text>
+                  </HStack>
+                </VStack>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </VStack>
+      </Container>
     </VStack>
   )
 }
