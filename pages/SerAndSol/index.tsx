@@ -14,6 +14,7 @@ import {
 import { SearchIcon } from '@chakra-ui/icons'
 import Service from '@components/SerAndSol/Service'
 import ServicePanels from '@components/SerAndSol/ServicePanels'
+import Info from '@components/SerAndSol/Info'
 export const SerAndSol = () => {
   return (
     <Layout>
@@ -175,7 +176,8 @@ export const SerAndSol = () => {
         </VStack>
       </Container>
       <Service />
-      <ServicePanels/>
+      <ServicePanels />
+      <Info/>
     </Layout>
   )
 }
