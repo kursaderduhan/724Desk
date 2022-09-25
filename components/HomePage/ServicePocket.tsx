@@ -6,7 +6,7 @@ import {
   VStack,
   Image,
   Button,
-  Container
+  Container,Box
 } from '@chakra-ui/react'
 export const ServicePocket = () => {
   return (
@@ -33,25 +33,58 @@ export const ServicePocket = () => {
           <HStack w={'full'} gap='5'>
             {Item.map(item => (
               <VStack
-                w={'288px'}
-                h={'500px'}
-                bg={'white'}
+                w={item.populer == true ? "320px" : '288px'}
+                h={item.populer == true ? '600px' : '500px'}
+                bg={item.populer == true ? '#F2A77D' : 'white'}
                 key={item.key}
                 alignItems={'flex-start'}
-                p={5}
+                p={5} justifyContent={"space-between"}
               >
+                {item.populer == true ? <HStack w={"185px"} h={"40px"}  bg={"rgba(138, 86, 49, 0.3)"} rounded={5} justifyContent={"center"}>
+                  <Image src={"/star-1.png"} alt={"ımg"} w={"24px"} h={"24px"}  />
+                  <Text fontSize={"12px"} color={"white"} fontWeight={400}> En çok tercih edilen</Text>
+                </HStack> : null}
                 <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
-                <Text fontSize={'33px'} fontWeight={400} color={'#C4C4C4'}>
+                <VStack w={"full"} alignItems={"flex-start"}>
+                <Text fontSize={'33px'} fontWeight={400} color={item.populer == true ? "#FFE7CE" : '#C4C4C4'}>
                   {item.time}
                 </Text>
                 <Text fontSize={'23px'} fontWeight={400} color={'#333333'}>
                   {item.price}
-                </Text>
-                <HStack></HStack>
-                <Button w={'163px'} h={'36px'} alignSelf={'center'}>
-                  Seç
+                  </Text>
+                  </VStack>
+                <VStack w={"full"} gap={2}>
+                <VStack w={"full"}>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <Text fontSize={"15px"} fontWeight={400} color={item.populer == true ? "#FFE7CE" : "#666666"}>Çözüm</Text>
+                    <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{item.populer == true ? "Bir" : "Tümü"}</Text>
+                  </HStack>
+                </VStack>
+                <VStack w={"full"}>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <Text fontSize={"15px"} fontWeight={400} color={item.populer == true ? "#FFE7CE" : "#666666"}>Kategori</Text>
+                    <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{item.populer == true ? "Bir" : "Tümü"}</Text>
+                  </HStack>
+                </VStack>
+                <VStack w={"full"}>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <Text fontSize={"15px"} fontWeight={400} color={item.populer == true ? "#FFE7CE" : "#666666"}>Ticket Sayısı</Text>
+                    <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{item.ticketNumber}
+                    </Text>
+                  </HStack>
+                </VStack>
+                {item.supportNumber && (
+                <VStack w={"full"}>
+                  <HStack w={"full"} justifyContent={"space-between"}>
+                    <Text fontSize={"15px"} fontWeight={400} color={item.populer == true ? "#FFE7CE" : "#666666"}>Destek Sayısı</Text>
+                      <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{item.supportNumber}</Text>
+                  </HStack>
+                </VStack>  )}
+                  </VStack>
+                <Button w={item.populer == true ? "full" : '163px'} h={'36px'} alignSelf={'center'} color={item.populer == true ? "#F27C00" : "#525252"}>
+                   {item.populer == true ? "Hemen Seç" :  "Seç" }
                 </Button>
-              </VStack>
+              </VStack> 
             ))}
           </HStack>
           <Text fontWeight={400} fontSize={'46px'} color={'black'}>
@@ -84,6 +117,7 @@ interface itemProp {
   category: string
   ticketNumber: string
   supportNumber?: string
+  populer: boolean
   key: number
 }
 
@@ -94,7 +128,8 @@ const Item: Array<itemProp> = [
     price: '$ / Saat',
     result: 'Çözüm',
     category: 'Kategori',
-    ticketNumber: 'Ticket Sayısı',
+    ticketNumber: 'Limitsiz',
+    populer : false,
     key: 1
   },
   {
@@ -103,8 +138,9 @@ const Item: Array<itemProp> = [
     price: '$19.99/Tek sefer',
     result: 'Çözüm',
     category: 'Kategori',
-    ticketNumber: 'Ticket Sayısı',
-    supportNumber: 'Destek Sayısı',
+    ticketNumber: 'Bir kere',
+    supportNumber: 'Bir kere',
+    populer : true,
     key: 2
   },
   {
@@ -113,8 +149,9 @@ const Item: Array<itemProp> = [
     price: '$59.99/Ay',
     result: 'Çözüm',
     category: 'Kategori',
-    ticketNumber: 'Ticket Sayısı',
-    supportNumber: 'Destek Sayısı',
+    ticketNumber: 'Limitsiz',
+    supportNumber: '30 kere',
+    populer : false,
     key: 3
   },
   {
@@ -123,8 +160,9 @@ const Item: Array<itemProp> = [
     price: '$99.99/Ay',
     result: 'Çözüm',
     category: 'Kategori',
-    ticketNumber: 'Ticket Sayısı',
-    supportNumber: 'Destek Sayısı',
+    ticketNumber: 'Limitsiz',
+    supportNumber: '30 kere',
+    populer : false,
     key: 4
   }
 ]
