@@ -1,10 +1,41 @@
-import React,{memo} from 'react'
+import React, { memo } from 'react'
 import Layout from '@components/Layout/Layout'
+import { HStack, Container, Text, VStack } from '@chakra-ui/react'
+import ResultSolve from '@components/HowToUse/ResultSolve'
+import Learn from '@components/HowToUse/Learn'
+import Solve from '@components/HowToUse/Solve'
 export const HowToUse = () => {
-    return (
-        <Layout>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <HStack
+        h={'196px'}
+        bg={'#E5EDF4'}
+        flexDirection={'column'}
+        alignSelf={'flex-end'}
+        alignItems={'flex-start'}
+        justifyContent={'flex-end'}
+        gap={5}
+        py={10}
+      >
+        <Container maxW={'1200px'}>
+          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+            Nasıl Kullanılır?
+          </Text>
+          <Text fontSize={'12px'} fontWeight={'400'} color={'#959595'}>
+            Projenin aşamalarını, nasıl kullanıldığını ve ilerleyişini
+            inceleyin.
+          </Text>
+        </Container>
+      </HStack>
+      <VStack bg={'white'} w={'full'}>
+        <Container maxW={'1200px'}>
+          <ResultSolve />
+          <Learn />
+          <Solve />
+        </Container>
+      </VStack>
+    </Layout>
+  )
 }
 
 export default memo(HowToUse)

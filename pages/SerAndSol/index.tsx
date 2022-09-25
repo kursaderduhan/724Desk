@@ -50,7 +50,7 @@ export const SerAndSol = () => {
         </Container>
       </HStack>
       <Container maxW={'1200px'} py={100} >
-        <VStack gap={5}>
+        <VStack gap={5} bg={"white"}>
           <Text fontSize={'26px'} fontWeight={500} textAlign={'center'}>
             <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
             ve destek talebinizi
