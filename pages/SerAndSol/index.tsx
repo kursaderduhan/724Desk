@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import Service from '@components/SerAndSol/Service'
+import ServicePanels from '@components/SerAndSol/ServicePanels'
 export const SerAndSol = () => {
   return (
     <Layout>
@@ -96,7 +97,6 @@ export const SerAndSol = () => {
             <br /> çözüm bulacak makaleler bulabilir, sorunlarınızı
             çözebilirsiniz.
           </Text>
-          ;
           <HStack w={'full'} justifyContent={'space-around'}>
             {categories.map(categories => (
               <Box
@@ -174,7 +174,8 @@ export const SerAndSol = () => {
           </Button>
         </VStack>
       </Container>
-      <Service/>
+      <Service />
+      <ServicePanels/>
     </Layout>
   )
 }
