@@ -106,7 +106,7 @@ const Home: NextPage = () => {
       <FeedBack />
       <PartnerShip />
       <ServicePocket />
-      <Footer />
+      <Footer HomePage />
     </Layout>
   )
 }
