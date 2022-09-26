@@ -8,18 +8,18 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  List
+  List,Container
 } from '@chakra-ui/react'
 import Home from '@pages'
 
 export const Footer = ({HomePage= false} : {HomePage?: boolean}) => {
   return (
-    <Box bgImage={HomePage ? '/footerBg.png' : "#E5E5E5"} h={'500px'} pos={'relative'} w={'full'} >
+    <Box bgImage={HomePage ? '/footerBg.png' : "#E5E5E5"} h={'500px'} pos={'relative'} w={'full'}>
       {HomePage && <Box
         bgImage={'/footerLogo.png'}
         pos={'absolute'}
         bottom={225}
-        left={250}
+        left={{lg:400,xl:400,xxl:600}}
         justifyContent={'center'}
         w={'full'}
         display={'flex'}
@@ -29,11 +29,11 @@ export const Footer = ({HomePage= false} : {HomePage?: boolean}) => {
         h={'full'}
         boxSize={'xl'}
       />}
+      <Container maxW={"1200px"} >
       <VStack py={HomePage ? 0 : 10}>
         <HStack
           w={'full'}
           h={'full'}
-          px={'125px'}
           py={'100px'}
           justifyContent={'space-between'}
         >
@@ -119,7 +119,8 @@ export const Footer = ({HomePage= false} : {HomePage?: boolean}) => {
         <Text fontSize={'12px'} fontWeight={400} color={'#D4D4D4'}>
           Copyright © 724desk.com
         </Text>
-      </VStack>
+        </VStack>
+        </Container>
     </Box>
   )
 }

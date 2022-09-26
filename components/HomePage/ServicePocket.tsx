@@ -94,9 +94,7 @@ export const ServicePocket = () => {
             Hemen kaydol, adımları tamamla ve kullanmaya başla.
           </Text>
           <Button
-            bg={'#F27C00'}
-            color={'white'}
-            _hover={{ opacity: 0.8 }}
+           variant={"globalButton"}
             w={'236px'}
           >
             Hemen Başla

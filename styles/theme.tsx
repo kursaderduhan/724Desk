@@ -15,7 +15,7 @@ export const theme = extendTheme({
     md: '768px',
     lg: '980px',
     xl: '1270px',
-    myCustomOne: '1920px'
+    xxl: '1920px'
   }),fonts: {
     heading: 'Poppins',
     body: 'Poppins',
@@ -63,7 +63,13 @@ export const theme = extendTheme({
             rounded: 5,
             fontSize: "sm",
             _hover: {opacity:0.8}
-          }) 
+          }),
+          globalButton: (props: any) => ({
+            ...base.components.Button.variants.outline(props),
+            bg:'#F27C00',
+            color:'white',
+            _hover:{opacity: 0.8}
+          })
         }
       },
       Input: {
