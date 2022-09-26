@@ -35,7 +35,7 @@ export const Header = () => {
           h={'24px'}
         />
       </Box>
-      <HStack w={"full"} pl={50} gap={10}>
+      <HStack w={"full"} pl={100} gap={10}>
       {headerText.map(header => (
         <TextHeader
           key={header.key}
