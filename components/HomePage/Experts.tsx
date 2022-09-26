@@ -18,7 +18,7 @@ export const Experts = () => {
       flexDirection={'column'}
       py={100}
     >
-      <Container maxW={'1200px'}>
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
         <VStack w={'full'} gap={50}>
           <Text
             fontSize={'23px'}

@@ -4,7 +4,7 @@ export const DataBase = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'} py={50}>
       <VStack py={50}>
-      <Container maxW={"1200px"} >
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
         <Text
           fontSize={'23px'}
           fontWeight={500}
@@ -174,7 +174,7 @@ export const DataBase = () => {
         </HStack>
       </VStack>
       <VStack>
-      <Container maxW={"1200px"} >
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}} >
         <Text
           fontWeight={500}
           fontSize={'23px'}

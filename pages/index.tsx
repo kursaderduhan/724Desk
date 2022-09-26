@@ -40,7 +40,7 @@ const Home: NextPage = () => {
         bgPos={'center'}
         bgSize={'cover'}
       >
-        <Container maxW='1200px'>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <Flex
             flexDirection={'column'}
             w={'full'}

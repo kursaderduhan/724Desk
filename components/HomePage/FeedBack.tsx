@@ -23,7 +23,7 @@ export const FeedBack = () => {
       alignItems={'flex-start'}
       gap={5}
     >
-      <Container maxW={'1200px'}>
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
           Geri Dönüşler
         </Text>
@@ -84,7 +84,7 @@ export const FeedBack = () => {
           </Flex>
         ))}
       </HStack>
-      <Container maxW={'1200px'}>
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'} py={10}>
           Sıkça Sorulan Sorular
         </Text>

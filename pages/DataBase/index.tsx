@@ -16,7 +16,7 @@ export const DataBase = () => {
         gap={5}
         py={10}
       >
-        <Container maxW={'1200px'}>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             724Desk Bilgi Bankası
           </Text>
@@ -27,7 +27,7 @@ export const DataBase = () => {
         </Container>
       </VStack>
       <VStack bg={'white'} w='full' py={50}>
-        <Container maxW={'1200px'}>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <MostRead />
           <News />
         </Container>

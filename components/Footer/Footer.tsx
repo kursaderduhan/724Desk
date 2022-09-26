@@ -29,7 +29,7 @@ export const Footer = ({HomePage= false} : {HomePage?: boolean}) => {
         h={'full'}
         boxSize={'xl'}
       />}
-      <Container maxW={"1200px"} >
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}} >
       <VStack py={HomePage ? 0 : 10}>
         <HStack
           w={'full'}

@@ -20,7 +20,7 @@ export const ServicePocket = () => {
       alignItems={'center'}
       pb={250}
     >
-      <Container maxW={'1200px'}>
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
         <VStack w={'full'} gap='10'>
           <Text
             fontSize={'23px'}

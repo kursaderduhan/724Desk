@@ -13,7 +13,7 @@ export const Experts = () => {
         bgSize={'cover'}
         bgPos={'right'}
       >
-        <Container maxW={'1200px'}>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <VStack w={'full'} alignItems={'flex-start'} gap={10}>
             <Text fontSize={'33px'} fontWeight={500} color={'#333333'}>
               Para kazanarak bilgi birikiminizi <br /> artırabileceğiniz bir
@@ -33,7 +33,7 @@ export const Experts = () => {
         </Container>
       </HStack>
       <HStack py={50}>
-        <Container maxW={'1200px'}>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <WhyBeExpert />
         </Container>
       </HStack>

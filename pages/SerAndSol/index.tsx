@@ -29,7 +29,7 @@ export const SerAndSol = () => {
         gap={5}
         py={10}
       >
-        <Container maxW={'1200px'} >
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}} >
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Servisler & Çözümler
           </Text>
@@ -49,7 +49,7 @@ export const SerAndSol = () => {
           </HStack>
         </Container>
       </HStack>
-      <Container maxW={'1200px'} py={100} >
+      <Container maxW={{ xl:'1200px',xxl:'1600px'}} py={100} >
         <VStack gap={5} bg={"white"}>
           <Text fontSize={'26px'} fontWeight={500} textAlign={'center'}>
             <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi

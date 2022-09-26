@@ -23,7 +23,7 @@ export const Detail = () => {
         gap={5}
         py={10}
       >
-        <Container maxW={'1200px'}>
+        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
           <HStack>
             <Link href={'/DataBase'}>
               <IconButton
