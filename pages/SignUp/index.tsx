@@ -83,16 +83,18 @@ export const SignUp = () => {
             </FormLabel>
             <Input placeholder={''} bg={"#F1F9FE"} />
           </InputGroup>
+          <Link href={"/"}>
           <Button
             bg={'#2C4EC6'}
             color={'white'}
             gap={2}
             fontSize={'13px'}
-            fontWeight={500}
+            fontWeight={500} _hover={{opacity:0.8}}
           >
             <Image src={'/lock.png'} alt={'lock'} w={'18px'} h={'18px'} />
             Giriş Yap
-          </Button>
+            </Button>
+            </Link>
           <HStack w={'full'}>
             <Divider />
             <Text alignSelf={'center'}>Yada</Text>
@@ -123,7 +125,7 @@ export const SignUp = () => {
             Şifremi unuttum
           </Text>
           <Text>
-            Henüz kayıt olmadın mı?{' '}
+            Henüz kayıt olmadın mı?
             <span style={{ color: '#2485E8' }}>
               <Link href={''}>Hesap Oluştur</Link>
             </span>
