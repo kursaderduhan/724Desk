@@ -9,6 +9,7 @@ import {
   Button,
   Container
 } from '@chakra-ui/react'
+import Link from 'next/link'
 export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'}>
@@ -176,6 +177,7 @@ export const Categories = () => {
               </HStack>
             ))}
             <Box w={"full"} pl="50">
+              <Link href={"/HowToUse"}>
             <Button
               bg={'#F27C00'}
               color={'white'}
@@ -184,7 +186,8 @@ export const Categories = () => {
               _hover={{ opacity: 0.8 }}
             >
               Hemen Başla
-              </Button>
+                </Button>
+                </Link>
               </Box>
           </VStack>
           <Box>
