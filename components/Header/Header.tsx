@@ -46,9 +46,10 @@ export const Header = () => {
       ))}
         </HStack>
       <HStack>
+        <Link href={"/SignUp"}>
         <Button variant={'headerButton'} bg={'light.100'} color={'dark.100'}>
           Giriş Yap
-        </Button>
+        </Button></Link>
         <Button variant={'headerButton'} bg={'dark.200'} color={'light.100'}>
           Kayıt Ol
         </Button>
