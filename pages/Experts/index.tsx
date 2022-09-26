@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import Layout from '@components/Layout/Layout'
 import { HStack, Container, Button, Text, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
+import WhyBeExpert from '@components/Experts/WhyBeExpert'
 export const Experts = () => {
   return (
     <Layout>
@@ -29,6 +30,11 @@ export const Experts = () => {
               <Button variant={'globalButton'}>Uzman Olmak İstiyorum</Button>
             </Link>
           </VStack>
+        </Container>
+      </HStack>
+      <HStack py={50}>
+        <Container maxW={'1200px'}>
+          <WhyBeExpert />
         </Container>
       </HStack>
     </Layout>
