@@ -13,7 +13,7 @@ import Link from 'next/link'
 export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'}>
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <HStack w={'full'} justifyContent={'space-around'}>
           {ıtem.map(item => (
             <VStack key={item.key}>
@@ -78,9 +78,11 @@ export const Categories = () => {
           </VStack>
         </HStack>
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
-            Kategoriler
-          </Text>
+          <Link href={'/Categories'}>
+            <Text fontWeight={500} fontSize={'23px'} color={'#525252'} cursor={"pointer"}>
+              Kategoriler
+            </Text>
+          </Link>
           <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
             Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
           </Text>
@@ -176,19 +178,19 @@ export const Categories = () => {
                 </VStack>
               </HStack>
             ))}
-            <Box w={"full"} pl="50">
-              <Link href={"/HowToUse"}>
-            <Button
-              bg={'#F27C00'}
-              color={'white'}
-              w={'176px'}
-              h={'36px'}
-              _hover={{ opacity: 0.8 }}
-            >
-              Hemen Başla
+            <Box w={'full'} pl='50'>
+              <Link href={'/HowToUse'}>
+                <Button
+                  bg={'#F27C00'}
+                  color={'white'}
+                  w={'176px'}
+                  h={'36px'}
+                  _hover={{ opacity: 0.8 }}
+                >
+                  Hemen Başla
                 </Button>
-                </Link>
-              </Box>
+              </Link>
+            </Box>
           </VStack>
           <Box>
             <Image

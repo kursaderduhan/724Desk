@@ -9,7 +9,8 @@ import {
   InputGroup,
   FormLabel,
   Flex,
-  Divider
+  Divider,
+  ButtonGroup
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
@@ -33,6 +34,7 @@ export const SignUp = () => {
               Giriş yönteminizi seçin
             </Text>
             <HStack w={'full'} bg={'#D0DDE7'} rounded={5}>
+              <ButtonGroup>
               <Button bg={'#2C4EC6'} w={'75px'}>
                 <Image
                   src='/signUp-profile.png'
@@ -64,7 +66,8 @@ export const SignUp = () => {
                   w={'24px'}
                   h={'24px'}
                 />
-              </Button>
+                </Button>
+                </ButtonGroup>
             </HStack>
           </Flex>
           <Text
