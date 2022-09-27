@@ -16,7 +16,7 @@ import Link from 'next/link'
 import { GrLanguage } from 'react-icons/gr'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import LanguageButton from '@components/Header/LanguageButton'
-export const Header = () => {
+export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   return (
     <Flex
       w={'full'}
@@ -27,7 +27,7 @@ export const Header = () => {
       px={5}
       py={5}
     >
-      <Box w={"100px"}>
+      <Box w={'100px'}>
         <Image
           src={'/724DeskLogo.png'}
           alt={'desk-ıcon'}
@@ -35,21 +35,21 @@ export const Header = () => {
           h={'24px'}
         />
       </Box>
-      <HStack w={"full"} pl={100} gap={10}>
-      {headerText.map(header => (
-        <TextHeader
-          key={header.key}
-          heading={header.heading}
-          Link={header.Link} bg={"red"}
-        >
-        </TextHeader>
-      ))}
-        </HStack>
+      <HStack w={'full'} pl={100} gap={10}>
+        {headerText.map(header => (
+          <Link href={header.Link} key={header.key}>
+            <Text cursor={'pointer'} textStyle={'headerText'} color={headerProp ? "white" : "gray"}>
+              {header.heading}
+            </Text>
+          </Link>
+        ))}
+      </HStack>
       <HStack>
-        <Link href={"/SignUp"}>
-        <Button variant={'headerButton'} bg={'light.100'} color={'dark.100'}>
-          Giriş Yap
-        </Button></Link>
+        <Link href={'/SignUp'}>
+          <Button variant={'headerButton'} bg={'light.100'} color={'dark.100'}>
+            Giriş Yap
+          </Button>
+        </Link>
         <Button variant={'headerButton'} bg={'dark.200'} color={'light.100'}>
           Kayıt Ol
         </Button>
@@ -62,7 +62,7 @@ export const Header = () => {
             _hover={{ opacity: 0.8, bg: 'transparent' }}
             alignItems={'center'}
             as={Button}
-            _active={{ bg: 'transparent' }}
+            _active={{ bg: 'transparent' }} color={headerProp ? "white" : "black"}
           >
             TR
           </MenuButton>
@@ -91,17 +91,3 @@ const headerText: Array<headerProp> = [
   { heading: 'Uzmanlar İçin', Link: 'Experts', key: 'expert' }
 ]
 
-interface headProp extends FlexProps {
-  heading: string
-  Link: string
-}
-
-const TextHeader = ({ ...rest }: headProp) => {
-  return (
-    <Link href={rest.Link}>
-      <Text cursor={'pointer'} textStyle={'headerText'}  >
-        {rest.heading}
-      </Text>
-    </Link>
-  )
-}
