@@ -9,7 +9,8 @@ import {
   UnorderedList,
   ListItem,
   List,
-  Container
+  Container,
+  Center
 } from '@chakra-ui/react'
 import Home from '@pages'
 
@@ -143,14 +144,21 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               </VStack>
             </HStack>
           </HStack>
+          <Center>
           <HStack
             w={'full'}
-            justifyContent={'center'}
-            cursor={'pointer'}
-            pb={2}
+            justifyContent={'center'} gap={10}
           >
-            <Image src={'/footerImg.png'} alt={'ımg'} w={'647px'} h={'32px'} />
-          </HStack>
+            <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
+            <Image src={'/Mastercard.png'} alt={'ımg'} w={'45px'} h={'28px'} />
+              <Image src={'/GooglePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+            <Image src={'/ApplePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+            <Image src={'/PayPal.png'} alt={'ımg'} w={'22px'} h={'27px'} />
+            <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
+            <Image src={'/Payoneer.png'} alt={'ımg'} w={'55px'} h={'20px'} />
+            <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
+            </HStack>
+            </Center>
           <Text fontSize={'12px'} fontWeight={400} color={'#D4D4D4'}>
             Copyright © 724desk.com
           </Text>

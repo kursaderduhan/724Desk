@@ -16,6 +16,7 @@ import Service from '@components/SerAndSol/Service'
 import ServicePanels from '@components/SerAndSol/ServicePanels'
 import Info from '@components/SerAndSol/Info'
 import Footer from '@components/Footer/Footer'
+import Link from 'next/link'
 export const SerAndSol = () => {
   return (
     <Layout>
@@ -29,7 +30,7 @@ export const SerAndSol = () => {
         gap={5}
         py={10}
       >
-        <Container maxW={{ xl:'1200px',xxl:'1600px'}} >
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Servisler & Çözümler
           </Text>
@@ -49,8 +50,8 @@ export const SerAndSol = () => {
           </HStack>
         </Container>
       </HStack>
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}} py={100} >
-        <VStack gap={5} bg={"white"}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }} py={100}>
+        <VStack gap={5} bg={'white'}>
           <Text fontSize={'26px'} fontWeight={500} textAlign={'center'}>
             <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
             ve destek talebinizi
@@ -101,79 +102,85 @@ export const SerAndSol = () => {
           </Text>
           <HStack w={'full'} justifyContent={'space-around'}>
             {categories.map(categories => (
-              <Box
-                key={categories.key}
-                w={'389px'}
-                h={'200px'}
-                bg={categories.bg}
-                rounded={15}
-                opacity={categories.opac}
-              >
-                <HStack w={'full'} h={'full'} pos={'relative'}>
-                  <VStack
-                    alignItems={'flex-start'}
-                    justifyContent={'flex-end'}
-                    h={'full'}
-                    w={'full'}
-                    px={5}
-                  >
-                    <Image
-                      src={categories.ImgLeft}
-                      alt={'ımg'}
-                      w={'42px'}
-                      h={'42px'}
-                    />
-                    <Text fontSize={'23px'} fontWeight={500}>
-                      {categories.TextHead}
+              <Link href={categories.link} key={categories.key}>
+                <Box
+                  w={'389px'}
+                  h={'200px'}
+                  bg={categories.bg}
+                  rounded={15}
+                  opacity={categories.opac}
+                  transform={'auto'}
+                  _hover={{ scale: '1.02', opacity: '0.7' }}
+                  cursor={'pointer'}
+                >
+                  <HStack w={'full'} h={'full'} pos={'relative'}>
+                    <VStack
+                      alignItems={'flex-start'}
+                      justifyContent={'flex-end'}
+                      h={'full'}
+                      w={'full'}
+                      p={5}
+                    >
+                      <Image
+                        src={categories.ImgLeft}
+                        alt={'ımg'}
+                        w={'42px'}
+                        h={'42px'}
+                      />
+                      <Text fontSize={'23px'} fontWeight={500}>
+                        {categories.TextHead}
+                      </Text>
+                      <Text fontSize={'12px'} fontWeight={400}>
+                        {categories.Description}
+                      </Text>
+                    </VStack>
+                    <Text
+                      position={'absolute'}
+                      w={'full'}
+                      display={'flex'}
+                      h={'full'}
+                      justifyContent={'flex-end'}
+                      alignItems={'flex-start'}
+                      alignSelf={'flex-start'}
+                      px={25}
+                      py={25}
+                    >
+                      {categories.online}
                     </Text>
-                    <Text fontSize={'12px'} fontWeight={400}>
-                      {categories.Description}
-                    </Text>
-                  </VStack>
-                  <Text
-                    position={'absolute'}
-                    w={'full'}
-                    display={'flex'}
-                    h={'full'}
-                    justifyContent={'flex-end'}
-                    alignItems={'flex-start'}
-                    alignSelf={'flex-start'}
-                    px={25}
-                    py={25}
-                  >
-                    {categories.online}
-                  </Text>
-                  <Box
-                    pos={'absolute'}
-                    w={'full'}
-                    h={'full'}
-                    display={'flex'}
-                    justifyContent={'flex-end'}
-                    alignItems={'flex-start'}
-                    alignSelf={'flex-start'}
-                  >
-                    <Image
-                      src={categories.ImgRight}
-                      alt={'rightImg'}
-                      w={'133px'}
-                      h={'133px'}
-                    />
-                  </Box>
-                </HStack>
-              </Box>
+                    <Box
+                      pos={'absolute'}
+                      w={'full'}
+                      h={'full'}
+                      display={'flex'}
+                      justifyContent={'flex-end'}
+                      alignItems={'flex-start'}
+                      alignSelf={'flex-start'}
+                    >
+                      <Image
+                        src={categories.ImgRight}
+                        alt={'rightImg'}
+                        w={'133px'}
+                        h={'133px'}
+                      />
+                    </Box>
+                  </HStack>
+                </Box>
+              </Link>
             ))}
           </HStack>
-          <Button
-            fontSize={'13px'}
-            fontWeight={500}
-            color={'#3B78C1'}
-            bg={'transparent'}
-            border={'1px solid'}
-            borderColor={'#3B78C1'}
-            alignSelf={'flex-start'}
-          >
-            Tüm Kategoriler
-          </Button>
+          <Link href={'/Categories'}>
+            <Button
+              fontSize={'13px'}
+              fontWeight={500}
+              color={'#3B78C1'}
+              bg={'transparent'}
+              border={'1px solid'}
+              borderColor={'#3B78C1'}
+              alignSelf={'flex-start'}
+            >
+              Tüm Kategoriler
+            </Button>
+          </Link>
         </VStack>
       </Container>
       <Service />
@@ -234,6 +241,7 @@ interface categoriesProp {
   bg: string
   opac?: string
   key: string
+  link: string
 }
 
 const categories: Array<categoriesProp> = [
@@ -244,6 +252,7 @@ const categories: Array<categoriesProp> = [
       'Kripto paralar, sanal para birimi olarak kullanılan ve herhangi bir fiziksel biçimde mevcut olmayan dijital...',
     ImgRight: '/ct-btc-right.png',
     bg: '#F6E9DC',
+    link: '/Crypto',
     key: 'crypto'
   },
   {
@@ -255,6 +264,7 @@ const categories: Array<categoriesProp> = [
     online: 'Çok Yakında..',
     bg: '#FFFBEE',
     opac: '0.6',
+    link: '',
     key: 'cloud'
   },
   {
@@ -266,6 +276,7 @@ const categories: Array<categoriesProp> = [
     online: 'Çok Yakında..',
     bg: '#FFFBEE',
     opac: '0.6',
+    link: '',
     key: 'host'
   }
 ]

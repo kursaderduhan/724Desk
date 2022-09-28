@@ -78,76 +78,79 @@ export const Categories = () => {
           </VStack>
         </HStack>
         <VStack w={'full'} alignItems={'flex-start'}>
-          <Link href={'/Categories'}>
-            <Text fontWeight={500} fontSize={'23px'} color={'#525252'} cursor={"pointer"}>
-              Kategoriler
-            </Text>
-          </Link>
+          <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+            Kategoriler
+          </Text>
           <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
             Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
           </Text>
           <HStack w={'full'} justifyContent={'space-between'}>
             {categories.map(categories => (
-              <Box
-                key={categories.key}
-                w={'389px'}
-                h={'200px'}
-                bg={categories.bg}
-                rounded={15}
-                opacity={categories.opac}
-              >
-                <HStack w={'full'} h={'full'} pos={'relative'}>
-                  <VStack
-                    alignItems={'flex-start'}
-                    justifyContent={'flex-end'}
-                    h={'full'}
-                    w={'full'}
-                    px={5}
-                  >
-                    <Image
-                      src={categories.ImgLeft}
-                      alt={'ımg'}
-                      w={'42px'}
-                      h={'42px'}
-                    />
-                    <Text fontSize={'23px'} fontWeight={500}>
-                      {categories.TextHead}
+              <Link href={categories.link} key={categories.key}>
+                <Box
+                  w={'389px'}
+                  h={'200px'}
+                  bg={categories.bg}
+                  rounded={15}
+                  opacity={categories.opac}
+                  transform={'auto'}
+                  _hover={{ scale: '1.02', opacity: '0.7' }}
+                  cursor={'pointer'}
+                >
+                  <HStack w={'full'} h={'full'} pos={'relative'}>
+                    <VStack
+                      alignItems={'flex-start'}
+                      justifyContent={'flex-end'}
+                      h={'full'}
+                      w={'full'}
+                      px={5}
+                      py={5}
+                    >
+                      <Image
+                        src={categories.ImgLeft}
+                        alt={'ımg'}
+                        w={'42px'}
+                        h={'42px'}
+                      />
+                      <Text fontSize={'23px'} fontWeight={500}>
+                        {categories.TextHead}
+                      </Text>
+                      <Text fontSize={'12px'} fontWeight={400}>
+                        {categories.Description}
+                      </Text>
+                    </VStack>
+                    <Text
+                      position={'absolute'}
+                      w={'full'}
+                      display={'flex'}
+                      h={'full'}
+                      justifyContent={'flex-end'}
+                      alignItems={'flex-start'}
+                      alignSelf={'flex-start'}
+                      px={25}
+                      py={25}
+                    >
+                      {categories.online}
                     </Text>
-                    <Text fontSize={'12px'} fontWeight={400}>
-                      {categories.Description}
-                    </Text>
-                  </VStack>
-                  <Text
-                    position={'absolute'}
-                    w={'full'}
-                    display={'flex'}
-                    h={'full'}
-                    justifyContent={'flex-end'}
-                    alignItems={'flex-start'}
-                    alignSelf={'flex-start'}
-                    px={25}
-                    py={25}
-                  >
-                    {categories.online}
-                  </Text>
-                  <Box
-                    pos={'absolute'}
-                    w={'full'}
-                    h={'full'}
-                    display={'flex'}
-                    justifyContent={'flex-end'}
-                    alignItems={'flex-start'}
-                    alignSelf={'flex-start'}
-                  >
-                    <Image
-                      src={categories.ImgRight}
-                      alt={'rightImg'}
-                      w={'133px'}
-                      h={'133px'}
-                    />
-                  </Box>
-                </HStack>
-              </Box>
+                    <Box
+                      pos={'absolute'}
+                      w={'full'}
+                      h={'full'}
+                      display={'flex'}
+                      justifyContent={'flex-end'}
+                      alignItems={'flex-start'}
+                      alignSelf={'flex-start'}
+                    >
+                      <Image
+                        src={categories.ImgRight}
+                        alt={'rightImg'}
+                        w={'133px'}
+                        h={'133px'}
+                      />
+                    </Box>
+                  </HStack>
+                </Box>
+              </Link>
             ))}
           </HStack>
         </VStack>
@@ -283,6 +286,7 @@ interface categoriesProp {
   online?: string
   bg: string
   opac?: string
+  link: string
   key: string
 }
 
@@ -294,6 +298,7 @@ const categories: Array<categoriesProp> = [
       'Kripto paralar, sanal para birimi olarak kullanılan ve herhangi bir fiziksel biçimde mevcut olmayan dijital...',
     ImgRight: '/ct-btc-right.png',
     bg: '#F6E9DC',
+    link: '/Crypto',
     key: 'crypto'
   },
   {
@@ -305,6 +310,7 @@ const categories: Array<categoriesProp> = [
     online: 'Çok Yakında..',
     bg: '#FFFBEE',
     opac: '0.6',
+    link: '',
     key: 'cloud'
   },
   {
@@ -316,6 +322,7 @@ const categories: Array<categoriesProp> = [
     online: 'Çok Yakında..',
     bg: '#FFFBEE',
     opac: '0.6',
+    link: '',
     key: 'host'
   }
 ]

@@ -8,9 +8,16 @@ import {
   Avatar,
   Box,
   Icon,
-  Container
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Circle
 } from '@chakra-ui/react'
 import { IoIosArrowDropdown } from 'react-icons/io'
+import { ChevronDownIcon, SmallCloseIcon } from '@chakra-ui/icons'
 
 export const FeedBack = () => {
   return (
@@ -23,7 +30,7 @@ export const FeedBack = () => {
       alignItems={'flex-start'}
       gap={5}
     >
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
           Geri Dönüşler
         </Text>
@@ -84,65 +91,182 @@ export const FeedBack = () => {
           </Flex>
         ))}
       </HStack>
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'} py={10}>
           Sıkça Sorulan Sorular
         </Text>
-        <VStack w={'full'} gap={2} alignItems={"flex-start"}>
-          <HStack
-            w={'1200px'}
-            h={'60px'}
-            bg={'white'}
-            rounded={10}
-            justifyContent={'space-between'}
-            px={10}
-          >
-            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-              Projenin amacı nedir?
-            </Text>
-            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-          </HStack>
-          <HStack
-            w={'1200px'}
-            h={'60px'}
-            bg={'white'}
-            rounded={10}
-            justifyContent={'space-between'}
-            px={10}
-          >
-            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-              Nasıl destek hizmeti alabilirim?
-            </Text>
-            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-          </HStack>
-          <HStack
-            w={'1200px'}
-            h={'60px'}
-            bg={'white'}
-            rounded={10}
-            justifyContent={'space-between'}
-            px={10}
-          >
-            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-              Hizmetleriniz neleri kapsıyor?
-            </Text>
-            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-          </HStack>
-          <HStack
-            w={'1200px'}
-            h={'60px'}
-            bg={'white'}
-            rounded={10}
-            justifyContent={'space-between'}
-            px={10}
-          >
-            <Text fontSize={'15px'} fontWeight={400} color={'#89969F'}>
-              Uzmanlarınızın kabiliyetlerinden ve çözüm üreteceklerinden nasıl
-              emin olabilirim?
-            </Text>
-            <Icon as={IoIosArrowDropdown} w={'24px'} h={'24px'} />
-          </HStack>
-        </VStack>
+        <Accordion w={'full'} alignItems={'flex-start'} allowToggle>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton
+                    w={'full'}
+                    h={'60px'}
+                    bg={'white'}
+                    rounded={0}
+                    justifyContent={'space-between'}
+                    px={10}
+                  >
+                    <Box
+                      flex='1'
+                      textAlign='left'
+                      fontSize={'15px'}
+                      fontWeight={400}
+                      color={'#89969F'}
+                    >
+                      Projenin amacı nedir?
+                    </Box>
+                    {isExpanded ? (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <SmallCloseIcon fontSize='18px' color={'gray'} />{' '}
+                      </Circle>
+                    ) : (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <ChevronDownIcon fontSize='18px' color={'gray'} />
+                      </Circle>
+                    )}
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10}>
+                  Bilişim teknolojileri alanında online platformlar aracılığıyla
+                  anlık oluşabilecek her türlü problemi uzman ekibimizle çözüme
+                  ulaştırmak.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+          <br/>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton
+                    w={'full'}
+                    h={'60px'}
+                    bg={'white'}
+                    rounded={0}
+                    justifyContent={'space-between'}
+                    px={10}
+                  >
+                    <Box
+                      flex='1'
+                      textAlign='left'
+                      fontSize={'15px'}
+                      fontWeight={400}
+                      color={'#89969F'}
+                    >
+                      Nasıl destek hizmeti alabilirim?
+                    </Box>
+                    {isExpanded ? (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <SmallCloseIcon fontSize='18px' color={'gray'} />{' '}
+                      </Circle>
+                    ) : (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <ChevronDownIcon fontSize='18px' color={'gray'} />
+                      </Circle>
+                    )}
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10}>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam minima beatae accusamus id laudantium culpa excepturi,
+                  facilis numquam officiis rerum? Distinctio dignissimos
+                  necessitatibus pariatur delectus consectetur corporis
+                  incidunt, dolores dicta.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+          <br/>
+          <AccordionItem>
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton
+                    w={'full'}
+                    h={'60px'}
+                    bg={'white'}
+                    rounded={0}
+                    justifyContent={'space-between'}
+                    px={10}
+                  >
+                    <Box
+                      flex='1'
+                      textAlign='left'
+                      fontSize={'15px'}
+                      fontWeight={400}
+                      color={'#89969F'}
+                    >
+                      Hizmetleriniz neleri kapsıyor?
+                    </Box>
+                    {isExpanded ? (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <SmallCloseIcon fontSize='18px' color={'gray'} />{' '}
+                      </Circle>
+                    ) : (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <ChevronDownIcon fontSize='18px' color={'gray'} />
+                      </Circle>
+                    )}
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10}>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam minima beatae accusamus id laudantium culpa excepturi,
+                  facilis numquam officiis rerum? Distinctio dignissimos
+                  necessitatibus pariatur delectus consectetur corporis
+                  incidunt, dolores dicta.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+          <br/>
+          <AccordionItem >
+            {({ isExpanded }) => (
+              <>
+                <h2>
+                  <AccordionButton
+                    w={'full'}
+                    h={'60px'}
+                    bg={'white'}
+                    rounded={0}
+                    justifyContent={'space-between'}
+                    px={10} 
+                  >
+                    <Box
+                      flex='1'
+                      textAlign='left'
+                      fontSize={'15px'}
+                      fontWeight={400}
+                      color={'#89969F'}
+                    >
+                      Uzmanlarınızın kabiliyetlerinden ve çözüm üreteceklerinden
+                      nasıl emin olabilirim?
+                    </Box>
+                    {isExpanded ? (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <SmallCloseIcon fontSize='18px' color={'gray'} />{' '}
+                      </Circle>
+                    ) : (
+                      <Circle border={'1px solid'} borderColor={'gray'}>
+                        <ChevronDownIcon fontSize='18px' color={'gray'} />
+                      </Circle>
+                    )}
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10}>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam minima beatae accusamus id laudantium culpa excepturi,
+                  facilis numquam officiis rerum? Distinctio dignissimos
+                  necessitatibus pariatur delectus consectetur corporis
+                  incidunt, dolores dicta.
+                </AccordionPanel>
+              </>
+            )}
+          </AccordionItem>
+        </Accordion>
       </Container>
     </Flex>
   )
