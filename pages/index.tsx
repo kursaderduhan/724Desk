@@ -36,7 +36,7 @@ const Home: NextPage = () => {
       </Head>
       <Box
         bgImage={'/HomePageBg.png'}
-        w={'full'}
+        minW={'100vw'}
         h={'746px'}
         bgPos={'center'}
         bgSize={'cover'}

@@ -19,13 +19,12 @@ import LanguageButton from '@components/Header/LanguageButton'
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   return (
     <Flex
-      w={'full'}
       h={'full'}
       flexDirection={'row'}
       alignItems={'center'}
       justifyContent={'space-between'}
       px={5}
-      py={5}
+      py={5} minW={"100vw"}
     >
       <Box w={'100px'}>
         <Image

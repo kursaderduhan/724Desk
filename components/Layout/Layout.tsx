@@ -3,7 +3,7 @@ import { Flex, Box } from '@chakra-ui/react'
 import Header from '../Header/Header'
 export const Layout = ({ children,headerChoose=false }: { children: any,headerChoose?:boolean }) => {
   return (
-    <Flex w={'full'} minH={'100vh'} flexDirection={"column"}>
+    <Flex w={'full'} minH={'100vh'} minW={"100vw"} flexDirection={"column"}>
       <Box w={"full"} pos={"absolute"} top={0} zIndex="4" minW={"100vw"}>
         <Header headerProp={headerChoose} />
       </Box>
