@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import { HStack, VStack, Text, Image, Flex, Box, Container } from '@chakra-ui/react'
+import Link from 'next/link'
 export const DataBase = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'} py={50}>
@@ -13,13 +14,14 @@ export const DataBase = () => {
         >
           724DESK Bilgi Bankası
         </Text>
-        <HStack w={'full'} justifyContent={'space-between'} px={0}>
+          <HStack w={'full'} justifyContent={'space-between'} px={0}>
+            <Link href={"/DataBase"}>
           <Image
             src={'/DataBase-Img.png'}
             alt={'ımg'}
             w={'491px'}
-            h={'276px'}
-          />
+            h={'276px'} cursor={"pointer"}
+          /></Link>
           <VStack alignItems={'flex-start'}>
             <Text fontWeight={500} fontSize={'33px'} color={'#333333'}>
               İşte Dev Balinaların En Çok Trade Et...

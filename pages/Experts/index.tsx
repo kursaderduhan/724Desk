@@ -26,7 +26,7 @@ export const Experts = () => {
               elde ederken insanlara yardımcı <br /> olmanın mutluluğunu
               yaşayın.
             </Text>
-            <Link href={'/Experts/BecomeAnExpert'}>
+            <Link href={'/BecomeAnExpert'}>
               <Button variant={'globalButton'}>Uzman Olmak İstiyorum</Button>
             </Link>
           </VStack>

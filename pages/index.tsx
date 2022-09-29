@@ -24,6 +24,7 @@ import FeedBack from '@components/HomePage/FeedBack'
 import PartnerShip from '@components/HomePage/PartnerShip'
 import ServicePocket from '@components/HomePage/ServicePocket'
 import Footer from '@components/Footer/Footer'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
@@ -40,7 +41,7 @@ const Home: NextPage = () => {
         bgPos={'center'}
         bgSize={'cover'}
       >
-        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Flex
             flexDirection={'column'}
             w={'full'}
@@ -54,21 +55,23 @@ const Home: NextPage = () => {
                 Çözüm <br /> Bulun!
               </span>
             </Text>
-            <Button
-              bg={'#F27C00'}
-              color={'white'}
-              w={'242px'}
-              gap={4}
-              _hover={{ opacity: 0.8 }}
-            >
-              <Image
-                src={'/hpButtonIcon.png'}
-                alt={'icon'}
-                w={'21.5px'}
-                h={'21.5px'}
-              />
-              Destek Talebi Oluştur
-            </Button>
+            <Link href={'/SupportRequest'}>
+              <Button
+                bg={'#F27C00'}
+                color={'white'}
+                w={'242px'}
+                gap={4}
+                _hover={{ opacity: 0.8 }}
+              >
+                <Image
+                  src={'/hpButtonIcon.png'}
+                  alt={'icon'}
+                  w={'21.5px'}
+                  h={'21.5px'}
+                />
+                Destek Talebi Oluştur
+              </Button>
+            </Link>
             <InputGroup
               size={'lg'}
               w={'389px'}

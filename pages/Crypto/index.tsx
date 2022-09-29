@@ -38,6 +38,7 @@ export const Crypto = () => {
             birikimizinden <br /> faydalanmasını sağlayacaktır. Böylece gelir
             elde ederken insanlara yardımcı <br /> olmanın mutluluğunu yaşayın.
           </Text>
+          <Link href={"/SupportRequest"} >
           <Button
             variant={'globalButton'}
             fontSize={'15px'}
@@ -45,7 +46,8 @@ export const Crypto = () => {
             h={'47px'}
           >
             Hemen Destek Talebi Oluştur
-          </Button>
+            </Button>
+            </Link>
         </VStack>
       </HStack>
       <HStack py={50} w={'full'} justifyContent='center'>
