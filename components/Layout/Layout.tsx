@@ -7,7 +7,7 @@ export const Layout = ({ children,headerChoose=false }: { children: any,headerCh
       <Box w={"full"} pos={"absolute"} top={0} zIndex="4" minW={"100vw"}>
         <Header headerProp={headerChoose} />
       </Box>
-      <Box w={"full"} h={"full"}>{children}</Box>
+      <Box w={"full"} h={"full"} minW={"100vw"}>{children}</Box>
     </Flex>
   )
 }
