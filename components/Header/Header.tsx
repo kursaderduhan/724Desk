@@ -49,9 +49,11 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
             Giriş Yap
           </Button>
         </Link>
+        <Link href={"/SignIn"}>
         <Button variant={'headerButton'} bg={'dark.200'} color={'light.100'}>
           Kayıt Ol
-        </Button>
+          </Button>
+          </Link>
         <Menu>
           <MenuButton
             aria-label='language'
