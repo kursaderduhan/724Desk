@@ -13,6 +13,7 @@ import {
   Center
 } from '@chakra-ui/react'
 import Home from '@pages'
+import Link from 'next/link'
 
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
   return (
@@ -117,7 +118,8 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Nasıl Kullanılır?</ListItem>
                   <ListItem>Değerlendirmeler</ListItem>
                   <ListItem>Hakkımızda</ListItem>
-                  <ListItem>İletişim</ListItem>
+                  <Link href={"/Contact"}>
+                  <ListItem cursor={"pointer"}>İletişim</ListItem></Link>
                   <ListItem>Kayıt Ol</ListItem>
                 </List>
               </VStack>
@@ -145,20 +147,22 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
             </HStack>
           </HStack>
           <Center>
-          <HStack
-            w={'full'}
-            justifyContent={'center'} gap={10}
-          >
-            <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
-            <Image src={'/Mastercard.png'} alt={'ımg'} w={'45px'} h={'28px'} />
+            <HStack w={'full'} justifyContent={'center'} gap={10}>
+              <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
+              <Image
+                src={'/Mastercard.png'}
+                alt={'ımg'}
+                w={'45px'}
+                h={'28px'}
+              />
               <Image src={'/GooglePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
-            <Image src={'/ApplePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
-            <Image src={'/PayPal.png'} alt={'ımg'} w={'22px'} h={'27px'} />
-            <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
-            <Image src={'/Payoneer.png'} alt={'ımg'} w={'55px'} h={'20px'} />
-            <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
+              <Image src={'/ApplePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+              <Image src={'/PayPal.png'} alt={'ımg'} w={'22px'} h={'27px'} />
+              <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
+              <Image src={'/Payoneer.png'} alt={'ımg'} w={'55px'} h={'20px'} />
+              <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
             </HStack>
-            </Center>
+          </Center>
           <Text fontSize={'12px'} fontWeight={400} color={'#D4D4D4'}>
             Copyright © 724desk.com
           </Text>

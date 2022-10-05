@@ -38,7 +38,7 @@ export const PriceList = () => {
       </HStack>
       <VStack bg={'#F7FCFE'} w={'full'}>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-          <VStack w={"full"} alignItems={"flex-start"}>
+          <VStack w={'full'} alignItems={'flex-start'}>
             {Item.map(item => (
               <HStack key={item.key} gap={20} py={50}>
                 <VStack
@@ -119,39 +119,77 @@ export const PriceList = () => {
                     Paketi Seç
                   </Button>
                 </VStack>
-                <VStack w={"500px"} alignItems={"flex-start"}>
+                <VStack w={'500px'} alignItems={'flex-start'}>
                   <HStack>
                     <Image src={item.Image} alt={'ımg'} w={'42px'} h={'42px'} />
                     <Text fontSize={'19px'} color={'black'} fontWeight={500}>
                       {item.timeLong}
                     </Text>
                   </HStack>
-                  <Text fontSize={"14px"} color={"#666666"} fontWeight={400}>{item.description}</Text>
+                  <Text fontSize={'14px'} color={'#666666'} fontWeight={400}>
+                    {item.description}
+                  </Text>
                   {item.descListItem && (
                     <UnorderedList>
-                      <ListItem fontSize={"14px"} color={"#666666"} fontWeight={400}>{item.descListItem}</ListItem>
+                      <ListItem
+                        fontSize={'14px'}
+                        color={'#666666'}
+                        fontWeight={400} ml={5}
+                      >
+                        {item.descListItem}
+                      </ListItem>
                     </UnorderedList>
                   )}
                   <Divider />
-                  <HStack w={"250px"}>
-                    <Text fontSize={"14px"} color={"#666666"} fontWeight={400}>Çözüm Sayısı:</Text>
-                    <Text fontSize={"15px"} color={"#333333"} fontWeight={500}>{item.resultRight}</Text>
+                  <HStack w={'250px'}>
+                    <Text fontSize={'14px'} color={'#666666'} fontWeight={400}>
+                      Çözüm Sayısı:
+                    </Text>
+                    <Text fontSize={'15px'} color={'#333333'} fontWeight={500}>
+                      {item.resultRight}
+                    </Text>
                   </HStack>
                   <HStack>
-                    <Text fontSize={"14px"} color={"#666666"} fontWeight={400}>Kategori:</Text>
-                    <Text fontSize={"15px"} color={"#333333"} fontWeight={500}>{item.categoryRight}</Text>
+                    <Text fontSize={'14px'} color={'#666666'} fontWeight={400}>
+                      Kategori:
+                    </Text>
+                    <Text fontSize={'15px'} color={'#333333'} fontWeight={500}>
+                      {item.categoryRight}
+                    </Text>
                   </HStack>
                   <HStack>
-                    <Text fontSize={"14px"} color={"#666666"} fontWeight={400}>Ticket:</Text>
-                    <Text fontSize={"15px"} color={"#333333"} fontWeight={500}>{item.ticketNumber}</Text>
+                    <Text fontSize={'14px'} color={'#666666'} fontWeight={400}>
+                      Ticket:
+                    </Text>
+                    <Text fontSize={'15px'} color={'#333333'} fontWeight={500}>
+                      {item.ticketNumber}
+                    </Text>
                   </HStack>
                   {item.supportNumber && (
                     <HStack>
-                      <Text fontSize={"14px"} color={"#666666"} fontWeight={400}>Destek:</Text>
-                      <Text fontSize={"15px"} color={"#333333"} fontWeight={500}>{item.supportNumber}</Text>
+                      <Text
+                        fontSize={'14px'}
+                        color={'#666666'}
+                        fontWeight={400}
+                      >
+                        Destek:
+                      </Text>
+                      <Text
+                        fontSize={'15px'}
+                        color={'#333333'}
+                        fontWeight={500}
+                      >
+                        {item.supportNumber}
+                      </Text>
                     </HStack>
-                        )}
-                        <Button variant={"globalButton"} w={"200px"} fontSize={"13px"}>Paketi Seç</Button>
+                  )}
+                  <Button
+                    variant={'globalButton'}
+                    w={'200px'}
+                    fontSize={'13px'}
+                  >
+                    Paketi Seç
+                  </Button>
                 </VStack>
               </HStack>
             ))}
