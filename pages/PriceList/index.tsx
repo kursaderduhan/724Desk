@@ -47,7 +47,7 @@ export const PriceList = () => {
                   bg={'white'}
                   alignItems={'flex-start'}
                   p={5}
-                  gap={5}
+                  gap={5} rounded={5}
                 >
                   <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
                   <Text fontSize={'33px'} color={'#C4C4C4'} fontWeight={400}>
