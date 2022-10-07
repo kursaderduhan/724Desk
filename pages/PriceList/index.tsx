@@ -12,7 +12,7 @@ import {
   UnorderedList
 } from '@chakra-ui/react'
 import { Hash } from 'crypto'
-
+import Link from 'next/link'
 export const PriceList = () => {
   return (
     <Layout>
@@ -183,13 +183,15 @@ export const PriceList = () => {
                       </Text>
                     </HStack>
                   )}
+                  <Link href={"/Payment"}>
                   <Button
                     variant={'globalButton'}
                     w={'200px'}
                     fontSize={'13px'}
                   >
                     Paketi Seç
-                  </Button>
+                    </Button>
+                    </Link>
                 </VStack>
               </HStack>
             ))}
