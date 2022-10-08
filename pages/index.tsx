@@ -25,6 +25,7 @@ import PartnerShip from '@components/HomePage/PartnerShip'
 import ServicePocket from '@components/HomePage/ServicePocket'
 import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
+import { createContext } from 'react'
 
 const Home: NextPage = () => {
   return (

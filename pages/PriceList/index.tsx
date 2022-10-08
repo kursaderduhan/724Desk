@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo,useState ,useContext} from 'react'
 import Layout from '@components/Layout/Layout'
 import {
   HStack,
@@ -11,9 +11,12 @@ import {
   Divider,
   UnorderedList
 } from '@chakra-ui/react'
-import { Hash } from 'crypto'
 import Link from 'next/link'
+
+ 
 export const PriceList = () => {
+  const [choose, setChoose] = useState<number>()
+  
   return (
     <Layout>
       <HStack
@@ -109,7 +112,6 @@ export const PriceList = () => {
                     )}
                   </VStack>
                   <Button
-                    bg={''}
                     color={'#F27C00'}
                     boxShadow={'md'}
                     _hover={{ opacity: 0.8 }}
@@ -183,7 +185,7 @@ export const PriceList = () => {
                       </Text>
                     </HStack>
                   )}
-                  <Link href={"/Payment"}>
+                  <Link href={"/Payment"} onClick={() => setChoose(item.key) }>
                   <Button
                     variant={'globalButton'}
                     w={'200px'}
