@@ -69,6 +69,17 @@ export const theme = extendTheme({
             bg:'#F27C00',
             color:'white',
             _hover:{opacity: 0.8}
+          }),
+          walletButton: (props: any) => ({
+            ...base.components.Button.variants.outline(props),
+            w: "189px",
+            h: "84px",
+            bg: "#F8F9FD",
+            fontWeight: 400,
+            color: "#333333",
+            fontSize: "14px",
+            rounded: 5,
+            gap:5
           })
         }
       },
