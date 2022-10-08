@@ -31,7 +31,7 @@ import { AiOutlineCheckCircle } from 'react-icons/ai'
 
 import { BsPlusCircle } from 'react-icons/bs'
 
-const PaymentMethod = () => {
+const PaymentMethod = ({succesfull,failedPage}:any) => {
   const [page, setPage] = useState<number>(1)
   const { onOpen, onClose, isOpen } = useDisclosure()
   const [wallet, setWallet] = useState<boolean>(false)
@@ -360,7 +360,7 @@ const PaymentMethod = () => {
               fontSize={'15px'}
               w={'300px'}
               alignSelf={'center'}
-              gap={3}
+              gap={3} onClick={() => failedPage()}
             >
               Ödemeyi Tamamla
               <Image src={'/card.png'} alt={'ımg'} w={'18px'} h={'18px'} />
@@ -461,7 +461,7 @@ const PaymentMethod = () => {
             fontSize={'15px'}
             w={'300px'}
             alignSelf={'center'}
-            gap={3}
+            gap={3} onClick={() => succesfull()}
           >
             Ödemeyi Tamamla
             <Image src={'/card.png'} alt={'ımg'} w={'18px'} h={'18px'} />

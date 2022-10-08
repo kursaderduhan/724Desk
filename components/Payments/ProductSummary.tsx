@@ -1,27 +1,32 @@
 import React, { memo, useState } from 'react'
-import { VStack, Text, HStack, Divider,Flex } from '@chakra-ui/react'
+import { VStack, Text, HStack, Divider, Flex } from '@chakra-ui/react'
 
 const ProductSummary = () => {
-  const [ınfo, setInfo] = useState<number>(4)
-    
-    interface itemProps {
-        id: number
-        service: string
-        price: string
-        totalPrice: string
-    }
-    const item: Array<itemProps> = [
-         { id: 1, service: 'Saatlik', price: '$10.00/s', totalPrice: '$10' },
-         { id: 2, service: 'Tek Seferlik', price: '$19.99/Tek sefer', totalPrice: '$19.99' },
-         { id: 3, service: '6 Aylık', price: '$59.99/s', totalPrice: '$59.99' },
-         { id: 4, service: 'Yıllık', price: '$99.99/s', totalPrice: '$99.99' },
-    ]
+  const [ınfo, setInfo] = useState<number>(1)
 
-    const result = item.filter(proo => proo.id == ınfo)
+  interface itemProps {
+    id: number
+    service: string
+    price: string
+    totalPrice: string
+  }
+  const item: Array<itemProps> = [
+    { id: 1, service: 'Saatlik', price: '$10.00/s', totalPrice: '$10' },
+    {
+      id: 2,
+      service: 'Tek Seferlik',
+      price: '$19.99/Tek sefer',
+      totalPrice: '$19.99'
+    },
+    { id: 3, service: '6 Aylık', price: '$59.99/s', totalPrice: '$59.99' },
+    { id: 4, service: 'Yıllık', price: '$99.99/s', totalPrice: '$99.99' }
+  ]
+
+  const result = item.filter(proo => proo.id == ınfo)
   return (
-        <VStack>
-          {result.map(product => (
-          <VStack key={product.id} w={'288px'} h={'281px'} bg={'white'} gap={2}>
+    <VStack>
+      {result.map(product => (
+        <VStack key={product.id} w={'288px'} h={'281px'} bg={'white'} gap={2}>
           <Text
             w={'full'}
             h={'42px'}
@@ -33,7 +38,6 @@ const ProductSummary = () => {
             fontWeight={500}
             alignItems={'center'}
             px={5}
-            
           >
             Ürün Özeti
           </Text>
@@ -81,10 +85,10 @@ const ProductSummary = () => {
                 $10
               </Text>
             </HStack>
-                  </VStack>
-                  </VStack>
-      ))}
+          </VStack>
         </VStack>
+      ))}
+    </VStack>
   )
 }
 

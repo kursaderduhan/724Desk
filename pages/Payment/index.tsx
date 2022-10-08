@@ -1,12 +1,32 @@
-import React, { memo } from 'react'
+import React, { memo,useState } from 'react'
 import Layout from '@components/Layout/Layout'
 import { HStack, VStack, Text, Container, Flex } from '@chakra-ui/react'
 import PaymentMethod from '@components/Payments/PaymentMethod'
 import ProductSummary from '@components/Payments/ProductSummary'
 import CouponCode from '@components/Payments/CouponCode'
+import PaymentSuccesfull from '@components/Payments/PaymentSuccesfull'
+import PaymentsFailed from '@components/Payments/PaymentsFailed'
 
 export const Payment = () => {
-  return (
+  const [succesfull, setSuccesfull] = useState<boolean>(false)
+  const [mainPage, setMainPage] = useState<boolean>(true)
+  const [failed, setFailed] = useState<boolean>(false)
+  const closeFailed = () => {
+    setFailed(false)
+    setSuccesfull(false)
+    setMainPage(true)
+  }
+  const openFailed = () => {
+    setMainPage(false)
+    setSuccesfull(false)
+    setFailed(true)
+  }
+  const openSuccesfull = () => {
+    setMainPage(false)
+    setFailed(false)
+    setSuccesfull(true)
+  }
+    return (
     <Layout>
       <HStack
         h={'196px'}
@@ -29,13 +49,15 @@ export const Payment = () => {
       </HStack>
       <HStack bg={'#E5E5E5'} w={'full'}>
         <Container maxW={'1200px'}>
+          {mainPage == true ? 
           <Flex w={'full'} py={20} justifyContent={'center'} gap={5}>
-            <PaymentMethod />
+              <PaymentMethod succesfull={() => openSuccesfull() } failedPage={() => openFailed()} />
             <VStack>
               <ProductSummary />
               <CouponCode />
             </VStack>
-          </Flex>
+          </Flex> : succesfull == true ?
+              <PaymentSuccesfull /> : failed == true ? <PaymentsFailed closeFailedPage={() => closeFailed() } /> : null }
         </Container>
       </HStack>
     </Layout>
