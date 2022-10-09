@@ -9,6 +9,7 @@ import {
   Image
 } from '@chakra-ui/react'
 import { Counter } from './Counter'
+import Link from 'next/link'
 export const DeskToken = () => {
   return (
     <VStack
@@ -96,6 +97,7 @@ export const DeskToken = () => {
             >
               1 DEX = 0.10 USD
             </Text>
+            <Link href={"/DeskToken"}>
             <Button
               variant={'globalButton'}
               fontSize={'13px'}
@@ -103,7 +105,8 @@ export const DeskToken = () => {
               alignSelf='flex-end'
             >
               Hemen Katıl
-            </Button>
+              </Button>
+              </Link>
           </VStack>
         </HStack>
       </VStack>
