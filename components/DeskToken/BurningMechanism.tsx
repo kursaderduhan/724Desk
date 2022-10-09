@@ -17,11 +17,11 @@ const BurningMechanism = () => {
         the value of the token in the long run.
       </Text>
       <HStack gap={10}>
-        <VStack
+        <VStack flexDirection={"column"}
           bg={'linear-gradient(180deg, #647BC7 0%, #364062 100%)'}
           rounded={20}
           w={'389px'}
-          h={'482px'}
+          h={'482px'} py={10} gap={5}
         >
           <Image
             src={'/totalSupply.png'}
