@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { IconType } from 'react-icons/lib'
 import { HiOutlineExternalLink } from 'react-icons/hi'
+import BurningMechanism from '@components/DeskToken/BurningMechanism'
 const DeskToken = () => {
   return (
     <VStack>
@@ -111,7 +112,7 @@ const DeskToken = () => {
                 <Circle
                   size={'16px'}
                   bg={ıtem.color}
-                  alignSelf={'flex-start'}
+                  alignSelf={'flex-start'} mt={1}
                 />
                 <VStack alignItems={'flex-start'} w={'366px'}>
                   <Text fontSize={'15px'} color={ıtem.color} fontWeight={500}>
@@ -171,17 +172,18 @@ const DeskToken = () => {
                       w={'24px'}
                       h={'24px'}
                     />
-                  )}{' '}
+                  )}
                   {tokens.rightDesc}
                   {tokens.icon && (
                     <Icon as={tokens.icon} w={'18px'} h={'18px'} />
-                  )}{' '}
+                  )}
                 </Text>
               </HStack>
             ))}
           </HStack>
         </HStack>
       </VStack>
+      <BurningMechanism />
     </VStack>
   )
 }
