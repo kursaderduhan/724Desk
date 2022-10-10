@@ -14,6 +14,8 @@ import {
 import { IconType } from 'react-icons/lib'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import BurningMechanism from '@components/DeskToken/BurningMechanism'
+import HowToEarn from '@components/DeskToken/HowToEarn'
+import Footer from '@components/Footer/Footer'
 const DeskToken = () => {
   return (
     <VStack>
@@ -112,7 +114,8 @@ const DeskToken = () => {
                 <Circle
                   size={'16px'}
                   bg={ıtem.color}
-                  alignSelf={'flex-start'} mt={1}
+                  alignSelf={'flex-start'}
+                  mt={1}
                 />
                 <VStack alignItems={'flex-start'} w={'366px'}>
                   <Text fontSize={'15px'} color={ıtem.color} fontWeight={500}>
@@ -184,6 +187,64 @@ const DeskToken = () => {
         </HStack>
       </VStack>
       <BurningMechanism />
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <HowToEarn />
+      </Container>
+      <VStack w={'full'} h={'1476px'} bg={'#212842'}>
+        <VStack>
+          <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+            <HStack w={'full'} justifyContent={'space-around'}>
+              <Image
+                src={'/deskToken.png'}
+                alt={'deskToken'}
+                w={'186px'}
+                h={'186px'}
+              />
+              <VStack alignItems={'flex-start'}>
+                <Text fontSize={'33px'} fontWeight={500} color={'white'}>
+                  Want to integrate DESK token into your platform?
+                </Text>
+                <Text
+                  fontSize={'14px'}
+                  fontWeight={400}
+                  color={'#C4C4C4'}
+                  letterSpacing={'0.5px'}
+                  w={'694px'}
+                >
+                  Get in touch with us via support@724desk.org and the team will
+                  carefully analyze the possibility of connecting your product
+                  with the user base of more than 46,000 DESK holders. The best
+                  products based on our initial review will be added to the list
+                  of DESK Token Opportunities and will get the marketing boost
+                  in the form of promotion across our social media profiles
+                  accounting for more than 130,000 users.
+                </Text>
+              </VStack>
+            </HStack>
+            <VStack>
+            <Text
+              fontSize={'33px'}
+              fontWeight={500}
+              color={'white'}
+              textAlign={'center'}
+            >
+              Become a holder of the token that supports <br />
+              the 724Desk ecosystem
+            </Text>
+            <Button variant={'globalButton'} gap={2} w={'261px'}>
+              <Image
+                src={'/deskToken.png'}
+                alt={'desk'}
+                w={'24px'}
+                h={'24px'}
+              />
+              DESK Token Satın Al
+              </Button>
+              </VStack>
+          </Container>
+        </VStack>
+        <Footer />
+      </VStack>
     </VStack>
   )
 }
