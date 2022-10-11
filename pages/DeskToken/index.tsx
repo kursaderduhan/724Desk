@@ -18,7 +18,7 @@ import HowToEarn from '@components/DeskToken/HowToEarn'
 import Footer from '@components/Footer/Footer'
 const DeskToken = () => {
   return (
-    <VStack>
+    <VStack overflow={"hidden"}>
       <HStack
         h={'196px'}
         bg={'#E5EDF4'}
@@ -190,9 +190,14 @@ const DeskToken = () => {
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <HowToEarn />
       </Container>
-      <VStack w={'full'} h={'1476px'} bg={'#212842'}>
-        <VStack>
-          <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <VStack
+        w={'full'}
+        h={'1476px'}
+        bg={'#212842'}
+        justifyContent={"space-between"}
+      >
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+          <VStack   h={'full'} pt={10} gap={10}>
             <HStack w={'full'} justifyContent={'space-around'}>
               <Image
                 src={'/deskToken.png'}
@@ -221,29 +226,76 @@ const DeskToken = () => {
                 </Text>
               </VStack>
             </HStack>
-            <VStack>
-            <Text
-              fontSize={'33px'}
-              fontWeight={500}
-              color={'white'}
-              textAlign={'center'}
-            >
-              Become a holder of the token that supports <br />
-              the 724Desk ecosystem
-            </Text>
-            <Button variant={'globalButton'} gap={2} w={'261px'}>
-              <Image
-                src={'/deskToken.png'}
-                alt={'desk'}
-                w={'24px'}
-                h={'24px'}
-              />
-              DESK Token Satın Al
+            <VStack gap={10}>
+              <Text
+                fontSize={'33px'}
+                fontWeight={500}
+                color={'white'}
+                textAlign={'center'}
+              >
+                Become a holder of the token that supports <br />
+                the 724Desk ecosystem
+              </Text>
+              <Button variant={'globalButton'} gap={2} w={'261px'}>
+                <Image
+                  src={'/deskToken.png'}
+                  alt={'desk'}
+                  w={'24px'}
+                  h={'24px'}
+                />
+                DESK Token Satın Al
               </Button>
-              </VStack>
-          </Container>
-        </VStack>
-        <Footer />
+            </VStack>
+            <HStack
+              w={'full'}
+              justifyContent={'center'}
+              pt={20}
+              gap={5}
+              h={'350px'}
+            >
+              <Image
+                src={'/dToken-1.png'}
+                alt={'ımg'}
+                w={'112px'}
+                h={'112px'}
+                alignSelf={'flex-end'}
+              />
+              <Image src={'/dToken-2.png'} alt={'ımg'} w={'66px'} h={'66px'} />
+              <Image
+                src={'/dToken-3.png'}
+                alt={'ımg'}
+                w={'195px'}
+                h={'195px'}
+                alignSelf={'flex-start'}
+              />
+              <Image
+                src={'/dToken-4.png'}
+                alt={'ımg'}
+                w={'73px'}
+                h={'73px'}
+                alignSelf={'flex-end'}
+              />
+              <Image
+                src={'/dToken-5.png'}
+                alt={'ımg'}
+                w={'112px'}
+                h={'112px'}
+                alignSelf={'center'}
+                bottom={25}
+              />
+              <Image
+                src={'/dToken-2.png'}
+                alt={'ımg'}
+                w={'66px'}
+                h={'66px'}
+                alignSelf={'center'}
+              />
+            </HStack>
+          </VStack>
+        </Container>
+      
+          <Footer />
+        
       </VStack>
     </VStack>
   )

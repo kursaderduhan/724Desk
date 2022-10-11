@@ -40,11 +40,11 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
         />
       )}
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <VStack py={HomePage ? 0 : 10}>
+        <VStack py={HomePage ? 0 : 0}>
           <HStack
             w={'full'}
             h={'full'}
-            py={'100px'}
+            py={'80px'}
             justifyContent={'space-between'}
           >
             <VStack alignItems={'flex-start'} gap={20} alignSelf={'flex-start'}>
