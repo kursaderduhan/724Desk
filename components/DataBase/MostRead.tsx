@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { VStack, Text, Image, Flex } from '@chakra-ui/react'
-export const MostRead = () => {
+export const MostRead = ({ changePage }: {changePage?:any }) => {
   return (
     <VStack w={'full'} h={'full'}>
       <Flex
@@ -8,7 +8,7 @@ export const MostRead = () => {
         justifyContent={'space-between'}
         gap={15}
         alignContent={'space-between'}
-        h={'full'}
+        h={'full'} _hover={{transition:"1.2s", bg:"#E1EEF6", rounded:10}} cursor={"pointer"} onClick={() => changePage()}
       >
         <Image src={'/DataBase-Img.png'} alt={'ımg'} w={'491px'} h={'276px'} />
         <VStack alignItems={'flex-start'} justifyContent={'space-between'}>

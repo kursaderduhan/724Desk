@@ -288,7 +288,6 @@ export const WhyBeExpert = () => {
             h={'16px'}
           />
           <Text color={'#F27C00'} fontSize={'12px'} fontWeight={'500'}>
-            {' '}
             Neden Uzman Olmalıyım?
           </Text>
         </HStack>
