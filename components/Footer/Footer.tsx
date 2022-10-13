@@ -118,8 +118,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Nasıl Kullanılır?</ListItem>
                   <ListItem>Değerlendirmeler</ListItem>
                   <ListItem>Hakkımızda</ListItem>
-                  <Link href={"/Contact"}>
-                  <ListItem cursor={"pointer"}>İletişim</ListItem></Link>
+                  <Link href={'/Contact'}>
+                    <ListItem cursor={'pointer'}>İletişim</ListItem>
+                  </Link>
                   <ListItem>Kayıt Ol</ListItem>
                 </List>
               </VStack>
@@ -141,7 +142,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Network</ListItem>
                   <ListItem>Siber Güvenlik</ListItem>
                   <ListItem>Desk Token</ListItem>
-                  <ListItem>Referans Programı</ListItem>
+                  <Link href={'/Reference'}>
+                    <ListItem cursor={'pointer'}>Referans Programı</ListItem>
+                  </Link>
                 </List>
               </VStack>
             </HStack>
