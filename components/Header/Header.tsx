@@ -87,8 +87,8 @@ interface headerProp {
 const headerText: Array<headerProp> = [
   { heading: 'Ana Sayfa', Link: '/', key: 'home' },
   { heading: 'Servisler & Çözümler', Link: '/SerAndSol', key: 'result' },
-  { heading: 'Nasıl Kullanılır?', Link: 'HowToUse', key: 'use' },
-  { heading: 'Bilgi Bankası', Link: 'DataBase', key: 'bank' },
-  { heading: 'Uzmanlar İçin', Link: 'Experts', key: 'expert' }
+  { heading: 'Nasıl Kullanılır?', Link: '/HowToUse', key: 'use' },
+  { heading: 'Bilgi Bankası', Link: '/DataBase', key: 'bank' },
+  { heading: 'Uzmanlar İçin', Link: '/ForExperts', key: 'expert' }
 ]
 
