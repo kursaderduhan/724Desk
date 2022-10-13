@@ -9,6 +9,7 @@ import {
   HStack,
   Container
 } from '@chakra-ui/react'
+import Link from 'next/link'
 export const Experts = () => {
   return (
     <VStack
@@ -18,16 +19,18 @@ export const Experts = () => {
       flexDirection={'column'}
       py={100}
     >
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <VStack w={'full'} gap={50}>
-          <Text
-            fontSize={'23px'}
-            color={'white'}
-            fontWeight={500}
-            alignSelf={'flex-start'}
-          >
-            Uzmanlarımız
-          </Text>
+          <Link href={'/Experts'}>
+            <Text
+              fontSize={'23px'}
+              color={'white'}
+              fontWeight={500}
+              alignSelf={'flex-start'} cursor={"pointer"}
+            >
+              Uzmanlarımız
+            </Text>
+          </Link>
           <SimpleGrid columns={4} spacing={'15px'} w={'full'}>
             {Item.map(ıtem => (
               <Box
