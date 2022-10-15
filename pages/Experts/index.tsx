@@ -9,7 +9,14 @@ import {
   Button,
   SimpleGrid,
   Flex,
-  Box
+  Box,
+  InputGroup,
+  FormLabel,
+  Input,
+  Textarea,
+  Select,
+  InputRightAddon,
+  Checkbox
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import Footer from '@components/Footer/Footer'
@@ -212,11 +219,163 @@ const Experts = () => {
             </SimpleGrid>
           </VStack>
         </Container>
-        <VStack>
+        <VStack gap={5}>
           <Text fontSize={'23px'} color={'#333333'} fontWeight={500}>
             Bir sorunun mu var? Hemen Ticket Oluştur
           </Text>
-          <HStack></HStack>
+          <HStack>
+            <InputGroup flexDirection={'column'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Make a title for your request
+                </Text>
+              </FormLabel>
+              <Input
+                type={'text'}
+                placeholder={'e.g. We need a help'}
+                w='389px'
+              />
+            </InputGroup>
+            <InputGroup flexDirection={'column'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  E-mail
+                </Text>
+              </FormLabel>
+              <Input
+                type={'email'}
+                placeholder={'e.g. ferhattunali@gmail.com'}
+                w='389px'
+              />
+            </InputGroup>
+          </HStack>
+          <InputGroup flexDirection={'column'}>
+            <FormLabel>
+              <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                Details
+              </Text>
+            </FormLabel>
+            <Textarea
+              placeholder='e.g. Can you help me, because i need your help in my situation'
+              _placeholder={{ color: '#B3CBD4' }}
+              h={'283px'}
+              resize={'none'}
+            ></Textarea>
+          </InputGroup>
+          <HStack>
+            <InputGroup flexDirection={'column'} w={'389px'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Category
+                </Text>
+              </FormLabel>
+              <Select placeholder={'Select option'}>
+                <option>Crypto</option>
+              </Select>
+            </InputGroup>
+            <InputGroup flexDirection={'column'} w={'389px'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Communication type
+                </Text>
+              </FormLabel>
+              <Select placeholder={'Select option'}>
+                <option>Phone</option>
+              </Select>
+            </InputGroup>
+          </HStack>
+          <HStack>
+            <HStack>
+              <InputGroup flexDirection={'column'}>
+                <FormLabel>
+                  <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                    Support time
+                  </Text>
+                </FormLabel>
+                <Input
+                  type={'date'}
+                  placeholder={'Mon. 12:00 - 17:00...'}
+                  w='187px'
+                />
+              </InputGroup>
+              <InputGroup flexDirection={'column'}>
+                <FormLabel>
+                  <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                    Time zone
+                  </Text>
+                </FormLabel>
+                <Select placeholder={'Select option'} w='187px'>
+                  <option>GMT +2</option>
+                </Select>
+              </InputGroup>
+            </HStack>
+            <InputGroup flexDirection={'column'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Approximate solution process
+                </Text>
+              </FormLabel>
+              <Input placeholder={'3-5 hours'} w='389px' type={'text'} />
+            </InputGroup>
+          </HStack>
+          <HStack>
+            <InputGroup flexDirection={'column'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Priority status
+                </Text>
+              </FormLabel>
+              <Select placeholder={'Select option'} w='389px'>
+                <option>Urgent</option>
+              </Select>
+            </InputGroup>
+            <InputGroup flexDirection={'column'}>
+              <FormLabel>
+                <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                  Support language
+                </Text>
+              </FormLabel>
+              <Select placeholder={'Select option'} w='389px'>
+                <option>Arabic</option>
+              </Select>
+            </InputGroup>
+          </HStack>
+          <InputGroup flexDirection={'column'}>
+            <FormLabel>
+              <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
+                Priority status
+              </Text>
+            </FormLabel>
+            <InputGroup>
+              <Input placeholder={'Select option'} w='277px' type={'file'} />
+              <InputRightAddon w={'112px'} fontSize={'14px'}>
+                Add sound
+              </InputRightAddon>
+            </InputGroup>
+          </InputGroup>
+          <Checkbox
+            fontSize={'14px'}
+            color={'#525252'}
+            alignSelf={'flex-start'}
+          >
+            I agree <span style={{ color: '#2485E8' }}>User agreement</span>{' '}
+          </Checkbox>
+          <Text
+            color={'#2485E8'}
+            fontSize='12px'
+            fontWeight={400}
+            alignSelf='flex-start'
+          >
+            Less options
+          </Text>
+          <Button
+            variant={'globalButton'}
+            w={'136px'}
+            fontSize={'13px'}
+            alignSelf={'flex-start'}
+          >
+            Gönder
+          </Button>
         </VStack>
         <Footer />
       </VStack>
