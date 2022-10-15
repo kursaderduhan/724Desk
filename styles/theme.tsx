@@ -51,6 +51,11 @@ export const theme = extendTheme({
       fontSize: { base: "xs", md: "sm", lg: "sm", xl: "sm" },
       fontWeight: "400",
       color:'dark.100'
+    },
+    cryptoPageText: {
+      fontSize: "15px",
+      fontWeight: 400,
+      color: "#333333",
     }
   },
     components: {
