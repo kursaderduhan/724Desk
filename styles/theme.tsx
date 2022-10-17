@@ -56,6 +56,18 @@ export const theme = extendTheme({
       fontSize: "15px",
       fontWeight: 400,
       color: "#333333",
+    },
+    elementHeadText: {
+      fontSize: "23px",
+      color: "#333333",
+      fontWeight: 500,
+      alignSelf:"flex-start"
+    },
+    elementDescText: {
+      fontSize: "14px",
+      color: '#333333',
+      fontWeight: 400,
+      alignSelf: 'flex-start'
     }
   },
     components: {
