@@ -167,7 +167,7 @@ export const Altcoin = () => {
             {result.map(element => (
               <VStack key={element.id} w={'full'} h={'full'}>
                 <Flex w={'full'} gap={5} justifyContent={"space-between"}>
-                  <VStack w={'full'}>
+                  <VStack w={'693px'}>
                     <Text
                       fontSize={'33px'}
                       color={'#333333'}
@@ -185,7 +185,7 @@ export const Altcoin = () => {
                       {element.date}
                     </Text>
                     {page == 'Airdrop nedir?' && <Element />}
-                    <VStack py={10}>
+                    <VStack py={10} alignSelf={"flex-end"}>
                       <Text color={'#666666'}>Yardım için buradayız!</Text>
                       <Button
                         variant={'globalButton'}
