@@ -2635,6 +2635,11 @@ source-map@^0.5.7:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   integrity sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==
 
+storken@^2.1.0-ts.8:
+  version "2.1.0-ts.8"
+  resolved "https://registry.yarnpkg.com/storken/-/storken-2.1.0-ts.8.tgz#e6b9cddad9a06baca55031b6fcbbeadf60804039"
+  integrity sha512-N22thu3Col6tArG0vMEzc/4DAKwFmYbqb8kC8X6DyX60vh2TV/K9RTNJXwpbTEyP8pAz8NAV7oStz1UbHvDd9A==
+
 string.prototype.matchall@^4.0.7:
   version "4.0.7"
   resolved "https://registry.npmjs.org/string.prototype.matchall/-/string.prototype.matchall-4.0.7.tgz"

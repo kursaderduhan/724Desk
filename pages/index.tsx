@@ -25,9 +25,29 @@ import PartnerShip from '@components/HomePage/PartnerShip'
 import ServicePocket from '@components/HomePage/ServicePocket'
 import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
-import { createContext } from 'react'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
+// import { create as createStore } from 'storken'
+
+// const [useStorken] = createStore({
+//   initialValues: {
+//     ınputValue: ""
+//   }
+// })
+
 
 const Home: NextPage = () => {
+  const router = useRouter()
+  const [search, setSearch] = useState("")
+  const handleChange = (event: any) => {
+    setSearch(event.target.value)
+  }
+  const searchPage = (e: any) => {
+    if (e.key === "Enter") {
+      search == '' && alert('Arama Boş Olamaz')
+      search == 'trade yapmak' && router.push('/Search')
+    }
+  }
   return (
     <Layout>
       <Head>
@@ -68,8 +88,7 @@ const Home: NextPage = () => {
                   src={'/hpButtonIcon.png'}
                   alt={'icon'}
                   w={'21.5px'}
-                  h={'21.5px'}
-                />
+                  h={'21.5px'} />
                 Destek Talebi Oluştur
               </Button>
             </Link>
@@ -83,7 +102,12 @@ const Home: NextPage = () => {
               <InputLeftElement h={'full'}>
                 <Icon as={BsSearch} />
               </InputLeftElement>
-              <Input placeholder='Problemlerinizi yazın ve arayın'></Input>
+              <Input
+                placeholder='Problemlerinizi yazın ve arayın'
+                type={'text'}
+                onChange={handleChange}
+                value={search.toLowerCase()}
+                onKeyPress={(e) => searchPage(e)} />
             </InputGroup>
             <HStack>
               {Item.map(item => (
