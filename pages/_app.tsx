@@ -8,7 +8,7 @@ function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel='manifest' href='/manifest.json' />
+         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/icon.png' />
         <meta name='theme-color' content='#fff' />
         <meta name='application-name' content='TFB BeyondStars' />
@@ -119,9 +119,8 @@ function MyApp ({ Component, pageProps }: AppProps) {
           rel='apple-touch-startup-image'
           href='/images/apple_splash_640.png'
           sizes='640x1136'
-        />
+        /> 
       </Head>
-
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>

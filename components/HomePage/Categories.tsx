@@ -14,7 +14,7 @@ export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'}>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <HStack w={'full'} justifyContent={'space-around'}>
+        <Flex w={'full'} justifyContent={'space-around'} flexDirection={{base:"column",md:"column",lg:"row"}}>
           {ıtem.map(item => (
             <VStack key={item.key}>
               <Image src={item.Image} alt={'ımage'} w={'125px'} h={'150px'} />
@@ -28,8 +28,8 @@ export const Categories = () => {
               </Text>
             </VStack>
           ))}
-        </HStack>
-        <HStack w={'full'} justifyContent={'space-around'}>
+        </Flex>
+        <Flex w={'full'} justifyContent={{base:"center",md:'space-around'}} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
           <Box w={'384px'} h={'572px'} overflow={'hidden'}>
             <Image
               src={'/hpWomenPic.png'}
@@ -46,7 +46,7 @@ export const Categories = () => {
             h={'384px'} mb={50}
           /> */}
           </Box>
-          <VStack alignItems={'flex-start'} fontWeight={500} w={580}>
+          <VStack fontWeight={500} w={580} alignItems={{base:"center",md:'flex-start'}}>
             <Text fontSize={'15px'} color={'#959595'}>
               724Desk’e hoş geldiniz
             </Text>
@@ -76,15 +76,15 @@ export const Categories = () => {
               </HStack>
             ))}
           </VStack>
-        </HStack>
-        <VStack w={'full'} alignItems={'flex-start'}>
+        </Flex>
+        <VStack w={'full'} alignItems={{base:"center",md:'flex-start'}}>
           <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
             Kategoriler
           </Text>
           <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
             Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
           </Text>
-          <HStack w={'full'} justifyContent={'space-between'}>
+          <Flex w={'full'} justifyContent={'space-between'} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
             {categories.map(categories => (
               <Link href={categories.link} key={categories.key}>
                 <Box
@@ -152,9 +152,9 @@ export const Categories = () => {
                 </Box>
               </Link>
             ))}
-          </HStack>
+          </Flex>
         </VStack>
-        <HStack w={'full'} justifyContent={'space-between'} py={100}>
+        <Flex w={'full'} justifyContent={'space-between'} py={100} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
           <VStack alignItems={'flex-start'} w={'450px'}>
             <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
               Problem Çözüm Aşamaları
@@ -203,7 +203,7 @@ export const Categories = () => {
               h={'634px'}
             />
           </Box>
-        </HStack>
+        </Flex>
       </Container>
     </Flex>
   )

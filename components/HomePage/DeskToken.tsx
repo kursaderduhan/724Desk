@@ -6,7 +6,8 @@ import {
   HStack,
   Box,
   Button,
-  Image
+  Image,
+  SimpleGrid
 } from '@chakra-ui/react'
 import { Counter } from './Counter'
 import Link from 'next/link'
@@ -15,7 +16,10 @@ export const DeskToken = () => {
     <VStack
       bg={'#333862'}
       w={'full'}
-      h={'1200px'}
+      h={{
+        base: '2110px',
+        md: '1200px'
+      }}
       justifyContent={'space-around'}
       pos={'relative'}
       overflow={'visible'}
@@ -32,14 +36,14 @@ export const DeskToken = () => {
         >
           Desk Token Verileri
         </Text>
-        <HStack
-          w={'1200px'}
-          h={'250px'}
+        <Flex
+          w={{base:350,md:1200}}
+          h={{ base: '409px', md: '250px' }}
           bg={'#505583'}
           gap={5}
           rounded={10}
-          px={5}
-          justifyContent={'space-between'}
+          px={5} overflow={"hidden"}
+          justifyContent={'space-between'} flexDirection={{base:"column",md:"row"}}
         >
           <VStack
             alignItems={'flex-start'}
@@ -97,18 +101,18 @@ export const DeskToken = () => {
             >
               1 DEX = 0.10 USD
             </Text>
-            <Link href={"/DeskToken"}>
-            <Button
-              variant={'globalButton'}
-              fontSize={'13px'}
-              w={'169px'}
-              alignSelf='flex-end'
-            >
-              Hemen Katıl
+            <Link href={'/DeskToken'}>
+              <Button
+                variant={'globalButton'}
+                fontSize={'13px'}
+                w={'169px'}
+                alignSelf='flex-end'
+              >
+                Hemen Katıl
               </Button>
-              </Link>
+            </Link>
           </VStack>
-        </HStack>
+        </Flex>
       </VStack>
       <VStack pos={'relative'} overflow={'visible'}>
         <Box pos={'absolute'} bottom={32} left={40}>
@@ -128,7 +132,7 @@ export const DeskToken = () => {
         >
           Anlık Veriler
         </Text>
-        <HStack gap={2} zIndex={1}>
+        <Flex flexDirection={{ base: 'column', md: 'row' }} gap={2} zIndex={1}>
           {item.map(ıtem => (
             <VStack
               key={ıtem.id}
@@ -162,7 +166,7 @@ export const DeskToken = () => {
               </Text>
             </VStack>
           ))}
-        </HStack>
+        </Flex>
       </VStack>
     </VStack>
   )

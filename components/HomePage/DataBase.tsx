@@ -1,192 +1,225 @@
 import React, { memo } from 'react'
-import { HStack, VStack, Text, Image, Flex, Box, Container } from '@chakra-ui/react'
+import {
+  HStack,
+  VStack,
+  Text,
+  Image,
+  Flex,
+  Box,
+  Container,
+  SimpleGrid
+} from '@chakra-ui/react'
 import Link from 'next/link'
 export const DataBase = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'} py={50}>
       <VStack py={50}>
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
-        <Text
-          fontSize={'23px'}
-          fontWeight={500}
-          color={'#525252'}
-          alignSelf={'flex-start'}
-        >
-          724DESK Bilgi Bankası
-        </Text>
-          <HStack w={'full'} justifyContent={'space-between'} px={0}>
-            <Link href={"/DataBase"}>
-          <Image
-            src={'/DataBase-Img.png'}
-            alt={'ımg'}
-            w={'491px'}
-            h={'276px'} cursor={"pointer"}
-          /></Link>
-          <VStack alignItems={'flex-start'}>
-            <Text fontWeight={500} fontSize={'33px'} color={'#333333'}>
-              İşte Dev Balinaların En Çok Trade Et...
-            </Text>
-            <Text
-              color={'#666666'}
-              fontSize={'14px'}
-              fontWeight={400}
-              w={'655px'}
-            >
-              Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin projesinde
-              devasa balina satın alımlarına şahit oldu. Balinalar CRV’yi en çok
-              kullanılan akıllı sözleşmeler listesinde de ilk sıralara çıkardı.
-              <br />
-              WhaleStates’e göre, “BlueWhale0088” adlı bir ETH balinası, 2.13
-              milyon dolar değerinde CRV stokladı. Balina sadece iki işlemde
-              824.000 CRV satın aldı ve piyasaya düşerken...
-            </Text>
-            <Text fontSize={'12px'} color={'#666666'} fontWeight={400}>
-              12/04/2022
-            </Text>
-          </VStack>
-        </HStack>
-        <HStack w={'full'} py={50}>
-          {Item.map(items => (
-            <Box
-              key={items.Key}
-              w={'288px'}
-              h={'162px'}
-              bgImage={items.Image}
-              bgPos={'center'}
-              bgSize={'cover'}
-              display={'flex'}
-              py={5}
-            >
-              <Text
-                fontSize={'15px'}
-                fontWeight={500}
-                alignSelf={'flex-end'}
-                w={'full'}
-                display={'flex'}
-                justifyContent={'center'}
-                color={'white'}
-              >
-                {items.Text}
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+          <Text
+            fontSize={'23px'}
+            fontWeight={500}
+            color={'#525252'}
+            alignSelf={'flex-start'}
+          >
+            724DESK Bilgi Bankası
+          </Text>
+          <Flex
+            flexDirection={{ base: 'column', md: 'row' }}
+            w={'full'}
+            justifyContent={'space-between'}
+            px={0}
+            alignItems={{ base: 'center' }}
+          >
+            <Link href={'/DataBase'}>
+              <Image
+                src={'/DataBase-Img.png'}
+                alt={'ımg'}
+                w={'491px'}
+                h={'276px'}
+                cursor={'pointer'}
+              />
+            </Link>
+            <VStack alignItems={'flex-start'}>
+              <Text fontWeight={500} fontSize={'33px'} color={'#333333'}>
+                İşte Dev Balinaların En Çok Trade Et...
               </Text>
-            </Box>
-          ))}
-          </HStack>
-          </Container>
+              <Text
+                color={'#666666'}
+                fontSize={'14px'}
+                fontWeight={400}
+                w={'655px'}
+              >
+                Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin
+                projesinde devasa balina satın alımlarına şahit oldu. Balinalar
+                CRV’yi en çok kullanılan akıllı sözleşmeler listesinde de ilk
+                sıralara çıkardı.
+                <br />
+                WhaleStates’e göre, “BlueWhale0088” adlı bir ETH balinası, 2.13
+                milyon dolar değerinde CRV stokladı. Balina sadece iki işlemde
+                824.000 CRV satın aldı ve piyasaya düşerken...
+              </Text>
+              <Text fontSize={'12px'} color={'#666666'} fontWeight={400}>
+                12/04/2022
+              </Text>
+            </VStack>
+          </Flex>
+          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={50}>
+            {Item.map(items => (
+              <Box
+                key={items.Key}
+                w={'288px'}
+                h={'162px'}
+                bgImage={items.Image}
+                bgPos={'center'}
+                bgSize={'cover'}
+                display={'flex'}
+                py={5}
+              >
+                <Text
+                  fontSize={'15px'}
+                  fontWeight={500}
+                  alignSelf={'flex-end'}
+                  w={'full'}
+                  display={'flex'}
+                  justifyContent={'center'}
+                  color={'white'}
+                >
+                  {items.Text}
+                </Text>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Container>
       </VStack>
       <VStack w={'full'} py={50}>
-        <HStack
-          w={'full'}
-          display={'flex'}
-          alignSelf={'flex-end'}
-          pos={'relative'}
-        >
-          <Image
-            src={'/DataBase-Ellipse.png'}
-            alt={'women'}
-            w={'491px'}
-            h={'491px'}
-            pl={125}
-            zIndex={1}
-          />
-          <Text>Resim Width büyük yerleşmiyor</Text>
-
+        <HStack w={'full'} display={'flex'} alignSelf={'flex-end'}>
           <HStack
-            bgImage={'/DataBase-bg.png'}
-            w={'1075px'}
-            h={'491px'}
-            justifyContent={'center'}
-            borderLeftRadius={'full'}
+            w={'full'}
+            h={'full'}
+            justifyContent={'flex-end'}
+            pos={'relative'}
           >
-            <HStack w={'480px'}>
+            <Flex zIndex={1} pos={'absolute'}  justifyContent={"center"} w={"full"}>
               <Image
-                src={'/message-question.png'}
-                alt={'question'}
-                w={'45px'}
-                h={'43px'}
-                alignSelf={'flex-start'}
+                src={'/DataBaseWomen.png'}
+                alt={'women'}
+                w={'991px'}
+                h={'630px'}
+                zIndex={1}
+                display={'flex'}
               />
-              <VStack alignItems={'flex-start'}>
-                <Text fontWeight={500} fontSize={'23px'} color={'white'}>
-                  Bizi neden seçmelisiniz?
-                </Text>
-                <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
-                  Sizi anlıyoruz, çünkü aynı dili konuşuyoruz. Sizinle
-                  birlikteyiz, çünkü aynı yerde yaşıyoruz. Size destek oluyoruz,
-                  çünkü aynı kanalları kullanıyoruz...
-                </Text>
-                <HStack gap={4}>
-                  <HStack
-                    bg={'#555A8A'}
-                    w={'249px'}
-                    h={'86px'}
-                    justifyContent={'center'}
-                    rounded={10}
-                  >
-                    <Image
-                      src={'/flag.png'}
-                      alt={'flag'}
-                      w={'54px'}
-                      h={'54px'}
-                    />
-                    <Text fontWeight={500} fontSize={'33px'} color={'white'}>
-                      33
-                    </Text>
-                    <Text fontWeight={400} fontSize={'15px'} color={'#D4D4D4'}>
-                      ülke
-                    </Text>
-                  </HStack>
+            </Flex>
 
-                  <HStack
-                    bg={'#555A8A'}
-                    w={'249px'}
-                    h={'86px'}
-                    justifyContent={'center'}
-                    rounded={10}
-                  >
-                    <Image
-                      src={'/global-refresh.png'}
-                      alt={'global'}
-                      w={'54px'}
-                      h={'54px'}
-                    />
-                    <Text fontWeight={500} fontSize={'33px'} color={'white'}>
-                      42
-                    </Text>
-                    <Text fontWeight={400} fontSize={'15px'} color={'#D4D4D4'}>
-                      Dil
-                    </Text>
+            <HStack
+              bgImage={'/DataBase-bg.png'}
+              w={'1075px'}
+              h={'491px'}
+              justifyContent={'center'}
+              borderLeftRadius={'full'}
+            >
+              <HStack w={'480px'}>
+                <Image
+                  src={'/message-question.png'}
+                  alt={'question'}
+                  w={'45px'}
+                  h={'43px'}
+                  alignSelf={'flex-start'}
+                />
+                <VStack alignItems={'flex-start'}>
+                  <Text fontWeight={500} fontSize={'23px'} color={'white'}>
+                    Bizi neden seçmelisiniz?
+                  </Text>
+                  <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
+                    Sizi anlıyoruz, çünkü aynı dili konuşuyoruz. Sizinle
+                    birlikteyiz, çünkü aynı yerde yaşıyoruz. Size destek
+                    oluyoruz, çünkü aynı kanalları kullanıyoruz...
+                  </Text>
+                  <HStack gap={4}>
+                    <HStack
+                      bg={'#555A8A'}
+                      w={'249px'}
+                      h={'86px'}
+                      justifyContent={'center'}
+                      rounded={10}
+                    >
+                      <Image
+                        src={'/flag.png'}
+                        alt={'flag'}
+                        w={'54px'}
+                        h={'54px'}
+                      />
+                      <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                        33
+                      </Text>
+                      <Text
+                        fontWeight={400}
+                        fontSize={'15px'}
+                        color={'#D4D4D4'}
+                      >
+                        ülke
+                      </Text>
+                    </HStack>
+
+                    <HStack
+                      bg={'#555A8A'}
+                      w={'249px'}
+                      h={'86px'}
+                      justifyContent={'center'}
+                      rounded={10}
+                    >
+                      <Image
+                        src={'/global-refresh.png'}
+                        alt={'global'}
+                        w={'54px'}
+                        h={'54px'}
+                      />
+                      <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                        42
+                      </Text>
+                      <Text
+                        fontWeight={400}
+                        fontSize={'15px'}
+                        color={'#D4D4D4'}
+                      >
+                        Dil
+                      </Text>
+                    </HStack>
                   </HStack>
-                </HStack>
-                <HStack bg={'#555A8A'} w={'522px'} h={'99px'} rounded={10}>
-                  <VStack w={'full'}>
-                    <Image
-                      src={'/hpIcons.png'}
-                      alt={'icons'}
-                      w={'288px'}
-                      h={'32px'}
-                    />
-                    <Text fontSize={'15px'} color={'#D4D4D4'} fontWeight={400}>
-                      Birçok kanal
-                    </Text>
-                  </VStack>
-                </HStack>
-              </VStack>
+                  <HStack bg={'#555A8A'} w={'522px'} h={'99px'} rounded={10}>
+                    <VStack w={'full'}>
+                      <Image
+                        src={'/hpIcons.png'}
+                        alt={'icons'}
+                        w={'288px'}
+                        h={'32px'}
+                      />
+                      <Text
+                        fontSize={'15px'}
+                        color={'#D4D4D4'}
+                        fontWeight={400}
+                      >
+                        Birçok kanal
+                      </Text>
+                    </VStack>
+                  </HStack>
+                </VStack>
+              </HStack>
             </HStack>
           </HStack>
         </HStack>
       </VStack>
       <VStack>
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}} >
-        <Text
-          fontWeight={500}
-          fontSize={'23px'}
-          color={'#525252'}
-          alignSelf={'flex-start'}
-        >
-          Destek Kanalları
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+          <Text
+            fontWeight={500}
+            fontSize={'23px'}
+            color={'#525252'}
+            alignSelf={'flex-start'}
+          >
+            Destek Kanalları
           </Text>
-          </Container>
-        <HStack gap='10' w={"full"} pl="175">
+        </Container>
+        <HStack gap='10' w={'full'} pl='175'>
           {categories.map(categories => (
             <Box
               key={categories.key}
@@ -236,8 +269,7 @@ export const DataBase = () => {
             </Box>
           ))}
         </HStack>
-       
-        </VStack>
+      </VStack>
     </Flex>
   )
 }

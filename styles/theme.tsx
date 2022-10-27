@@ -16,7 +16,8 @@ export const theme = extendTheme({
     lg: '980px',
     xl: '1270px',
     xxl: '1920px'
-  }),fonts: {
+  }),
+  fonts: {
     heading: 'Poppins',
     body: 'Poppins',
   },fontSizes: {

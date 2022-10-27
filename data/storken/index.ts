@@ -15,10 +15,7 @@
 //     },
 //   },
 //   initialValues: {
-//     newsId: 1 as number,
-//     NewsPage: 'none' as string,
-//     PostPanel: false as boolean,
-//     theme: 1 as number, //1 light theme 0 dark theme
+    
 //   },
 // })
 

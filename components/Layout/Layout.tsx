@@ -1,15 +1,34 @@
-import React from 'react'
-import { Flex, Box } from '@chakra-ui/react'
+import React,{memo} from 'react'
+import { Flex, Box, VStack } from '@chakra-ui/react'
 import Header from '../Header/Header'
-export const Layout = ({ children,headerChoose=false }: { children: any,headerChoose?:boolean }) => {
+import Head from 'next/head'
+
+export const Layout = ({
+  children,
+  headerChoose = false
+}: {
+  children: any
+  headerChoose?: boolean
+}) => {
   return (
-    <Flex w={'full'} minH={'100vh'} minW={"100vw"} flexDirection={"column"}>
-      <Box w={"full"} pos={"absolute"} top={0} zIndex="4" minW={"100vw"}>
+    <Flex minH={'100vh'} flexDirection={'column'} w={"100%"}>
+      <Head>
+        <title>724Desk</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
+      <Box
+        w={'100%'}
+        pos={{ base: 'initial', md: 'absolute' }}
+        top={0}
+        zIndex='4'
+      >
         <Header headerProp={headerChoose} />
       </Box>
-      <Box w={"full"} h={"full"} minW={"100vw"}>{children}</Box>
+      <Box w={'100%'} h={'full'}>
+        {children}
+      </Box>
     </Flex>
   )
 }
 
-export default Layout
+export default memo(Layout)
