@@ -4,7 +4,6 @@ import Layout from '@components/Layout/Layout'
 import {
   Box,
   Text,
-  VStack,
   Button,
   Input,
   InputGroup,
@@ -14,7 +13,6 @@ import {
   Icon,
   HStack,
   Container,
-  AspectRatio
 } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 import Categories from '@components/HomePage/Categories'
@@ -28,16 +26,8 @@ import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import screen from '../../app/constants'
-import useWindowSize from 'hooks/useWindowSize'
-
-interface Size {
-  width: number | undefined
-  height: number | undefined
-}
 
 const Home: NextPage = () => {
-  const size: Size = useWindowSize()
   const router = useRouter()
   const [search, setSearch] = useState('')
   const handleChange = (event: any) => {
