@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { createStore } from 'storken'
 import { StorkenStorage } from 'storken-storage'
 
@@ -28,7 +29,7 @@ export const [Storken, { useStorken }] = createStore({
     },
   },
   initialValues: {
-    pagesName: "Ana Sayfa" as string,
+    pagesName: "Ana Sayfa" as any,
   },
 })
 

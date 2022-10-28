@@ -119,7 +119,11 @@ const headerText: Array<headerProp> = [
 ]
 
 const MobileHeader = () => {
-  const pagesName = useStorken<string>("pagesName")
+  const pagesName = useStorken<any>("pagesName")
+  const changePagesName = (heading:any) => {
+  pagesName.set(heading)
+}
+
   return (
     <Flex w={'100%'}>
       <Accordion allowMultiple w={'100%'}>
@@ -209,7 +213,7 @@ const MobileHeader = () => {
                           fontSize={'14px'}
                           fontWeight={400}
                           color={'#333333'}
-                          cursor={'pointer'} onClick={(heading) => pagesName.set(header.heading)}
+                          cursor={'pointer'} onClick={() => changePagesName(header.heading)}
                         >
                           {header.heading}
                         </Text>
