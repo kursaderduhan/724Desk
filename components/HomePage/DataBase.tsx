@@ -40,14 +40,14 @@ export const DataBase = () => {
               />
             </Link>
             <VStack alignItems={'flex-start'}>
-              <Text fontWeight={500} fontSize={'33px'} color={'#333333'}>
+              <Text fontWeight={500} fontSize={{base:"19px",md:'33px'}} color={'#333333'}>
                 İşte Dev Balinaların En Çok Trade Et...
               </Text>
               <Text
                 color={'#666666'}
                 fontSize={'14px'}
                 fontWeight={400}
-                w={'655px'}
+                maxW={{base:"full",md:'655px'}}
               >
                 Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin
                 projesinde devasa balina satın alımlarına şahit oldu. Balinalar
@@ -63,17 +63,17 @@ export const DataBase = () => {
               </Text>
             </VStack>
           </Flex>
-          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={50}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={50} justifyContent={"center"} gap={5}>
             {Item.map(items => (
               <Box
                 key={items.Key}
-                w={'288px'}
+                w={{base:"164px",md:'288px'}}
                 h={'162px'}
                 bgImage={items.Image}
                 bgPos={'center'}
                 bgSize={'cover'}
                 display={'flex'}
-                py={5}
+                py={5} rounded={10}
               >
                 <Text
                   fontSize={'15px'}
@@ -99,7 +99,7 @@ export const DataBase = () => {
             justifyContent={'flex-end'}
             pos={'relative'}
           >
-            <Flex zIndex={1} pos={'absolute'}  justifyContent={"center"} w={"full"}>
+            <Flex zIndex={1} pos={{base:"initial",md:'absolute'}}  justifyContent={"center"} w={"full"}>
               <Image
                 src={'/DataBaseWomen.png'}
                 alt={'women'}
@@ -115,7 +115,7 @@ export const DataBase = () => {
               w={'1075px'}
               h={'491px'}
               justifyContent={'center'}
-              borderLeftRadius={'full'}
+              borderLeftRadius={'full'} display={{base:"none",md:"flex"}}
             >
               <HStack w={'480px'}>
                 <Image
@@ -209,7 +209,7 @@ export const DataBase = () => {
         </HStack>
       </VStack>
       <VStack>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text
             fontWeight={500}
             fontSize={'23px'}
@@ -219,12 +219,12 @@ export const DataBase = () => {
             Destek Kanalları
           </Text>
         </Container>
-        <HStack gap='10' w={'full'} pl='175'>
+        <SimpleGrid gap='10' w={'full'} pl={{base:"3",md:'175'}} display={"grid"} columns={{base:2,md:4}}>
           {categories.map(categories => (
             <Box
               key={categories.key}
-              w={'288px'}
-              h={'223px'}
+              w={{base:"164px",md:'288px'}}
+              h={{base:"125px",md:'223px'}}
               bg={categories.bg}
               rounded={15}
             >
@@ -242,10 +242,10 @@ export const DataBase = () => {
                     w={'42px'}
                     h={'42px'}
                   />
-                  <Text fontSize={'23px'} fontWeight={500}>
+                  <Text fontSize={{base:"15px",md:'23px'}} fontWeight={500}>
                     {categories.TextHead}
                   </Text>
-                  <Text fontSize={'12px'} fontWeight={400}>
+                  <Text fontSize={'12px'} fontWeight={400} display={{base:"none",md:"flex"}}>
                     {categories.Description}
                   </Text>
                 </VStack>
@@ -261,14 +261,14 @@ export const DataBase = () => {
                   <Image
                     src={categories.ImgRight}
                     alt={'rightImg'}
-                    w={'133px'}
-                    h={'133px'}
+                    w={{base:"72px",md:'133px'}}
+                    h={{base:"72px",md:'133px'}} p={2}
                   />
                 </Box>
               </HStack>
             </Box>
           ))}
-        </HStack>
+        </SimpleGrid>
       </VStack>
     </Flex>
   )

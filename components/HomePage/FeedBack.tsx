@@ -30,12 +30,12 @@ export const FeedBack = () => {
       alignItems={'flex-start'}
       gap={5}
     >
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
           Geri Dönüşler
         </Text>
       </Container>
-      <HStack w={'full'} pl={'180px'}>
+      <HStack w={'full'} pl={{base:"0px",md:'180px'}}>
         {Item.map(item => (
           <Flex
             key={item.key}

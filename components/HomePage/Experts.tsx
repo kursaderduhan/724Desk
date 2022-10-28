@@ -17,26 +17,27 @@ export const Experts = () => {
       h={'1155px'}
       bgImage={'/experts-bg.png'}
       flexDirection={'column'}
-      py={100}
+      py={{base:25,md:100}}
     >
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <VStack w={'full'} gap={50}>
+        <VStack w={'full'} gap={{base:10,md:50}}>
           <Link href={'/Experts'}>
             <Text
               fontSize={'23px'}
               color={'white'}
               fontWeight={500}
-              alignSelf={'flex-start'} cursor={"pointer"}
+              alignSelf={'flex-start'}
+              cursor={'pointer'}
             >
               Uzmanlarımız
             </Text>
           </Link>
-          <SimpleGrid columns={4} spacing={'15px'} w={'full'}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={'15px'} w={'full'}>
             {Item.map(ıtem => (
               <Box
                 key={ıtem.key}
-                w={'288px'}
-                h={'408px'}
+                w={{ base: '164px', md: '288px' }}
+                h={{ base: '247px', md: '408px' }}
                 bg={'#505583'}
                 rounded={10}
                 py={2}
@@ -46,8 +47,8 @@ export const Experts = () => {
                     bgImage={ıtem.Image}
                     bgSize={'cover'}
                     bgPos={'center'}
-                    w={'256px'}
-                    h={'156px'}
+                    w={{ base: '148px', md: '256px' }}
+                    h={{ base: '90px', md: '156px' }}
                     alignItems={'flex-start'}
                     px={2}
                     justifyContent={'space-between'}
@@ -83,33 +84,44 @@ export const Experts = () => {
                       </Text>
                     </HStack>
                   </Flex>
-                  <Text
-                    fontSize={'19px'}
-                    fontWeight={500}
-                    color={'white'}
-                    alignSelf={'flex-start'}
-                    px='5'
-                  >
-                    {ıtem.name}
-                  </Text>
-                  <Text
-                    fontSize={'14px'}
-                    fontWeight={400}
-                    color={'#C4C4C4'}
-                    alignSelf={'flex-start'}
-                    px='5'
-                  >
-                    {ıtem.expert}
-                  </Text>
-                  <Text
-                    fontSize={'14px'}
-                    fontWeight={400}
-                    color={'#C4C4C4'}
-                    alignSelf={'flex-start'}
-                    px='5'
-                  >
-                    {ıtem.description}
-                  </Text>
+                  <VStack alignItems={"flex-start"} w={"full"} px={{base:3,md:0}} >
+                    <Text
+                      fontSize={{ base: '15px', md: '19px' }}
+                      fontWeight={500}
+                      color={'white'}
+                      alignSelf={'flex-start'}
+                      px={{base:0,md:5}}
+                    >
+                      {ıtem.name}
+                    </Text>
+                    <Text
+                      fontSize={{ base: '12px', md: '14px' }}
+                      fontWeight={400}
+                      color={'#C4C4C4'}
+                      alignSelf={'flex-start'}
+                      px={{base:0,md:5}}
+                    >
+                      {ıtem.expert}
+                    </Text>
+                    <Text
+                      fontSize={'14px'}
+                      fontWeight={400}
+                      color={'#C4C4C4'}
+                      alignSelf={'flex-start'}
+                      px='5'
+                      display={{ base: 'none', md: 'flex' }}
+                    >
+                      {ıtem.description}
+                    </Text>
+                    <Text
+                      fontSize={'12px'}
+                      fontWeight={400}
+                      color={'white'}
+                      display={{ base: 'flex', md: 'none' }}
+                    >
+                      {ıtem.language}
+                    </Text>
+                  </VStack>
                   <HStack w='full' px='5' justifyContent={'space-between'}>
                     <HStack alignItems={'flex-start'} display={'flex'}>
                       {ıtem.phone && (
@@ -145,7 +157,12 @@ export const Experts = () => {
                         />
                       )}
                     </HStack>
-                    <Text fontSize={'12px'} fontWeight={400} color={'white'}>
+                    <Text
+                      fontSize={'12px'}
+                      fontWeight={400}
+                      color={'white'}
+                      display={{ base: 'none', md: 'flex' }}
+                    >
                       {ıtem.language}
                     </Text>
                   </HStack>

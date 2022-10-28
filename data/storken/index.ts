@@ -1,22 +1,36 @@
-// import { createStore } from 'storken'
-// import { StorkenStorage } from 'storken-storage'
+import { createStore } from 'storken'
+import { StorkenStorage } from 'storken-storage'
 
-// export const [Storken, { useStorken }] = createStore({
-//   plugins: {
-//     storage: StorkenStorage({
-//       storage:
-//         typeof window !== 'undefined' ? window.localStorage : ({} as Storage),
-//     }),
-//   },
-//   storkenOptions: {
-//     credentials: {
-//       storage: typeof window !== 'undefined' ? window.localStorage : null,
-//       loading: true,
-//     },
-//   },
-//   initialValues: {
-    
-//   },
-// })
+const storage = StorkenStorage({
+  storage: typeof window !== 'undefined' ? window.localStorage : (null as any),
+})
 
-// export default { Storken, useStorken }
+export const [Storken, { useStorken }] = createStore({
+  storkenOptions: {
+    credentials: {
+      loading: true,
+      plugins: { storage },
+    },
+    theme: {
+      plugins: { storage },
+    },
+    lang: {
+      plugins: { storage },
+    },
+    newsId: {
+      plugins: { storage },
+    },
+    NewsPage: {
+      plugins: { storage },
+    },
+    PostPanel: {
+      plugins: { storage },
+    },
+  },
+  initialValues: {
+    pagesName: "Ana Sayfa" as string,
+  },
+})
+
+export default { Storken, useStorken }
+

@@ -23,6 +23,7 @@ import { ChevronDownIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import LanguageButton from '@components/Header/LanguageButton'
 import screen from '../../constants'
 import useWindowSize from 'hooks/useWindowSize'
+import { useStorken } from '@data/storken'
 
 interface Size {
   width: number | undefined
@@ -118,6 +119,7 @@ const headerText: Array<headerProp> = [
 ]
 
 const MobileHeader = () => {
+  const pagesName = useStorken<string>("pagesName")
   return (
     <Flex w={'100%'}>
       <Accordion allowMultiple w={'100%'}>
@@ -132,12 +134,13 @@ const MobileHeader = () => {
                   px={5}
                 >
                   <Box w={'full'}>
-                    <Image
-                      src={'/724DeskLogo.png'}
-                      alt={'desk-ıcon'}
-                      w={'77px'}
-                      h={'24px'}
-                    />
+                    {pagesName.v == "Ana Sayfa" ?
+                      <Image
+                        src={'/724DeskLogo.png'}
+                        alt={'desk-ıcon'}
+                        w={'77px'}
+                        h={'24px'}
+                      /> : <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{pagesName.v}</Text> }
                   </Box>
                   <AccordionButton
                     alignSelf={'flex-end'}
@@ -206,7 +209,7 @@ const MobileHeader = () => {
                           fontSize={'14px'}
                           fontWeight={400}
                           color={'#333333'}
-                          cursor={'pointer'}
+                          cursor={'pointer'} onClick={(heading) => pagesName.set(header.heading)}
                         >
                           {header.heading}
                         </Text>

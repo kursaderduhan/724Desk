@@ -2635,10 +2635,15 @@ source-map@^0.5.7:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   integrity sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==
 
-storken@^2.1.0-ts.8:
-  version "2.1.0-ts.8"
-  resolved "https://registry.yarnpkg.com/storken/-/storken-2.1.0-ts.8.tgz#e6b9cddad9a06baca55031b6fcbbeadf60804039"
-  integrity sha512-N22thu3Col6tArG0vMEzc/4DAKwFmYbqb8kC8X6DyX60vh2TV/K9RTNJXwpbTEyP8pAz8NAV7oStz1UbHvDd9A==
+storken-storage@1.0.9-beta.2:
+  version "1.0.9-beta.2"
+  resolved "https://registry.yarnpkg.com/storken-storage/-/storken-storage-1.0.9-beta.2.tgz#ce310f331a0ddf65f8862b4faece3fa1b6949374"
+  integrity sha512-1WWC5zFeeR/n80jg7C9KS5jgwdCOMLF0DQIs1wVryiHqZIdCbuPVgmaj8YGim/CFhWNUDgSgEPd9Ca9AWn1GEQ==
+
+storken@2.1.0-beta.19:
+  version "2.1.0-beta.19"
+  resolved "https://registry.yarnpkg.com/storken/-/storken-2.1.0-beta.19.tgz#bc9ee56ef85768c2b8948ee4cad22e5fbef423e1"
+  integrity sha512-gAK7kqcGWNzR1lz0doBTOK0wsym+V2+WkF/OC+SzR+ogeBwOqvs5ZOR7qCm5s0GsMnHlmOcSNUCPsd96HQ/Guw==
 
 string.prototype.matchall@^4.0.7:
   version "4.0.7"

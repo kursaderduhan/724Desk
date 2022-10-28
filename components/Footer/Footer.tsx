@@ -10,16 +10,16 @@ import {
   ListItem,
   List,
   Container,
-  Center
+  Center,
+  SimpleGrid
 } from '@chakra-ui/react'
-import Home from '@pages'
 import Link from 'next/link'
 
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
   return (
     <Box
       bgImage={HomePage ? '/footerBg.png' : '#E5E5E5'}
-      h={'500px'}
+      h={{ base: '967px', md: '500px' }}
       pos={'relative'}
       w={'full'}
     >
@@ -31,7 +31,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
           left={{ lg: 400, xl: 400, xxl: 600 }}
           justifyContent={'center'}
           w={'full'}
-          display={'flex'}
+          display={{ base: 'none', md: 'flex' }}
           alignSelf={'center'}
           zIndex={1}
           bgSize={'cover'}
@@ -40,14 +40,19 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
         />
       )}
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <VStack py={HomePage ? 0 : 0}>
-          <HStack
+        <VStack py={HomePage ? 0 : 0} gap={10}>
+          <Flex
             w={'full'}
             h={'full'}
-            py={'80px'}
-            justifyContent={'space-between'}
+            py={{ base: '20px', md: '80px' }}
+            flexDirection={{ base: 'column', md: 'row' }}
+            justifyContent={'space-between'} gap={10}
           >
-            <VStack alignItems={'flex-start'} gap={20} alignSelf={'flex-start'}>
+            <VStack
+              alignItems={'flex-start'}
+              gap={{ base: 2, md: 20 }}
+              alignSelf={'flex-start'}
+            >
               <Box>
                 <Image
                   src={HomePage ? '/724Desk.png' : '/724Desk-soft.png'}
@@ -101,13 +106,14 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                 </HStack>
               </Box>
             </VStack>
-            <HStack
-              gap={20}
+            <SimpleGrid
+              columns={{ base: 2, md: 3 }}
+              gap={{base:10,md:20}}
               fontSize={'15px'}
               color={HomePage ? 'white' : '#959595'}
               fontWeight={400}
               w={HomePage ? '' : 'full'}
-              justifyContent={'space-evenly'}
+              justifyContent={{base:"flex-start",md:'space-evenly'}}
               alignSelf={'flex-start'}
               alignItems={'flex-start'}
             >
@@ -117,8 +123,8 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Hizmetler & Çözümler</ListItem>
                   <ListItem>Nasıl Kullanılır?</ListItem>
                   <ListItem>Değerlendirmeler</ListItem>
-                  <Link href={'/Info'} >
-                    <ListItem cursor={"pointer"}>Hakkımızda</ListItem>
+                  <Link href={'/Info'}>
+                    <ListItem cursor={'pointer'}>Hakkımızda</ListItem>
                   </Link>
                   <Link href={'/Contact'}>
                     <ListItem cursor={'pointer'}>İletişim</ListItem>
@@ -137,7 +143,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Site Haritası</ListItem>
                 </List>
               </VStack>
-              <VStack>
+              <VStack alignItems={"flex-start"}>
                 <List spacing={2}>
                   <ListItem>Sunucu Yönetimi</ListItem>
                   <ListItem>Yazılım Geliştirme</ListItem>
@@ -149,10 +155,15 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   </Link>
                 </List>
               </VStack>
-            </HStack>
-          </HStack>
+            </SimpleGrid>
+          </Flex>
           <Center>
-            <HStack w={'full'} justifyContent={'center'} gap={10}>
+            <SimpleGrid
+              columns={{ base: 4, md: 8 }}
+              w={'full'}
+              justifyContent={'center'}
+              gap={10}
+            >
               <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
               <Image
                 src={'/Mastercard.png'}
@@ -166,7 +177,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
               <Image src={'/Payoneer.png'} alt={'ımg'} w={'55px'} h={'20px'} />
               <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
-            </HStack>
+            </SimpleGrid>
           </Center>
           <Text fontSize={'12px'} fontWeight={400} color={'#D4D4D4'}>
             Copyright © 724desk.com

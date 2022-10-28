@@ -19,7 +19,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "storken": "^2.1.0-ts.8"
+    "storken": "2.1.0-beta.19",
+    "storken-storage": "1.0.9-beta.2"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
