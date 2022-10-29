@@ -30,8 +30,8 @@ export const [Storken, { useStorken }] = createStore({
   },
   initialValues: {
     pagesName: "Ana Sayfa" as any,
+    search: "" as any,
   },
 })
 
 export default { Storken, useStorken }
-

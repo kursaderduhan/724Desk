@@ -37,16 +37,16 @@ export const ServicePocket = () => {
               {smallScreen ? 'Hizmet Paketlerimiz': "Abonelik"}
             </Text>
           </Link>
-          <SimpleGrid w={'full'} gap='5' columns={{base:1,md:4}}>
+          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} w={'100%'} gap={5} justifyContent={{base:"center",md:"flex-start"}}>
             {Item.map(item => (
               <VStack
-                w={item.populer == true ? {base:"343px",md:'320px'} : {base:"343px",md:'288px'}}
-                h={item.populer == true ? '600px' : '500px'}
+                w={item.populer == true ? {base:"340px",md:'320px'} : {base:"340px",md:'288px'}}
+                h={item.populer == true ? { base: "553px", md: '600px' } : {base:"424px",md:'500px'}}
                 bg={item.populer == true ? '#F2A77D' : 'white'}
                 key={item.key}
                 alignItems={{base:"center",md:'flex-start'}}
-                p={5}
-                justifyContent={'space-between'} rounded={10}
+                p={5} zIndex={item.populer == true ? 1 : 0}
+                justifyContent={'space-between'} rounded={10} 
               >
                 {item.populer == true ? (
                   <HStack
@@ -166,8 +166,8 @@ export const ServicePocket = () => {
                 </Button>
               </VStack>
             ))}
-          </SimpleGrid>
-          <Text fontWeight={400} fontSize={{base:"33px",md:'46px'}} color={'black'}>
+          </Flex>
+          <Text fontWeight={400} fontSize={{base:"33px",md:'46px'}} color={'black'} textAlign={{base:"center"}}>
             Hemen Kullanmaya Başla!
           </Text>
           <Text color={'#666666'} fontSize={'14px'} fontWeight={400}>

@@ -12,7 +12,7 @@ import {
   Image,
   Icon,
   HStack,
-  Container,
+  Container
 } from '@chakra-ui/react'
 import { BsSearch } from 'react-icons/bs'
 import Categories from '@components/HomePage/Categories'
@@ -26,17 +26,18 @@ import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useStorken } from '@data/storken'
 
 const Home: NextPage = () => {
   const router = useRouter()
-  const [search, setSearch] = useState('')
+  const search = useStorken<any>("search")
   const handleChange = (event: any) => {
-    setSearch(event.target.value)
+    search.set(event.target.value)
   }
   const searchPage = (e: any) => {
     if (e.key === 'Enter') {
-      search == '' && alert('Arama Boş Olamaz')
-      search == 'trade yapmak' && router.push('/Search')
+      search.v == '' && alert('Arama Boş Olamaz')
+      search.v == 'trade yapmak' && router.push('/Search')
     }
   }
   return (
@@ -49,7 +50,7 @@ const Home: NextPage = () => {
 
       <Box
         bgImage='/HomePageBg.png'
-        w={{ base: 'full', md: 'full' }}
+        w={{ base: '100%', md: 'full' }}
         h={{ base: '746px', md: '746px' }}
         bgPos={'center'}
         bgSize={'cover'}
@@ -57,11 +58,11 @@ const Home: NextPage = () => {
         <Container maxW={'1200px'}>
           <Flex
             flexDirection={'column'}
-            w={'100vw'}
+            w={'100%'}
             h={'full'}
             gap={10}
             py={{ base: 140, md: 150 }}
-            alignItems={{ base: 'center', md: 'flex-start' }}
+            alignItems={{ base: 'flex-start', md: 'flex-start' }}
           >
             <Text fontSize={{ base: '32px', md: '54px' }}>
               Problemlerinize <br /> Anında{' '}
@@ -88,7 +89,7 @@ const Home: NextPage = () => {
             </Link>
             <InputGroup
               size={'lg'}
-              w={'389px'}
+              w={{base:"343px",md:'389px'}}
               rounded={5}
               boxShadow={'xl'}
               alignItems={'center'}
@@ -100,7 +101,7 @@ const Home: NextPage = () => {
                 placeholder='Problemlerinizi yazın ve arayın'
                 type={'text'}
                 onChange={handleChange}
-                value={search.toLowerCase()}
+                value={search.v.toLowerCase()}
                 onKeyPress={e => searchPage(e)}
               />
             </InputGroup>

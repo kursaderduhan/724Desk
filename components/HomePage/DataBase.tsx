@@ -34,8 +34,8 @@ export const DataBase = () => {
               <Image
                 src={'/DataBase-Img.png'}
                 alt={'ımg'}
-                w={'491px'}
-                h={'276px'}
+                w={{base:"343px",md:'491px'}}
+                h={{base:"192px",md:'276px'}}
                 cursor={'pointer'}
               />
             </Link>
@@ -63,7 +63,7 @@ export const DataBase = () => {
               </Text>
             </VStack>
           </Flex>
-          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={50} justifyContent={"center"} gap={5}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={{base:5,md:50}} justifyContent={"center"} alignItems={"center"} gap={5}>
             {Item.map(items => (
               <Box
                 key={items.Key}
@@ -91,7 +91,7 @@ export const DataBase = () => {
           </SimpleGrid>
         </Container>
       </VStack>
-      <VStack w={'full'} py={50}>
+      <VStack w={'full'} py={{base:5,md:50}}>
         <HStack w={'full'} display={'flex'} alignSelf={'flex-end'}>
           <HStack
             w={'full'}
@@ -99,12 +99,12 @@ export const DataBase = () => {
             justifyContent={'flex-end'}
             pos={'relative'}
           >
-            <Flex zIndex={1} pos={{base:"initial",md:'absolute'}}  justifyContent={"center"} w={"full"}>
+            <Flex zIndex={1} pos={{ base: "initial", md: 'absolute' }} justifyContent={{ base: "center", md: "flex-start" }} pl={{base:"",md:"200px"}} alignItems={"flex-start"} w={"full"}>
               <Image
                 src={'/DataBaseWomen.png'}
                 alt={'women'}
-                w={'991px'}
-                h={'630px'}
+                w={{base:"324px",md:'624px'}}
+                h={{base:"326px",md:'630px'}}
                 zIndex={1}
                 display={'flex'}
               />
@@ -219,7 +219,7 @@ export const DataBase = () => {
             Destek Kanalları
           </Text>
         </Container>
-        <SimpleGrid gap='10' w={'full'} pl={{base:"3",md:'175'}} display={"grid"} columns={{base:2,md:4}}>
+        <SimpleGrid gap='1' w={'full'} pl={{base:"",md:'175'}} px={2} columns={{base:2,md:4}}>
           {categories.map(categories => (
             <Box
               key={categories.key}

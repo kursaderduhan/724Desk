@@ -13,7 +13,7 @@ import Link from 'next/link'
 export const Experts = () => {
   return (
     <VStack
-      w={'full'}
+      w={'100%'}
       h={'1155px'}
       bgImage={'/experts-bg.png'}
       flexDirection={'column'}
@@ -32,11 +32,11 @@ export const Experts = () => {
               Uzmanlarımız
             </Text>
           </Link>
-          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={'15px'} w={'full'}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{base:1,md:10}} w={'full'} >
             {Item.map(ıtem => (
               <Box
                 key={ıtem.key}
-                w={{ base: '164px', md: '288px' }}
+                w={{ base: '160px', md: '288px' }}
                 h={{ base: '247px', md: '408px' }}
                 bg={'#505583'}
                 rounded={10}
@@ -60,7 +60,7 @@ export const Experts = () => {
                       bg={'#F7FCFE'}
                       rounded={10}
                       justifyContent='center'
-                      opacity={0.9}
+                      opacity={0.9} display={{base:"none",md:"flex"}}
                     >
                       <Text fontSize={'12px'} fontWeight={500}>
                         {ıtem.online == true ? (

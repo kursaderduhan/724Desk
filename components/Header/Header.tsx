@@ -119,10 +119,10 @@ const headerText: Array<headerProp> = [
 ]
 
 const MobileHeader = () => {
-  const pagesName = useStorken<any>("pagesName")
-  const changePagesName = (heading:any) => {
-  pagesName.set(heading)
-}
+  const pagesName = useStorken<any>('pagesName')
+  const changePagesName = (heading: any) => {
+    pagesName.set(heading)
+  }
 
   return (
     <Flex w={'100%'}>
@@ -138,13 +138,22 @@ const MobileHeader = () => {
                   px={5}
                 >
                   <Box w={'full'}>
-                    {pagesName.v == "Ana Sayfa" ?
+                    {pagesName.v == 'Ana Sayfa' ? (
                       <Image
                         src={'/724DeskLogo.png'}
                         alt={'desk-ıcon'}
                         w={'77px'}
                         h={'24px'}
-                      /> : <Text fontSize={"15px"} fontWeight={500} color={"#333333"}>{pagesName.v}</Text> }
+                      />
+                    ) : (
+                      <Text
+                        fontSize={'15px'}
+                        fontWeight={500}
+                        color={'#333333'}
+                      >
+                        {pagesName.v}
+                      </Text>
+                    )}
                   </Box>
                   <AccordionButton
                     alignSelf={'flex-end'}
@@ -213,7 +222,8 @@ const MobileHeader = () => {
                           fontSize={'14px'}
                           fontWeight={400}
                           color={'#333333'}
-                          cursor={'pointer'} onClick={() => changePagesName(header.heading)}
+                          cursor={'pointer'}
+                          onClick={() => changePagesName(header.heading)}
                         >
                           {header.heading}
                         </Text>

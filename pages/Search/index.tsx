@@ -14,14 +14,18 @@ import {
   FormLabel,
   Input,
   Textarea,
-  Checkbox
+  Checkbox,
+  Flex
 } from '@chakra-ui/react'
 import { WarningIcon } from '@chakra-ui/icons'
 import DetailPage from '@components/Search/DetailPage'
+import { useStorken } from '@data/storken'
 export const Search = () => {
   const [supportButton, setSupportButton] = useState<boolean>(false)
   const [feedBack, setFeedBack] = useState<boolean>(false)
   const [detailPage, setDetailPage] = useState<boolean>(false)
+  const searchPage = useStorken<string>('search')
+  // const resultPage = item.filter(datas => datas.headName == searchPage.v)
   return (
     <Layout>
       <HStack
@@ -64,7 +68,9 @@ export const Search = () => {
                       h={'169px'}
                       bg={'white'}
                       justifyContent={'space-between'}
-                      rounded={10} onClick={() => setDetailPage(true)} cursor={"pointer"}
+                      rounded={10}
+                      onClick={() => setDetailPage(true)}
+                      cursor={'pointer'}
                     >
                       <VStack alignItems={'flex-start'} gap={2} px={5}>
                         <Text

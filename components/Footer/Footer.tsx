@@ -162,7 +162,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               columns={{ base: 4, md: 8 }}
               w={'full'}
               justifyContent={'center'}
-              gap={10}
+              gap={5}
             >
               <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
               <Image

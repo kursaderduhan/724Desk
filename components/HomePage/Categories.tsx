@@ -14,7 +14,11 @@ export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'}>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <Flex w={'full'} justifyContent={'space-around'} flexDirection={{base:"column",md:"column",lg:"row"}}>
+        <Flex
+          w={'full'}
+          justifyContent={'space-around'}
+          flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
+        >
           {ıtem.map(item => (
             <VStack key={item.key}>
               <Image src={item.Image} alt={'ımage'} w={'125px'} h={'150px'} />
@@ -29,13 +33,23 @@ export const Categories = () => {
             </VStack>
           ))}
         </Flex>
-        <Flex w={'full'} justifyContent={{base:"center",md:'space-around'}} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
-          <Box w={'384px'} h={'572px'} overflow={'hidden'}>
+        <Flex
+          w={'full'}
+          justifyContent={{ base: 'center', md: 'space-around' }}
+          flexDirection={{ base: 'column', md: 'row' }}
+          alignItems={{ base: 'center', md: 'flex-start' }}
+        >
+          <Box
+            w={{ base: '268px', md: '384px' }}
+            h={{ base: '403px', md: '572px' }}
+            overflow={'hidden'}
+            alignSelf={'center'}
+          >
             <Image
               src={'/hpWomenPic.png'}
               alt={'ımg'}
-              w={'382px'}
-              h={'574px'}
+              w={{ base: '268px', md: '382px' }}
+              h={{ base: '403px', md: '574px' }}
               zIndex={1}
             />
             {/* <Image
@@ -46,11 +60,15 @@ export const Categories = () => {
             h={'384px'} mb={50}
           /> */}
           </Box>
-          <VStack fontWeight={500} w={580} alignItems={{base:"center",md:'flex-start'}}>
+          <VStack
+            fontWeight={500}
+            w={{ base: 'full', md: 580 }}
+            alignItems={{ base: 'center', md: 'flex-start' }}
+          >
             <Text fontSize={'15px'} color={'#959595'}>
               724Desk’e hoş geldiniz
             </Text>
-            <Text fontSize={'23px'}>
+            <Text fontSize={{ base: '19px', md: '23px' }}>
               <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
               ve destek talebinizi <br /> karşılayabileceğiniz çevrimiçi destek
               platformdur.
@@ -66,7 +84,11 @@ export const Categories = () => {
                   mt={1}
                 />
                 <VStack alignItems={'flex-start'}>
-                  <Text fontSize={'19px'} color={'#333333'} fontWeight={500}>
+                  <Text
+                    fontSize={{ base: '16px', md: '19px' }}
+                    color={'#333333'}
+                    fontWeight={500}
+                  >
                     {text.TextHead}
                   </Text>
                   <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
@@ -77,19 +99,25 @@ export const Categories = () => {
             ))}
           </VStack>
         </Flex>
-        <VStack w={'full'} alignItems={{base:"center",md:'flex-start'}}>
+        <VStack w={'full'} alignItems={{ base: 'center', md: 'flex-start' }} py={{base:5}} gap={2}>
           <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
             Kategoriler
           </Text>
           <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
             Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
           </Text>
-          <Flex w={'full'} justifyContent={'space-between'} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
+          <Flex
+            w={'full'}
+            justifyContent={'space-between'}
+            flexDirection={{ base: 'column', md: 'row' }}
+            alignItems={{ base: 'center', md: 'flex-start' }}
+            gap={2}
+          >
             {categories.map(categories => (
               <Link href={categories.link} key={categories.key}>
                 <Box
-                  w={'389px'}
-                  h={'200px'}
+                  w={{ base: '343px', md: '389px' }}
+                  h={{ base: '187px', md: '200px' }}
                   bg={categories.bg}
                   rounded={15}
                   opacity={categories.opac}
@@ -154,8 +182,15 @@ export const Categories = () => {
             ))}
           </Flex>
         </VStack>
-        <Flex w={'full'} justifyContent={'space-between'} py={100} flexDirection={{base:"column",md:"row"}} alignItems={{base:"center",md:'flex-start'}}>
-          <VStack alignItems={'flex-start'} w={'450px'}>
+        <Flex
+          w={'full'}
+          justifyContent={'space-between'}
+          py={100}
+          flexDirection={{ base: 'column', md: 'row' }}
+          alignItems={{ base: 'center', md: 'flex-start' }}
+          gap={5}
+        >
+          <VStack alignItems={'flex-start'} w={{ base: 'full', md: '450px' }} gap={2}>
             <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
               Problem Çözüm Aşamaları
             </Text>
@@ -181,26 +216,35 @@ export const Categories = () => {
                 </VStack>
               </HStack>
             ))}
-            <Box w={'full'} pl='50'>
+            <Flex w={'full'} pl={{md:'50'}} justifyContent={"center"} alignItems={"center"} gap={2}>
               <Link href={'/HowToUse'}>
                 <Button
                   bg={'#F27C00'}
                   color={'white'}
-                  w={'176px'}
+                  w={{base:"164px",md:'176px'}}
                   h={'36px'}
                   _hover={{ opacity: 0.8 }}
                 >
                   Hemen Başla
                 </Button>
               </Link>
-            </Box>
+              <Button
+                bg={'#F27C00'}
+                color={'white'}
+                w={'164px'}
+                h={'36px'}
+                _hover={{ opacity: 0.8 }} display={{base:"flex",md:"none"}}
+              >
+                Hemen Başla
+              </Button>
+            </Flex>
           </VStack>
           <Box>
             <Image
               alt={'hand'}
               src={'/hpHandPhone.png'}
-              w={'493px'}
-              h={'634px'}
+              w={{ base: '266px', md: '493px' }}
+              h={{ base: '342px', md: '634px' }}
             />
           </Box>
         </Flex>

@@ -24,7 +24,7 @@ export const DeskToken = () => {
       pos={'relative'}
       overflow={'visible'}
     >
-      <Box pos={'absolute'} right={0} top={10}>
+      <Box pos={'absolute'} right={0} top={10} display={{base:"none"}}>
         <Image src={'/deskCoin-2.png'} alt={''} w={'590px'} h={'890px'} />{' '}
       </Box>
       <VStack zIndex={1}>
@@ -37,7 +37,7 @@ export const DeskToken = () => {
           Desk Token Verileri
         </Text>
         <Flex
-          w={{base:350,md:1200}}
+          w={{base:"343px",md:1200}}
           h={{ base: '409px', md: '250px' }}
           bg={'#505583'}
           gap={5}
@@ -51,7 +51,7 @@ export const DeskToken = () => {
             justifyContent={'space-evenly'}
           >
             <Text
-              fontSize={'23px'}
+              fontSize={{base:"15px",md:'23px'}}
               fontWeight={500}
               color={'white'}
               alignSelf={'flex-start'}
@@ -62,7 +62,7 @@ export const DeskToken = () => {
           </VStack>
           <VStack>
             <Text
-              fontSize={'23px'}
+              fontSize={{base:"15px",md:'23px'}}
               color={'#C4C4C4'}
               fontWeight={500}
               alignSelf={'flex-start'}
@@ -77,9 +77,9 @@ export const DeskToken = () => {
             >
               Hard Cap
             </Text>
-            <Box w={'700px'} h={'16px'} bg={'#363B66'} borderRadius={'100px'}>
+            <Box w={{base:"full",md:'700px'}} h={'16px'} bg={'#363B66'} borderRadius={'100px'}>
               <Box
-                w={'600px'}
+                w={{base:"full",md:'600px'}}
                 h={'16px'}
                 bg={'linear-gradient(90deg, #505583 7.29%, #ADB3E4 100%)'}
                 borderRadius={'100px'}
@@ -94,7 +94,7 @@ export const DeskToken = () => {
               375K USD
             </Text>
             <Text
-              fontSize={'23px'}
+               fontSize={{base:"15px",md:'23px'}}
               color={'#C4C4C4'}
               fontWeight={500}
               alignSelf={'flex-start'}
@@ -106,7 +106,7 @@ export const DeskToken = () => {
                 variant={'globalButton'}
                 fontSize={'13px'}
                 w={'169px'}
-                alignSelf='flex-end'
+                alignSelf={{ base: "center", md: 'flex-end' }}
               >
                 Hemen Katıl
               </Button>
@@ -115,7 +115,7 @@ export const DeskToken = () => {
         </Flex>
       </VStack>
       <VStack pos={'relative'} overflow={'visible'}>
-        <Box pos={'absolute'} bottom={32} left={40}>
+        <Box pos={'absolute'} bottom={32} left={40} display={{base:"none"}}>
           <Image
             src={'/deskCoin-1.png'}
             alt={'deskCoin'}

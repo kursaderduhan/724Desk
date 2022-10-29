@@ -10,7 +10,7 @@ export const Counter = () => {
   let interval: any
 
   const startTimer = () => {
-    const countDownDate = new Date('October 29,2022 ').getTime()
+    const countDownDate = new Date('December 29,2022 ').getTime()
 
     interval = setInterval(() => {
       const now = new Date().getTime()
@@ -59,29 +59,29 @@ const Clock = ({ timerDays, timerHours, timerMinutes, timerSeconds }: any) => {
     <Flex>
       <HStack gap={2} fontSize={'4xl'} fontWeight={500}>
         <VStack w={'full'}>
-          <Text color={"white"} fontSize={"58px"} >{timerDays}</Text>
-          <Text color={'#C4C4C4'} fontSize={'13px'} >
+          <Text color={"white"} fontSize={{base:"42px",md:"58px"}} >{timerDays}</Text>
+          <Text color={'#C4C4C4'} fontSize={{base:"10px",md:'13px'}} >
             days
           </Text>
         </VStack>
         <Text alignSelf={'flex-start'} color={"white"} py={3}>:</Text>
         <VStack>
-          <Text color={"white"} fontSize={"58px"}>{timerHours}</Text>
-          <Text color={'#C4C4C4'} fontSize={'13px'} >
+          <Text color={"white"} fontSize={{base:"42px",md:"58px"}}>{timerHours}</Text>
+          <Text color={'#C4C4C4'} fontSize={{base:"10px",md:'13px'}} >
             hours
           </Text>
         </VStack>
         <Text alignSelf={'flex-start'} color={"white"} py={3}>:</Text>
         <VStack>
-          <Text color={"white"} fontSize={"58px"}>{timerMinutes}</Text>
-          <Text color={'#C4C4C4'} fontSize={'13px'} >
+          <Text color={"white"} fontSize={{base:"42px",md:"58px"}}>{timerMinutes}</Text>
+          <Text color={'#C4C4C4'} fontSize={{base:"10px",md:'13px'}} >
             minutes
           </Text>
         </VStack>
         <Text alignSelf={"flex-start"} color={"white"} py={3}>:</Text>
         <VStack>
-          <Text color={"white"} fontSize={"58px"}>{timerSeconds}</Text>
-          <Text color={'#C4C4C4'} fontSize={'13px'} >
+          <Text color={"white"} fontSize={{base:"42px",md:"58px"}}>{timerSeconds}</Text>
+          <Text color={'#C4C4C4'} fontSize={{base:"10px",md:'13px'}} >
             seconds
           </Text>
         </VStack>
