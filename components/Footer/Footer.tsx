@@ -149,7 +149,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>Yazılım Geliştirme</ListItem>
                   <ListItem>Network</ListItem>
                   <ListItem>Siber Güvenlik</ListItem>
-                  <ListItem>Desk Token</ListItem>
+                  <Link href={"/DeskToken"}>
+                    <ListItem cursor={"pointer"}>Desk Token</ListItem>
+                    </Link>
                   <Link href={'/Reference'}>
                     <ListItem cursor={'pointer'}>Referans Programı</ListItem>
                   </Link>

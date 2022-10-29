@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 const BurningMechanism = () => {
   return (
-    <VStack w={'full'} h={'943px'} bg={'#212842'} py={100} >
+    <VStack w={'full'} h={{base:"1406px",md:'943px'}} bg={'#212842'} py={{base:10,md:100}} >
       <Container maxW={'1200px'}>
         <VStack gap={10}>
         <Text color={'white'} fontSize={'23px'} fontWeight={500}>
@@ -26,13 +26,13 @@ const BurningMechanism = () => {
           the help of a weekly burning <br /> mechanism, which should in turn
           increase the value of the token in the long run.
         </Text>
-        <HStack gap={10}>
+        <Flex gap={10} flexDirection={{base:"column",md:"row"}}>
           <VStack
             flexDirection={'column'}
             bg={'linear-gradient(180deg, #647BC7 0%, #364062 100%)'}
             rounded={20}
-            w={'389px'}
-            h={'482px'}
+              w={{base:"full",md:'389px'}}
+              h={'482px'}
             py={10}
             gap={5}
           >
@@ -191,7 +191,7 @@ const BurningMechanism = () => {
               </VStack>
             </HStack>
           </VStack>
-          </HStack>
+          </Flex>
           </VStack>
       </Container>
     </VStack>

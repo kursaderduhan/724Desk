@@ -97,7 +97,7 @@ export const FeedBack = () => {
           Sıkça Sorulan Sorular
         </Text>
         <Accordion w={'full'} alignItems={{base:"center",md:'flex-start'}} justifyContent={"center"} display={"flex"} flexDirection={"column"} allowToggle>
-          <AccordionItem>
+          <AccordionItem  w={{base:"343px",md:'100%'}}>
             {({ isExpanded }) => (
               <>
                 <h2>
@@ -138,7 +138,7 @@ export const FeedBack = () => {
             )}
           </AccordionItem>
           <br/>
-          <AccordionItem>
+          <AccordionItem  w={{base:"343px",md:'100%'}}>
             {({ isExpanded }) => (
               <>
                 <h2>
@@ -181,7 +181,7 @@ export const FeedBack = () => {
             )}
           </AccordionItem>
           <br/>
-          <AccordionItem>
+          <AccordionItem  w={{base:"343px",md:'100%'}}>
             {({ isExpanded }) => (
               <>
                 <h2>
@@ -224,12 +224,12 @@ export const FeedBack = () => {
             )}
           </AccordionItem>
           <br/>
-          <AccordionItem >
+          <AccordionItem  w={{base:"343px",md:'100%'}} >
             {({ isExpanded }) => (
               <>
                 <h2>
                   <AccordionButton
-                    w={{base:"343px",md:'full'}}
+                    w={{base:"343px",md:'100%'}}
                     h={'60px'}
                     bg={'white'}
                     rounded={0}

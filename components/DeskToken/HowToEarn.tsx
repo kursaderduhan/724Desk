@@ -12,11 +12,11 @@ import {
 const HowToEarn = () => {
   return (
     <VStack w={'full'} py={20}>
-      <HStack w={"full"} justifyContent={"space-between"}>
-        <VStack w={'437px'} h='621px'>
+      <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} w={"full"} justifyContent={"space-between"}>
+        <VStack w={{ base: "full", md: '437px' }} h={{ base: "485px", md: '621px' }}>
           <Box
-            w={'376px'}
-            h={'534px'}
+            w={{base:"full",md:'376px'}}
+            h={{base:"485px",md:'534px'}}
             bg={'linear-gradient(180deg, #F3DC5F 0%, #F5A937 100%)'}
             alignSelf={'flex-start'}
             mt={10}
@@ -27,12 +27,12 @@ const HowToEarn = () => {
               src={'/deskToken-3.png'}
               alt={'ımg'}
               pos={'absolute'}
-              left={10}
+              left={10} h={{base:"450",md:"full"}}
             />
           </Box>
         </VStack>
         <VStack alignItems={'flex-start'}>
-          <Text fontSize={'33px'} fontWeight={500} color={'black'}>
+          <Text fontSize={{base:"23px",md:'33px'}} fontWeight={500} color={'black'}>
             How to earn DESK Token?
           </Text>
           <Text fontSize={'14px'} fontWeight={400} color={'#525252'}>
@@ -58,7 +58,7 @@ const HowToEarn = () => {
                   {ıtem.headName}
                 </Text>
                 <Text
-                  w={'623px'}
+                  w={{base:"full",md:'623px'}}
                   fontSize={'14px'}
                   fontWeight={400}
                   color={'#666666'}
@@ -69,7 +69,7 @@ const HowToEarn = () => {
             </HStack>
           ))}
         </VStack>
-      </HStack>
+      </Flex>
       <Text
         fontSize={'23px'}
         color={'#333333'}
@@ -78,11 +78,11 @@ const HowToEarn = () => {
       >
         DESK Token Opportunities
       </Text>
-      <SimpleGrid columns={3} spacing={5}>
+      <SimpleGrid columns={{base:1,md:3}} spacing={5}>
         {opp.map(opper => (
           <VStack
-            w={'376px'}
-            h={'376px'}
+            w={{base:"343px",md:'376px'}}
+            h={{base:"300px",md:'376px'}}
             key={opper.id}
             bg={'linear-gradient(180deg, #76336B 0%, #500264 100%)'}
             rounded={20}
