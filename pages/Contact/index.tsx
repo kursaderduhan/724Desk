@@ -11,7 +11,8 @@ import {
   FormLabel,
   Input,
   Textarea,
-  Button
+  Button,
+  Flex
 } from '@chakra-ui/react'
 import Footer from '@components/Footer/Footer'
 export const Contact = () => {
@@ -25,7 +26,7 @@ export const Contact = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10}
+        py={10} display={{base:"none",md:"flex"}}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
@@ -38,10 +39,10 @@ export const Contact = () => {
       </HStack>
       <VStack>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-          <HStack w={'full'} gap={40} py={50}>
-            <VStack alignItems={'flex-start'} alignSelf={'flex-start'}>
-              <Text fontSize={'23px'}>İletişim kanalları</Text>
-              <Text>Bize aşağıdaki iletişim kanallarından ulaşın!</Text>
+          <Flex flexDirection={{ base: "column", md: "row" }} alignItems={"center"} w={'full'} gap={{ base: 5, md: 40 }} py={{base:2,md:50}}>
+            <VStack alignItems={'flex-start'} alignSelf={'flex-start'} gap={2}>
+              <Text fontSize={"23px"} fontWeight={500}>İletişim kanalları</Text>
+              <Text color={{base:"#959595",md:"black"}}>Bize aşağıdaki iletişim kanallarından ulaşın!</Text>
               <HStack>
                 <Circle size='38px' bg={'#2C4EC6'}>
                   <Image src={'/call.png'} alt={'ımg'} w={'22px'} h={'22px'} />
@@ -85,9 +86,9 @@ export const Contact = () => {
                 </Text>
               </HStack>
             </VStack>
-            <VStack alignItems={'flex-start'}>
-              <Text fontSize={'23px'}>Sosyal medya adresleri</Text>
-              <Text>Bizi sosyal medya hesaplarımızdan takip edin!</Text>
+            <VStack alignItems={'flex-start'} w={"full"} gap={2}>
+              <Text fontSize={'23px'} fontWeight={500}>Sosyal medya adresleri</Text>
+              <Text color={{base:"#959595",md:"black"}}>Bizi sosyal medya hesaplarımızdan takip edin!</Text>
               <HStack>
                 <Circle size='38px' bg={'#4267B2'}>
                   <Image
@@ -145,16 +146,16 @@ export const Contact = () => {
                 </Text>
               </HStack>
             </VStack>
-          </HStack>
-          <VStack>
-            <VStack alignItems={'flex-start'}>
+          </Flex>
+          <VStack py={{base:10,md:5}}>
+            <VStack alignItems={'flex-start'} gap={5}>
               <Text fontSize={'23px'} color={'#333333'} fontWeight={500}>
                 İletişim Bilgileri
               </Text>
               <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
                 İletişim bilgilerinizi yazın, biz size dönüş yapalım.
               </Text>
-              <HStack>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text>Ad Soyad</Text>
@@ -162,7 +163,7 @@ export const Contact = () => {
                   <Input
                     placeholder='örn. Fatih Demirkan'
                     type={'text'}
-                    w={'389px'}
+                    w={{base:"343px",md:'389px'}}
                   />
                 </InputGroup>
                 <InputGroup flexDirection={'column'}>
@@ -172,11 +173,11 @@ export const Contact = () => {
                   <Input
                     placeholder='örn. fdemirkan4@gmail.com'
                     type={'email'}
-                    w={'389px'}
+                   w={{base:"343px",md:'389px'}}
                   />
                 </InputGroup>
-              </HStack>
-              <HStack>
+              </Flex>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text>Telefon Numarası</Text>
@@ -184,7 +185,7 @@ export const Contact = () => {
                   <Input
                     placeholder='örn. +90 534 936 3296'
                     type={'number'}
-                    w={'389px'}
+                    w={{base:"343px",md:'389px'}}
                   />
                 </InputGroup>
                 <InputGroup flexDirection={'column'}>
@@ -194,18 +195,18 @@ export const Contact = () => {
                   <Input
                     placeholder='örn. Doge Coin hakkında'
                     type={'text'}
-                    w={'389px'}
+                    w={{base:"343px",md:'389px'}}
                   />
                 </InputGroup>
-              </HStack>
+              </Flex>
               <Textarea
                 placeholder='örn. Merhaba, doge coin hakkında bilgi almak istiyorum, lütfen dönüş yapar mısınız?'
                 size='sm'
                 resize={'none'}
-                w={'794px'}
+                w={{base:"343px",md:'794px'}}
                 h={'283px'}
               />
-              <Button variant={'globalButton'} w={'136px'}>
+              <Button variant={'globalButton'} w={{base:"343px",md:'136px'}}>
                 Gönder
               </Button>
             </VStack>
