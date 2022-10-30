@@ -32,7 +32,7 @@ const Experts = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10}
+        py={10} display={{base:"none",md:"flex"}}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
@@ -46,7 +46,7 @@ const Experts = () => {
       </HStack>
       <VStack bg={'#F7FCFE'} w={'full'} h={'full'}>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-          <VStack alignItems={'flex-start'} gap={5} py={10}>
+          <VStack alignItems={'flex-start'} gap={5} py={10} display={{base:"none",md:"flex"}} flexDirection={"column"}>
             <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
               Uzman Kategorileri
             </Text>
@@ -219,11 +219,11 @@ const Experts = () => {
             </SimpleGrid>
           </VStack>
         </Container>
-        <VStack gap={5}>
-          <Text fontSize={'23px'} color={'#333333'} fontWeight={500}>
+        <VStack gap={5} alignItems={"center"} display={"flex"} flexDirection={"column"}>
+          <Text fontSize={{base:"18px",md:'23px'}} color={'#333333'} fontWeight={500}>
             Bir sorunun mu var? Hemen Ticket Oluştur
           </Text>
-          <HStack>
+          <Flex flexDirection={{base:"column",md:"row"}}>
             <InputGroup flexDirection={'column'}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
@@ -233,7 +233,7 @@ const Experts = () => {
               <Input
                 type={'text'}
                 placeholder={'e.g. We need a help'}
-                w='389px'
+                w={{base:"320px",md:'389px'}}
               />
             </InputGroup>
             <InputGroup flexDirection={'column'}>
@@ -245,11 +245,11 @@ const Experts = () => {
               <Input
                 type={'email'}
                 placeholder={'e.g. ferhattunali@gmail.com'}
-                w='389px'
+                w={{base:"320px",md:'389px'}}
               />
             </InputGroup>
-          </HStack>
-          <InputGroup flexDirection={'column'}>
+          </Flex>
+          <InputGroup flexDirection={'column'} alignItems={"flex-start"}>
             <FormLabel>
               <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                 Details
@@ -258,12 +258,12 @@ const Experts = () => {
             <Textarea
               placeholder='e.g. Can you help me, because i need your help in my situation'
               _placeholder={{ color: '#B3CBD4' }}
-              h={'283px'}
+              h={'283px'} w={{base:"320px",md:"full"}}
               resize={'none'}
             ></Textarea>
           </InputGroup>
-          <HStack>
-            <InputGroup flexDirection={'column'} w={'389px'}>
+          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
+            <InputGroup flexDirection={'column'} w={{base:"320px",md:'389px'}}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Category
@@ -273,7 +273,7 @@ const Experts = () => {
                 <option>Crypto</option>
               </Select>
             </InputGroup>
-            <InputGroup flexDirection={'column'} w={'389px'}>
+            <InputGroup flexDirection={'column'} w={{base:"320px",md:'389px'}}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Communication type
@@ -283,10 +283,10 @@ const Experts = () => {
                 <option>Phone</option>
               </Select>
             </InputGroup>
-          </HStack>
-          <HStack>
-            <HStack>
-              <InputGroup flexDirection={'column'}>
+          </Flex>
+          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
+            <Flex gap={2}>
+              <InputGroup flexDirection={'column'} w={{base:"160px",md:'389px'}}>
                 <FormLabel>
                   <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                     Support time
@@ -295,7 +295,7 @@ const Experts = () => {
                 <Input
                   type={'date'}
                   placeholder={'Mon. 12:00 - 17:00...'}
-                  w='187px'
+                  w={{base:"160px",md:'187px'}}
                 />
               </InputGroup>
               <InputGroup flexDirection={'column'}>
@@ -304,28 +304,28 @@ const Experts = () => {
                     Time zone
                   </Text>
                 </FormLabel>
-                <Select placeholder={'Select option'} w='187px'>
+                <Select placeholder={'Select option'} w={{base:"160px",md:'187px'}}>
                   <option>GMT +2</option>
                 </Select>
               </InputGroup>
-            </HStack>
+            </Flex>
             <InputGroup flexDirection={'column'}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Approximate solution process
                 </Text>
               </FormLabel>
-              <Input placeholder={'3-5 hours'} w='389px' type={'text'} />
+              <Input placeholder={'3-5 hours'} w={{base:"320px",md:'389px'}} type={'text'} />
             </InputGroup>
-          </HStack>
-          <HStack>
+          </Flex>
+          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
             <InputGroup flexDirection={'column'}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Priority status
                 </Text>
               </FormLabel>
-              <Select placeholder={'Select option'} w='389px'>
+              <Select placeholder={'Select option'} w={{base:"320px",md:'389px'}}>
                 <option>Urgent</option>
               </Select>
             </InputGroup>
@@ -335,20 +335,20 @@ const Experts = () => {
                   Support language
                 </Text>
               </FormLabel>
-              <Select placeholder={'Select option'} w='389px'>
+              <Select placeholder={'Select option'} w={{base:"320px",md:'389px'}}>
                 <option>Arabic</option>
               </Select>
             </InputGroup>
-          </HStack>
+          </Flex>
           <InputGroup flexDirection={'column'}>
             <FormLabel>
               <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                 Priority status
               </Text>
             </FormLabel>
-            <InputGroup>
-              <Input placeholder={'Select option'} w='277px' type={'file'} />
-              <InputRightAddon w={'112px'} fontSize={'14px'}>
+            <InputGroup >
+              <Input placeholder={'Select option'} w={{ base: "240px", md: '277px' }} type={'file'} />
+              <InputRightAddon w={{base:"80px",md:'112px'}} fontSize={'14px'} justifyContent={"center"} display={"flex"}>
                 Add sound
               </InputRightAddon>
             </InputGroup>

@@ -379,7 +379,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
       ) : page == 3 ? (
         <Flex w={'full'} px={5} py={2} flexDirection={'column'} gap={5}>
           <HStack w={'full'} justifyContent={'space-between'} display={'flex'}>
-            <Text fontSize={'23px'} color={'#333333'} fontWeight={400}>
+                <Text fontSize={{base:"18px",md:'23px'}} color={'#333333'} fontWeight={400}>
               Fatih D.
             </Text>
             <Flex gap={5}>
