@@ -16,7 +16,7 @@ export const Learn = () => {
         bgSize={'cover'}
         bgPos={'center'}
         w={'full'}
-        h={'676px'}
+        h={{base:"194px",md:'676px'}}
         justifyContent={'center'}
         alignItems={'center'}
       >

@@ -1,10 +1,35 @@
 import React, { memo } from 'react'
-import { HStack, Image, Text, Box, VStack } from '@chakra-ui/react'
+import {
+  HStack,
+  Image,
+  Text,
+  Box,
+  VStack,
+  Flex,
+  Button
+} from '@chakra-ui/react'
 
 export const ResultSolve = () => {
   return (
-    <HStack w={'full'} justifyContent={'space-between'} py={50}>
-      <VStack alignItems={'flex-start'} w={'450px'}>
+    <Flex
+      flexDirection={{ base: 'column', md: 'row' }}
+      alignItems={'center'}
+      w={'full'}
+      justifyContent={'space-between'}
+      py={{base:1,md:50}}
+    >
+      <Box display={{ base: 'flex', md: 'none' }}>
+        <Image alt={'hand'} src={'/hpHandPhone.png'} w={'266px'} h={'342px'} />
+      </Box>
+      <VStack alignItems={'flex-start'} w={{ base: '343px', md: '450px' }}>
+        <Text
+          fontSize={'23px'}
+          fontWeight={500}
+          color={'#525252'}
+          display={{ base: 'flex', md: 'none' }}
+        >
+          Çözüm Süreci
+        </Text>
         {result.map(result => (
           <HStack key={result.key}>
             <Image
@@ -28,10 +53,16 @@ export const ResultSolve = () => {
           </HStack>
         ))}
       </VStack>
-      <Box>
+      <Flex gap={5}>
+        <Button variant={'globalButton'} w={'164px'}>
+          Hemen Başla
+        </Button>
+        <Button w={'164px'}>Videolu Çözüm</Button>
+      </Flex>
+      <Box display={{ base: 'none', md: 'flex' }}>
         <Image alt={'hand'} src={'/hpHandPhone.png'} w={'493px'} h={'634px'} />
       </Box>
-    </HStack>
+    </Flex>
   )
 }
 

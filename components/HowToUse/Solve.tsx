@@ -3,9 +3,9 @@ import React, { memo } from 'react'
 
 export const Solve = () => {
   return (
-    <VStack w={'full'} py="100" pb={400}>
+    <VStack w={'full'} py={{ base: 1, md: 100 }} pb={{base:2,md:400}}>
       {result.map(result => (
-        <Flex w={'full'} justifyContent={'space-between'} key={result.key} >
+        <Flex w={'full'} justifyContent={'space-between'} key={result.key} flexDirection={{base:"column",md:"row"}} >
           <HStack alignSelf={"flex-start"}>
             <Image src={result.Image} alt={'ımg'} w={'43px'} h={'43px'} alignSelf={'flex-start'} />
             <VStack alignItems={'flex-start'}>
@@ -15,12 +15,12 @@ export const Solve = () => {
               <Text fontSize={'23px'} fontWeight={500} color={'black'}>
                 {result.textHead}
               </Text>
-              <Text fontSize={'14px'} fontWeight={400} color={'#666666'} w={"522px"}>
+              <Text fontSize={'14px'} fontWeight={400} color={'#666666'} w={{base:"full",md:"522px"}}>
                 {result.textDown}
               </Text>
             </VStack>
           </HStack>
-              <Image src={result.ImageRight} alt={'ımg'} w={'491px'} h={'364px'} />
+          <Image src={result.ImageRight} alt={'ımg'} w={{ base: "273px", md: '491px' }} h={{base:"202px",md:'364px'}} alignSelf={"center"} />
         </Flex>
       ))}
     </VStack>
