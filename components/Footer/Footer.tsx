@@ -139,7 +139,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>SSS</ListItem>
                   <ListItem>Blog</ListItem>
                   <ListItem>Kariyer</ListItem>
-                  <ListItem>Uzmanlar</ListItem>
+                  <Link href={"/ForExperts"}>
+                    <ListItem cursor={"pointer"}>Uzmanlar</ListItem>
+                    </Link>
                   <ListItem>Gizlilik Politikası</ListItem>
                   <ListItem>Kullanım Koşulları</ListItem>
                   <ListItem>Site Haritası</ListItem>
