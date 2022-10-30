@@ -25,7 +25,8 @@ import {
   Circle,
   Stack,
   useDisclosure,
-  SimpleGrid
+  SimpleGrid,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 
@@ -35,9 +36,9 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
   const [page, setPage] = useState<number>(1)
   const { onOpen, onClose, isOpen } = useDisclosure()
   const [wallet, setWallet] = useState<boolean>(false)
-
+  const [mobileScreen] = useMediaQuery("(max-width:572px)")
   return (
-    <VStack w={'490px'} h={'660px'} bg={'white'} gap={5}>
+    <VStack w={{ base: "343px", md: '490px' }} h={{base:"700px",md:'660px'}} bg={'white'} gap={5} >
       <Text
         w={'full'}
         h={'42px'}
@@ -52,10 +53,10 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
       >
         Ödeme Yöntemi Seçin
       </Text>
-      <HStack fontSize={'13px'}>
+      <Flex fontSize={'13px'} flexDirection={{base:"column",md:"row"}} w={"full"} px={{base:2,md:1}} gap={{base:2,md:1}}>
         <Button
           bg={'white'}
-          w={'147px'}
+          w={{base:"100%",md:'147px'}}
           onClick={() => setPage(1)}
           border={'1px solid'}
           borderColor={'#C1DAF04D'}
@@ -64,7 +65,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
         </Button>
         <Button
           bg={'white'}
-          w={'147px'}
+          w={{base:"100%",md:'147px'}}
           onClick={() => setPage(2)}
           border={'1px solid'}
           borderColor={'#C1DAF04D'}
@@ -73,14 +74,14 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
         </Button>
         <Button
           bg={'white'}
-          w={'147px'}
+          w={{base:"100%",md:'147px'}}
           onClick={() => setPage(3)}
           border={'1px solid'}
           borderColor={'#C1DAF04D'}
         >
           Kripto
         </Button>
-      </HStack>
+      </Flex>
       {page == 1 ? (
         <Flex
           flexDirection={'column'}
@@ -99,7 +100,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                   placeholder={'Örn.Fatih Demirkan'}
                   bg={'white'}
                   type={'text'}
-                  w={'458px'}
+                  w={{base:"320px",md:'458px'}}
                 />
                 <InputRightElement>
                   <AiOutlineCheckCircle />
@@ -117,7 +118,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                   placeholder={'4543 1479 1145 2214'}
                   bg={'white'}
                   type={'text'}
-                  w={'458px'}
+                   w={{base:"320px",md:'458px'}}
                 />
                 <InputRightElement>
                   <Image
@@ -129,14 +130,14 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                 </InputRightElement>
               </InputGroup>
             </InputGroup>
-            <HStack w={'full'}>
+            <Flex flexDirection={"row"} alignItems={"center"} w={'full'} justifyContent={"space-between"}>
               <VStack alignItems={'flex-start'}>
                 <FormLabel>
                   <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
                     Ay
                   </Text>
                 </FormLabel>
-                <Select w={'143px'} h={'46px'}>
+                <Select w={{base:"90px",md:'143px'}} h={'46px'}>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -157,7 +158,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                     Yıl
                   </Text>
                 </FormLabel>
-                <Select w={'143px'} h={'46px'}>
+                <Select w={{base:"90px",md:'143px'}} h={'46px'}>
                   <option>2024</option>
                   <option>2025</option>
                   <option>2026</option>
@@ -172,7 +173,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                 </FormLabel>
                 <InputGroup>
                   <Input
-                    w={'143px'}
+                    w={{base:"90px",md:'143px'}}
                     h={'46px'}
                     placeholder={'344'}
                     _placeholder={{ color: 'black' }}
@@ -187,7 +188,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                   </InputRightElement>
                 </InputGroup>
               </VStack>
-            </HStack>
+            </Flex>
             <Checkbox fontSize={'14px'} color={'#525252'} fontWeight={400}>
               Sonraki Ödemeler için kaydet
             </Checkbox>
@@ -216,7 +217,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
           </Flex>
           <Modal isOpen={isOpen} onClose={onClose} size={'lg'}>
             <ModalOverlay />
-            <ModalContent w={'490px'} h={'588px'}>
+            <ModalContent w={{ base: "343px", md: '490px' }} h={'588px'} alignItems={{base:"center",md:"flex-start"}}>
               <ModalHeader
                 fontSize={'15px'}
                 color={' #333333'}
@@ -226,7 +227,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
               </ModalHeader>
               <ModalCloseButton />
               <Divider />
-              <ModalBody w={'490px'} h={'588px'}>
+              <ModalBody w={{base:"343px",md:'490px'}} h={'588px'}>
                 <AddCard />
               </ModalBody>
             </ModalContent>
@@ -239,7 +240,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
               <Stack direction='column' w={'full'}>
                 <Radio value='1' w={'full'}>
                   <HStack w={'full'} gap={20}>
-                    <Flex gap={5}>
+                    <Flex gap={5} alignItems={"center"}>
                       <Image
                         src={'/isBank.png'}
                         alt={'is'}
@@ -275,7 +276,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                 </Radio>
                 <Radio value='2'>
                   <HStack w={'full'} gap={20}>
-                    <Flex gap={5}>
+                    <Flex gap={5} alignItems={"center"}>
                       <Image
                         src={'/ziraatBank.png'}
                         alt={'ziraat'}
@@ -311,7 +312,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                 </Radio>
                 <Radio value='3'>
                   <HStack w={'full'} gap={20}>
-                    <Flex gap={5}>
+                    <Flex gap={5} alignItems={"center"}>
                       <Image
                         src={'/vakıfBank.png'}
                         alt={'vakıf'}
@@ -398,7 +399,7 @@ const PaymentMethod = ({succesfull,failedPage}:any) => {
                     </Text>
                   </Flex>
                 )}
-                <Modal isOpen={isOpen} onClose={onClose}>
+                    <Modal isOpen={isOpen} onClose={onClose} size={mobileScreen ? "xs" : "xl"}>
                   <ModalOverlay />
                   <ModalContent>
                     <ModalHeader>Your Wallet</ModalHeader>
@@ -488,7 +489,7 @@ const AddCard = () => {
             placeholder={'Örn.Fatih Demirkan'}
             bg={'white'}
             type={'text'}
-            w={'458px'}
+            w={{base:"100%",md:'458px'}}
           />
           <InputRightElement>
             <AiOutlineCheckCircle />
@@ -506,7 +507,7 @@ const AddCard = () => {
             placeholder={'4543 1479 1145 2214'}
             bg={'white'}
             type={'text'}
-            w={'458px'}
+            w={{base:"100%",md:'458px'}}
           />
           <InputRightElement>
             <Image
@@ -518,14 +519,14 @@ const AddCard = () => {
           </InputRightElement>
         </InputGroup>
       </InputGroup>
-      <HStack w={'full'}>
+      <HStack w={'full'} alignItems={"center"}>
         <VStack alignItems={'flex-start'}>
           <FormLabel>
             <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
               Ay
             </Text>
           </FormLabel>
-          <Select w={'143px'} h={'46px'}>
+          <Select w={{base:"90px",md:'143px'}} h={'46px'}>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -546,7 +547,7 @@ const AddCard = () => {
               Yıl
             </Text>
           </FormLabel>
-          <Select w={'144px'} h={'46px'}>
+          <Select w={{base:"90px",md:'143px'}} h={'46px'}>
             <option>2024</option>
             <option>2025</option>
             <option>2026</option>
@@ -561,7 +562,7 @@ const AddCard = () => {
           </FormLabel>
           <InputGroup>
             <Input
-              w={'139px'}
+              w={{base:"90px",md:'139px'}}
               h={'46px'}
               placeholder={'344'}
               _placeholder={{ color: 'black' }}
@@ -578,7 +579,7 @@ const AddCard = () => {
       <Button
         variant={'globalButton'}
         fontSize={'15px'}
-        w={450}
+        w={{base:"100%",md:450}}
         alignSelf={'center'}
         gap={3}
       >
@@ -594,7 +595,7 @@ export const Wallet = ({ walletActive }: { walletActive: any }) => {
       h={'716px'}
       bg={' #FFFFFF'}
       borderRadius={'16px'}
-      alignItems={'flex-start'}
+      alignItems={{base:"center",md:'flex-start'}}
       gap={5}
     >
       <Text fontSize={'19px'} fontWeight={500} color={'#666666'}>
@@ -664,7 +665,7 @@ export const Wallet = ({ walletActive }: { walletActive: any }) => {
       </SimpleGrid>
       <Button
         variant={'globalButton'}
-        w={'395px'}
+        w={{base:"280px",md:'395px'}}
         onClick={() => walletActive()}
       >
         Devam et

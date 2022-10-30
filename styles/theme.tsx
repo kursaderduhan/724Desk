@@ -90,8 +90,8 @@ export const theme = extendTheme({
           }),
           walletButton: (props: any) => ({
             ...base.components.Button.variants.outline(props),
-            w: "189px",
-            h: "84px",
+            w: {base:"140px",md:"189px"},
+            h: {base:"70px",md:"84px"},
             bg: "#F8F9FD",
             fontWeight: 400,
             color: "#333333",

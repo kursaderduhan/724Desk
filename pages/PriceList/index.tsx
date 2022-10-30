@@ -114,6 +114,7 @@ export const PriceList = () => {
                       </HStack>
                     )}
                   </VStack>
+                  <Link href={"/Payment"} onClick={() => setChoose(item.key) }>
                   <Button
                     color={smallScreen ? "white" :'#F27C00'}
                     boxShadow={'md'}
@@ -122,7 +123,8 @@ export const PriceList = () => {
                     w={'163px'} variant={smallScreen ? "globalButton" : ""}
                   >
                     Paketi Seç
-                  </Button>
+                    </Button>
+                    </Link>
                 </VStack>
                 <VStack w={{base:"343px",md:'500px'}} alignItems={'flex-start'}>
                   <HStack>
@@ -188,7 +190,7 @@ export const PriceList = () => {
                       </Text>
                     </HStack>
                   )}
-                  <Link href={"/Payment"} onClick={() => setChoose(item.key) }>
+                  <Link href={"/Payment"} onClick={() => setChoose(item.key) } >
                   <Button
                     variant={'globalButton'}
                     w={'200px'}
