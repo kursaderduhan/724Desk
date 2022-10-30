@@ -119,7 +119,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
             >
               <VStack h={'full'}>
                 <List spacing={2}>
+                  <Link href={"/"}>
                   <ListItem>Ana Sayfa</ListItem>
+                  </Link>
                   <ListItem>Hizmetler & Çözümler</ListItem>
                   <ListItem>Nasıl Kullanılır?</ListItem>
                   <ListItem>Değerlendirmeler</ListItem>
