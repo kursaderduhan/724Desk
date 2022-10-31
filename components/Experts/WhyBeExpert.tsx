@@ -12,13 +12,27 @@ import {
 export const WhyBeExpert = () => {
   return (
     <Flex gap={20}>
-      <Flex flexDirection={'column'} w={'693px'} gap={10}>
+      <Flex
+        flexDirection={'column'}
+        w={{ base: '343px', md: '693px' }}
+        gap={10}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Neden Uzman Olmalıyım?
           </Text>
           <Flex flexDirection={'column'} gap={5}>
-            <Text fontSize={{base:"15px",md:'19px'}} fontWeight={500} color={'#333333'}>
+            <Text
+              fontSize={{ base: '15px', md: '19px' }}
+              fontWeight={500}
+              color={'#333333'}
+            >
               Support projemiz dünya çapında uzmanların oluşturduğu bir networke
               sahiptir.
             </Text>
@@ -26,7 +40,8 @@ export const WhyBeExpert = () => {
               fontSize={'14px'}
               fontWeight={'400'}
               color={'#666666'}
-              spacing={3} w={{base:"343px",md:"full"}}
+              spacing={3}
+              w={{ base: '343px', md: 'full' }}
             >
               <ListItem>
                 Öncelikle böyle bir platformda uzman olmak size büyük bir
@@ -51,15 +66,25 @@ export const WhyBeExpert = () => {
           </Flex>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Kimler Uzman Olabilir?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Bilişim teknolojileri alalında herhangi bir konuda uzmanlığı olan
@@ -74,15 +99,25 @@ export const WhyBeExpert = () => {
           </UnorderedList>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Paylaşmak İstediğiniz bir uzmanlığınız mı var?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}}  />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Bir konuda uzman mısınız? Herhangi bir teknoloji alanında herkese
@@ -109,15 +144,25 @@ export const WhyBeExpert = () => {
           </UnorderedList>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Hangi kriterlere göre tarafıma iş yönlendirilecek?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Uzmanlarımıza sağlıklı bir iş dağıtımı yapmak ve mevcut
@@ -149,10 +194,19 @@ export const WhyBeExpert = () => {
           </UnorderedList>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             İş yönlendirmelerinde hangi kriterleri baz alacağız?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Bu kriterlerden birçoğunu aşağıdaki başlıklarda sizin için
             listeledik.
@@ -161,7 +215,8 @@ export const WhyBeExpert = () => {
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Ticket Cevaplama Kalitesi: Uzmanlarımızın destek taleplerine cevap
@@ -206,15 +261,25 @@ export const WhyBeExpert = () => {
           </Text>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Daha fazla iş almak için kalite puanınızı nasıl artırırsınız?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Platformumuz uzmanlarımızın daha fazla kazanç elde etmelerine
@@ -231,15 +296,25 @@ export const WhyBeExpert = () => {
           </UnorderedList>
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
-          <Text fontSize={{base:"19px",md:'33px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            fontSize={{ base: '19px', md: '33px' }}
+            fontWeight={500}
+            color={'#333333'}
+          >
             Kalite puanını neler etkiler?
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', md: '693px' }}
+            h={{ base: '192px', md: '390px' }}
+          />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
-            spacing={3} w={{base:"343px",md:"full"}}
+            spacing={3}
+            w={{ base: '343px', md: 'full' }}
           >
             <ListItem>
               Ticket Puanlama: Müşterilerimiz, ticket cevaplarının altına
@@ -279,7 +354,11 @@ export const WhyBeExpert = () => {
           </UnorderedList>
         </Flex>
       </Flex>
-      <Flex flexDirection={'column'} gap={5} display={{base:"none",md:"flex"}}>
+      <Flex
+        flexDirection={'column'}
+        gap={5}
+        display={{ base: 'none', md: 'flex' }}
+      >
         <HStack>
           <Image
             src={'/circleOrange.png'}

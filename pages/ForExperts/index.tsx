@@ -67,8 +67,8 @@ export const Experts = () => {
           </VStack>
         </Container>
       </HStack>
-      <Flex flexDirection={'column'} py={50} w={{ base: '343px' }}>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Flex flexDirection={'column'} py={50}>
+        <Container maxW={{ xl: '1200px', xxl: '1600px' }} >
           <WhyBeExpert />
         </Container>
         <Footer />

@@ -24,7 +24,7 @@ export const Altcoin = () => {
               bg={'white'}
               rounded={5}
               alignItems={'flex-start'}
-              p={5}
+              p={5} display={{base:"none",md:"flex"}}
             >
               <HStack>
                 <Image
@@ -58,8 +58,8 @@ export const Altcoin = () => {
               {item.map(ıtem => (
                 <HStack
                   key={ıtem.id}
-                  w={'896px'}
-                  h={'183px'}
+                  w={{base:"343px",md:'896px'}}
+                  h={{base:"150px",md:'183px'}}
                   bg={'white'}
                   border={'1px solid'}
                   borderColor={'transparent'}
@@ -69,22 +69,22 @@ export const Altcoin = () => {
                   onClick={() => setPage(ıtem.headName)}
                 >
                   <VStack alignItems={'flex-start'} gap={3} pl={5}>
-                    <Text fontSize={'19px'} color={'#333333'} fontWeight={500}>
+                    <Text fontSize={{base:"15px",md:'19px'}} color={'#333333'} fontWeight={500}>
                       {ıtem.headName}
                     </Text>
-                    <Text fontSize={'12px'} color={'#959595'} fontWeight={400}>
+                    <Text fontSize={{base:"8px",md:'12px'}} color={'#959595'} fontWeight={400}>
                       {ıtem.description}
                     </Text>
-                    <HStack w={'full'} justifyContent={'space-between'}>
+                    <Flex w={'full'} justifyContent={'space-between'}>
                       <HStack>
                         <Image
                           src={'/pen1.png'}
                           alt={'pen'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Text
-                          fontSize={'14px'}
+                          fontSize={{base:"8px",md:'14px'}}
                           fontWeight={400}
                           color={'#666666'}
                         >
@@ -95,11 +95,11 @@ export const Altcoin = () => {
                         <Image
                           src={'/book.png'}
                           alt={'book'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Text
-                          fontSize={'14px'}
+                          fontSize={{base:"8px",md:'14px'}}
                           fontWeight={400}
                           color={'#666666'}
                         >
@@ -110,50 +110,50 @@ export const Altcoin = () => {
                         <Image
                           src={'/calendar1.png'}
                           alt={'calendar'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Text
-                          fontSize={'14px'}
+                          fontSize={{base:"8px",md:'14px'}}
                           fontWeight={400}
                           color={'#666666'}
                         >
                           {ıtem.date}
                         </Text>
                       </HStack>
-                      <HStack>
+                      <HStack display={"none"}>
                         <Image
                           src={'/facebook-soft.png'}
                           alt={'facebook'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Image
                           src={'/twitter-soft.png'}
                           alt={'twitter'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Image
                           src={'/whatsapp(1).png'}
                           alt={'whatsapp'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                         <Image
                           src={'/link.png'}
                           alt={'link'}
-                          w={'24px'}
-                          h={'24px'}
+                          w={{base:"12px",md:'24px'}}
+                          h={{base:"12px",md:'24px'}}
                         />
                       </HStack>
-                    </HStack>
+                    </Flex>
                   </VStack>
                   <Image
                     src={ıtem.ımage}
                     alt={'ımg'}
-                    w={'200px'}
-                    h={'183px'}
+                    w={{base:"100px",md:'200px'}}
+                    h={{base:"150px",md:'183px'}}
                     alignSelf={'flex-end'}
                     rounded={10}
                   />

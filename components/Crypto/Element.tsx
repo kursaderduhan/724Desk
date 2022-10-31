@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 const Element = () => {
   return (
-    <VStack w={'693px'} alignSelf={'flex-start'} h={'full'} py={10} gap={5}>
+    <VStack w={{base:"343px",md:'693px'}} alignSelf={'flex-start'} h={'full'} py={10} gap={5}>
       <Text
         color={'#333333'}
         fontSize={'14px'}
