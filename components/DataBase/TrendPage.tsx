@@ -13,10 +13,10 @@ import React, { memo } from 'react'
 export const TrendPage = () => {
   return (
     <VStack>
-      <Flex  w={"full"} justifyContent={"space-between"}> 
-        <VStack alignItems={'flex-start'} w={'693px'} gap={5}>
+      <Flex  w={"full"} justifyContent={"space-between"} flexDirection={{base:"column",md:"row"}} > 
+        <VStack alignItems={'flex-start'} w={{base:"full",md:'693px'}} gap={5}>
           <VStack alignItems={'flex-start'} alignSelf={'flex-start'}>
-            <Text fontSize={'33px'} fontWeight={500} color={'#333333'}>
+            <Text fontSize={{base:"23px",md:'33px'}} fontWeight={500} color={'#333333'}>
               Son Bir Haftada En Çok Yükselen Kripto Paralar
             </Text>
             <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
@@ -29,7 +29,7 @@ export const TrendPage = () => {
             kripto paralar şunlar: Son günlerin parlayan yıldızı Xido Finance
             XIDO %84 lük bir yükselişle geliyor. .
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={'693px'} h={'390px'} />
+          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
           <Text>
             En büyük kripto para listeleme platformlarından biri olan
             CoinGecko’dan alınan verilere göre, son bir haftada en çok yükselen
@@ -41,7 +41,7 @@ export const TrendPage = () => {
             kripto paralarda 5. sırada ise CELO ve GMT gelirken onu NEAR, XEC,
             CAKE ve DOGE takip ediyor.
           </Text>
-          <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
+          <Text fontSize={{base:"19px",md:'23px'}} fontWeight={500} color={'#333333'}>
             What Will I Learn?
           </Text>
           <Text fontSize={'14px'} fontWeight={400} color={'#333333'}>
@@ -135,10 +135,10 @@ export const TrendPage = () => {
           <Image
             src={'/TrendPageImg.png'}
             alt={'ımg'}
-            w={'693px'}
-            h={'390px'}
+            w={{ base: "343px", md: '693px' }}
+            h={{base:"194px",md:'390px'}}
           />
-          <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
+          <Text fontSize={{bsae:"19px",md:'23px'}} fontWeight={500} color={'#333333'}>
             How Does The Rewards Bootcamp Work?
           </Text>
           <UnorderedList spacing={2}>
@@ -163,11 +163,11 @@ export const TrendPage = () => {
             </ListItem>
           </UnorderedList>
         </VStack>
-        <VStack alignItems={"flex-start"} gap={5}>
+        <VStack alignItems={{base:"center",md:"flex-start"}} gap={5}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Paylaş
           </Text>
-          <HStack>
+          <HStack gap={2}>
             <Image
               src={'/facebook (1).png'}
               alt={'facebook'}
@@ -195,7 +195,7 @@ export const TrendPage = () => {
             <Image src={'/be.png'} alt={'be'} w={'24px'} h={'24px'} />
             <Image src={'/link.png'} alt={'link'} w={'24px'} h={'24px'} />
           </HStack>
-          <Flex flexDirection={'column'} gap={5}>
+          <Flex flexDirection={'column'} gap={5} display={{base:"none",md:"flex"}}>
             <HStack>
               <Image
                 src={'/circleOrange.png'}
@@ -257,9 +257,10 @@ export const TrendPage = () => {
           </Text>
           <Flex
             bgImage={'/ımg-1.png'}
-            w={'389px'}
-            h={'208px'}
-            bgSize={'cover'}
+            w={{base:"343px",md:'389px'}}
+            h={{ base: "136px", md: '208px' }}
+            rounded={10}
+            bgSize={'cover'} 
             bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
           >
             <Text fontSize={'15px'} color={'white'} fontWeight={'500'}>
@@ -271,8 +272,9 @@ export const TrendPage = () => {
           </Flex>
           <Flex
             bgImage={'/ımg-2.png'}
-            w={'389px'}
-            h={'208px'}
+            w={{base:"343px",md:'389px'}}
+            h={{ base: "136px", md: '208px' }}
+            rounded={10}
             bgSize={'cover'}
             bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
           >
@@ -285,8 +287,9 @@ export const TrendPage = () => {
           </Flex>
           <Flex
             bgImage={'/ımg-3.png'}
-            w={'389px'}
-            h={'208px'}
+            w={{base:"343px",md:'389px'}}
+            h={{ base: "136px", md: '208px' }}
+            rounded={10}
             bgSize={'cover'}
             bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
           >

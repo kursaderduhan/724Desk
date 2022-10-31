@@ -248,6 +248,6 @@ const headerTextMobile: Array<headerProp> = [
   { heading: 'Servisler & Çözümler', Link: '/SerAndSol', key: 'result' },
   { heading: 'Nasıl Kullanılır?', Link: '/HowToUse', key: 'use' },
   { heading: 'Uzmanlar', Link: '/DataBase', key: 'experts' },
-  { heading: 'Blog', Link: '/', key: 'blog' },
-  { heading: 'Fiyat Listesi', Link: '/', key: 'priceList' }
+  { heading: 'Blog', Link: '/DataBase', key: 'blog' },
+  { heading: 'Fiyat Listesi', Link: '/PriceList', key: 'priceList' }
 ]

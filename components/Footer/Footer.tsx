@@ -154,7 +154,9 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               <VStack>
                 <List spacing={2}>
                   <ListItem>SSS</ListItem>
-                  <ListItem>Blog</ListItem>
+                  <Link href={"/DataBase"}> 
+                    <ListItem cursor={'pointer'} onClick={() => pagesName.set('Blog')}>Blog</ListItem>
+                    </Link>
                   <ListItem>Kariyer</ListItem>
                   <Link href={'/ForExperts'}>
                     <ListItem

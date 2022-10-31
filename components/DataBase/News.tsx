@@ -4,7 +4,7 @@ import { Flex, SimpleGrid, Text, Image, VStack } from '@chakra-ui/react'
 export const News = () => {
   return (
     <Flex w={'full'} py={10}>
-      <SimpleGrid columns={3} spacing={6}>
+      <SimpleGrid columns={{base:1,md:3}} spacing={6}>
         {news.map(news => (
           <VStack
             key={news.key}
@@ -14,7 +14,7 @@ export const News = () => {
             _hover={{ scale: '1.02', opacity: '0.7' }}
             cursor={'pointer'}
           >
-            <Image src={news.Image} alt={'ımg'} w={'389px'} h={'208px'} />
+            <Image src={news.Image} alt={'ımg'} w={{ base: "253px", md: '389px' }} h={{base:"136px",md:'208px'}} />
             <Text fontSize={'15px'} fontWeight={500} color={'#333333'}>
               {news.Title}
             </Text>
