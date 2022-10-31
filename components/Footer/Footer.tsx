@@ -14,8 +14,9 @@ import {
   SimpleGrid
 } from '@chakra-ui/react'
 import Link from 'next/link'
-
+import { useStorken } from '@data/storken'
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
+  const pagesName = useStorken<any>('pagesName')
   return (
     <Box
       bgImage={HomePage ? '/footerBg.png' : '#E5E5E5'}
@@ -46,7 +47,8 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
             h={'full'}
             py={{ base: '20px', md: '80px' }}
             flexDirection={{ base: 'column', md: 'row' }}
-            justifyContent={'space-between'} gap={10}
+            justifyContent={'space-between'}
+            gap={10}
           >
             <VStack
               alignItems={'flex-start'}
@@ -108,28 +110,43 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
             </VStack>
             <SimpleGrid
               columns={{ base: 2, md: 3 }}
-              gap={{base:10,md:20}}
+              gap={{ base: 10, md: 20 }}
               fontSize={'15px'}
               color={HomePage ? 'white' : '#959595'}
               fontWeight={400}
               w={HomePage ? '' : 'full'}
-              justifyContent={{base:"flex-start",md:'space-evenly'}}
+              justifyContent={{ base: 'flex-start', md: 'space-evenly' }}
               alignSelf={'flex-start'}
               alignItems={'flex-start'}
             >
               <VStack h={'full'}>
                 <List spacing={2}>
-                  <Link href={"/"}>
-                  <ListItem>Ana Sayfa</ListItem>
+                  <Link href={'/'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Ana Sayfa')}
+                    >
+                      Ana Sayfa
+                    </ListItem>
                   </Link>
                   <ListItem>Hizmetler & Çözümler</ListItem>
                   <ListItem>Nasıl Kullanılır?</ListItem>
                   <ListItem>Değerlendirmeler</ListItem>
                   <Link href={'/Info'}>
-                    <ListItem cursor={'pointer'}>Hakkımızda</ListItem>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Info')}
+                    >
+                      Hakkımızda
+                    </ListItem>
                   </Link>
                   <Link href={'/Contact'}>
-                    <ListItem cursor={'pointer'}>İletişim</ListItem>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Contact')}
+                    >
+                      İletişim
+                    </ListItem>
                   </Link>
                   <ListItem>Kayıt Ol</ListItem>
                 </List>
@@ -139,25 +156,40 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <ListItem>SSS</ListItem>
                   <ListItem>Blog</ListItem>
                   <ListItem>Kariyer</ListItem>
-                  <Link href={"/ForExperts"}>
-                    <ListItem cursor={"pointer"}>Uzmanlar</ListItem>
-                    </Link>
+                  <Link href={'/ForExperts'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Uzmanlar')}
+                    >
+                      Uzmanlar
+                    </ListItem>
+                  </Link>
                   <ListItem>Gizlilik Politikası</ListItem>
                   <ListItem>Kullanım Koşulları</ListItem>
                   <ListItem>Site Haritası</ListItem>
                 </List>
               </VStack>
-              <VStack alignItems={"flex-start"}>
+              <VStack alignItems={'flex-start'}>
                 <List spacing={2}>
                   <ListItem>Sunucu Yönetimi</ListItem>
                   <ListItem>Yazılım Geliştirme</ListItem>
                   <ListItem>Network</ListItem>
                   <ListItem>Siber Güvenlik</ListItem>
-                  <Link href={"/DeskToken"}>
-                    <ListItem cursor={"pointer"}>Desk Token</ListItem>
-                    </Link>
+                  <Link href={'/DeskToken'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Desk Token')}
+                    >
+                      Desk Token
+                    </ListItem>
+                  </Link>
                   <Link href={'/Reference'}>
-                    <ListItem cursor={'pointer'}>Referans Programı</ListItem>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Referans')}
+                    >
+                      Referans Programı
+                    </ListItem>
                   </Link>
                 </List>
               </VStack>

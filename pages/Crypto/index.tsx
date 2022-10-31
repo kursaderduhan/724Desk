@@ -9,14 +9,17 @@ import {
   Button,
   SimpleGrid,
   Container,
-  Icon
+  Icon,
+  useMediaQuery
 } from '@chakra-ui/react'
 import Layout from '@components/Layout/Layout'
 import Link from 'next/link'
 import { ChevronLeftIcon } from '@chakra-ui/icons'
 import Altcoin from '@components/Crypto/Altcoin'
+import Footer from '@components/Footer/Footer'
 export const Crypto = () => {
   const [page, setPage] = useState<string>('crypto')
+  const [smallScreen] = useMediaQuery('(max-width:572px)')
   return (
     <Layout headerChoose>
       {page === 'crypto' && (
@@ -41,9 +44,10 @@ export const Crypto = () => {
                 lineHeight={'150%'}
               >
                 Uzmanlığınızı paylaşmak birçok ihtiyaç sahibinin bilgi
-                birikimizinden <br /> faydalanmasını sağlayacaktır. Böylece
-                gelir elde ederken insanlara yardımcı <br /> olmanın mutluluğunu
-                yaşayın.
+                birikimizinden {smallScreen ? <br /> : null}faydalanmasını
+                sağlayacaktır. Böylece gelir elde ederken insanlara yardımcı{' '}
+                {smallScreen ? <br /> : null}
+                olmanın mutluluğunu yaşayın.
               </Text>
               <Link href={'/SupportRequest'}>
                 <Button
@@ -58,13 +62,20 @@ export const Crypto = () => {
             </VStack>
           </HStack>
           <HStack py={50} w={'full'} justifyContent='center'>
-            <Box w={'full'} h={'188px'} bg={'#E9F2F5'} pos={'absolute'}></Box>
+            <Box
+              w={'full'}
+              h={'188px'}
+              bg={'#E9F2F5'}
+              pos={'absolute'}
+              display={{ base: 'none', md: 'flex' }}
+            ></Box>
             <Image
               src={'/cryptoPhone.png'}
               alt={'phone'}
               w={'444px'}
               h={'545px'}
               zIndex={1}
+              display={{ base: 'none', md: 'flex' }}
             />
             <VStack alignItems={'flex-start'} zIndex={1}>
               <Text fontSize={'19px'} fontWeight={500} color={'black'}>
@@ -72,28 +83,40 @@ export const Crypto = () => {
               </Text>
               <Text fontSize={'14px'} fontWeight={400} color={'#433F3F'}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum
-                consectetur <br />
+                consectetur {smallScreen ? <br /> : null}
                 quisque eget adipiscing vitae in. Tincidunt platea etiam
-                pulvinar pellentesque <br /> nulla sit sed.
+                pulvinar pellentesque {smallScreen ? <br /> : null}
+                nulla sit sed.
               </Text>
             </VStack>
           </HStack>
-          <VStack w='full' h={'1648px'} bg={'#E9F2F5'} py={50}>
+          <VStack
+            w='full'
+            h={{ base: 'full', md: '1648px' }}
+            bg={'#E9F2F5'}
+            py={{ base: 10, md: 50 }}
+          >
             <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-              <Text fontSize={'33px'} fontWeight={500} color={'black'}>
+              <Text
+                fontSize={{ base: '28px', md: '33px' }}
+                fontWeight={500}
+                color={'black'}
+                alignItems={'center'}
+                w={'full'}
+              >
                 Kripto Kategorileri
               </Text>
-              <SimpleGrid columns={3} spacing={5} py={50}>
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5} py={50}>
                 {Item.map(item => (
                   <Link href={item.link} key={item.key}>
                     <VStack
-                      w={'390px'}
+                      w={{ base: '343px', md: '390px' }}
                       h={'450px'}
                       bg={'white'}
                       cursor={'pointer'}
                       transform={'auto'}
                       _hover={{ scale: '1.01', opacity: '0.7' }}
-                      rounded={5}
+                      rounded={10}
                       onClick={() =>
                         item.headName == 'NFT' ? setPage('NFT') : null
                       }
@@ -134,7 +157,7 @@ export const Crypto = () => {
           <VStack w={'full'} h={'full'} py={50}>
             <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
               <VStack
-                w={'full'}
+                w={{ base: '343px', md: 'full' }}
                 h={'300px'}
                 bgImage={'/cryptoLp.png'}
                 bgSize={'cover'}
@@ -157,7 +180,7 @@ export const Crypto = () => {
                 <Image
                   src={'cryptoLp-2.png'}
                   alt={'ımg'}
-                  w={'389px'}
+                  w={{ base: '343px', md: '389px' }}
                   h={'200px'}
                 />
                 <Text fontSize={'23px'} fontWeight={500} color={'black'}>
@@ -177,6 +200,7 @@ export const Crypto = () => {
                 </Text>
               </VStack>
             </Container>
+            <Footer />
           </VStack>
         </>
       )}
@@ -192,7 +216,7 @@ export const Crypto = () => {
             py={10}
           >
             <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-              <Flex alignItems={"center"} gap={2}>
+              <Flex alignItems={'center'} gap={2}>
                 <Icon
                   aria-label='back'
                   as={ChevronLeftIcon}
@@ -209,7 +233,7 @@ export const Crypto = () => {
               </Flex>
             </Container>
           </VStack>
-          <Altcoin/>
+          <Altcoin />
         </>
       )}
     </Layout>
