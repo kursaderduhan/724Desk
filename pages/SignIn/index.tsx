@@ -29,7 +29,7 @@ export const SignIn = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10}
+        py={10} display={{base:"none",md:"flex"}}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
@@ -51,12 +51,12 @@ export const SignIn = () => {
               justifyContent={'center'}
               alignItems={'flex-end'}
               overflow={'hidden'}
-              rounded={'full'}
+              rounded={'full'} display={{base:"none",md:"flex"}} 
             >
               <Image src={'/sıgnIn.png'} alt={'ımg'} w={481} h={392} />
             </Flex>
             <VStack alignItems={'flex-start'} gap={5}>
-              <HStack>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -83,8 +83,8 @@ export const SignIn = () => {
                     w={'288px'}
                   />
                 </InputGroup>
-              </HStack>
-              <HStack>
+              </Flex>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -111,8 +111,8 @@ export const SignIn = () => {
                     w={'288px'}
                   />
                 </InputGroup>
-              </HStack>
-              <HStack w={'full'}>
+              </Flex>
+              <Flex w={'full'} flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -140,8 +140,8 @@ export const SignIn = () => {
                     </HStack>
                   </RadioGroup>
                 </FormControl>
-              </HStack>
-              <HStack>
+              </Flex>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -168,8 +168,8 @@ export const SignIn = () => {
                     w={'288px'}
                   />
                 </InputGroup>
-              </HStack>
-              <HStack>
+              </Flex>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -199,8 +199,8 @@ export const SignIn = () => {
                     w={'288px'}
                   />
                 </InputGroup>
-              </HStack>
-              <HStack>
+              </Flex>
+              <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} gap={5}>
                 <InputGroup flexDirection={'column'}>
                   <FormLabel>
                     <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
@@ -227,7 +227,7 @@ export const SignIn = () => {
                     w={'288px'}
                   />
                 </InputGroup>
-              </HStack>
+              </Flex>
               <Checkbox alignSelf={'flex-start'}>
                 I read and accept <span style={{ color: '#2485E8' }}>privacy and agreement.</span>
               </Checkbox>

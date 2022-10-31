@@ -53,7 +53,7 @@ export const ResultSolve = () => {
           </HStack>
         ))}
       </VStack>
-      <Flex gap={5}>
+      <Flex gap={5} display={{base:"flex",md:"none"}}>
         <Button variant={'globalButton'} w={'164px'}>
           Hemen Başla
         </Button>
