@@ -129,8 +129,22 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                       Ana Sayfa
                     </ListItem>
                   </Link>
-                  <ListItem>Hizmetler & Çözümler</ListItem>
-                  <ListItem>Nasıl Kullanılır?</ListItem>
+                  <Link href={'/SerAndSol'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Servisler & Çözümler')}
+                    >
+                      Hizmetler & Çözümler
+                    </ListItem>
+                  </Link>
+                  <Link href={'/HowToUse'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Nasıl Kullanılır')}
+                    >
+                      Nasıl Kullanılır?
+                    </ListItem>
+                  </Link>
                   <ListItem>Değerlendirmeler</ListItem>
                   <Link href={'/Info'}>
                     <ListItem
@@ -148,15 +162,22 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                       İletişim
                     </ListItem>
                   </Link>
-                  <ListItem>Kayıt Ol</ListItem>
+                  <Link href={'/SignUp'}>
+                    <ListItem cursor={'pointer'}>Kayıt Ol</ListItem>
+                  </Link>
                 </List>
               </VStack>
               <VStack>
                 <List spacing={2}>
                   <ListItem>SSS</ListItem>
-                  <Link href={"/DataBase"}> 
-                    <ListItem cursor={'pointer'} onClick={() => pagesName.set('Blog')}>Blog</ListItem>
-                    </Link>
+                  <Link href={'/DataBase'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Blog')}
+                    >
+                      Blog
+                    </ListItem>
+                  </Link>
                   <ListItem>Kariyer</ListItem>
                   <Link href={'/ForExperts'}>
                     <ListItem

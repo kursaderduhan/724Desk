@@ -12,7 +12,7 @@ import {
 import Link from 'next/link'
 export const Categories = () => {
   return (
-    <Flex w={'full'} h={'full'} flexDirection={'column'}>
+    <Flex w={'full'} h={'full'} flexDirection={'column'} bg={"#F7FCFE"}>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <Flex
           w={'full'}
@@ -229,13 +229,13 @@ export const Categories = () => {
                 </Button>
               </Link>
               <Button
-                bg={'#F27C00'}
-                color={'white'}
+                bg={'white'}
+                color={'#525252'}
                 w={'164px'}
                 h={'36px'}
                 _hover={{ opacity: 0.8 }} display={{base:"flex",md:"none"}}
               >
-                Hemen Başla
+                Videolu Çözüm
               </Button>
             </Flex>
           </VStack>

@@ -10,7 +10,7 @@ const PaymentsFailed = ({closeFailedPage} : any) => {
   </Text>
   <VStack
     bgImage={'/PaymentBg.png'}
-    w={'444px'}
+        w={{base:"full",md:'444px'}}
     h={'444px'}
     bgPos={'center'}
     overflow={'hidden'}
@@ -33,7 +33,7 @@ const PaymentsFailed = ({closeFailedPage} : any) => {
       <Text fontSize={"15px"} color={"#959595"} fontWeight={400} textAlign={"center"}>Lorem ipsum dolor sit amet, consectetur <br/> adipiscing elit. </Text>
     </VStack>
   </VStack>
-  <VStack w={'440px'} px={1}>
+      <VStack w={{base:"full",md:'440px'}} px={1}>
     <HStack w={'full'} justifyContent={'center'}>
       <Link href={'/Payment'}>
         <Button

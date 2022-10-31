@@ -9,7 +9,7 @@ const PaymentSuccesfull = () => {
       </Text>
       <VStack
         bgImage={'/PaymentBg.png'}
-        w={'444px'}
+        w={{base:"full",md:'444px'}}
         h={'444px'}
         bgPos={'center'}
         overflow={'hidden'}
@@ -52,7 +52,7 @@ const PaymentSuccesfull = () => {
           </HStack>
         </VStack>
       </VStack>
-      <VStack w={'440px'} px={1}>
+      <VStack w={{base:"full",md:'440px'}} px={1}>
         <HStack w={'full'} justifyContent={'space-between'}>
           <Link href={'/'}>
             <Button

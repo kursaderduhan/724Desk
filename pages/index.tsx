@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Box
-        bgImage='/HomePageBg.png'
+        bgImage={{base:"/Hp-BgMobile.png",md:'/HomePageBg.png'}}
         w={{ base: '100%', md: 'full' }}
         h={{ base: '746px', md: '746px' }}
         bgPos={'center'}
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
               w={{base:"343px",md:'389px'}}
               rounded={5}
               boxShadow={'xl'}
-              alignItems={'center'}
+              alignItems={'center'} bg={"#F0F1F3"}
             >
               <InputLeftElement h={'full'}>
                 <Icon as={BsSearch} />
