@@ -181,7 +181,7 @@ const MobileHeader = () => {
                     gap={5}
                   >
                     <Link href={'/SignIn'}>
-                      <Button variant={'globalButton'} w={'237px'}>
+                      <Button variant={'globalButton'} w={'237px'} onClick={() => pagesName.set("Kayıt ol")}>
                         Kayıt Ol
                       </Button>
                     </Link>
@@ -191,7 +191,7 @@ const MobileHeader = () => {
                           variant={'headerButton'}
                           bg={'transparent'}
                           color={'light.100'}
-                          w={'111px'}
+                          w={'111px'} onClick={() => pagesName.set("Uzmanlar İçin")}
                         >
                           Uzmanlar İçin
                         </Button>
@@ -201,7 +201,7 @@ const MobileHeader = () => {
                           variant={'headerButton'}
                           bg={'transparent'}
                           color={'light.100'}
-                          w={'111px'}
+                          w={'111px'} onClick={() => pagesName.set("Giriş Yap")}
                         >
                           Giriş Yap
                         </Button>
@@ -247,7 +247,7 @@ const headerTextMobile: Array<headerProp> = [
   { heading: 'Ana Sayfa', Link: '/', key: 'home' },
   { heading: 'Servisler & Çözümler', Link: '/SerAndSol', key: 'result' },
   { heading: 'Nasıl Kullanılır?', Link: '/HowToUse', key: 'use' },
-  { heading: 'Uzmanlar', Link: '/DataBase', key: 'experts' },
+  { heading: 'Uzmanlar', Link: '/Experts', key: 'experts' },
   { heading: 'Blog', Link: '/DataBase', key: 'blog' },
   { heading: 'Fiyat Listesi', Link: '/PriceList', key: 'priceList' }
 ]

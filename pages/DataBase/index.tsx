@@ -35,7 +35,8 @@ export const DataBase = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10} display={{base:"none",md:"flex"}} 
+        py={10}
+        display={{ base: 'none', md: 'flex' }}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Flex display={page}>
@@ -47,11 +48,7 @@ export const DataBase = () => {
               inceleyerek sorunlarını çözebilirsin.
             </Text>
           </Flex>
-          <Flex
-            display={dataBase}
-            w={'full'}
-            flexDirection={'row'}
-          >
+          <Flex display={dataBase} w={'full'} flexDirection={'row'}>
             <Icon
               aria-label='back'
               as={ChevronLeftIcon}
@@ -68,19 +65,18 @@ export const DataBase = () => {
           </Flex>
         </Container>
       </VStack>
-      <VStack bg={'white'} w='full' py={{base:0,md:50}} display={page}>
+      <VStack bg={'white'} w='full' py={{ base: 0, md: 50 }} display={page}>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <MostRead changePage={() => changePage()} />
           <News />
         </Container>
-        
       </VStack>
       <VStack bg={'white'} w='full' py={50} display={dataBase}>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <TrendPage />
         </Container>
       </VStack>
-      <Footer/>
+      <Footer />
     </Layout>
   )
 }
