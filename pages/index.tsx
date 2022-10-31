@@ -31,7 +31,7 @@ import { useStorken } from '@data/storken'
 const Home: NextPage = () => {
   const router = useRouter()
   const search = useStorken<any>("search")
-  const handleChange = (event: any) => {
+  function handleChange(event: any) {
     search.set(event.target.value)
   }
   const searchPage = (e: any) => {

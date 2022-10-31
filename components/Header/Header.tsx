@@ -171,11 +171,11 @@ const MobileHeader = () => {
                   </AccordionButton>
                 </Flex>
               </h2>
-              <AccordionPanel w={'full'}>
-                <Flex w={'full'} flexDirection={'column'}>
+              <AccordionPanel w={'100%'}>
+                <Flex w={'100%'} flexDirection={'column'}>
                   <VStack
                     h={'238px'}
-                    w={'full'}
+                    w={'100%'}
                     bg={'#2269B1'}
                     justifyContent={'center'}
                     gap={5}
@@ -186,7 +186,7 @@ const MobileHeader = () => {
                       </Button>
                     </Link>
                     <HStack gap={1}>
-                      <Link href={'/SignUp'}>
+                      <Link href={'/ForExperts'}>
                         <Button
                           variant={'headerButton'}
                           bg={'transparent'}

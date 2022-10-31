@@ -36,7 +36,7 @@ export const Search = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10}
+        py={10} display={{base:"none",md:"flex"}}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
@@ -54,17 +54,17 @@ export const Search = () => {
           <VStack>
             {detailPage === false ? (
               <VStack>
-                <Text fontSize={'23px'} color={'#333333'} fontWeight={500}>
+                <Text fontSize={{base:"19px",md:'23px'}} color={'#333333'} fontWeight={500}>
                   “Trade yapmak” ile ilgili makale sonuçları
                 </Text>
-                <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
+                <Text fontSize={{base:"12px",md:'15px'}} color={'#959595'} fontWeight={400}>
                   Bu anahtar kelime ile ilgili 7 arama sonucu bulunmuştur.
                 </Text>
                 <VStack py={5} gap={5}>
                   {item.map(ıtem => (
                     <HStack
                       key={ıtem.id}
-                      w={'794px'}
+                      w={{base:"343px",md:'794px'}}
                       h={'169px'}
                       bg={'white'}
                       justifyContent={'space-between'}
@@ -74,14 +74,14 @@ export const Search = () => {
                     >
                       <VStack alignItems={'flex-start'} gap={2} px={5}>
                         <Text
-                          fontSize={'19px'}
+                          fontSize={{base:"15px",md:'19px'}}
                           fontWeight={500}
                           color={'#333333'}
                         >
                           {ıtem.headName}
                         </Text>
                         <Text
-                          fontSize={'12px'}
+                          fontSize={{base:"10px",md:'12px'}}
                           fontWeight={400}
                           color={'#959595'}
                         >
@@ -97,7 +97,7 @@ export const Search = () => {
                       <Image
                         src={ıtem.ımage}
                         alt={'ımg'}
-                        w={'200px'}
+                        w={{base:"110px",md:'200px'}}
                         h={'169px'}
                         rounded={10}
                       />
@@ -176,7 +176,7 @@ export const Search = () => {
               </VStack>
               {supportButton && (
                 <VStack gap={5}>
-                  <HStack>
+                  <Flex flexDirection={{base:"column",md:"row"}}>
                     <VStack>
                       <InputGroup flexDirection={'column'}>
                         <FormLabel
@@ -187,7 +187,7 @@ export const Search = () => {
                           Konu Başlığı
                         </FormLabel>
                         <Input
-                          w={'365px'}
+                          w={{base:"343px",md:'365px'}}
                           h={'46px'}
                           placeholder={'örn. Telefonumu açamıyorum'}
                           color={'#B3CBD4'}
@@ -205,7 +205,7 @@ export const Search = () => {
                           E-mail
                         </FormLabel>
                         <Input
-                          w={'365px'}
+                          w={{base:"343px",md:'365px'}}
                           h={'46px'}
                           placeholder={'örn. fdemirkan4@gmail.com'}
                           color={'#B3CBD4'}
@@ -213,8 +213,8 @@ export const Search = () => {
                         />
                       </InputGroup>
                     </VStack>
-                  </HStack>
-                  <InputGroup w={'746px'} h={'283px'} flexDirection={'column'}>
+                  </Flex>
+                  <InputGroup w={{base:"343px",md:'746px'}} h={'283px'} flexDirection={'column'}>
                     <FormLabel
                       fontSize={'12px'}
                       fontWeight={400}
@@ -240,8 +240,8 @@ export const Search = () => {
                   </Checkbox>
                   <Button
                     variant={'globalButton'}
-                    w={'136px'}
-                    alignSelf={'flex-start'}
+                    w={{base:"220px",md:'136px'}}
+                    alignSelf={{base:"center",md:'flex-start'}}
                   >
                     Gönder
                   </Button>

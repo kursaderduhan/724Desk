@@ -12,8 +12,8 @@ import React from 'react'
 
 const DetailPage = () => {
   return (
-    <Flex w={'full'} justifyContent={'space-between'}>
-      <VStack w={'693px'} gap={5}>
+    <Flex w={'full'} justifyContent={'space-between'} flexDirection={{base:"column",md:"row"}}>
+      <VStack w={{base:"full",md:'693px'}} gap={5} >
         <HStack w={'full'} justifyContent={'space-between'}>
           <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
             Introduction
@@ -28,7 +28,7 @@ const DetailPage = () => {
         <Divider />
         <Flex w={'full'} gap={5}>
           <VStack alignItems={'flex-start'}>
-            <Image src={'/detail-1.png'} alt={'ımg'} w={'400px'} h={'300px'} />
+            <Image src={'/detail-1.png'} alt={'ımg'} w={{ base: "300px", md: '400px' }} h={{base:"150px",md:'300px'}} />
             <Text fontSize={'14px'} color={'#525252'} fontWeight={400}>
               This guide will show you how.
             </Text>
@@ -44,7 +44,7 @@ const DetailPage = () => {
             You can reply from the notifications that show up on your phone.
           </Text>
         </Flex>
-        <HStack w={'465px'} h={'48px'} bg={'#E9FFEC'} alignSelf={'flex-start'}>
+        <HStack w={{base:"full",md:'465px'}} h={'48px'} bg={'#E9FFEC'} alignSelf={'flex-start'}>
           <Image src={'/lamp-on.png'} alt={'lamp'} w={'24px'} h={'24px'} />
           <Text fontSize={'14px'} fontWeight={400} color={'#333333'}>
             Some of these steps work only on Android 8.0 and up.
@@ -62,39 +62,39 @@ const DetailPage = () => {
             1. Swipe down from the top edge of your Android device`s screen to
             see the Notification shade.
           </Text>
-          <Image src={'/detail-2.png'} alt={'ımg'} w={'200px'} h={'300px'} />
+          <Image src={'/detail-2.png'} alt={'ımg'} w={{base:"120px",md:'200px'}} h={{base:"150px",md:'300px'}} />
           <Text color={'#333333'} fontSize={'14px'} fontWeight={500}>
             1. Swipe down a second time for the full Quick Settings shade.
             Select the Settings icon near the top right.
           </Text>
-          <Image src={'/detail-3.png'} alt={'ımg'} w={'200px'} h={'300px'} />
+          <Image src={'/detail-3.png'} alt={'ımg'} w={{base:"120px",md:'200px'}} h={{base:"150px",md:'300px'}} />
         </VStack>
       </VStack>
       {item.map(element => (
-        <VStack alignSelf={'flex-start'} w={'389px'} gap={10} key={element.id}>
-          <VStack alignSelf={'flex-start'}>
+        <VStack alignSelf={{ base: "center", md: 'flex-start' }} w={{base:"full",md:'389px'}} gap={10} key={element.id} py={5}>
+          <VStack alignSelf={{ base: "center", md: 'flex-start' }} >
             <Text
-              fontSize={'19px'}
+              fontSize={{base:"15px",md:'19px'}}
               color={'#333333'}
               fontWeight={500}
-              alignSelf={'flex-start'}
+              alignSelf={{ base: "center", md: 'flex-start' }}
             >
               İçerik Bilgileri
             </Text>
-            <VStack alignSelf={'flex-start'} w={'full'}>
-              <HStack color={'#333333'} alignSelf={'flex-start'}>
+            <VStack alignSelf={{ base: "center", md: 'flex-start' }} w={'full'}>
+              <HStack color={'#333333'} alignSelf={{ base: "center", md: 'flex-start' }}>
                 <Image src={'/pen1.png'} alt={'pen'} w={'24px'} h={'24px'} />
                 <Text fontSize={'14px'} fontWeight={400}>
                   {element.writer}
                 </Text>
               </HStack>
-              <HStack color={'#333333'} alignSelf={'flex-start'}>
+              <HStack color={'#333333'} alignSelf={{ base: "center", md: 'flex-start' }}>
                 <Image src={'/book.png'} alt={'book'} w={'24px'} h={'24px'} />
                 <Text fontSize={'14px'} fontWeight={400}>
                   {element.reading}
                 </Text>
               </HStack>
-              <HStack color={'#333333'} alignSelf={'flex-start'}>
+              <HStack color={'#333333'} alignSelf={{ base: "center", md: 'flex-start' }}>
                 <Image
                   src={'/calendar1.png'}
                   alt={'calendar'}
@@ -107,16 +107,16 @@ const DetailPage = () => {
               </HStack>
             </VStack>
           </VStack>
-          <VStack alignSelf={'flex-start'}>
+          <VStack alignSelf={{ base: "center", md: 'flex-start' }}>
             <Text
-              alignSelf={'flex-start'}
+              alignSelf={{ base: "center", md: 'flex-start' }}
               fontSize={'19px'}
               color={'#333333'}
-              fontWeight={500}
+              fontWeight={500} display={{base:"none",md:"flex"}}
             >
               Bu içerik yardımcı oldu mu?
             </Text>
-            <HStack alignSelf={'flex-start'}>
+            <HStack alignSelf={{ base: "center", md: 'flex-start' }} display={{base:"none",md:"flex"}}>
               <HStack>
                 <Image src={'/dislike.png'} alt={'ımg'} w={'24px'} h={'24px'} />
                 <Text> Hayır</Text>
@@ -127,10 +127,10 @@ const DetailPage = () => {
               </HStack>
             </HStack>
           </VStack>
-          <VStack gap={2} alignSelf={'flex-start'}>
+          <VStack gap={2} alignSelf={{ base: "center", md: 'flex-start' }}>
             <Text
-              alignSelf={'flex-start'}
-              fontSize={'19px'}
+              alignSelf={{ base: "center", md: 'flex-start' }}
+              fontSize={{base:"15px",md:'19px'}}
               color={'#333333'}
               fontWeight={500}
             >
