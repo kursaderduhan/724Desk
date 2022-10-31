@@ -135,7 +135,7 @@ export const SignUp = () => {
           </Text>
         </VStack>
       </VStack>
-      <VStack bg={'#4F91CD'} minH={'100vh'} w={'full'} justifyContent={"space-between"}>
+      <VStack bg={'#4F91CD'} minH={'100vh'} w={'full'} justifyContent={"space-between"} display={{base:"none",md:"flex"}} flexDirection={"column"}>
         <VStack h={"full"} pt={{ xl:50,xxl:150}}>
         <Text fontSize={'46px'} fontWeight={600} color={'white'}>
           Çözüme anında ulaş!
