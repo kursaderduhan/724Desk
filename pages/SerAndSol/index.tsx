@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import Layout from '@components/Layout/Layout'
 import {
   Flex,
@@ -9,7 +9,10 @@ import {
   Box,
   Container,
   IconButton,
-  Button
+  Button,
+  InputGroup,
+  Input,
+  InputLeftElement
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import Service from '@components/SerAndSol/Service'
@@ -18,6 +21,7 @@ import Info from '@components/SerAndSol/Info'
 import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
 export const SerAndSol = () => {
+  const [searchSize, setSearchSize] = useState<boolean>(false)
   return (
     <Layout>
       <HStack
@@ -35,19 +39,21 @@ export const SerAndSol = () => {
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Servisler & Çözümler
           </Text>
-          <HStack w={'full'} justifyContent={'space-between'}>
+          <HStack w={'full'} justifyContent={'space-between'} alignItems={"center"}>
             <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
               Uzmanlarımız tarafından çözüme kavuşturulmuş problemleri
               inceleyerek kendi problemlerinizin çözümüne ulaşabilirsiniz.
             </Text>
-            <IconButton
-              as={SearchIcon}
+            <InputGroup w={searchSize == true ? "170px" : "20px" }>
+            <InputLeftElement
               aria-label={'search'}
               w={'20px'}
-              h={'20px'}
+             alignSelf={"center"}
               _hover={{ opacity: 0.5 }}
-              _active={{ bg: 'transparent' }}
-            ></IconButton>
+              _active={{ bg: 'transparent' }} onClick={() => searchSize == true ? setSearchSize(false) : setSearchSize(true) }
+              ><SearchIcon /></InputLeftElement>
+              <Input bg={searchSize ? "D2DFEB" : "transparent"} w={searchSize ? "170px" : "20px"} border={searchSize ? "1px solid" : "none"} borderColor={"black"} placeholder={"Ara"} />
+              </InputGroup>
           </HStack>
         </Container>
       </HStack>
