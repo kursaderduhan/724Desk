@@ -35,7 +35,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   return (
     <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
-        <Flex w={'100%'}>
+        <Flex w={'100%'} alignItems={"center"}>
           <Flex w={'100px'}>
             <Image
               src={'/724DeskLogo.png'}

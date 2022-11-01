@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 export const ServicePocket = () => {
-  const [smallScreen] = useMediaQuery(["(min-width:600px)"])
+  const [smallScreen] = useMediaQuery(["(max-width:572px)"])
   return (
     <Flex
       w={'full'}
