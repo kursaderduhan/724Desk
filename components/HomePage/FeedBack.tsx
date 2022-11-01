@@ -19,8 +19,11 @@ import {
 } from '@chakra-ui/react'
 import { IoIosArrowDropdown } from 'react-icons/io'
 import { ChevronDownIcon, SmallCloseIcon } from '@chakra-ui/icons'
-
+import Link from 'next/link'
+import { useStorken } from '@data/storken'
 export const FeedBack = () => {
+  const pagesName = useStorken<string>('pagesName')
+
   return (
     <Flex
       w={'full'}
@@ -28,22 +31,29 @@ export const FeedBack = () => {
       h={'full'}
       py={100}
       bg={'#E5E5E5'}
-      alignItems={{base:"center",md:'flex-start'}}
+      alignItems={{ base: 'center', md: 'flex-start' }}
       gap={5}
     >
-      <Container maxW={"1200px"}>
+      <Container maxW={'1200px'}>
         <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
           Geri Dönüşler
         </Text>
       </Container>
-      <Flex w={'full'} flexDirection={{base:"column",md:"row"}} pl={{md:'180px'}} gap={2} justifyContent={"center"} alignItems={"center"}>
+      <Flex
+        w={'full'}
+        flexDirection={{ base: 'column', md: 'row' }}
+        pl={{ md: '180px' }}
+        gap={2}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
         {Item.map(item => (
           <Flex
             key={item.key}
             bg={'#FFFFFF'}
             w={'277px'}
             h={'214px'}
-            rounded={5} 
+            rounded={5}
           >
             <VStack w={'full'} p={6}>
               <HStack w={'full'} justifyContent={'space-between'}>
@@ -91,18 +101,33 @@ export const FeedBack = () => {
             </VStack>
           </Flex>
         ))}
-        </Flex>
+      </Flex>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <Text fontWeight={500} fontSize={'23px'} color={'#525252'} py={10}>
-          Sıkça Sorulan Sorular
-        </Text>
-        <Accordion w={'full'} alignItems={{base:"center",md:'flex-start'}} justifyContent={"center"} display={"flex"} flexDirection={"column"} allowToggle>
-          <AccordionItem  w={{base:"343px",md:'100%'}}>
+        <Link href={'/PopulerQuestions'}>
+          <Text
+            fontWeight={500}
+            fontSize={'23px'}
+            color={'#525252'}
+            py={10}
+            onClick={() => pagesName.set('Sıkça Sorulan Sorular')}
+          >
+            Sıkça Sorulan Sorular
+          </Text>
+        </Link>
+        <Accordion
+          w={'full'}
+          alignItems={{ base: 'center', md: 'flex-start' }}
+          justifyContent={'center'}
+          display={'flex'}
+          flexDirection={'column'}
+          allowToggle
+        >
+          <AccordionItem w={{ base: '343px', md: '100%' }}>
             {({ isExpanded }) => (
               <>
                 <h2>
                   <AccordionButton
-                    w={{base:"343px",md:'full'}}
+                    w={{ base: '343px', md: 'full' }}
                     h={'60px'}
                     bg={'white'}
                     rounded={0}
@@ -129,7 +154,13 @@ export const FeedBack = () => {
                     )}
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10} w={{base:"343px",md:'full'}}>
+                <AccordionPanel
+                  pb={4}
+                  bg={'white'}
+                  rounded={0}
+                  px={10}
+                  w={{ base: '343px', md: 'full' }}
+                >
                   Bilişim teknolojileri alanında online platformlar aracılığıyla
                   anlık oluşabilecek her türlü problemi uzman ekibimizle çözüme
                   ulaştırmak.
@@ -137,13 +168,13 @@ export const FeedBack = () => {
               </>
             )}
           </AccordionItem>
-          <br/>
-          <AccordionItem  w={{base:"343px",md:'100%'}}>
+          <br />
+          <AccordionItem w={{ base: '343px', md: '100%' }}>
             {({ isExpanded }) => (
               <>
                 <h2>
                   <AccordionButton
-                    w={{base:"343px",md:'full'}}
+                    w={{ base: '343px', md: 'full' }}
                     h={'60px'}
                     bg={'white'}
                     rounded={0}
@@ -170,7 +201,13 @@ export const FeedBack = () => {
                     )}
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10} w={{base:"343px",md:'full'}}>
+                <AccordionPanel
+                  pb={4}
+                  bg={'white'}
+                  rounded={0}
+                  px={10}
+                  w={{ base: '343px', md: 'full' }}
+                >
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Magnam minima beatae accusamus id laudantium culpa excepturi,
                   facilis numquam officiis rerum? Distinctio dignissimos
@@ -180,13 +217,13 @@ export const FeedBack = () => {
               </>
             )}
           </AccordionItem>
-          <br/>
-          <AccordionItem  w={{base:"343px",md:'100%'}}>
+          <br />
+          <AccordionItem w={{ base: '343px', md: '100%' }}>
             {({ isExpanded }) => (
               <>
                 <h2>
                   <AccordionButton
-                    w={{base:"343px",md:'full'}}
+                    w={{ base: '343px', md: 'full' }}
                     h={'60px'}
                     bg={'white'}
                     rounded={0}
@@ -213,7 +250,13 @@ export const FeedBack = () => {
                     )}
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10} w={{base:"343px",md:'full'}}>
+                <AccordionPanel
+                  pb={4}
+                  bg={'white'}
+                  rounded={0}
+                  px={10}
+                  w={{ base: '343px', md: 'full' }}
+                >
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Magnam minima beatae accusamus id laudantium culpa excepturi,
                   facilis numquam officiis rerum? Distinctio dignissimos
@@ -223,18 +266,18 @@ export const FeedBack = () => {
               </>
             )}
           </AccordionItem>
-          <br/>
-          <AccordionItem  w={{base:"343px",md:'100%'}} >
+          <br />
+          <AccordionItem w={{ base: '343px', md: '100%' }}>
             {({ isExpanded }) => (
               <>
                 <h2>
                   <AccordionButton
-                    w={{base:"343px",md:'100%'}}
+                    w={{ base: '343px', md: '100%' }}
                     h={'60px'}
                     bg={'white'}
                     rounded={0}
                     justifyContent={'space-between'}
-                    px={10} 
+                    px={10}
                   >
                     <Box
                       flex='1'
@@ -257,7 +300,13 @@ export const FeedBack = () => {
                     )}
                   </AccordionButton>
                 </h2>
-                <AccordionPanel pb={4} bg={'white'} rounded={0} px={10} w={{base:"343px",md:'full'}}>
+                <AccordionPanel
+                  pb={4}
+                  bg={'white'}
+                  rounded={0}
+                  px={10}
+                  w={{ base: '343px', md: 'full' }}
+                >
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Magnam minima beatae accusamus id laudantium culpa excepturi,
                   facilis numquam officiis rerum? Distinctio dignissimos
