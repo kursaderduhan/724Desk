@@ -33,7 +33,7 @@ interface Size {
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   const size: Size = useWindowSize()
   return (
-    <Flex h={'full'} alignItems={'center'} p={5} w={'100%'}>
+    <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
         <Flex w={'100%'}>
           <Flex w={'100px'}>
@@ -97,7 +97,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
           </HStack>
         </Flex>
       )}
-      {size.width! < screen.MOBILE_SIZE && <MobileHeader />}
+      {size.width! < screen.MOBILE_SIZE && <Flex w={"full"}>{<MobileHeader />}</Flex>}
     </Flex>
   )
 }
@@ -119,6 +119,7 @@ const headerText: Array<headerProp> = [
 ]
 
 const MobileHeader = () => {
+
   const pagesName = useStorken<any>('pagesName')
   const changePagesName = (heading: any) => {
     pagesName.set(heading)
@@ -126,18 +127,24 @@ const MobileHeader = () => {
 
   return (
     <Flex w={'100%'}>
-      <Accordion allowMultiple w={'100%'}>
-        <AccordionItem border={'none'} w={'100%'}>
+      <Accordion allowMultiple w={"100%"} styleConfig={
+        {
+          baseStyle: {
+            width: '100%',
+          }
+        }
+      }>
+        <AccordionItem border={'none'} w={'100%'} >
           {({ isExpanded }) => (
-            <>
-              <h2>
+            <Flex flexDir={"column"} bgColor={"red"} w={"100%"}>
+
                 <Flex
                   alignItems={'center'}
                   w={'full'}
                   justifyContent={'space-between'}
                   px={5}
                 >
-                  <Box w={'full'}>
+                <Flex w={'full'} flexDir={"column"}>
                     {pagesName.v == 'Ana Sayfa' ? (
                       <Image
                         src={'/724DeskLogo.png'}
@@ -154,7 +161,7 @@ const MobileHeader = () => {
                         {pagesName.v}
                       </Text>
                     )}
-                  </Box>
+                </Flex>
                   <AccordionButton
                     alignSelf={'flex-end'}
                     w={'40px'}
@@ -170,7 +177,7 @@ const MobileHeader = () => {
                     )}
                   </AccordionButton>
                 </Flex>
-              </h2>
+
               <AccordionPanel w={'100%'}>
                 <Flex w={'100%'} flexDirection={'column'}>
                   <VStack
@@ -235,7 +242,7 @@ const MobileHeader = () => {
                   </VStack>
                 </Flex>
               </AccordionPanel>
-            </>
+            </Flex>
           )}
         </AccordionItem>
       </Accordion>
