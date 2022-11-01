@@ -33,7 +33,7 @@ interface Size {
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   const size: Size = useWindowSize()
   return (
-    <Flex h={'full'} alignItems={'center'} p={5} w={'100%'}>
+    <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
         <Flex w={'100%'}>
           <Flex w={'100px'}>
@@ -126,51 +126,53 @@ const MobileHeader = () => {
 
   return (
     <Flex w={'100%'}>
-      <Accordion allowMultiple w={'100%'}>
+      <Accordion
+        allowMultiple
+        w={'100%'}
+        styleConfig={{
+          baseStyle: {
+            width: '100%'
+          }
+        }}
+      >
         <AccordionItem border={'none'} w={'100%'}>
           {({ isExpanded }) => (
             <>
-              <h2>
-                <Flex
+              <Flex
+                alignItems={'center'}
+                w={'full'}
+                justifyContent={'space-between'}
+                h={10}
+                px={5}
+              >
+                <Box w={'full'}>
+                  {pagesName.v == 'Ana Sayfa' ? (
+                    <Image
+                      src={'/724DeskLogo.png'}
+                      alt={'desk-ıcon'}
+                      w={'77px'}
+                      h={'24px'}
+                    />
+                  ) : (
+                    <Text fontSize={'15px'} fontWeight={500} color={'#333333'}>
+                      {pagesName.v}
+                    </Text>
+                  )}
+                </Box>
+                <AccordionButton
+                  w={'40px'}
                   alignItems={'center'}
-                  w={'full'}
-                  justifyContent={'space-between'}
-                  px={5}
+                  justifyContent={'center'}
                 >
-                  <Box w={'full'}>
-                    {pagesName.v == 'Ana Sayfa' ? (
-                      <Image
-                        src={'/724DeskLogo.png'}
-                        alt={'desk-ıcon'}
-                        w={'77px'}
-                        h={'24px'}
-                      />
-                    ) : (
-                      <Text
-                        fontSize={'15px'}
-                        fontWeight={500}
-                        color={'#333333'}
-                      >
-                        {pagesName.v}
-                      </Text>
-                    )}
-                  </Box>
-                  <AccordionButton
-                    alignSelf={'flex-end'}
-                    w={'40px'}
-                    alignItems={'center'}
-                    justifyContent={'center'}
-                  >
-                    {isExpanded ? (
-                      <Circle border={'1px solid gray'} overflow={'hidden'}>
-                        <Icon as={CloseIcon} />
-                      </Circle>
-                    ) : (
-                      <Icon as={HamburgerIcon} />
-                    )}
-                  </AccordionButton>
-                </Flex>
-              </h2>
+                  {isExpanded ? (
+                    <Circle border={'1px solid gray'} overflow={'hidden'}>
+                      <Icon as={CloseIcon} />
+                    </Circle>
+                  ) : (
+                    <Icon as={HamburgerIcon} />
+                  )}
+                </AccordionButton>
+              </Flex>
               <AccordionPanel w={'100%'}>
                 <Flex w={'100%'} flexDirection={'column'}>
                   <VStack
@@ -181,7 +183,11 @@ const MobileHeader = () => {
                     gap={5}
                   >
                     <Link href={'/SignIn'}>
-                      <Button variant={'globalButton'} w={'237px'} onClick={() => pagesName.set("Kayıt ol")}>
+                      <Button
+                        variant={'globalButton'}
+                        w={'237px'}
+                        onClick={() => pagesName.set('Kayıt ol')}
+                      >
                         Kayıt Ol
                       </Button>
                     </Link>
@@ -191,7 +197,8 @@ const MobileHeader = () => {
                           variant={'headerButton'}
                           bg={'transparent'}
                           color={'light.100'}
-                          w={'111px'} onClick={() => pagesName.set("Uzmanlar İçin")}
+                          w={'111px'}
+                          onClick={() => pagesName.set('Uzmanlar İçin')}
                         >
                           Uzmanlar İçin
                         </Button>
@@ -201,7 +208,8 @@ const MobileHeader = () => {
                           variant={'headerButton'}
                           bg={'transparent'}
                           color={'light.100'}
-                          w={'111px'} onClick={() => pagesName.set("Giriş Yap")}
+                          w={'111px'}
+                          onClick={() => pagesName.set('Giriş Yap')}
                         >
                           Giriş Yap
                         </Button>
