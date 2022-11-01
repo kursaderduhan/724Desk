@@ -223,20 +223,20 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               columns={{ base: 4, md: 8 }}
               w={'full'}
               justifyContent={'center'}
-              gap={5}
+              gap={5} alignItems={"center"}
             >
-              <Image src={'/visa-logo.png'} alt={'ımg'} w={'49px'} h={'15px'} />
+              <Image src={HomePage ? '/visa-logo.png' : '/visa-blue.png'} alt={'ımg'} w={'49px'} h={'15px'} />
               <Image
                 src={'/Mastercard.png'}
                 alt={'ımg'}
                 w={'45px'}
                 h={'28px'}
               />
-              <Image src={'/GooglePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
-              <Image src={'/ApplePay.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+              <Image src={HomePage ? '/GooglePay.png' : '/GooglePay-blue.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+              <Image src={HomePage ? '/ApplePay.png' : 'ApplePay-gray.png'} alt={'ımg'} w={'50px'} h={'21px'} />
               <Image src={'/PayPal.png'} alt={'ımg'} w={'22px'} h={'27px'} />
               <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
-              <Image src={'/Payoneer.png'} alt={'ımg'} w={'55px'} h={'20px'} />
+              <Image src={HomePage ? '/Payoneer.png' : '/Payoneer-gray.png'} alt={'ımg'} w={'55px'} h={'20px'} />
               <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
             </SimpleGrid>
           </Center>
