@@ -17,10 +17,15 @@ import {
 import Link from 'next/link'
 import Footer from '@components/Footer/Footer'
 
-export const Ticket = () => {
+export const Ticket = ({ searchPages = false }: { searchPages: any }) => {
   const [less, setLess] = useState<string>('none')
+  const result = () => {
+    if (searchPages == true) {
+      return ""
+    } else { return "Layout" }
+  }
   return (
-    <Layout>
+    <>
       <HStack
         h={'196px'}
         bg={'#E5EDF4'}
@@ -30,7 +35,7 @@ export const Ticket = () => {
         justifyContent={'flex-end'}
         gap={5}
         py={10}
-        display={{ base: 'none', md: 'flex' }}
+        display={{ base: 'none', md: searchPages ? 'none':'flex' }}
       >
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <Text
@@ -51,13 +56,13 @@ export const Ticket = () => {
           </Text>
         </Container>
       </HStack>
-      <VStack py={50} justifyContent={'center'} bg={'#F7FCFE'}>
+      <VStack py={searchPages ? 0 : 50} justifyContent={'center'} bg={'#F7FCFE'}>
         <VStack
           alignItems={'flex-start'}
           w={{ base: '343px', md: '800px' }}
           gap={{ base: 3, md: 10 }}
         >
-          <Flex flexDirection={'column'}>
+          <Flex flexDirection={'column'} display={searchPages ? "none" : "flex"}>
             <Text
               fontSize={{ base: '19px', md: '23px' }}
               fontWeight={500}
@@ -216,7 +221,7 @@ export const Ticket = () => {
         </VStack>
         <Footer />
       </VStack>
-    </Layout>
+    </>
   )
 }
 

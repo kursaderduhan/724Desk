@@ -36,8 +36,7 @@ const Home: NextPage = () => {
   }
   const searchPage = (e: any) => {
     if (e.key === 'Enter') {
-      search.v == '' && alert('Arama Boş Olamaz')
-      search.v == 'trade yapmak' && router.push('/Search')
+      search.v == '' ? alert('Arama Boş Olamaz') : router.push('/Search')
     }
   }
   return (

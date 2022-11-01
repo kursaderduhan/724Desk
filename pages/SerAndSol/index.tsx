@@ -12,7 +12,8 @@ import {
   Button,
   InputGroup,
   Input,
-  InputLeftElement
+  InputLeftElement,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import Service from '@components/SerAndSol/Service'
@@ -22,6 +23,7 @@ import Footer from '@components/Footer/Footer'
 import Link from 'next/link'
 export const SerAndSol = () => {
   const [searchSize, setSearchSize] = useState<boolean>(false)
+  const [smallScreen] = useMediaQuery("(max-width:572px)")
   return (
     <Layout>
       <HStack
@@ -68,9 +70,8 @@ export const SerAndSol = () => {
             textAlign={'center'}
             display={{ base: 'none', md: 'flex' }}
           >
-            <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
-            ve destek talebinizi
-            <br /> karşılayabileceğiniz çevrimiçi destek platformdur.
+            <span style={{ color: '#F27C00' }}>724Desk,</span>her türlü bilgi
+            ve destek talebinizi<br />karşılayabileceğiniz çevrimiçi destek platformdur.
           </Text>
           <HStack
             w={'full'}

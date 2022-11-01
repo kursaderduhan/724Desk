@@ -20,12 +20,17 @@ import {
 import { WarningIcon } from '@chakra-ui/icons'
 import DetailPage from '@components/Search/DetailPage'
 import { useStorken } from '@data/storken'
+import Ticket from '@pages/SupportRequest/Ticket'
 export const Search = () => {
   const [supportButton, setSupportButton] = useState<boolean>(false)
   const [feedBack, setFeedBack] = useState<boolean>(false)
   const [detailPage, setDetailPage] = useState<boolean>(false)
   const searchPage = useStorken<string>('search')
-  // const resultPage = item.filter(datas => datas.headName == searchPage.v)
+  let expr = new RegExp(searchPage.v.toLowerCase(), "")
+  const resultPage = item.filter(elem => Object.keys(searchPage.v).some(key => {
+    return elem.headName[Number(key)] == searchPage.v[Number(key)]
+  }))
+  console.log("bu result:" , resultPage)
   return (
     <Layout>
       <HStack
@@ -52,16 +57,17 @@ export const Search = () => {
       <VStack bg={'#F7FCFE'} py={10}>
         <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
           <VStack>
-            {detailPage === false ? (
+            {!detailPage ? (
               <VStack>
                 <Text fontSize={{base:"19px",md:'23px'}} color={'#333333'} fontWeight={500}>
-                  “Trade yapmak” ile ilgili makale sonuçları
+                  “{searchPage.v}” ile ilgili makale sonuçları
                 </Text>
                 <Text fontSize={{base:"12px",md:'15px'}} color={'#959595'} fontWeight={400}>
-                  Bu anahtar kelime ile ilgili 7 arama sonucu bulunmuştur.
+                  Bu anahtar kelime ile ilgili {resultPage.length != 0 && resultPage.length } arama sonucu  {resultPage.length == 0 ? "bulunamamıştır." : "bulunmuştur." }
                 </Text>
                 <VStack py={5} gap={5}>
-                  {item.map(ıtem => (
+                  {resultPage.length != 0 ?
+                  item.map(ıtem => (
                     <HStack
                       key={ıtem.id}
                       w={{base:"343px",md:'794px'}}
@@ -102,25 +108,25 @@ export const Search = () => {
                         rounded={10}
                       />
                     </HStack>
-                  ))}
+                  )) : <Ticket searchPages/> }
                 </VStack>
               </VStack>
             ) : (
               <DetailPage />
             )}
             <VStack
-              w={'794px'}
-              h={supportButton === false ? '257px' : '894px'}
+              w={{base:"full",md:'794px'}}
+              h={!supportButton ? '257px' : '894px'}
               bg={'white'}
               rounded={10}
               justifyContent={
-                supportButton === false ? 'center' : 'space-around'
+                !supportButton ? 'center' : 'space-around'
               }
               gap={2}
             >
               <VStack>
                 <Text>Was this content helpful?</Text>
-                {feedBack === false ? (
+                {!feedBack ? (
                   <HStack gap={5}>
                     <HStack
                       cursor={'pointer'}
@@ -276,7 +282,7 @@ export const Search = () => {
 export default Search
 
 interface itemProps {
-  id: number
+  id: any
   headName: string
   description: string
   ımage: string
