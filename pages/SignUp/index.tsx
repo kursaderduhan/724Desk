@@ -13,9 +13,11 @@ import {
   ButtonGroup
 } from '@chakra-ui/react'
 import Link from 'next/link'
-
+import { useStorken } from '@data/storken'
 export const SignUp = () => {
   const [userChoose, setUserChoose] = useState<any>()
+  const pagesName = useStorken<any>('pagesName')
+
   return (
     <Flex w={'full'} minH={'100vh'} alignItems={'center'}>
       <VStack w={'583px'} justifyContent={'center'} align={'center'} h={'full'}>
@@ -35,39 +37,39 @@ export const SignUp = () => {
             </Text>
             <HStack w={'full'} bg={'#D0DDE7'} rounded={5}>
               <ButtonGroup>
-              <Button bg={'#2C4EC6'} w={'75px'}>
-                <Image
-                  src='/signUp-profile.png'
-                  alt={'profile'}
-                  w={'24px'}
-                  h={'24px'}
-                />
-              </Button>
-              <Button bg={'transparent'} w={'75px'}>
-                <Image
-                  src='/signUp-sms.png'
-                  alt={'sms'}
-                  w={'24px'}
-                  h={'24px'}
-                />
-              </Button>
-              <Button bg={'transparent'} w={'75px'}>
-                <Image
-                  src='/signUp-call.png'
-                  alt={'call'}
-                  w={'24px'}
-                  h={'24px'}
-                />
-              </Button>
-              <Button bg={'transparent'} w={'75px'}>
-                <Image
-                  src={'/signUp-mobile.png'}
-                  alt={'mobile'}
-                  w={'24px'}
-                  h={'24px'}
-                />
+                <Button bg={'#2C4EC6'} w={'75px'}>
+                  <Image
+                    src='/signUp-profile.png'
+                    alt={'profile'}
+                    w={'24px'}
+                    h={'24px'}
+                  />
                 </Button>
-                </ButtonGroup>
+                <Button bg={'transparent'} w={'75px'}>
+                  <Image
+                    src='/signUp-sms.png'
+                    alt={'sms'}
+                    w={'24px'}
+                    h={'24px'}
+                  />
+                </Button>
+                <Button bg={'transparent'} w={'75px'}>
+                  <Image
+                    src='/signUp-call.png'
+                    alt={'call'}
+                    w={'24px'}
+                    h={'24px'}
+                  />
+                </Button>
+                <Button bg={'transparent'} w={'75px'}>
+                  <Image
+                    src={'/signUp-mobile.png'}
+                    alt={'mobile'}
+                    w={'24px'}
+                    h={'24px'}
+                  />
+                </Button>
+              </ButtonGroup>
             </HStack>
           </Flex>
           <Text
@@ -84,20 +86,22 @@ export const SignUp = () => {
                 Kullanıcı Adı
               </Text>
             </FormLabel>
-            <Input placeholder={''} bg={"#F1F9FE"} />
+            <Input placeholder={''} bg={'#F1F9FE'} />
           </InputGroup>
-          <Link href={"/"}>
-          <Button
-            bg={'#2C4EC6'}
-            color={'white'}
-            gap={2}
-            fontSize={'13px'}
-            fontWeight={500} _hover={{opacity:0.8}}
-          >
-            <Image src={'/lock.png'} alt={'lock'} w={'18px'} h={'18px'} />
-            Giriş Yap
+          <Link href={'/'}>
+            <Button
+              bg={'#2C4EC6'}
+              color={'white'}
+              gap={2}
+              fontSize={'13px'}
+              fontWeight={500}
+              _hover={{ opacity: 0.8 }}
+              onClick={() => pagesName.set('Ana Sayfa')}
+            >
+              <Image src={'/lock.png'} alt={'lock'} w={'18px'} h={'18px'} />
+              Giriş Yap
             </Button>
-            </Link>
+          </Link>
           <HStack w={'full'}>
             <Divider />
             <Text alignSelf={'center'}>Yada</Text>
@@ -135,14 +139,28 @@ export const SignUp = () => {
           </Text>
         </VStack>
       </VStack>
-      <VStack bg={'#4F91CD'} minH={'100vh'} w={'full'} justifyContent={"space-between"} display={{base:"none",md:"flex"}} flexDirection={"column"}>
-        <VStack h={"full"} pt={{ xl:50,xxl:150}}>
-        <Text fontSize={'46px'} fontWeight={600} color={'white'}>
-          Çözüme anında ulaş!
-        </Text>
-        <Text fontSize={'19px'} fontWeight={400} color={'white'} textAlign={"center"}>
-          Çevrimiçi uzmanlarımızla iletişime geçerek anında <br/> destek alın.
-        </Text></VStack>
+      <VStack
+        bg={'#4F91CD'}
+        minH={'100vh'}
+        w={'full'}
+        justifyContent={'space-between'}
+        display={{ base: 'none', md: 'flex' }}
+        flexDirection={'column'}
+      >
+        <VStack h={'full'} pt={{ xl: 50, xxl: 150 }}>
+          <Text fontSize={'46px'} fontWeight={600} color={'white'}>
+            Çözüme anında ulaş!
+          </Text>
+          <Text
+            fontSize={'19px'}
+            fontWeight={400}
+            color={'white'}
+            textAlign={'center'}
+          >
+            Çevrimiçi uzmanlarımızla iletişime geçerek anında <br /> destek
+            alın.
+          </Text>
+        </VStack>
         <Image
           src={'/sıgnUp-man.png'}
           alt={'man'}
