@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo,useState } from 'react'
 import {
   VStack,
   Text,
@@ -12,7 +12,15 @@ import {
 } from '@chakra-ui/react'
 import Layout from '@components/Layout/Layout'
 import Footer from '@components/Footer/Footer'
+import BecameAnExpert from '@components/BecameAnExperts/BecomeAnExpert'
+import ExpertsDetail from '@components/BecameAnExperts/ExpertsDetail'
 export const BecomeAnExpert = () => {
+  const [sendForm, setSendForm] = useState("")
+  const [formDetail, setFormDetail] = useState("none")
+  const openDetail = () => {
+    sendForm == "" && setSendForm("none")
+    formDetail == "none" && setFormDetail("")
+  }
   return (
     <Layout>
       <VStack
@@ -33,7 +41,8 @@ export const BecomeAnExpert = () => {
           </Text>
         </Container>
       </VStack>
-      <Flex justifyContent={'center'} py={10} flexDirection={"column"} gap={10}>
+      <Flex justifyContent={'center'} py={10} flexDirection={"column"} gap={10} w={"full"}>
+        <Container maxW={"794px"}>
         <VStack alignItems={"flex-start"} gap={2} px={5}>
           <Text
             fontSize={'23px'}
@@ -46,18 +55,15 @@ export const BecomeAnExpert = () => {
           <Text fontSize={'15px'} fontWeight={400} color={'#959595'}>
             Uzman olmak için aşağıdaki formu doldurun ve hemen başvuru yapın!
           </Text>
-          <Flex alignItems={"center"} flexDirection={{base:"column",md:"row"}} alignSelf={"center"} gap={2}>
-            <InputGroup flexDirection={'column'} w={{base:"343px",md:"200px"}}>
-              <FormLabel>Ad Soyad</FormLabel>
-              <Input placeholder={'Fatih Demirkan'} />
-            </InputGroup>
-            <InputGroup flexDirection={'column'} w={{base:"343px",md:"200px"}}>
-              <FormLabel>Telefon Numarası</FormLabel>
-              <Input placeholder={'örn. +90 534 936 3296'} />
-            </InputGroup>
+          <Flex display={sendForm}>
+            <BecameAnExpert/>
           </Flex>
-          <Button variant={'globalButton'} w={{base:"343px",md:"200px"}} alignSelf={"center"}>Gönder</Button>
-        </VStack>
+          <Flex display={formDetail}>
+            <ExpertsDetail/>
+          </Flex>
+          <Button variant={'globalButton'} w={{base:"343px",md:"200px"}} alignSelf={"center"} onClick={openDetail}>Gönder</Button>
+          </VStack>
+          </Container>
         <Footer/>
       </Flex>
     </Layout>
