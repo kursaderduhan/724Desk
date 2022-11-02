@@ -60,7 +60,7 @@ const name = (pageData: any) => {
               {content.detail}
             </Text>
           </HStack>
-        </Container>
+        </Container> 
       </HStack>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         {/* <UserContract/> */}

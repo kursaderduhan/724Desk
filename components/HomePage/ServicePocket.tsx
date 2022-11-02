@@ -7,9 +7,6 @@ import {
   Image,
   Button,
   Container,
-  Box,
-  SimpleGrid,
-  useMediaQuery
 } from '@chakra-ui/react'
 import Link from 'next/link'
 export const ServicePocket = () => {

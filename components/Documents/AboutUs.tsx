@@ -7,7 +7,7 @@ const AboutUs = () => {
       <Text fontSize={'33px'} fontWeight={500} color={'#333333'}>
         Hakkımızda
       </Text>
-      <Text w={'693px'} fontSize={"14px"} color="#333333" fontWeight={400}>
+      <Text w={{base:"full",md:'693px'}} fontSize={"14px"} color="#333333" fontWeight={400}>
         Dijital araçların her alanda kullanımının arttığı günümüzde her türlü
         konuda bilgi ve destek ihtiyaçları, insanların problemlerine çözüm bulma
         arayışları, online ve offline ortamlar için katlanarak büyümektedir. Bu

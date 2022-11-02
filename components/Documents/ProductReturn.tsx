@@ -13,7 +13,7 @@ const ProductReturn = () => {
       <Text fontSize={'33px'} fontWeight={500} color={'#333333'}>
         Ürün İade Kuralları
       </Text>
-      <Text w={'693px'} fontSize={'14px'} color='#333333' fontWeight={400}>
+      <Text  w={{base:"full",md:'693px'}} fontSize={'14px'} color='#333333' fontWeight={400}>
         This Privacy Notice describes how 724Desk collects and processes your
         personal information through the 724Desk websites and applications that
         reference this Privacy Notice. 724Desk refers to an ecosystem comprising
@@ -41,12 +41,12 @@ const ProductReturn = () => {
         <br />
         <br />
       </Text>
-      <Text w={'693px'} fontSize={'15px'} color='black' fontWeight={500}>
+      <Text  w={{base:"full",md:'693px'}} fontSize={'15px'} color='black' fontWeight={500}>
         1. What Personal Information does 724Desk collect and process? Why does
         724Desk process my personal information ? What are the legal basis for
         our use of personal information?
       </Text>
-      <VStack w={'693px'} alignItems={'flex-start'} alignSelf={'flex-start'}>
+      <VStack  w={{base:"full",md:'693px'}} alignItems={'flex-start'} alignSelf={'flex-start'}>
         <Text fontSize={'15px'} color='#333333' fontWeight={500}>
           What personal information does Binance collect and process?
         </Text>
@@ -67,7 +67,7 @@ const ProductReturn = () => {
           <ListItem>a video recording of you;</ListItem>
         </UnorderedList>
       </VStack>
-      <VStack w={'693px'} alignItems={'flex-start'} alignSelf={'flex-start'}>
+      <VStack  w={{base:"full",md:'693px'}} alignItems={'flex-start'} alignSelf={'flex-start'}>
         <Text fontSize={'15px'} color='#333333' fontWeight={500}>
           Why does 724Desk process my personal information?
         </Text>
@@ -93,17 +93,17 @@ const ProductReturn = () => {
           </ListItem>
         </UnorderedList>
       </VStack>
-      <Text fontSize={'15px'} color='#333333' fontWeight={500} w={'693px'}>
+      <Text fontSize={'15px'} color='#333333' fontWeight={500}  w={{base:"full",md:'693px'}}>
         Legal Basis for our use of personal information (EU and UK GDPR)
       </Text>
-      <Text fontSize={'15px'} color='#333333' fontWeight={400} w={'693px'}>
+      <Text fontSize={'15px'} color='#333333' fontWeight={400}  w={{base:"full",md:'693px'}}>
         <span style={{ fontWeight: '500' }}> Performance of a contract</span>
         when we provide you with products or services, or communicate with you
         about them. This includes when we use your personal information to take
         and handle orders, and process payments.
       </Text>
       <VStack alignItems={'flex-start'} alignSelf={'flex-start'}>
-        <Text w={'693px'} fontSize={'15px'} color='black' fontWeight={500}>
+        <Text  w={{base:"full",md:'693px'}} fontSize={'15px'} color='black' fontWeight={500}>
           2. Can Children Use 724Desk Services?
         </Text>
         <Text color={'#525252'} fontSize={'14px'} fontWeight={400}>
@@ -111,8 +111,8 @@ const ProductReturn = () => {
           Services.
         </Text>
       </VStack>
-      <VStack alignItems={'flex-start'} alignSelf={'flex-start'} w={'693px'}>
-        <Text w={'693px'} fontSize={'15px'} color='black' fontWeight={500}>
+      <VStack alignItems={'flex-start'} alignSelf={'flex-start'}  w={{base:"full",md:'693px'}}>
+        <Text  w={{base:"full",md:'693px'}} fontSize={'15px'} color='black' fontWeight={500}>
           3. What About Cookies and Other Identifiers?
         </Text>
         <Text color={'#525252'} fontSize={'14px'} fontWeight={400}>
@@ -122,8 +122,8 @@ const ProductReturn = () => {
           you how to accept or refuse cookies.
         </Text>
       </VStack>
-      <VStack w={'693px'} alignItems={'flex-start'} alignSelf={'flex-start'}>
-        <Text w={'693px'} fontSize={'15px'} color='black' fontWeight={500}>
+      <VStack  w={{base:"full",md:'693px'}} alignItems={'flex-start'} alignSelf={'flex-start'}>
+        <Text  w={{base:"full",md:'693px'}}fontSize={'15px'} color='black' fontWeight={500}>
           4. Does 724Desk Share My Personal Information?
         </Text>
         <Text color={'#525252'} fontSize={'14px'} fontWeight={400}>
