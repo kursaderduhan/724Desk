@@ -6,7 +6,6 @@ import {
   VStack,
   Image,
   Text,
-  UnorderedList,
   ListItem,
   List,
   Container,
@@ -17,6 +16,7 @@ import Link from 'next/link'
 import { useStorken } from '@data/storken'
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
   const pagesName = useStorken<any>('pagesName')
+  // const infoPage = useStorken<any>('infoPage')
   return (
     <Box
       bgImage={HomePage ? '/footerBg.png' : '#E5E5E5'}
@@ -194,26 +194,15 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               </VStack>
               <VStack alignItems={'flex-start'}>
                 <List spacing={2}>
-                  <ListItem>Sunucu Yönetimi</ListItem>
-                  <ListItem>Yazılım Geliştirme</ListItem>
-                  <ListItem>Network</ListItem>
-                  <ListItem>Siber Güvenlik</ListItem>
-                  <Link href={'/DeskToken'}>
-                    <ListItem
-                      cursor={'pointer'}
-                      onClick={() => pagesName.set('Desk Token')}
-                    >
-                      Desk Token
-                    </ListItem>
-                  </Link>
-                  <Link href={'/Reference'}>
-                    <ListItem
-                      cursor={'pointer'}
-                      onClick={() => pagesName.set('Referans')}
-                    >
-                      Referans Programı
-                    </ListItem>
-                  </Link>
+                  {ListData.map((item, index) => {
+                    return (
+                      <Link href={'/Info/' + item.link} key={index}>
+                        <ListItem key={index} cursor={'pointer'}>
+                          {item.name}
+                        </ListItem>
+                      </Link>
+                    )
+                  })}
                 </List>
               </VStack>
             </SimpleGrid>
@@ -223,20 +212,41 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
               columns={{ base: 4, md: 8 }}
               w={'full'}
               justifyContent={'center'}
-              gap={5} alignItems={"center"}
+              gap={5}
+              alignItems={'center'}
             >
-              <Image src={HomePage ? '/visa-logo.png' : '/visa-blue.png'} alt={'ımg'} w={'49px'} h={'15px'} />
+              <Image
+                src={HomePage ? '/visa-logo.png' : '/visa-blue.png'}
+                alt={'ımg'}
+                w={'49px'}
+                h={'15px'}
+              />
               <Image
                 src={'/Mastercard.png'}
                 alt={'ımg'}
                 w={'45px'}
                 h={'28px'}
               />
-              <Image src={HomePage ? '/GooglePay.png' : '/GooglePay-blue.png'} alt={'ımg'} w={'50px'} h={'21px'} />
-              <Image src={HomePage ? '/ApplePay.png' : 'ApplePay-gray.png'} alt={'ımg'} w={'50px'} h={'21px'} />
+              <Image
+                src={HomePage ? '/GooglePay.png' : '/GooglePay-blue.png'}
+                alt={'ımg'}
+                w={'50px'}
+                h={'21px'}
+              />
+              <Image
+                src={HomePage ? '/ApplePay.png' : 'ApplePay-gray.png'}
+                alt={'ımg'}
+                w={'50px'}
+                h={'21px'}
+              />
               <Image src={'/PayPal.png'} alt={'ımg'} w={'22px'} h={'27px'} />
               <Image src={'/Skrill.png'} alt={'ımg'} w={'50px'} h={'17px'} />
-              <Image src={HomePage ? '/Payoneer.png' : '/Payoneer-gray.png'} alt={'ımg'} w={'55px'} h={'20px'} />
+              <Image
+                src={HomePage ? '/Payoneer.png' : '/Payoneer-gray.png'}
+                alt={'ımg'}
+                w={'55px'}
+                h={'20px'}
+              />
               <Image src={'/Bitcoin.png'} alt={'ımg'} w={'32px'} h={'32px'} />
             </SimpleGrid>
           </Center>
@@ -250,3 +260,48 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
 }
 
 export default memo(Footer)
+
+export const ListData = [
+  {
+    id: 0,
+    name: 'Sunucu Yönetimi',
+    link: 'SunucuYonetimi',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  },
+  {
+    id: 1,
+    name: 'Yazılım Geliştirme',
+    link: 'YazilimGelistirme',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  },
+  {
+    id: 2,
+    name: 'Network',
+    link: 'Network',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  },
+  {
+    id: 3,
+    name: 'Siber Güvenlik',
+    link: 'SiberGuvenlik',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  },
+  {
+    id: 4,
+    name: 'Desk Token',
+    link: 'DeskToken',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  },
+  {
+    id: 5,
+    name: 'Referans Programı',
+    link: 'Reference',
+    detail:
+      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+  }
+]

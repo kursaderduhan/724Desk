@@ -34,20 +34,24 @@ export const DataBase = () => {
               <Image
                 src={'/DataBase-Img.png'}
                 alt={'ımg'}
-                w={{base:"343px",md:'491px'}}
-                h={{base:"192px",md:'276px'}}
+                w={{ base: '343px', md: '491px' }}
+                h={{ base: '192px', md: '276px' }}
                 cursor={'pointer'}
               />
             </Link>
             <VStack alignItems={'flex-start'}>
-              <Text fontWeight={500} fontSize={{base:"19px",md:'33px'}} color={'#333333'}>
+              <Text
+                fontWeight={500}
+                fontSize={{ base: '19px', md: '33px' }}
+                color={'#333333'}
+              >
                 İşte Dev Balinaların En Çok Trade Et...
               </Text>
               <Text
                 color={'#666666'}
                 fontSize={'14px'}
                 fontWeight={400}
-                maxW={{base:"full",md:'655px'}}
+                maxW={{ base: 'full', md: '655px' }}
               >
                 Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin
                 projesinde devasa balina satın alımlarına şahit oldu. Balinalar
@@ -63,17 +67,25 @@ export const DataBase = () => {
               </Text>
             </VStack>
           </Flex>
-          <SimpleGrid columns={{ base: 2, md: 4 }} w={'full'} py={{base:5,md:50}} justifyContent={"center"} alignItems={"center"} gap={5}>
+          <SimpleGrid
+            columns={{ base: 2, md: 4 }}
+            w={'full'}
+            py={{ base: 5, md: 50 }}
+            justifyContent={'center'}
+            alignItems={'center'}
+            gap={5}
+          >
             {Item.map(items => (
               <Box
                 key={items.Key}
-                w={{base:"164px",md:'288px'}}
+                w={{ base: '164px', md: '288px' }}
                 h={'162px'}
                 bgImage={items.Image}
                 bgPos={'center'}
                 bgSize={'cover'}
                 display={'flex'}
-                py={5} rounded={10}
+                py={5}
+                rounded={10}
               >
                 <Text
                   fontSize={'15px'}
@@ -91,7 +103,7 @@ export const DataBase = () => {
           </SimpleGrid>
         </Container>
       </VStack>
-      <VStack w={'full'} py={{base:5,md:50}}>
+      <VStack w={'full'} py={{ base: 5, md: 50 }}>
         <HStack w={'full'} display={'flex'} alignSelf={'flex-end'}>
           <HStack
             w={'full'}
@@ -99,12 +111,19 @@ export const DataBase = () => {
             justifyContent={'flex-end'}
             pos={'relative'}
           >
-            <Flex zIndex={1} pos={{ base: "initial", md: 'absolute' }} justifyContent={{ base: "center", md: "flex-start" }} pl={{base:"",md:"200px"}} alignItems={"flex-start"} w={"full"}>
+            <Flex
+              zIndex={1}
+              pos={{ base: 'initial', md: 'absolute' }}
+              justifyContent={{ base: 'center', md: 'flex-start' }}
+              pl={{ base: '', md: '200px' }}
+              alignItems={'flex-start'}
+              w={'full'}
+            >
               <Image
                 src={'/DataBaseWomen.png'}
                 alt={'women'}
-                w={{base:"324px",md:'624px'}}
-                h={{base:"326px",md:'630px'}}
+                w={{ base: '324px', md: '624px' }}
+                h={{ base: '326px', md: '630px' }}
                 zIndex={1}
                 display={'flex'}
               />
@@ -115,7 +134,8 @@ export const DataBase = () => {
               w={'1075px'}
               h={'491px'}
               justifyContent={'center'}
-              borderLeftRadius={'full'} display={{base:"none",md:"flex"}}
+              borderLeftRadius={'full'}
+              display={{ base: 'none', md: 'flex' }}
             >
               <HStack w={'480px'}>
                 <Image
@@ -209,7 +229,7 @@ export const DataBase = () => {
         </HStack>
       </VStack>
       <VStack>
-        <Container maxW={"1200px"}>
+        <Container maxW={'1200px'}>
           <Text
             fontWeight={500}
             fontSize={'23px'}
@@ -219,14 +239,30 @@ export const DataBase = () => {
             Destek Kanalları
           </Text>
         </Container>
-        <SimpleGrid gap='1' w={'full'} pl={{base:"",md:'175'}} px={2} columns={{base:2,md:4}}>
+        <Flex
+          gap='1'
+          w={'full'}
+          pl={{ base: '', md: '175' }}
+          px={2}
+          style={{
+            display: 'flex',
+            flexWrap: 'nowrap',
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: '-ms-autohiding-scrollbar'
+          }}
+        >
           {categories.map(categories => (
             <Box
               key={categories.key}
-              w={{base:"164px",md:'288px'}}
-              h={{base:"125px",md:'223px'}}
+              w={{ base: '164px', md: '288px' }}
+              h={{ base: '125px', md: '223px' }}
               bg={categories.bg}
               rounded={15}
+              style={{
+                flex: '0 0 auto',
+                flexWrap: 'nowrap'
+              }}
             >
               <HStack w={'full'} h={'full'} pos={'relative'}>
                 <VStack
@@ -242,10 +278,17 @@ export const DataBase = () => {
                     w={'42px'}
                     h={'42px'}
                   />
-                  <Text fontSize={{base:"15px",md:'23px'}} fontWeight={500}>
+                  <Text
+                    fontSize={{ base: '15px', md: '23px' }}
+                    fontWeight={500}
+                  >
                     {categories.TextHead}
                   </Text>
-                  <Text fontSize={'12px'} fontWeight={400} display={{base:"none",md:"flex"}}>
+                  <Text
+                    fontSize={'12px'}
+                    fontWeight={400}
+                    display={{ base: 'none', md: 'flex' }}
+                  >
                     {categories.Description}
                   </Text>
                 </VStack>
@@ -261,14 +304,15 @@ export const DataBase = () => {
                   <Image
                     src={categories.ImgRight}
                     alt={'rightImg'}
-                    w={{base:"72px",md:'133px'}}
-                    h={{base:"72px",md:'133px'}} p={2}
+                    w={{ base: '72px', md: '133px' }}
+                    h={{ base: '72px', md: '133px' }}
+                    p={2}
                   />
                 </Box>
               </HStack>
             </Box>
           ))}
-        </SimpleGrid>
+        </Flex>
       </VStack>
     </Flex>
   )

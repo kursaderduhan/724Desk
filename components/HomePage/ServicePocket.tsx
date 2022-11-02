@@ -8,23 +8,23 @@ import {
   Button,
   Container,
   Box,
-  SimpleGrid,useMediaQuery
+  SimpleGrid,
+  useMediaQuery
 } from '@chakra-ui/react'
 import Link from 'next/link'
 export const ServicePocket = () => {
-  const [smallScreen] = useMediaQuery(["(max-width:572px)"])
   return (
     <Flex
       w={'full'}
       flexDirection={'column'}
       bg={'#E5E5E5'}
       justifyContent={'center'}
-      py={{base:20,md:100}}
+      py={{ base: 20, md: 100 }}
       gap={10}
       alignItems={'center'}
-      pb={{base:20,md:250}}
+      pb={{ base: 20, md: 250 }}
     >
-      <Container maxW={{xl:"1200px",xxl:"1600px"}}>
+      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
         <VStack w={'full'} gap='10'>
           <Link href={'/PriceList'}>
             <Text
@@ -34,19 +34,35 @@ export const ServicePocket = () => {
               alignSelf={'flex-start'}
               cursor={'pointer'}
             >
-              {smallScreen ? 'Hizmet Paketlerimiz': "Abonelik"}
+              Hizmet Paketlerimiz
             </Text>
           </Link>
-          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"} w={'100%'} gap={5} justifyContent={{base:"center",md:"flex-start"}}>
+          <Flex
+            flexDirection={{ base: 'column', md: 'row' }}
+            alignItems={'center'}
+            w={'100%'}
+            gap={5}
+            justifyContent={{ base: 'center', md: 'flex-start' }}
+          >
             {Item.map(item => (
               <VStack
-                w={item.populer == true ? {base:"340px",md:'320px'} : {base:"340px",md:'288px'}}
-                h={item.populer == true ? { base: "553px", md: '600px' } : {base:"424px",md:'500px'}}
+                w={
+                  item.populer == true
+                    ? { base: '340px', md: '320px' }
+                    : { base: '340px', md: '288px' }
+                }
+                h={
+                  item.populer == true
+                    ? { base: '553px', md: '600px' }
+                    : { base: '424px', md: '500px' }
+                }
                 bg={item.populer == true ? '#F2A77D' : 'white'}
                 key={item.key}
-                alignItems={{base:"center",md:'flex-start'}}
-                p={5} zIndex={item.populer == true ? 1 : 0}
-                justifyContent={'space-between'} rounded={10} 
+                alignItems={{ base: 'center', md: 'flex-start' }}
+                p={5}
+                zIndex={item.populer == true ? 1 : 0}
+                justifyContent={'space-between'}
+                rounded={10}
               >
                 {item.populer == true ? (
                   <HStack
@@ -68,7 +84,10 @@ export const ServicePocket = () => {
                   </HStack>
                 ) : null}
                 <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
-                <VStack w={'full'} alignItems={{base:"center",md:'flex-start'}}>
+                <VStack
+                  w={'full'}
+                  alignItems={{ base: 'center', md: 'flex-start' }}
+                >
                   <Text
                     fontSize={'33px'}
                     fontWeight={400}
@@ -167,7 +186,12 @@ export const ServicePocket = () => {
               </VStack>
             ))}
           </Flex>
-          <Text fontWeight={400} fontSize={{base:"33px",md:'46px'}} color={'black'} textAlign={{base:"center"}}>
+          <Text
+            fontWeight={400}
+            fontSize={{ base: '33px', md: '46px' }}
+            color={'black'}
+            textAlign={{ base: 'center' }}
+          >
             Hemen Kullanmaya Başla!
           </Text>
           <Text color={'#666666'} fontSize={'14px'} fontWeight={400}>

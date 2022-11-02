@@ -40,8 +40,15 @@ export const FeedBack = () => {
         </Text>
       </Container>
       <Flex
-        w={'full'}
-        flexDirection={{ base: 'column', md: 'row' }}
+        w={'90%'}
+        style={{
+          display: 'flex',
+          flexWrap: 'nowrap',
+          overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          msOverflowStyle: '-ms-autohiding-scrollbar'
+        }}
+        flexDirection={{ base: 'row', md: 'row' }}
         pl={{ md: '180px' }}
         gap={2}
         justifyContent={'center'}
@@ -49,13 +56,15 @@ export const FeedBack = () => {
       >
         {Item.map(item => (
           <Flex
+            style={{
+              display: 'flex',
+              flexWrap: 'nowrap'
+            }}
             key={item.key}
-            bg={'#FFFFFF'}
-            w={'277px'}
-            h={'214px'}
+            bg={'#FFFFFF  '}
             rounded={5}
           >
-            <VStack w={'full'} p={6}>
+            <VStack w={'277px'} h={'214px'} p={6}>
               <HStack w={'full'} justifyContent={'space-between'}>
                 <Avatar src={item.Image} size={'lg'} />
                 <VStack alignItems={'flex-end'}>
@@ -108,7 +117,8 @@ export const FeedBack = () => {
             fontWeight={500}
             fontSize={'23px'}
             color={'#525252'}
-            py={10} cursor={"pointer"}
+            py={10}
+            cursor={'pointer'}
             onClick={() => pagesName.set('Sıkça Sorulan Sorular')}
           >
             Sıkça Sorulan Sorular
