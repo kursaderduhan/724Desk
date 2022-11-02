@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react'
 const ExpertsDetail = () => {
   return (
-    <VStack alignItems={'flex-start'} gap={2} px={5}>
+    <VStack alignItems={'flex-start'} gap={2}>
       <Flex
         alignItems={'center'}
         flexDirection={{ base: 'column', md: 'row' }}
@@ -196,7 +196,7 @@ const ExpertsDetail = () => {
         <Text fontSize={"15px"} color={"#959595"} fontWeight={400}>
           Uzmanlığınızı en iyi şekilde anlatarak kendinizi tanıtmış olacaksınız.
         </Text>
-        <InputGroup w={{ base: '343px', md: 'full' }} flexDirection={'column'}>
+        <InputGroup w={{ base: '343px', md: 'full' }} flexDirection={'column'} alignSelf={"center"}>
           <FormLabel>Açıklama</FormLabel>
           <Textarea resize={"none"} h={"283px"}></Textarea>
         </InputGroup>

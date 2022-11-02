@@ -41,9 +41,9 @@ export const BecomeAnExpert = () => {
           </Text>
         </Container>
       </VStack>
-      <Flex justifyContent={'center'} py={10} flexDirection={"column"} gap={10} w={"full"}>
+      <Flex justifyContent={'center'} py={10} flexDirection={"column"} gap={10} w={"full"} alignSelf={"center"}>
         <Container maxW={"794px"}>
-        <VStack alignItems={"flex-start"} gap={2} px={5}>
+        <VStack alignItems={"flex-start"} gap={2} >
           <Text
             fontSize={'23px'}
             fontWeight={500}
@@ -61,7 +61,7 @@ export const BecomeAnExpert = () => {
           <Flex display={formDetail}>
             <ExpertsDetail/>
           </Flex>
-          <Button variant={'globalButton'} w={{base:"343px",md:"200px"}} alignSelf={"center"} onClick={openDetail}>Gönder</Button>
+          <Button variant={'globalButton'} w={{base:"343px",md:"136px"}} alignSelf={"flex-start"} onClick={openDetail}>Gönder</Button>
           </VStack>
           </Container>
         <Footer/>
