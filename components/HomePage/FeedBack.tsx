@@ -108,7 +108,7 @@ export const FeedBack = () => {
             fontWeight={500}
             fontSize={'23px'}
             color={'#525252'}
-            py={10}
+            py={10} cursor={"pointer"}
             onClick={() => pagesName.set('Sıkça Sorulan Sorular')}
           >
             Sıkça Sorulan Sorular
