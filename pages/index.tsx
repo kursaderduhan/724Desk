@@ -128,7 +128,7 @@ const Home: NextPage = () => {
       <Experts />
       <FeedBack />
       <PartnerShip />
-      <ServicePocket />
+      {/* <ServicePocket /> */}
       <Footer HomePage />
     </Layout>
   )

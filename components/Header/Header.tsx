@@ -31,6 +31,9 @@ interface Size {
 }
 
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
+  {
+    ssr: false
+  }
   const size: Size = useWindowSize()
   return (
     <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
