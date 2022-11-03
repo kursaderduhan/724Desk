@@ -1,10 +1,12 @@
 import { HStack, Container, VStack, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useCallback } from 'react'
 import Layout from '@components/Layout/Layout'
 import AboutUs from '@components/Documents/AboutUs'
 import UserContract from '@components/Documents/UserContract'
 import Footer, { ListData } from '@components/Footer/Footer'
-import { useStorken } from '@data/storken'
+import SecurityRules from '@components/Documents/SecurityRules'
+import { HtmlProps } from 'next/dist/shared/lib/html-context'
+import UseTerms from '@components/Documents/UseTerms'
 
 export const getStaticPaths = () => {
   // map data to an array of path objects with params (id)
@@ -27,18 +29,19 @@ export const getStaticProps = async (context: any) => {
     props: { pageData: datam, content: link }
   }
 }
-
 interface PageDetail {
   id: number
   name: string
-  detail: string
+  detailPage: any
   link: string
 }
-
 const name = (pageData: any) => {
+  console.log(pageData.content)
   const content = ListData.find(
     datas => datas.link === pageData.content
   ) as PageDetail
+  const result = pages.filter(pages => pages.id == content.id)
+
   return (
     <Layout>
       <HStack
@@ -57,14 +60,15 @@ const name = (pageData: any) => {
           </Text>
           <HStack w={'full'} justifyContent={'space-between'}>
             <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
-              {content.detail}
+              {content.name} detay sayfası
             </Text>
           </HStack>
-        </Container> 
+        </Container>
       </HStack>
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        {/* <UserContract/> */}
-        {content.id == 0 ? <UserContract /> : null}
+        {result.map(resultPage => (
+          <>{resultPage.page}</>
+        ))}
       </Container>
       <Footer />
     </Layout>
@@ -72,3 +76,15 @@ const name = (pageData: any) => {
 }
 
 export default name
+
+interface pageProps {
+  id: number
+  page: any
+}
+
+const pages: Array<pageProps> = [
+  { id: 0, page: <AboutUs /> },
+  { id: 1, page: <UserContract /> },
+  { id: 2, page: <UseTerms /> },
+  { id: 3, page: <SecurityRules /> },
+]

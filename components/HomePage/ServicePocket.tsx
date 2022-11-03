@@ -39,7 +39,7 @@ export const ServicePocket = () => {
             alignItems={'center'}
             w={'100%'}
             gap={5}
-            justifyContent={{ base: 'center', md: 'flex-start' }}
+            justifyContent={"center"}
           >
             {Item.map(item => (
               <VStack

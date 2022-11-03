@@ -31,6 +31,7 @@ export const [Storken, { useStorken }] = createStore({
   initialValues: {
     pagesName: "Ana Sayfa" as any,
     search: "" as any,
+    infoPage: "About Us" as any
   },
 })
 

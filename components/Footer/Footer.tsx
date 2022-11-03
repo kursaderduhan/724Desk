@@ -14,9 +14,13 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useStorken } from '@data/storken'
+import SecurityRules from '@components/Documents/SecurityRules'
+import AboutUs from '@components/Documents/AboutUs'
+import UseTerms from '@components/Documents/UseTerms'
+import UserContract from '@components/Documents/UserContract'
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
   const pagesName = useStorken<any>('pagesName')
-  // const infoPage = useStorken<any>('infoPage')
+  const infoPage = useStorken<any>('infoPage')
   return (
     <Box
       bgImage={HomePage ? '/footerBg.png' : '#E5E5E5'}
@@ -41,11 +45,11 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
         />
       )}
       <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
-        <VStack py={HomePage ? 0 : 0} gap={10}>
+        <VStack gap={10}>
           <Flex
             w={'full'}
             h={'full'}
-            py={{ base: '20px', md: '80px' }}
+            py={{ base: '20px', md: '40px' }}
             flexDirection={{ base: 'column', md: 'row' }}
             justifyContent={'space-between'}
             gap={10}
@@ -146,12 +150,20 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                     </ListItem>
                   </Link>
                   <ListItem>Değerlendirmeler</ListItem>
-                  <Link href={'/Info'}>
+                  <Link href={'/DeskToken'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Info')}
+                      onClick={() => pagesName.set('Desk Token')}
                     >
-                      Hakkımızda
+                      Desk Token
+                    </ListItem>
+                  </Link>
+                  <Link href={'/Reference'}>
+                    <ListItem
+                      cursor={'pointer'}
+                      onClick={() => pagesName.set('Referans')}
+                    >
+                      Referans Programı
                     </ListItem>
                   </Link>
                   <Link href={'/Contact'}>
@@ -187,13 +199,15 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                       Uzmanlar
                     </ListItem>
                   </Link>
-                  <ListItem>Gizlilik Politikası</ListItem>
-                  <ListItem>Kullanım Koşulları</ListItem>
-                  <ListItem>Site Haritası</ListItem>
+                  <ListItem>Sunucu Yönetimi</ListItem>
+                  <ListItem>Yazılım Geliştirme</ListItem>
+                  <ListItem>Network</ListItem>
+                  <ListItem>Siber Güvenlik</ListItem>
                 </List>
               </VStack>
               <VStack alignItems={'flex-start'}>
                 <List spacing={2}>
+                  <ListItem>Site Haritası</ListItem>
                   {ListData.map((item, index) => {
                     return (
                       <Link href={'/Info/' + item.link} key={index}>
@@ -264,44 +278,22 @@ export default memo(Footer)
 export const ListData = [
   {
     id: 0,
-    name: 'Sunucu Yönetimi',
-    link: 'SunucuYonetimi',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+    name: 'Hakkımızda',
+    link: 'Hakkımızda',
   },
   {
     id: 1,
-    name: 'Yazılım Geliştirme',
-    link: 'YazilimGelistirme',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+    name: 'Kullanıcı Sözleşmesi',
+    link: 'KullanıcıSözlesmesi',
   },
   {
     id: 2,
-    name: 'Network',
-    link: 'Network',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+    name: 'Kullanım Şartları',
+    link: 'KullanımSartları', 
   },
   {
     id: 3,
-    name: 'Siber Güvenlik',
-    link: 'SiberGuvenlik',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
+    name: 'Gizlilik Kuralları',
+    link: 'GizlilikKuralları',
   },
-  {
-    id: 4,
-    name: 'Desk Token',
-    link: 'DeskToken',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
-  },
-  {
-    id: 5,
-    name: 'Referans Programı',
-    link: 'Reference',
-    detail:
-      'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet '
-  }
 ]
