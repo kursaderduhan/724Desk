@@ -91,6 +91,12 @@ export const theme = extendTheme({
       lineHeight: "150%",
       letterSpacing:"0.25px"
     },
+    deskTokenHead: {
+      fontSize: "23px",
+      fontWeight: 500,
+      lineHeight: "34px",
+      fontStyle: "normal"
+    },
     cryptoPageText: {
       fontSize: "15px",
       fontWeight: 400,

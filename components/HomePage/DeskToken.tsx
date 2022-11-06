@@ -16,34 +16,42 @@ export const DeskToken = () => {
     <VStack
       bg={'#333862'}
       w={'full'}
+      py={{ base: '54px', lg: '120px' }}
       h={{
         base: '2110px',
-        md: '1200px'
+        lg: '1200px'
       }}
       justifyContent={'space-around'}
       pos={'relative'}
       overflow={'visible'}
+      gap={{ base: '82px', lg: '240px' }}
     >
-      <Box pos={'absolute'} right={0} top={10} display={{base:"none"}}>
+      <Box
+        pos={'absolute'}
+        right={0}
+        top={10}
+        display={{ base: 'none', lg: 'flex' }}
+      >
         <Image src={'/deskCoin-2.png'} alt={''} w={'590px'} h={'890px'} />{' '}
       </Box>
-      <VStack zIndex={1}>
+      <VStack zIndex={1} gap={{ base: '24px', lg: '32px' }}>
         <Text
-          fontSize={'23px'}
-          fontWeight={500}
+          textStyle={'deskTokenHead'}
           color={'white'}
           alignSelf={'flex-start'}
         >
           Desk Token Verileri
         </Text>
         <Flex
-          w={{base:"343px",md:1200}}
-          h={{ base: '409px', md: '250px' }}
+          w={{ base: '343px', lg: 1200 }}
+          h={{ base: '409px', lg: '250px' }}
           bg={'#505583'}
-          gap={5}
           rounded={10}
-          px={5} overflow={"hidden"}
-          justifyContent={'space-between'} flexDirection={{base:"column",md:"row"}}
+          px={'32px'}
+          alignItems={'center'}
+          overflow={'hidden'}
+          justifyContent={'space-between'}
+          flexDirection={{ base: 'column', lg: 'row' }}
         >
           <VStack
             alignItems={'flex-start'}
@@ -51,9 +59,10 @@ export const DeskToken = () => {
             justifyContent={'space-evenly'}
           >
             <Text
-              fontSize={{base:"15px",md:'23px'}}
+              fontSize={{ base: '15px', lg: '23px' }}
               fontWeight={500}
               color={'white'}
+              textStyle={'deakTokenHead'}
               alignSelf={'flex-start'}
             >
               Public Sale Whitelisting
@@ -62,9 +71,9 @@ export const DeskToken = () => {
           </VStack>
           <VStack>
             <Text
-              fontSize={{base:"15px",md:'23px'}}
+              fontSize={{ base: '15px', lg: '23px' }}
               color={'#C4C4C4'}
-              fontWeight={500}
+              textStyle={'deskTokenHead'}
               alignSelf={'flex-start'}
             >
               18.000.000 DEX Token
@@ -73,13 +82,21 @@ export const DeskToken = () => {
               fontSize={'13px'}
               fontWeight={500}
               color={'white'}
+              lineHeight={'20px'}
+              fontStyle={'normal'}
+              letterSpacing={'0.1px'}
               alignSelf={'flex-end'}
             >
               Hard Cap
             </Text>
-            <Box w={{base:"full",md:'700px'}} h={'16px'} bg={'#363B66'} borderRadius={'100px'}>
+            <Box
+              w={{ base: 'full', lg: '700px' }}
+              h={'16px'}
+              bg={'#363B66'}
+              borderRadius={'100px'}
+            >
               <Box
-                w={{base:"full",md:'600px'}}
+                w={{ base: 'full', lg: '600px' }}
                 h={'16px'}
                 bg={'linear-gradient(90deg, #505583 7.29%, #ADB3E4 100%)'}
                 borderRadius={'100px'}
@@ -90,13 +107,17 @@ export const DeskToken = () => {
               fontWeight={500}
               color={'white'}
               alignSelf={'flex-end'}
+              lineHeight={'20px'}
+              fontStyle={'normal'}
+              letterSpacing={'0.1px'}
             >
               375K USD
             </Text>
             <Text
-               fontSize={{base:"15px",md:'23px'}}
+              fontSize={{ base: '15px', lg: '19px' }}
               color={'#C4C4C4'}
               fontWeight={500}
+              textStyle={'homePageText'}
               alignSelf={'flex-start'}
             >
               1 DEX = 0.10 USD
@@ -106,7 +127,9 @@ export const DeskToken = () => {
                 variant={'globalButton'}
                 fontSize={'13px'}
                 w={'169px'}
-                alignSelf={{ base: "center", md: 'flex-end' }}
+                h={'36px'}
+                alignSelf={{ base: 'center', lg: 'flex-end' }}
+                borderRadius={'5px'}
               >
                 Hemen Katıl
               </Button>
@@ -114,8 +137,17 @@ export const DeskToken = () => {
           </VStack>
         </Flex>
       </VStack>
-      <VStack pos={'relative'} overflow={'visible'}>
-        <Box pos={'absolute'} bottom={32} left={40} display={{base:"none"}}>
+      <VStack
+        pos={'relative'}
+        overflow={'visible'}
+        gap={{ base: '24px', lg: '32px' }}
+      >
+        <Box
+          pos={'absolute'}
+          bottom={32}
+          left={40}
+          display={{ base: 'none', lg: 'flex' }}
+        >
           <Image
             src={'/deskCoin-1.png'}
             alt={'deskCoin'}
@@ -124,35 +156,46 @@ export const DeskToken = () => {
           />
         </Box>
         <Text
-          fontSize={'23px'}
+          textStyle={'deskTokenHead'}
           color={'white'}
-          fontWeight={500}
           alignSelf={'flex-start'}
           zIndex={1}
         >
           Anlık Veriler
         </Text>
-        <Flex flexDirection={{ base: 'column', md: 'row' }} gap={2} zIndex={1}>
+        <Flex flexDirection={{ base: 'column', lg: 'row' }} gap={"16px"} zIndex={1}>
           {item.map(ıtem => (
             <VStack
               key={ıtem.id}
               w={'288px'}
-              h={'337px'}
+              h={'337px'} justifyContent={"space-between"}
               bg={'#505583'}
               rounded={10}
+              py={'24px'}
             >
-              <HStack alignSelf={'flex-start'} px={3}>
+              <HStack alignItems={"center"} alignSelf={'flex-start'} px={3} >
                 <Image src={ıtem.Image} alt={'ımg'} w={'24px'} h={'36px'} />
-                <Text fontSize={'13px'} color={'#EAEAEA'} fontWeight={500}>
+                <Text
+                  fontSize={'13px'}
+                  color={'#EAEAEA'}
+                  fontWeight={500}
+                  alignSelf={'flex-end'}
+                  lineHeight={'20px'}
+                  fontStyle={'normal'}
+                  letterSpacing={'0.1px'} pb={1}
+                >
                   {ıtem.desc}
                 </Text>
               </HStack>
-              <Image src={ıtem.grafik} alt={'grafik'} w={'260px'} h={'142px'} />
+              <Image src={ıtem.grafik} alt={'grafik'} w={'260px'} h={'102px'} />
               <Text
                 fontSize={'58px'}
                 fontWeight={300}
-                color={'white'}
+                lineHeight={'87px'}
+                letterSpacing={'-0.5px'}
+                fontStyle={'normal'}
                 alignSelf={'center'}
+                color={'white'}
               >
                 {ıtem.counter}
               </Text>
