@@ -13,7 +13,7 @@ import Link from 'next/link'
 export const Categories = () => {
   return (
     <Flex w={'full'} h={'full'} flexDirection={'column'} bg={"#F7FCFE"}>
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <Flex
           w={'full'}
           justifyContent={'space-around'}

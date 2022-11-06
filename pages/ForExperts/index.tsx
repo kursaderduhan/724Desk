@@ -22,7 +22,7 @@ export const Experts = () => {
         bgSize={'cover'}
         bgPos={'right'}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <VStack
             w={'full'}
             alignItems={{ base: 'center', md: 'flex-start' }}
@@ -68,7 +68,7 @@ export const Experts = () => {
         </Container>
       </HStack>
       <Flex flexDirection={'column'} py={50}>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }} >
+        <Container maxW={"1200px"} >
           <WhyBeExpert />
         </Container>
         <Footer />

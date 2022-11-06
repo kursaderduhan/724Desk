@@ -28,7 +28,7 @@ export const Contact = () => {
         gap={5}
         py={10} display={{base:"none",md:"flex"}}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Bizimle İletişime Geçin
           </Text>
@@ -38,7 +38,7 @@ export const Contact = () => {
         </Container>
       </HStack>
       <VStack>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Flex flexDirection={{ base: "column", md: "row" }} alignItems={"center"} w={'full'} gap={{ base: 5, md: 40 }} py={{base:2,md:50}}>
             <VStack alignItems={'flex-start'} alignSelf={'flex-start'} gap={2}>
               <Text fontSize={"23px"} fontWeight={500}>İletişim kanalları</Text>

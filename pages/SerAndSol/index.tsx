@@ -37,7 +37,7 @@ export const SerAndSol = () => {
         py={10}
         display={{ base: 'none', md: 'flex' }}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Servisler & Çözümler
           </Text>
@@ -60,7 +60,7 @@ export const SerAndSol = () => {
         </Container>
       </HStack>
       <Container
-        maxW={{ xl: '1200px', xxl: '1600px' }}
+        maxW={"1200px"}
         py={{ base: 10, md: 100 }}
       >
         <VStack gap={5} bg={'white'}>

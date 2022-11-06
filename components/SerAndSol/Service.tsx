@@ -13,7 +13,7 @@ export const Service = () => {
     <Flex bg={'#333862'} h={'1202px'}>
       <VStack w={'full'} >
         <HStack bg={'#272B53'} w={'full'} h={'311px'}>
-          <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+          <Container maxW={"1200px"}>
             <HStack w={'full'} justifyContent={'space-around'}>
               <VStack>
                 <HStack gap={4}>
@@ -58,7 +58,7 @@ export const Service = () => {
             </HStack>
           </Container>
         </HStack>
-        <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+        <Container maxW={"1200px"}>
           <VStack gap={20} py={100}>
             <Flex flexDirection={'column'} alignItems={'flex-start'} w={'full'}>
               <Text fontWeight={500} fontSize={'23px'} color={'white'}>

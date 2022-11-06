@@ -4,10 +4,7 @@ import {
   VStack,
   Text,
   Container,
-  HStack,
-  Image,
   Flex,
-  IconButton,
   Icon
 } from '@chakra-ui/react'
 import MostRead from '@components/DataBase/MostRead'
@@ -38,7 +35,7 @@ export const DataBase = () => {
         py={10}
         display={{ base: 'none', md: 'flex' }}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Flex display={page}>
             <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
               724Desk Bilgi Bankası
@@ -66,13 +63,13 @@ export const DataBase = () => {
         </Container>
       </VStack>
       <VStack bg={'white'} w='full' py={{ base: 0, md: 50 }} display={page}>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <MostRead changePage={() => changePage()} />
           <News />
         </Container>
       </VStack>
       <VStack bg={'white'} w='full' py={50} display={dataBase}>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <TrendPage />
         </Container>
       </VStack>

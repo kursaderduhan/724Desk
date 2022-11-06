@@ -26,7 +26,7 @@ export const Categories = () => {
         gap={5}
         py={10}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Kategoriler
           </Text>
@@ -46,7 +46,7 @@ export const Categories = () => {
           </HStack>
         </Container>
       </HStack>
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <SimpleGrid w={'full'} columns={3} spacing={10} py={10}>
           {categories.map(categories => (
             <Link href={categories.Link} key={categories.key}>

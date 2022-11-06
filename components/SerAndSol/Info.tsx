@@ -17,7 +17,7 @@ export const Info = () => {
       bgSize={'cover'}
       bgPos={'center'}
     >
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}}>
+      <Container maxW={"1200px"}>
         <VStack w="592px" h={"full"} justifyContent={"flex-end"} py={50} gap={10} alignItems={"flex-start"}>
           <VStack >
             <Text color={"white"} fontSize={"33px"} fontWeight={500}>

@@ -44,7 +44,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
           boxSize={'xl'}
         />
       )}
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <VStack gap={10}>
           <Flex
             w={'full'}

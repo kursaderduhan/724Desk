@@ -19,7 +19,7 @@ export const Experts = () => {
       flexDirection={'column'}
       py={{base:25,md:100}}
     >
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <VStack w={'full'} gap={{base:10,md:50}}>
           <Link href={'/Experts'}>
             <Text

@@ -111,7 +111,7 @@ export const FeedBack = () => {
           </Flex>
         ))}
       </Flex>
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <Link href={'/PopulerQuestions'}>
           <Text
             fontWeight={500}

@@ -96,7 +96,7 @@ export const Crypto = () => {
             bg={'#E9F2F5'}
             py={{ base: 10, md: 50 }}
           >
-            <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+            <Container maxW={"1200px"}>
               <Text
                 fontSize={{ base: '28px', md: '33px' }}
                 fontWeight={500}
@@ -155,7 +155,7 @@ export const Crypto = () => {
             </Container>
           </VStack>
           <VStack w={'full'} h={'full'} py={50}>
-            <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+            <Container maxW={"1200px"}>
               <VStack
                 w={{ base: '343px', md: 'full' }}
                 h={'300px'}
@@ -215,7 +215,7 @@ export const Crypto = () => {
             gap={5}
             py={10}
           >
-            <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+            <Container maxW={"1200px"}>
               <Flex alignItems={'center'} gap={2}>
                 <Icon
                   aria-label='back'

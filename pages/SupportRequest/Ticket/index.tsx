@@ -37,7 +37,7 @@ export const Ticket = ({ searchPages = false }: { searchPages: any }) => {
         py={10}
         display={{ base: 'none', md: searchPages ? 'none':'flex' }}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text
             fontSize={'19px'}
             fontWeight={500}

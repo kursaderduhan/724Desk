@@ -21,7 +21,7 @@ export const ServicePocket = () => {
       alignItems={'center'}
       pb={{ base: 20, md: 250 }}
     >
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         <VStack w={'full'} gap='10'>
           <Link href={'/PriceList'}>
             <Text

@@ -18,7 +18,7 @@ export const ServicePanels = () => {
       flexDirection={'column'}
       py={100}
     >
-      <Container maxW={{ xl:'1200px',xxl:'1600px'}} h={'full'} gap={10}>
+      <Container maxW={"1200px"} h={'full'} gap={10}>
         <VStack w={'full'} alignItems={'flex-start'} gap={10}>
           <Flex flexDirection={'column'}>
             <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>

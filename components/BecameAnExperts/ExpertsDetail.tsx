@@ -1,8 +1,6 @@
 import React from 'react'
 import {
   VStack,
-  HStack,
-  Container,
   Text,
   Flex,
   InputGroup,

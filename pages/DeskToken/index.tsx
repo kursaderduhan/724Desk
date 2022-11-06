@@ -35,7 +35,7 @@ const DeskToken = () => {
           w={'full'}
           display={{ base: 'none', md: 'flex' }}
         >
-          <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+          <Container maxW={"1200px"}>
             <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
               Desk Token
             </Text>
@@ -205,7 +205,7 @@ const DeskToken = () => {
           </Flex>
         </VStack>
         <BurningMechanism />
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <HowToEarn />
         </Container>
         <VStack
@@ -214,7 +214,7 @@ const DeskToken = () => {
           bg={'#212842'}
           justifyContent={'space-between'}
         >
-          <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+          <Container maxW={"1200px"}>
             <VStack h={'full'} pt={10} gap={10}>
               <Flex
                 flexDirection={{ base: 'column', md: 'row' }}

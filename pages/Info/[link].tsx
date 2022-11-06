@@ -1,5 +1,5 @@
-import { HStack, Container, VStack, Text } from '@chakra-ui/react'
-import React, { useCallback } from 'react'
+import { HStack, Container, Text } from '@chakra-ui/react'
+import React from 'react'
 import Layout from '@components/Layout/Layout'
 import AboutUs from '@components/Documents/AboutUs'
 import UserContract from '@components/Documents/UserContract'
@@ -54,7 +54,7 @@ const name = (pageData: any) => {
         gap={5}
         py={10}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             {content.name}
           </Text>
@@ -65,7 +65,7 @@ const name = (pageData: any) => {
           </HStack>
         </Container>
       </HStack>
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         {result.map(resultPage => (
           <>{resultPage.page}</>
         ))}

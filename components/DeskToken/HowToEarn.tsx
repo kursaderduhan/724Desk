@@ -4,7 +4,6 @@ import {
   HStack,
   VStack,
   Text,
-  Container,
   Image,
   Box,
   SimpleGrid

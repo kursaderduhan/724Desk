@@ -43,7 +43,7 @@ export const Search = () => {
         gap={5}
         py={10} display={{base:"none",md:"flex"}}
       >
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Arama Sonuçları
           </Text>
@@ -55,7 +55,7 @@ export const Search = () => {
         </Container>
       </HStack>
       <VStack bg={'#F7FCFE'} py={10}>
-        <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+        <Container maxW={"1200px"}>
           <VStack>
             {!detailPage ? (
               <VStack>

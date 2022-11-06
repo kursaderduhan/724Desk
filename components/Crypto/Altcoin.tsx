@@ -14,7 +14,7 @@ export const Altcoin = () => {
   let result = item.filter(item => item.headName == page)
   return (
     <VStack bg={'#F7FCFE'} w={'full'} py={20}>
-      <Container maxW={{ xl: '1200px', xxl: '1600px' }}>
+      <Container maxW={"1200px"}>
         {page == 'page' && (
           <Flex gap={5}>
             <VStack

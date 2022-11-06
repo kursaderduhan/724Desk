@@ -1,7 +1,7 @@
 import { extendTheme,theme as base, useColorModeValue, type ThemeConfig } from '@chakra-ui/react'
 import { createBreakpoints, mode } from '@chakra-ui/theme-tools'
 import { StyleFunctionProps } from '@chakra-ui/styled-system'
-
+import "@fontsource/poppins"
 
 const config: ThemeConfig = {
     initialColorMode: 'light',
