@@ -12,12 +12,11 @@ import {
 import Link from 'next/link'
 export const DataBase = () => {
   return (
-    <Flex w={'full'} h={'full'} flexDirection={'column'} py={50}>
-      <VStack py={50}>
+    <Flex w={'full'} h={'full'} flexDirection={'column'} py={{base:"82px",lg:"120px"}}>
+      <VStack >
         <Container maxW={"1200px"}>
           <Text
-            fontSize={'23px'}
-            fontWeight={500}
+            textStyle={"deskTokenHead"}
             color={'#525252'}
             alignSelf={'flex-start'}
           >
@@ -27,8 +26,8 @@ export const DataBase = () => {
             flexDirection={{ base: 'column', md: 'row' }}
             w={'full'}
             justifyContent={'space-between'}
-            px={0}
-            alignItems={{ base: 'center' }}
+            px={0} pt={{ base: "24px", lg: "32px" }}
+            alignItems={{ base: 'center' }} gap={{base:"24px",lg:"54px"}}
           >
             <Link href={'/DataBase'}>
               <Image
@@ -43,14 +42,13 @@ export const DataBase = () => {
               <Text
                 fontWeight={500}
                 fontSize={{ base: '19px', md: '33px' }}
-                color={'#333333'}
+                color={'#333333'} letterSpacing={"0.25px"} lineHeight={"50px"} fontStyle={"normal"}
               >
                 İşte Dev Balinaların En Çok Trade Et...
               </Text>
               <Text
                 color={'#666666'}
-                fontSize={'14px'}
-                fontWeight={400}
+                fontWeight={400} textStyle={"subText"}
                 maxW={{ base: 'full', md: '655px' }}
               >
                 Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin
@@ -62,7 +60,7 @@ export const DataBase = () => {
                 milyon dolar değerinde CRV stokladı. Balina sadece iki işlemde
                 824.000 CRV satın aldı ve piyasaya düşerken...
               </Text>
-              <Text fontSize={'12px'} color={'#666666'} fontWeight={400}>
+              <Text fontSize={'12px'} color={'#666666'} fontWeight={400} lineHeight={"150%"} letterSpacing={"0.25px"} fontStyle={"normal"}>
                 12/04/2022
               </Text>
             </VStack>
@@ -91,7 +89,7 @@ export const DataBase = () => {
                   fontSize={'15px'}
                   fontWeight={500}
                   alignSelf={'flex-end'}
-                  w={'full'}
+                  w={'full'} lineHeight={"22px"} letterSpacing={"0.15px"}
                   display={'flex'}
                   justifyContent={'center'}
                   color={'white'}
@@ -103,7 +101,7 @@ export const DataBase = () => {
           </SimpleGrid>
         </Container>
       </VStack>
-      <VStack w={'full'} py={{ base: 5, md: 50 }}>
+      <VStack w={'full'} pt={{ base: 5, lg: "172px" }} pb={"118px"}>
         <HStack w={'full'} display={'flex'} alignSelf={'flex-end'}>
           <HStack
             w={'full'}
@@ -115,7 +113,7 @@ export const DataBase = () => {
               zIndex={1}
               pos={{ base: 'initial', md: 'absolute' }}
               justifyContent={{ base: 'center', md: 'flex-start' }}
-              pl={{ base: '', md: '200px' }}
+              pl={10}
               alignItems={'flex-start'}
               w={'full'}
             >
@@ -130,14 +128,13 @@ export const DataBase = () => {
             </Flex>
 
             <HStack
-              bgImage={'/DataBase-bg.png'}
-              w={'1075px'}
+              w={'1175px'} bg={"#333862"}
               h={'491px'}
-              justifyContent={'center'}
+              justifyContent={'center'} pl={230}
               borderLeftRadius={'full'}
-              display={{ base: 'none', md: 'flex' }}
+              display={{ base: 'none', md: 'flex' }} 
             >
-              <HStack w={'480px'}>
+              <HStack w={'480px'} pt={"93px"} mb={"40px"}>
                 <Image
                   src={'/message-question.png'}
                   alt={'question'}
@@ -146,19 +143,19 @@ export const DataBase = () => {
                   alignSelf={'flex-start'}
                 />
                 <VStack alignItems={'flex-start'}>
-                  <Text fontWeight={500} fontSize={'23px'} color={'white'}>
+                  <Text color={'white'} textStyle={"deskTokenHead"}>
                     Bizi neden seçmelisiniz?
                   </Text>
-                  <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
+                  <Text color={'#D4D4D4'} textStyle={"subText"}>
                     Sizi anlıyoruz, çünkü aynı dili konuşuyoruz. Sizinle
                     birlikteyiz, çünkü aynı yerde yaşıyoruz. Size destek
                     oluyoruz, çünkü aynı kanalları kullanıyoruz...
                   </Text>
-                  <HStack gap={4}>
+                  <HStack gap={4} pt={"53px"} pb={"16px"}>
                     <HStack
                       bg={'#555A8A'}
                       w={'249px'}
-                      h={'86px'}
+                      h={'86px'} boxShadow={"2xl"}
                       justifyContent={'center'}
                       rounded={10}
                     >
@@ -168,7 +165,7 @@ export const DataBase = () => {
                         w={'54px'}
                         h={'54px'}
                       />
-                      <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                      <Text textStyle={"bigText"} color={'white'}>
                         33
                       </Text>
                       <Text
@@ -185,7 +182,7 @@ export const DataBase = () => {
                       w={'249px'}
                       h={'86px'}
                       justifyContent={'center'}
-                      rounded={10}
+                      rounded={10} boxShadow={"2xl"}
                     >
                       <Image
                         src={'/global-refresh.png'}
@@ -193,7 +190,7 @@ export const DataBase = () => {
                         w={'54px'}
                         h={'54px'}
                       />
-                      <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                      <Text textStyle={"bigText"} color={'white'}>
                         42
                       </Text>
                       <Text
@@ -205,7 +202,7 @@ export const DataBase = () => {
                       </Text>
                     </HStack>
                   </HStack>
-                  <HStack bg={'#555A8A'} w={'522px'} h={'99px'} rounded={10}>
+                  <HStack bg={'#555A8A'} w={'522px'} h={'99px'} rounded={10} boxShadow={"2xl"}>
                     <VStack w={'full'}>
                       <Image
                         src={'/hpIcons.png'}
@@ -214,9 +211,8 @@ export const DataBase = () => {
                         h={'32px'}
                       />
                       <Text
-                        fontSize={'15px'}
                         color={'#D4D4D4'}
-                        fontWeight={400}
+                        textStyle={"homePageSubText"}
                       >
                         Birçok kanal
                       </Text>
@@ -231,19 +227,16 @@ export const DataBase = () => {
       <VStack>
         <Container maxW={'1200px'}>
           <Text
-            fontWeight={500}
-            fontSize={'23px'}
-            color={'#525252'}
+            color={'#525252'} textStyle={"deskTokenHead"}
             alignSelf={'flex-start'}
           >
             Destek Kanalları
           </Text>
         </Container>
         <Flex
-          gap='1'
+          gap='24px'
           w={'full'}
-          pl={{ base: '', md: '175' }}
-          px={2}
+          px={2} pt={{base:"24px",lg:"32px"}}
           style={{
             display: 'flex',
             flexWrap: 'nowrap',
@@ -399,6 +392,15 @@ const categories: Array<categoriesProp> = [
   {
     ImgLeft: '/ımg-l-4.png',
     TextHead: 'E-Posta',
+    Description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit est morbi hac vestibulum id ac amet sed vulputate. Nunc a sed mattis morbi at.',
+    ImgRight: '/ımg-r-4.png',
+    bg: '#FFFBEE',
+    key: 'e-posta'
+  },
+  {
+    ImgLeft: '/ımg-l-4.png',
+    TextHead: '724 Desk Uygulaması',
     Description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit est morbi hac vestibulum id ac amet sed vulputate. Nunc a sed mattis morbi at.',
     ImgRight: '/ımg-r-4.png',

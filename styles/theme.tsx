@@ -97,6 +97,13 @@ export const theme = extendTheme({
       lineHeight: "34px",
       fontStyle: "normal"
     },
+    bigText: {
+      fontSize: "33px",
+      fontWeight: 500,
+      lineHeight: "50px",
+      letterSpacing: "0.25px",
+      fontStyle: "normal"
+    },
     cryptoPageText: {
       fontSize: "15px",
       fontWeight: 400,
