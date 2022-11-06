@@ -59,23 +59,20 @@ const Home: NextPage = () => {
             flexDirection={'column'}
             w={'100%'}
             h={'full'}
-            gap={10}
             py={{ base: 233, md: 156 }}
             alignItems={{ base: 'flex-start', md: 'flex-start' }}
           >
-            <Text fontSize={{ base: '32px', md: '54px' }} fontWeight={500}>
-              Problemlerinize <br /> Anında{' '}
-              <span style={{ color: '#F27C00' }}>
-                Çözüm <br /> Bulun!
+            <Text textStyle={"homePageHead"} pb={{base:"24px",lg:"36px"}}>
+              Problemlerinize <br /> Anında<span style={{ color: '#F27C00' }}> Çözüm <br /> Bulun!
               </span>
             </Text>
             <Link href={'/SupportRequest'}>
               <Button
-                bg={'#F27C00'}
+                fontSize={"15px"}
                 color={'white'}
-                w={'242px'}
-                gap={4}
-                _hover={{ opacity: 0.8 }}
+                w={'242px'} h={"48px"}
+                gap={4} variant={"globalButton"}
+                _hover={{ opacity: 0.8 }} borderRadius={"10px"}
               >
                 <Image
                   src={'/hpButtonIcon.png'}
@@ -89,22 +86,21 @@ const Home: NextPage = () => {
             <InputGroup
               size={'lg'}
               w={{base:"343px",md:'389px'}}
-              rounded={5}
-              boxShadow={'xl'}
-              alignItems={'center'} bg={"#F0F1F3"}
+              boxShadow={'xl'} mt={"54px"} h={"54px"}
+              alignItems={'center'} rounded={"10px"}
             >
               <InputLeftElement h={'full'}>
                 <Icon as={BsSearch} />
               </InputLeftElement>
               <Input
-                placeholder='Problemlerinizi yazın ve arayın'
+                placeholder='Problemlerinizi yazın ve arayın' _placeholder={{fontStyle:"normal",fontWeight:400,color:"#9B9DBB",lineHeight:"24px",fontSize:"16px"}}
                 type={'text'}
                 onChange={handleChange}
-                value={search.v.toLowerCase()}
-                onKeyPress={e => searchPage(e)}
+                value={search.v.toLowerCase()} h="54px"
+                onKeyPress={e => searchPage(e)} bg={"#F0F1F3"} rounded={"10px"}
               />
             </InputGroup>
-            <HStack>
+            <HStack pt={"16px"}>
               {Item.map(item => (
                 <Button
                   key={item.key}
@@ -113,7 +109,7 @@ const Home: NextPage = () => {
                   border={'1px solid'}
                   borderColor={'rgba(0,0,0,0.1)'}
                   color={'rgba(0, 0, 0, 0.5)'}
-                  fontSize={'13px'}
+                  fontSize={'13px'} h={"28px"}
                 >
                   {item.name}
                 </Button>

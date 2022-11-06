@@ -56,6 +56,13 @@ export const theme = extendTheme({
       fontStyle: "normal",
       letterSpacing: "0.5px"
     },
+    homePageHead: {
+      fontSize: {base:"32px",lg:"54px"},
+      lineHeight: {base:"128%",lg:"69px"},
+      letterSpacing: "-0.5px",
+      fontWeight: 500,
+      fontStyle: "normal"
+    },
     cryptoPageText: {
       fontSize: "15px",
       fontWeight: 400,
@@ -92,7 +99,11 @@ export const theme = extendTheme({
           globalButton: (props: any) => ({
             ...base.components.Button.variants.outline(props),
             bg:'#F27C00',
-            color:'white',
+            color: 'white',
+            lineHeight: "22px",
+            letterSpacing: "0.15px",
+            fontStyle: "normal",
+            fontWeight: 400,
             _hover:{opacity: 0.8}
           }),
           walletButton: (props: any) => ({
