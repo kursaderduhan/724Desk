@@ -50,7 +50,7 @@ export const theme = extendTheme({
     },
     headerText: {
       fontSize: "sm",
-      fontWeight: "400",
+      fontWeight: 400,
       color: 'dark.100',
       lineHeight: "150%",
       fontStyle: "normal",
@@ -62,6 +62,34 @@ export const theme = extendTheme({
       letterSpacing: "-0.5px",
       fontWeight: 500,
       fontStyle: "normal"
+    },
+    homePageText: {
+      fontSize: "19px",
+      fontWeight: 500,
+      lineHeight: "28px",
+      letterSpacing: "0.15px",
+      fontStyle: "normal"
+    },
+    homePageSubText: {
+      fontSize: "15px",
+      fontWeight: 400,
+      lineHeight: "22px",
+      letterSpacing: "0.15px",
+      fontStyle: "normal"
+    },
+    subText: {
+      fontSize: "14px",
+      fontStyle: "normal",
+      fontWeight: 400,
+      letterSpacing: "0.5px",
+      lineHeight: "150%"
+    },
+    categoriesText: {
+      fontSize: "12px",
+      fontStyle: "normal",
+      fontWeight: 400,
+      lineHeight: "150%",
+      letterSpacing:"0.25px"
     },
     cryptoPageText: {
       fontSize: "15px",

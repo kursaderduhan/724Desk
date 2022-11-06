@@ -12,20 +12,26 @@ import {
 import Link from 'next/link'
 export const Categories = () => {
   return (
-    <Flex w={'full'} h={'full'} flexDirection={'column'} bg={"#F7FCFE"}>
-      <Container maxW={"1200px"}>
+    <Flex w={'full'} h={'full'} flexDirection={'column'} bg={'#F7FCFE'}>
+      <Container maxW={'1200px'}>
         <Flex
-          w={'full'}
-          justifyContent={'space-around'}
+          w={'100%'}
+          gap={{ base: '32px', lg: 280 }}
+          mt={{ base: '24px', lg: '72px' }}
           flexDirection={{ base: 'column', md: 'column', lg: 'row' }}
         >
           {ıtem.map(item => (
-            <VStack key={item.key}>
-              <Image src={item.Image} alt={'ımage'} w={'125px'} h={'150px'} />
+            <VStack key={item.key} spacing={{ lg: '-10' }}>
+              <Image
+                src={item.Image}
+                alt={'ımage'}
+                maxW={{ base: '125px', lg: '200' }}
+                maxH={{ base: '150px', lg: '225' }}
+              />
               <Text
                 color={item.color}
-                fontSize={'19px'}
-                w={180}
+                textStyle={'homePageText'}
+                maxW={'201px'}
                 textAlign={'center'}
               >
                 {item.text}
@@ -38,6 +44,7 @@ export const Categories = () => {
           justifyContent={{ base: 'center', md: 'space-around' }}
           flexDirection={{ base: 'column', md: 'row' }}
           alignItems={{ base: 'center', md: 'flex-start' }}
+          mt={{ base: '54px', lg: '100px' }}
         >
           <Box
             w={{ base: '268px', md: '384px' }}
@@ -46,7 +53,7 @@ export const Categories = () => {
             alignSelf={'center'}
           >
             <Image
-              src={'/hpWomenPic.png'}
+              src={'/womenImg.png'}
               alt={'ımg'}
               w={{ base: '268px', md: '382px' }}
               h={{ base: '403px', md: '574px' }}
@@ -65,16 +72,24 @@ export const Categories = () => {
             w={{ base: 'full', md: 580 }}
             alignItems={{ base: 'center', md: 'flex-start' }}
           >
-            <Text fontSize={'15px'} color={'#959595'}>
+            <Text color={'#959595'} textStyle={'homePageSubText'}>
               724Desk’e hoş geldiniz
             </Text>
-            <Text fontSize={{ base: '19px', md: '23px' }}>
+            <Text
+              textStyle={'homePageText'}
+              maxW={'591px'}
+              pt={{ base: '32px', lg: '24px' }}
+            >
               <span style={{ color: '#F27C00' }}>724Desk,</span> her türlü bilgi
-              ve destek talebinizi <br /> karşılayabileceğiniz çevrimiçi destek
+              ve destek talebinizi karşılayabileceğiniz çevrimiçi destek
               platformdur.
             </Text>
             {text.map(text => (
-              <HStack key={text.key}>
+              <HStack
+                key={text.key}
+                pt={{ base: '51px', lg: '24px' }}
+                gap={{ base: '32px', lg: '24px' }}
+              >
                 <Image
                   src={text.Image}
                   alt={'ımage'}
@@ -87,11 +102,15 @@ export const Categories = () => {
                   <Text
                     fontSize={{ base: '16px', md: '19px' }}
                     color={'#333333'}
-                    fontWeight={500}
+                    textStyle={'homePageText'}
                   >
                     {text.TextHead}
                   </Text>
-                  <Text fontSize={'15px'} color={'#959595'} fontWeight={400}>
+                  <Text
+                    textStyle={'homePageSubText'}
+                    color={'#959595'}
+                    pt={{ base: '12px', lg: '8px' }}
+                  >
                     {text.TextDown}
                   </Text>
                 </VStack>
@@ -99,11 +118,28 @@ export const Categories = () => {
             ))}
           </VStack>
         </Flex>
-        <VStack w={'full'} alignItems={{ base: 'center', md: 'flex-start' }} py={{base:5}} gap={2}>
-          <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+        <VStack
+          w={'full'}
+          alignItems={{ base: 'center', md: 'flex-start' }}
+          pt={{ base: '82px', lg: '100px' }}
+          pb={{ base: '82px', lg: '120px' }}
+          gap={2}
+        >
+          <Text
+            fontWeight={500}
+            alignSelf={'flex-start'}
+            fontSize={'23px'}
+            color={'#525252'}
+            lineHeight={'34px'}
+            fontStyle={'normal'}
+          >
             Kategoriler
           </Text>
-          <Text fontWeight={400} fontSize={'sm'} color={'#666666'}>
+          <Text
+            color={'#666666'}
+            textStyle={'subText'}
+            display={{ base: 'none', lg: 'flex' }}
+          >
             Aşağıdaki kategori başlıklarında hizmet sunuyoruz/sunacağız.
           </Text>
           <Flex
@@ -112,15 +148,16 @@ export const Categories = () => {
             flexDirection={{ base: 'column', md: 'row' }}
             alignItems={{ base: 'center', md: 'flex-start' }}
             gap={2}
+            pt={{ base: '24px', lg: '32px' }}
           >
             {categories.map(categories => (
               <Link href={categories.link} key={categories.key}>
                 <Box
                   w={{ base: '343px', md: '389px' }}
                   h={{ base: '187px', md: '200px' }}
-                  bg={categories.bg}
+                  bg={{ base: '#FFFBEE', lg: categories.bg }}
                   rounded={15}
-                  opacity={categories.opac}
+                  opacity={{ base: 1, lg: categories.opac }}
                   transform={'auto'}
                   _hover={{ scale: '1.02', opacity: '0.7' }}
                   cursor={'pointer'}
@@ -150,7 +187,7 @@ export const Categories = () => {
                     <Text
                       position={'absolute'}
                       w={'full'}
-                      display={'flex'}
+                      display={{ base: 'none', lg: 'flex' }}
                       h={'full'}
                       justifyContent={'flex-end'}
                       alignItems={'flex-start'}
@@ -185,43 +222,60 @@ export const Categories = () => {
         <Flex
           w={'full'}
           justifyContent={'space-between'}
-          py={100}
-          flexDirection={{ base: 'column', md: 'row' }}
-          alignItems={{ base: 'center', md: 'flex-start' }}
+          pb={{base:"82px",lg:"120px"}}
+          flexDirection={{ base: 'column', lg: 'row' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
           gap={5}
         >
-          <VStack alignItems={'flex-start'} w={{ base: 'full', md: '450px' }} gap={2}>
-            <Text fontSize={'23px'} fontWeight={500} color={'#525252'}>
+          <VStack
+            alignItems={'flex-start'}
+            w={{ base: 'full', lg: '450px' }}
+            gap={2}
+          >
+            <Box display={{ base: 'flex', lg: 'none' }} alignSelf={"center"}>
+              <Image
+                alt={'hand'}
+                src={'/hpHandPhone.png'}
+                w={'266px'}
+                h={'342px'}
+              />
+            </Box>
+            <Text fontSize={'23px'} fontWeight={500} color={'#525252'} lineHeight={"34px"} fontStyle={"normal"}>
               Problem Çözüm Aşamaları
             </Text>
             {result.map(result => (
-              <HStack key={result.key}>
+              <HStack key={result.key} pt={{base:"24px",lg:"32px"}}>
                 <Image
                   src={result.Image}
                   alt={'ımg'}
-                  w={'43px'}
-                  h={'43px'}
+                  w={"54px"}
+                  h={"54px"}
                   alignSelf={'flex-start'}
                 />
                 <VStack alignItems={'flex-start'}>
-                  <Text fontSize={'10px'} fontWeight={400} color={'#666666'}>
+                  <Text fontSize={'10px'} fontWeight={400} color={'#666666'} letterSpacing={"0.25px"} lineHeight={"150%"}>
                     {result.area}
                   </Text>
-                  <Text fontSize={'23px'} fontWeight={500} color={'black'}>
+                  <Text fontSize={{base:"19px",lg:'23px'}}  color={'black'} textStyle={"homePageText"}>
                     {result.textHead}
                   </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#666666'}>
+                  <Text color={'#666666'} textStyle={"categoriesText"} pt={"6px"}>
                     {result.textDown}
                   </Text>
                 </VStack>
               </HStack>
             ))}
-            <Flex w={'full'} pl={{md:'50'}} justifyContent={"center"} alignItems={"center"} gap={2}>
+            <Flex
+              w={'full'}
+              justifyContent={'flex-start'}
+              alignItems={'flex-start'}
+              gap={2} pt={"24px"} pl={{lg:12}}
+            >
               <Link href={'/HowToUse'}>
                 <Button
-                  bg={'#F27C00'}
-                  color={'white'}
-                  w={{base:"164px",md:'176px'}}
+                  bg={'#F27C00'} fontSize={"13px"} letterSpacing={"0.5px"} lineHeight={"20px"} fontWeight={500}
+                  color={'white'} fontStyle={"normal"}
+                  w={{ base: '164px', md: '176px' }}
                   h={'36px'}
                   _hover={{ opacity: 0.8 }}
                 >
@@ -231,20 +285,21 @@ export const Categories = () => {
               <Button
                 bg={'white'}
                 color={'#525252'}
-                w={'164px'}
-                h={'36px'}
-                _hover={{ opacity: 0.8 }} display={{base:"flex",md:"none"}}
+                w={'164px'} fontSize={"13px"} letterSpacing={"0.5px"} lineHeight={"20px"} fontWeight={500}
+                h={'36px'} fontStyle={"normal"}
+                _hover={{ opacity: 0.8 }}
+                display={{ base: 'flex', md: 'none' }}
               >
                 Videolu Çözüm
               </Button>
             </Flex>
           </VStack>
-          <Box>
+          <Box display={{ base: 'none', lg: 'flex' }}>
             <Image
               alt={'hand'}
               src={'/hpHandPhone.png'}
-              w={{ base: '266px', md: '493px' }}
-              h={{ base: '342px', md: '634px' }}
+              w={'493px'}
+              h={'634px'}
             />
           </Box>
         </Flex>

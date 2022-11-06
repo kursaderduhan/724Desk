@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             py={{ base: 233, md: 156 }}
             alignItems={{ base: 'flex-start', md: 'flex-start' }}
           >
-            <Text textStyle={"homePageHead"} pb={{base:"24px",lg:"36px"}}>
+            <Text textStyle={"homePageHead"} pb={{base:"24px",lg:"32px"}}>
               Problemlerinize <br /> Anında<span style={{ color: '#F27C00' }}> Çözüm <br /> Bulun!
               </span>
             </Text>
