@@ -41,22 +41,22 @@ export const Categories = () => {
         </Flex>
         <Flex
           w={'full'}
-          justifyContent={{ base: 'center', md: 'space-around' }}
-          flexDirection={{ base: 'column', md: 'row' }}
-          alignItems={{ base: 'center', md: 'flex-start' }}
+          justifyContent={{ base: 'center', lg: 'space-around' }}
+          flexDirection={{ base: 'column', lg: 'row' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
           mt={{ base: '54px', lg: '100px' }}
         >
           <Box
-            w={{ base: '268px', md: '384px' }}
-            h={{ base: '403px', md: '572px' }}
+            w={{ base: '268px', lg: '384px' }}
+            h={{ base: '403px', lg: '572px' }}
             overflow={'hidden'}
             alignSelf={'center'}
           >
             <Image
               src={'/womenImg.png'}
               alt={'ımg'}
-              w={{ base: '268px', md: '382px' }}
-              h={{ base: '403px', md: '574px' }}
+              w={{ base: '268px', lg: '382px' }}
+              h={{ base: '403px', lg: '574px' }}
               zIndex={1}
             />
             {/* <Image
@@ -69,8 +69,8 @@ export const Categories = () => {
           </Box>
           <VStack
             fontWeight={500}
-            w={{ base: 'full', md: 580 }}
-            alignItems={{ base: 'center', md: 'flex-start' }}
+            w={{ base: 'full', lg: 580 }}
+            alignItems={{ base: 'center', lg: 'flex-start' }}
           >
             <Text color={'#959595'} textStyle={'homePageSubText'}>
               724Desk’e hoş geldiniz
@@ -100,7 +100,7 @@ export const Categories = () => {
                 />
                 <VStack alignItems={'flex-start'}>
                   <Text
-                    fontSize={{ base: '16px', md: '19px' }}
+                    fontSize={{ base: '16px', lg: '19px' }}
                     color={'#333333'}
                     textStyle={'homePageText'}
                   >
@@ -120,7 +120,7 @@ export const Categories = () => {
         </Flex>
         <VStack
           w={'full'}
-          alignItems={{ base: 'center', md: 'flex-start' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
           pt={{ base: '82px', lg: '100px' }}
           pb={{ base: '82px', lg: '120px' }}
           gap={2}
@@ -145,8 +145,8 @@ export const Categories = () => {
           <Flex
             w={'full'}
             justifyContent={'space-between'}
-            flexDirection={{ base: 'column', md: 'row' }}
-            alignItems={{ base: 'center', md: 'flex-start' }}
+            flexDirection={{ base: 'column', lg: 'row' }}
+            alignItems={{ base: 'center', lg: 'flex-start' }}
             gap={2}
             pt={{ base: '24px', lg: '32px' }}
           >
@@ -230,7 +230,7 @@ export const Categories = () => {
           <VStack
             alignItems={'flex-start'}
             w={{ base: 'full', lg: '450px' }}
-            gap={2}
+            gap={2} mt={{ lg:"40px"}}
           >
             <Box display={{ base: 'flex', lg: 'none' }} alignSelf={"center"}>
               <Image
@@ -275,7 +275,7 @@ export const Categories = () => {
                 <Button
                   bg={'#F27C00'} fontSize={"13px"} letterSpacing={"0.5px"} lineHeight={"20px"} fontWeight={500}
                   color={'white'} fontStyle={"normal"}
-                  w={{ base: '164px', md: '176px' }}
+                  w={{ base: '164px', lg: '176px' }}
                   h={'36px'}
                   _hover={{ opacity: 0.8 }}
                 >
@@ -288,7 +288,7 @@ export const Categories = () => {
                 w={'164px'} fontSize={"13px"} letterSpacing={"0.5px"} lineHeight={"20px"} fontWeight={500}
                 h={'36px'} fontStyle={"normal"}
                 _hover={{ opacity: 0.8 }}
-                display={{ base: 'flex', md: 'none' }}
+                display={{ base: 'flex', lg: 'none' }}
               >
                 Videolu Çözüm
               </Button>
@@ -298,7 +298,6 @@ export const Categories = () => {
             <Image
               alt={'hand'}
               src={'/hpHandPhone.png'}
-              w={'493px'}
               h={'634px'}
             />
           </Box>
