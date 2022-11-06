@@ -49,9 +49,12 @@ export const theme = extendTheme({
       fontSize: { base: "xs", md: "sm", lg: "sm" },
     },
     headerText: {
-      fontSize: { base: "xs", md: "sm", lg: "sm", xl: "sm" },
+      fontSize: "sm",
       fontWeight: "400",
-      color:'dark.100'
+      color: 'dark.100',
+      lineHeight: "150%",
+      fontStyle: "normal",
+      letterSpacing: "0.5px"
     },
     cryptoPageText: {
       fontSize: "15px",
@@ -80,7 +83,11 @@ export const theme = extendTheme({
             ...base.components.Button.variants.outline(props),
             rounded: 5,
             fontSize: "sm",
-            _hover: {opacity:0.8}
+            _hover: { opacity: 0.8 },
+            letterSpacing: "0.5px",
+            fontWeight: 400,
+            fontStyle: "normal",
+            lineHeight: "150%"
           }),
           globalButton: (props: any) => ({
             ...base.components.Button.variants.outline(props),

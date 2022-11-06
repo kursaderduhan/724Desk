@@ -15,7 +15,8 @@ import {
   AccordionButton,
   AccordionPanel,
   VStack,
-  Circle
+  Circle,
+  Container
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { GrLanguage } from 'react-icons/gr'
@@ -36,7 +37,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
     <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
         <Flex w={'100%'} alignItems={"center"}>
-          <Flex w={'100px'}>
+          <Flex w={'full'} maxW={"150px"}>
             <Image
               src={'/724DeskLogo.png'}
               alt={'desk-ıcon'}
@@ -44,25 +45,27 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
               h={'24px'}
             />
           </Flex>
-          <HStack w={'full'} pl={100} gap={10}>
+          <Container maxW={"1200px"}>
+          <HStack w={'100%'} gap={5}>
             {headerText.map(header => (
               <Link href={header.Link} key={header.key}>
                 <Text
                   cursor={'pointer'}
                   textStyle={'headerText'}
-                  color={headerProp ? 'white' : 'gray'}
+                  color={headerProp ? 'white' : '#333333'}
                 >
                   {header.heading}
                 </Text>
               </Link>
             ))}
-          </HStack>
+            </HStack>
+            </Container>
           <HStack display={'flex'} justifyContent={'flex-end'} w={'full'}>
             <Link href={'/SignUp'}>
               <Button
                 variant={'headerButton'}
                 bg={'light.100'}
-                color={'dark.100'}
+                color={'dark.100'} w={"98px"} h={"37px"}
               >
                 Giriş Yap
               </Button>
@@ -71,7 +74,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
               <Button
                 variant={'headerButton'}
                 bg={'dark.200'}
-                color={'light.100'}
+                color={'light.100'} w={"88px"} h={"37px"}
               >
                 Kayıt Ol
               </Button>
@@ -128,21 +131,21 @@ const MobileHeader = () => {
     <Flex w={'100%'}>
       <Accordion
         allowMultiple
-        w={'100%'}
+        w={'100%'} 
         styleConfig={{
           baseStyle: {
             width: '100%'
           }
         }}
       >
-        <AccordionItem border={'none'} w={'100%'}>
+        <AccordionItem border={'none'} w={'100%'} h={"76px"} >
           {({ isExpanded }) => (
             <>
               <Flex
                 alignItems={'center'}
                 w={'full'}
                 justifyContent={'space-between'}
-                h={10}
+                h={"100%"}
                 px={5}
               >
                 <Box w={'full'}>
@@ -154,7 +157,7 @@ const MobileHeader = () => {
                       h={'24px'}
                     />
                   ) : (
-                    <Text fontSize={'15px'} fontWeight={500} color={'#333333'}>
+                    <Text fontSize={'15px'} fontWeight={500} color={'#333333'} lineHeight={"22.5px"} letterSpacing={"0.15px"} fontStyle={"normal"}>
                       {pagesName.v}
                     </Text>
                   )}
@@ -169,7 +172,7 @@ const MobileHeader = () => {
                       <Icon as={CloseIcon} />
                     </Circle>
                   ) : (
-                    <Icon as={HamburgerIcon} />
+                    <Icon as={HamburgerIcon} boxSize={"24px"} />
                   )}
                 </AccordionButton>
               </Flex>
@@ -184,8 +187,8 @@ const MobileHeader = () => {
                   >
                     <Link href={'/SignIn'}>
                       <Button
-                        variant={'globalButton'}
-                        w={'237px'}
+                        variant={'headerButton'} bg={"#F27C00"} color={"white"}
+                        w={'237px'} h={"37px"}
                         onClick={() => pagesName.set('Kayıt ol')}
                       >
                         Kayıt Ol
@@ -196,8 +199,8 @@ const MobileHeader = () => {
                         <Button
                           variant={'headerButton'}
                           bg={'transparent'}
-                          color={'light.100'}
-                          w={'111px'}
+                          color={'light.100'} borderColor={"rgba(255, 255, 255, 0.2)"}
+                          w={'111px'} h={"37px"}
                           onClick={() => pagesName.set('Uzmanlar İçin')}
                         >
                           Uzmanlar İçin
@@ -207,8 +210,8 @@ const MobileHeader = () => {
                         <Button
                           variant={'headerButton'}
                           bg={'transparent'}
-                          color={'light.100'}
-                          w={'111px'}
+                          color={'light.100'} 
+                          w={'111px'} h={"37px"} borderColor={"rgba(255, 255, 255, 0.2)"}
                           onClick={() => pagesName.set('Giriş Yap')}
                         >
                           Giriş Yap
@@ -220,17 +223,14 @@ const MobileHeader = () => {
                     bg={'white'}
                     alignItems={'flex-start'}
                     w={'full'}
-                    gap={5}
+                    gap={"24px"}
                     py={10}
-                    px={5}
+                    px={"24px"}
                   >
                     {headerTextMobile.map(header => (
                       <Link href={header.Link} key={header.key}>
                         <Text
-                          fontSize={'14px'}
-                          fontWeight={400}
-                          color={'#333333'}
-                          cursor={'pointer'}
+                          cursor={'pointer'} textStyle={"headerText"}
                           onClick={() => changePagesName(header.heading)}
                         >
                           {header.heading}

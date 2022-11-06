@@ -60,10 +60,10 @@ const Home: NextPage = () => {
             w={'100%'}
             h={'full'}
             gap={10}
-            py={{ base: 140, md: 150 }}
+            py={{ base: 233, md: 156 }}
             alignItems={{ base: 'flex-start', md: 'flex-start' }}
           >
-            <Text fontSize={{ base: '32px', md: '54px' }}>
+            <Text fontSize={{ base: '32px', md: '54px' }} fontWeight={500}>
               Problemlerinize <br /> Anında{' '}
               <span style={{ color: '#F27C00' }}>
                 Çözüm <br /> Bulun!
