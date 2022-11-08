@@ -23,7 +23,7 @@ export const DataBase = () => {
             724DESK Bilgi Bankası
           </Text>
           <Flex
-            flexDirection={{ base: 'column', md: 'row' }}
+            flexDirection={{ base: 'column', lg: 'row' }}
             w={'full'}
             justifyContent={'space-between'}
             px={0} pt={{ base: "24px", lg: "32px" }}
@@ -33,15 +33,15 @@ export const DataBase = () => {
               <Image
                 src={'/DataBase-Img.png'}
                 alt={'ımg'}
-                w={{ base: '343px', md: '491px' }}
-                h={{ base: '192px', md: '276px' }}
+                w={{ base: '343px', lg: '491px' }}
+                h={{ base: '192px', lg: '276px' }}
                 cursor={'pointer'}
               />
             </Link>
             <VStack alignItems={'flex-start'}>
               <Text
                 fontWeight={500}
-                fontSize={{ base: '19px', md: '33px' }}
+                fontSize={{ base: '19px', lg: '33px' }}
                 color={'#333333'} letterSpacing={"0.25px"} lineHeight={"50px"} fontStyle={"normal"}
               >
                 İşte Dev Balinaların En Çok Trade Et...
@@ -49,7 +49,7 @@ export const DataBase = () => {
               <Text
                 color={'#666666'}
                 fontWeight={400} textStyle={"subText"}
-                maxW={{ base: 'full', md: '655px' }}
+                maxW={{ base: 'full', lg: '655px' }}
               >
                 Curve DAO Token (CRV), Livepeer (LPT) ve birkaç altcoin
                 projesinde devasa balina satın alımlarına şahit oldu. Balinalar
@@ -66,9 +66,9 @@ export const DataBase = () => {
             </VStack>
           </Flex>
           <SimpleGrid
-            columns={{ base: 2, md: 4 }}
+            columns={{ base: 2, lg: 4 }}
             w={'full'}
-            py={{ base: 5, md: 50 }}
+            py={{ base: 5, lg: 50 }}
             justifyContent={'center'}
             alignItems={'center'}
             gap={5}
@@ -76,7 +76,7 @@ export const DataBase = () => {
             {Item.map(items => (
               <Box
                 key={items.Key}
-                w={{ base: '164px', md: '288px' }}
+                w={{ base: '164px', lg: '288px' }}
                 h={'162px'}
                 bgImage={items.Image}
                 bgPos={'center'}
@@ -111,8 +111,8 @@ export const DataBase = () => {
           >
             <Flex
               zIndex={1}
-              pos={{ base: 'initial', md: 'absolute' }}
-              justifyContent={{ base: 'center', md: 'flex-start' }}
+              pos={{ base: 'initial', lg: 'absolute' }}
+              justifyContent={{ base: 'center', lg: 'flex-start' }}
               pl={10}
               alignItems={'flex-start'}
               w={'full'}
@@ -120,8 +120,8 @@ export const DataBase = () => {
               <Image
                 src={'/DataBaseWomen.png'}
                 alt={'women'}
-                w={{ base: '324px', md: '624px' }}
-                h={{ base: '326px', md: '630px' }}
+                w={{ base: '324px', lg: '624px' }}
+                h={{ base: '326px', lg: '630px' }}
                 zIndex={1}
                 display={'flex'}
               />
@@ -132,7 +132,7 @@ export const DataBase = () => {
               h={'491px'}
               justifyContent={'center'} pl={230}
               borderLeftRadius={'full'}
-              display={{ base: 'none', md: 'flex' }} 
+              display={{ base: 'none', lg: 'flex' }} 
             >
               <HStack w={'480px'} pt={"93px"} mb={"40px"}>
                 <Image
@@ -248,9 +248,9 @@ export const DataBase = () => {
           {categories.map(categories => (
             <Box
               key={categories.key}
-              w={{ base: '164px', md: '288px' }}
-              h={{ base: '125px', md: '223px' }}
-              bg={categories.bg}
+              w={{ base: '164px', lg: '288px' }}
+              h={{ base: '125px', lg: '223px' }}
+              bg={categories.bg} py={"24px"}
               rounded={15}
               style={{
                 flex: '0 0 auto',
@@ -272,15 +272,14 @@ export const DataBase = () => {
                     h={'42px'}
                   />
                   <Text
-                    fontSize={{ base: '15px', md: '23px' }}
-                    fontWeight={500}
+                    fontSize={{ base: '15px', lg: '19px' }}
+                    fontWeight={500} textStyle={"homePageText"}
                   >
                     {categories.TextHead}
                   </Text>
                   <Text
-                    fontSize={'12px'}
-                    fontWeight={400}
-                    display={{ base: 'none', md: 'flex' }}
+                    textStyle={"categoriesText"}
+                    display={{ base: 'none', lg: 'flex' }} color={"#666666"}
                   >
                     {categories.Description}
                   </Text>
@@ -297,8 +296,8 @@ export const DataBase = () => {
                   <Image
                     src={categories.ImgRight}
                     alt={'rightImg'}
-                    w={{ base: '72px', md: '133px' }}
-                    h={{ base: '72px', md: '133px' }}
+                    w={{ base: '72px', lg: '133px' }}
+                    h={{ base: '72px', lg: '133px' }}
                     p={2}
                   />
                 </Box>
