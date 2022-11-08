@@ -34,10 +34,10 @@ interface Size {
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   const size: Size = useWindowSize()
   return (
-    <Flex h={'full'} alignItems={'center'} p={{ base: 0, md: 5 }} w={'100%'}>
+    <Flex h={'full'} alignItems={'center'} p={"24px"} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
         <Flex w={'100%'} alignItems={"center"}>
-          <Flex w={'full'} maxW={"150px"}>
+          <Flex w={'full'} maxW={"77px"}>
             <Image
               src={'/724DeskLogo.png'}
               alt={'desk-ıcon'}
@@ -45,12 +45,12 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
               h={'24px'}
             />
           </Flex>
-          <Container maxW={"1200px"}>
-          <HStack w={'100%'} gap={5}>
+          
+          <Flex alignItems={"center"} pl={"32px"} gap={"24px"} w={"100%"} justifyContent={"flex-start"}>
             {headerText.map(header => (
               <Link href={header.Link} key={header.key}>
                 <Text
-                  cursor={'pointer'}
+                  cursor={'pointer'} 
                   textStyle={'headerText'}
                   color={headerProp ? 'white' : '#333333'}
                 >
@@ -58,9 +58,9 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
                 </Text>
               </Link>
             ))}
-            </HStack>
-            </Container>
-          <HStack display={'flex'} justifyContent={'flex-end'} w={'full'}>
+            </Flex>
+            
+          <HStack display={'flex'} justifyContent={'flex-end'}>
             <Link href={'/SignUp'}>
               <Button
                 variant={'headerButton'}
@@ -88,8 +88,8 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
                 _hover={{ opacity: 0.8, bg: 'transparent' }}
                 alignItems={'center'}
                 as={Button}
-                _active={{ bg: 'transparent' }}
-                color={headerProp ? 'white' : 'black'}
+                _active={{ bg: 'transparent' }} textStyle={"homePageSubText"}
+                color={headerProp ? 'white' : '#333333'}
               >
                 TR
               </MenuButton>
