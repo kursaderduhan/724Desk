@@ -6,7 +6,7 @@ import {
   VStack,
   Image,
   Button,
-  Container,
+  Container
 } from '@chakra-ui/react'
 import Link from 'next/link'
 export const ServicePocket = () => {
@@ -14,20 +14,19 @@ export const ServicePocket = () => {
     <Flex
       w={'full'}
       flexDirection={'column'}
-      bg={'#E5E5E5'}
+      bg={'#F7FCFE'}
       justifyContent={'center'}
-      py={{ base: 20, md: 100 }}
+      pt={{ base: '82px', lg: '120px' }}
+      pb={{ base: '104px', lg: '305px' }}
       gap={10}
       alignItems={'center'}
-      pb={{ base: 20, md: 250 }}
     >
-      <Container maxW={"1200px"}>
-        <VStack w={'full'} gap='10'>
+      <Container maxW={'1200px'}>
+        <VStack w={'full'}>
           <Link href={'/PriceList'}>
             <Text
-              fontSize={'23px'}
-              fontWeight={'500'}
               color={'#525252'}
+              textStyle={'deskTokenHead'}
               alignSelf={'flex-start'}
               cursor={'pointer'}
             >
@@ -38,8 +37,9 @@ export const ServicePocket = () => {
             flexDirection={{ base: 'column', md: 'row' }}
             alignItems={'center'}
             w={'100%'}
-            gap={5}
-            justifyContent={"center"}
+            pt={'32px'}
+            gap={'16px'}
+            justifyContent={'center'}
           >
             {Item.map(item => (
               <VStack
@@ -56,7 +56,7 @@ export const ServicePocket = () => {
                 bg={item.populer == true ? '#F2A77D' : 'white'}
                 key={item.key}
                 alignItems={{ base: 'center', md: 'flex-start' }}
-                p={5}
+                p={'24px'}
                 zIndex={item.populer == true ? 1 : 0}
                 justifyContent={'space-between'}
                 rounded={10}
@@ -86,13 +86,17 @@ export const ServicePocket = () => {
                   alignItems={{ base: 'center', md: 'flex-start' }}
                 >
                   <Text
-                    fontSize={'33px'}
-                    fontWeight={400}
+                    textStyle={'bigText'}
                     color={item.populer == true ? '#FFE7CE' : '#C4C4C4'}
                   >
                     {item.time}
                   </Text>
-                  <Text fontSize={'23px'} fontWeight={400} color={'#333333'}>
+                  <Text
+                    textStyle={'deskTokenHead'}
+                    pt={'6px'}
+                    fontWeight={400}
+                    color={'#333333'}
+                  >
                     {item.price}
                   </Text>
                 </VStack>
@@ -175,7 +179,12 @@ export const ServicePocket = () => {
                 <Button
                   w={item.populer == true ? 'full' : '163px'}
                   h={'36px'}
+                  fontSize={'13px'}
+                  fontWeight={500}
+                  fontStyle={'normal'}
                   alignSelf={'center'}
+                  lineHeight={'20px'}
+                  letterSpacing={'0.5px'}
                   color={item.populer == true ? '#F27C00' : '#525252'}
                 >
                   {item.populer == true ? 'Hemen Seç' : 'Seç'}
@@ -186,15 +195,28 @@ export const ServicePocket = () => {
           <Text
             fontWeight={400}
             fontSize={{ base: '33px', md: '46px' }}
+            textStyle={'bigText'}
             color={'black'}
+            pt={{ base: '82px', lg: '120px' }}
             textAlign={{ base: 'center' }}
           >
             Hemen Kullanmaya Başla!
           </Text>
-          <Text color={'#666666'} fontSize={'14px'} fontWeight={400}>
+          <Text
+            color={'#666666'}
+            pt={{ base: '12px', lg: '16px' }}
+            fontWeight={400} textStyle={"subText"}
+          >
             Hemen kaydol, adımları tamamla ve kullanmaya başla.
           </Text>
-          <Button variant={'globalButton'} w={'236px'}>
+          <Button
+            variant={'globalButton'}
+            w={'236px'}
+            top={{ base: '42px', lg: '54px' }}
+            lineHeight={'20px'}
+            letterSpacing={'0.5px'} borderRadius={"10px"}
+            fontWeight={500} fontSize={"13px"}
+          >
             Hemen Başla
           </Button>
         </VStack>
