@@ -29,13 +29,14 @@ export const FeedBack = () => {
       w={'full'}
       flexDirection={'column'}
       h={'full'}
-      py={100}
-      bg={'#E5E5E5'}
+      pt={{ base: '82px', lg: '120px' }}
+      pb={{ base: '82px', lg: '230px' }}
+      bg={'#F7FCFE'}
       alignItems={{ base: 'center', md: 'flex-start' }}
       gap={5}
     >
       <Container maxW={'1200px'}>
-        <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+        <Text textStyle={'deskTokenHead'} color={'#525252'}>
           Geri Dönüşler
         </Text>
       </Container>
@@ -49,8 +50,9 @@ export const FeedBack = () => {
           msOverflowStyle: '-ms-autohiding-scrollbar'
         }}
         flexDirection={{ base: 'row', md: 'row' }}
-        pl={{ md: '180px' }}
-        gap={2}
+        pl={{ lg: '180px' }}
+        pt={{ base: '24px', lg: '32px' }}
+        gap={'16px'}
         justifyContent={'center'}
         alignItems={'center'}
       >
@@ -68,18 +70,22 @@ export const FeedBack = () => {
               <HStack w={'full'} justifyContent={'space-between'}>
                 <Avatar src={item.Image} size={'lg'} />
                 <VStack alignItems={'flex-end'}>
-                  <Text fontSize={'15px'} color={'#333333'} fontWeight={500}>
+                  <Text
+                    color={'#333333'}
+                    textStyle={'homePageSubText'}
+                    fontWeight={500}
+                  >
                     {item.name}
                   </Text>
-                  <Text fontSize={'12px'} color={'#959595'} fontWeight={400}>
+                  <Text textStyle={'categoriesText'} color={'#959595'}>
                     {item.job}
                   </Text>
-                  <Text fontSize={'10px'} color={'#959595'} fontWeight={500}>
+                  <Text textStyle={'smallText'} color={'#959595'}>
                     {item.time}
                   </Text>
                 </VStack>
               </HStack>
-              <Text fontSize={'12px'} fontWeight={400} color={'#333333'}>
+              <Text textStyle={'categoriesText'} color={'#333333'}>
                 {item.feedBack}
               </Text>
               <HStack w={'full'} justifyContent={'space-between'}>
@@ -102,7 +108,13 @@ export const FeedBack = () => {
                     w={'16px'}
                     h={'16px'}
                   />
-                  <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
+                  <Text
+                    fontSize={'12px'}
+                    lineHeight={'16px'}
+                    fontStyle={'normal'}
+                    fontWeight={400}
+                    color={'#525252'}
+                  >
                     {item.likeCounter}
                   </Text>
                 </HStack>
@@ -111,13 +123,13 @@ export const FeedBack = () => {
           </Flex>
         ))}
       </Flex>
-      <Container maxW={"1200px"}>
+      <Container maxW={'1200px'}>
         <Link href={'/PopulerQuestions'}>
           <Text
-            fontWeight={500}
-            fontSize={'23px'}
             color={'#525252'}
-            py={10}
+            textStyle={'deskTokenHead'}
+            pt={{ base: '82px', lg: '120px' }}
+            pb={{ base: '24px', lg: '32px' }}
             cursor={'pointer'}
             onClick={() => pagesName.set('Sıkça Sorulan Sorular')}
           >
@@ -147,8 +159,7 @@ export const FeedBack = () => {
                     <Box
                       flex='1'
                       textAlign='left'
-                      fontSize={'15px'}
-                      fontWeight={400}
+                      textStyle={'homePageSubText'}
                       color={'#89969F'}
                     >
                       Projenin amacı nedir?

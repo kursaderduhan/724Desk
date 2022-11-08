@@ -104,6 +104,13 @@ export const theme = extendTheme({
       letterSpacing: "0.25px",
       fontStyle: "normal"
     },
+    smallText: {
+      fontSize: "10px",
+      fontStyle: "normal",
+      fontWeight: 400,
+      lineHeight: "150%",
+      letterSpacing: "0.25px"
+    },
     cryptoPageText: {
       fontSize: "15px",
       fontWeight: 400,
