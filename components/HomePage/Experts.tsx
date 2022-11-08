@@ -15,12 +15,12 @@ export const Experts = () => {
     <VStack
       w={'100%'}
       h={'1155px'}
-      bgImage={'/experts-bg.png'}
+      bg={"#333862"}
       flexDirection={'column'}
-      py={{base:25,md:100}}
+      py={{base:"54px",lg:"120px"}}
     >
       <Container maxW={"1200px"}>
-        <VStack w={'full'} gap={{base:10,md:50}}>
+        <VStack w={'full'}>
           <Link href={'/Experts'}>
             <Text
               fontSize={'23px'}
@@ -32,12 +32,12 @@ export const Experts = () => {
               Uzmanlarımız
             </Text>
           </Link>
-          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{base:1,md:10}} w={'full'} >
+          <SimpleGrid columns={{ base: 2, lg: 4 }} spacing={{ base: 1, lg: 10 }} w={'full'} py={{base:"41px",lg:"32px"}} >
             {Item.map(ıtem => (
               <Box
                 key={ıtem.key}
-                w={{ base: '160px', md: '288px' }}
-                h={{ base: '247px', md: '408px' }}
+                w={{ base: '160px', lg: '288px' }}
+                h={{ base: '247px', lg: '408px' }}
                 bg={'#505583'}
                 rounded={10}
                 py={2}
@@ -47,8 +47,8 @@ export const Experts = () => {
                     bgImage={ıtem.Image}
                     bgSize={'cover'}
                     bgPos={'center'}
-                    w={{ base: '148px', md: '256px' }}
-                    h={{ base: '90px', md: '156px' }}
+                    w={{ base: '148px', lg: '256px' }}
+                    h={{ base: '90px', lg: '156px' }}
                     alignItems={'flex-start'}
                     px={2}
                     justifyContent={'space-between'}
@@ -60,9 +60,9 @@ export const Experts = () => {
                       bg={'#F7FCFE'}
                       rounded={10}
                       justifyContent='center'
-                      opacity={0.9} display={{base:"none",md:"flex"}}
+                      opacity={0.9} display={{base:"none",lg:"flex"}}
                     >
-                      <Text fontSize={'12px'} fontWeight={500}>
+                      <Text fontSize={'12px'} fontWeight={500} >
                         {ıtem.online == true ? (
                           <span style={{ color: 'green' }}>Online</span>
                         ) : (
@@ -84,40 +84,36 @@ export const Experts = () => {
                       </Text>
                     </HStack>
                   </Flex>
-                  <VStack alignItems={"flex-start"} w={"full"} px={{base:3,md:0}} >
+                  <VStack alignItems={"flex-start"} w={"full"} px={{base:3,lg:0}} >
                     <Text
-                      fontSize={{ base: '15px', md: '19px' }}
-                      fontWeight={500}
+                      fontSize={{ base: '15px', lg: '19px' }}
                       color={'white'}
                       alignSelf={'flex-start'}
-                      px={{base:0,md:5}}
+                      px={{base:0,lg:5}} textStyle={"homePageText"}
                     >
                       {ıtem.name}
                     </Text>
                     <Text
-                      fontSize={{ base: '12px', md: '14px' }}
-                      fontWeight={400}
+                      fontSize={{ base: '12px', lg: '14px' }}
+                      textStyle={"subText"}
                       color={'#C4C4C4'}
                       alignSelf={'flex-start'}
-                      px={{base:0,md:5}}
+                      px={{base:0,lg:5}}
                     >
                       {ıtem.expert}
                     </Text>
                     <Text
-                      fontSize={'14px'}
-                      fontWeight={400}
-                      color={'#C4C4C4'}
+                      color={'#C4C4C4'} textStyle={"subText"}
                       alignSelf={'flex-start'}
                       px='5'
-                      display={{ base: 'none', md: 'flex' }}
+                      display={{ base: 'none', lg: 'flex' }}
                     >
                       {ıtem.description}
                     </Text>
                     <Text
                       fontSize={'12px'}
-                      fontWeight={400}
-                      color={'white'}
-                      display={{ base: 'flex', md: 'none' }}
+                      color={'white'} textStyle={"subText"}
+                      display={{ base: 'flex', lg: 'none' }}
                     >
                       {ıtem.language}
                     </Text>
@@ -159,9 +155,9 @@ export const Experts = () => {
                     </HStack>
                     <Text
                       fontSize={'12px'}
-                      fontWeight={400}
+                      textStyle={"subText"}
                       color={'white'}
-                      display={{ base: 'none', md: 'flex' }}
+                      display={{ base: 'none', lg: 'flex' }}
                     >
                       {ıtem.language}
                     </Text>
