@@ -111,6 +111,13 @@ export const theme = extendTheme({
       lineHeight: "150%",
       letterSpacing: "0.25px"
     },
+    footerSmall: {
+      fontSize: "13px",
+      fontWeight: 500,
+      lineHeight: "20px",
+      letterSpacing: "0.1px",
+      fontStyle: "normal",
+    },
     cryptoPageText: {
       fontSize: "15px",
       fontWeight: 400,

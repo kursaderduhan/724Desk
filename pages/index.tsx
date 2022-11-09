@@ -48,9 +48,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Box
-        bgImage={{base:"/Hp-BgMobile.png",md:'/HomePageBg.png'}}
-        w={{ base: '100%', md: 'full' }}
-        h={{ base: '746px', md: '746px' }}
+        bgImage={{base:"/Hp-BgMobile.png",lg:'/HomePageBg.png'}}
+        w={{ base: '100%', lg: 'full' }}
+        h={{ base: '746px', lg: '746px' }}
         bgPos={'center'}
         bgSize={'cover'}
       >
@@ -59,8 +59,8 @@ const Home: NextPage = () => {
             flexDirection={'column'}
             w={'100%'}
             h={'full'}
-            py={{ base: 233, md: 156 }}
-            alignItems={{ base: 'flex-start', md: 'flex-start' }}
+            py={{ base: "233px", lg: "156px" }}
+            alignItems={{ base: 'flex-start', lg: 'flex-start' }}
           >
             <Text textStyle={"homePageHead"} pb={{base:"24px",lg:"32px"}}>
               Problemlerinize <br /> Anında<span style={{ color: '#F27C00' }}> Çözüm <br /> Bulun!
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
             </Link>
             <InputGroup
               size={'lg'}
-              w={{base:"343px",md:'389px'}}
+              w={{base:"343px",lg:'389px'}}
               boxShadow={'xl'} mt={"54px"} h={"54px"}
               alignItems={'center'} rounded={"10px"}
             >

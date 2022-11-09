@@ -34,7 +34,7 @@ interface Size {
 export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
   const size: Size = useWindowSize()
   return (
-    <Flex h={'full'} alignItems={'center'} p={"24px"} w={'100%'}>
+    <Flex h={'full'} alignItems={'center'} p={{base:"0px",lg:"24px"}} w={'100%'}>
       {size.width! > screen.MOBILE_SIZE && (
         <Flex w={'100%'} alignItems={"center"}>
           <Flex w={'full'} maxW={"77px"}>
@@ -143,12 +143,11 @@ const MobileHeader = () => {
             <>
               <Flex
                 alignItems={'center'}
-                w={'full'}
+                w={'100%'}
                 justifyContent={'space-between'}
-                h={"100%"}
-                px={5}
+                h={"100%"} px={5}
               >
-                <Box w={'full'}>
+                <Box w={'100%'}>
                   {pagesName.v == 'Ana Sayfa' ? (
                     <Image
                       src={'/724DeskLogo.png'}
@@ -176,7 +175,7 @@ const MobileHeader = () => {
                   )}
                 </AccordionButton>
               </Flex>
-              <AccordionPanel w={'100%'}>
+              <AccordionPanel w={'100%'} >
                 <Flex w={'100%'} flexDirection={'column'}>
                   <VStack
                     h={'238px'}
@@ -230,7 +229,7 @@ const MobileHeader = () => {
                     {headerTextMobile.map(header => (
                       <Link href={header.Link} key={header.key}>
                         <Text
-                          cursor={'pointer'} textStyle={"headerText"}
+                          cursor={'pointer'} textStyle={"headerText"} color={"#333333"}
                           onClick={() => changePagesName(header.heading)}
                         >
                           {header.heading}
