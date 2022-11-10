@@ -14,32 +14,32 @@ export const ServicePanels = () => {
       w={'full'}
       h={'full'}
       alignItems={'flex-start'}
-      bg={'#E5E5E5'}
+      bg={'#F7FCFE'}
       flexDirection={'column'}
-      py={100}
+      pt={"150px"} pb={"132px"}
     >
-      <Container maxW={"1200px"} h={'full'} gap={10}>
-        <VStack w={'full'} alignItems={'flex-start'} gap={10}>
+      <Container maxW={"1200px"}>
+        <VStack w={'full'} alignItems={'flex-start'}>
           <Flex flexDirection={'column'}>
-            <Text fontWeight={500} fontSize={'23px'} color={'#525252'}>
+            <Text textStyle={"deskTokenHead"} color={'#525252'}>
               Hizmet Paketleri
             </Text>
-            <Text fontWeight={400} fontSize={'14px'} color={'#959595'}>
+            <Text textStyle={"subText"} color={'#959595'} maxW={"608px"} pt={"12px"}>
               Hizmet almak isteyen müşterilerimiz, tek seferlik, 6 aylık, yıllık
-              ve premium <br /> paketlerimizden ihtiyaç duyduğunu seçerek işlem
+              ve premium paketlerimizden ihtiyaç duyduğunu seçerek işlem
               sürecini başlatabilir.
             </Text>
           </Flex>
-          <HStack>
+          <HStack pt={"42px"} gap={"16px"}>
             {Item.map(item => (
-              <HStack w={'389px'} h={'181px'} key={item.key} bg={'#FFFFFF'}>
-                <HStack alignItems={'flex-start'} px={10}>
+              <HStack w={'389px'} h={'181px'} key={item.key} bg={'#FFFFFF'} borderRadius={"16px"}>
+                <HStack alignItems={'flex-start'} py={"32px"} pl={"33px"}>
                   <Image src={item.Image} alt={'ımg'} w={'82px'} h={'82px'} />
                   <VStack fontWeight={400} alignItems={'flex-start'}>
-                    <Text fontSize={'33px'} color={'#FFA649'}>
+                    <Text color={'#FFA649'} textStyle={"bigText"}>
                       {item.HeadName}
                     </Text>
-                    <Text fontSize={'14px'} color={'#959595'}>
+                    <Text textStyle={"subText"} color={'#959595'} pt={"4px"} maxW={"244px"}>
                       {item.Description}
                     </Text>
                   </VStack>
@@ -48,10 +48,10 @@ export const ServicePanels = () => {
             ))}
           </HStack>
           <Button
-            bg={'transparent'}
-            color={'#F27C00'}
-            border={'1px solid'}
-            borderColor={'#F27C00'}
+            bg={'transparent'} top={"24px"} fontSize={"13px"} lineHeight={"20px"} letterSpacing={"0.5px"} fontWeight={500}
+            color={'#F27C00'} w={"195px"} h={"36px"}
+            border={'1px solid'} borderRadius={"5px"}
+            borderColor={'#F27C00'} _hover={{opacity:0.8}}
           >
             Daha Fazla Bilgi
           </Button>

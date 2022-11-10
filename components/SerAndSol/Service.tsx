@@ -6,51 +6,80 @@ import {
   Image,
   Text,
   Container,
-  Button
+  Button,
+  Divider,
+  SimpleGrid
 } from '@chakra-ui/react'
 export const Service = () => {
   return (
-    <Flex bg={'#333862'} h={'1202px'}>
-      <VStack w={'full'} >
-        <HStack bg={'#272B53'} w={'full'} h={'311px'}>
-          <Container maxW={"1200px"}>
-            <HStack w={'full'} justifyContent={'space-around'}>
+    <Flex bg={'#333862'} h={'full'}>
+      <VStack w={'full'}>
+        <HStack bg={'#272B53'} w={'full'} h={'311px'} mt={'100px'}>
+          <Container maxW={'1200px'}>
+            <HStack w={'full'} justifyContent={'space-around'} py={'72px'}>
               <VStack>
-                <HStack gap={4}>
+                <HStack gap={'12px'}>
                   <Image src={'/flag.png'} alt={'flag'} w={'54px'} h={'54px'} />
-                  <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                  <Text color={'white'} textStyle={'bigText'}>
                     33
                   </Text>
-                  <Text fontWeight={400} fontSize={'15px'} color={'#959595'}>
+                  <Text
+                    textStyle={'homePageSubText'}
+                    color={'#959595'}
+                    opacity={0.8}
+                  >
                     ülke
                   </Text>
                 </HStack>
-                <Text fontSize={'23px'} fontWeight={500} color={'#EAEAEA'}>
+                <Text color={'#EAEAEA'} textStyle={'deskTokenHead'} pt={'28px'}>
                   Birçok farklı ülkeden uzmanlara sahibiz
                 </Text>
-                <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
+                <Text
+                  color={'#D4D4D4'}
+                  textStyle={'subText'}
+                  maxW={'454px'}
+                  textAlign={'center'}
+                  pt={'12px'}
+                >
                   Size çok yakınız, aynı zaman diliminde her zaman yanınızdayız.
                 </Text>
               </VStack>
+              <Divider
+                orientation='vertical'
+                bg={'white'}
+                border={'1px solid'}
+                borderColor={'#525575'}
+                h={'227px'}
+              />
               <VStack>
-                <HStack>
+                <HStack gap={'12px'}>
                   <Image
                     src={'/global-refresh.png'}
                     alt={'global'}
                     w={'54px'}
                     h={'54px'}
                   />
-                  <Text fontWeight={500} fontSize={'33px'} color={'white'}>
+                  <Text color={'white'} textStyle={'bigText'}>
                     42
                   </Text>
-                  <Text fontWeight={400} fontSize={'15px'} color={'#959595'}>
+                  <Text
+                    textStyle={'homePageSubText'}
+                    color={'#959595'}
+                    opacity={0.8}
+                  >
                     Dil
                   </Text>
                 </HStack>
-                <Text fontSize={'23px'} fontWeight={500} color={'#EAEAEA'}>
+                <Text color={'#EAEAEA'} textStyle={'deskTokenHead'} pt={'28px'}>
                   Bİrçok dilde hizmet vermekteyiz
                 </Text>
-                <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
+                <Text
+                  color={'#D4D4D4'}
+                  textStyle={'subText'}
+                  maxW={'454px'}
+                  textAlign={'center'}
+                  pt={'12px'}
+                >
                   Sizi anlıyoruz, çünkü aynı dili konuşuyoruz. Size destek
                   oluyoruz, çünkü hedeflerimiz aynı.
                 </Text>
@@ -58,125 +87,70 @@ export const Service = () => {
             </HStack>
           </Container>
         </HStack>
-        <Container maxW={"1200px"}>
-          <VStack gap={20} py={100}>
+        <Container maxW={'1200px'}>
+          <VStack pt={'100px'} pb={'150px'}>
             <Flex flexDirection={'column'} alignItems={'flex-start'} w={'full'}>
-              <Text fontWeight={500} fontSize={'23px'} color={'white'}>
+              <Text color={'white'} textStyle={'deskTokenHead'}>
                 Birçok farklı iletişim kanalından hizmet sunmaktayız
               </Text>
-              <Text fontSize={'14px'} fontWeight={400} color={'#D4D4D4'}>
+              <Text color={'#D4D4D4'} textStyle={'subText'} pt={'12px'}>
                 Sizin sahip olduğunuz iletişim kanalları aracılığıyla iletişim
                 kuruyoruz. sahip olduğunuz iletişim kanalları aracılığıyla
                 iletişim kuruyoruz.
               </Text>
             </Flex>
-            <HStack w={'full'} h={'full'} alignItems={'flex-start'} justifyContent={"space-between"}>
-              <VStack h={'full'} gap={10}>
-                <Flex flexDirection={'column'}>
-                  <Image
-                    src={'/phone-1.png'}
-                    alt={'phone'}
-                    w='54px'
-                    h={'54px'}
-                  />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    Telefon
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    Telefon numaranız aracılığıyla uzmanlarımız <br/> size ulaşarak
-                    gerekli desteği sağlayacaktır.
-                  </Text>
-                </Flex>
-                <Flex
-                  flexDirection={'column'}
+            <SimpleGrid
+              w={'full'}
+              h={'full'}
+              columns={3}
+              pt={'80px'}
+              gridRowGap={'77px'}
+              gridColumnGap={'144px'}
+            >
+              {item.map(items => (
+                <VStack
+                  h={'full'}
+                  gap={10}
+                  key={items.id}
                   alignItems={'flex-start'}
-                  gap={2}
-                  alignSelf={'flex-start'}
                 >
-                  <Image
-                    src={'/global.png'}
-                    alt={'phone'}
-                    w='54px'
-                    h={'54px'}
-                  />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    Canlı Sohbet
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    Canlı sohbet aracılığıyla eş zamanlı olarak <br/> uzmanlarımızdan
-                    destek alabilirsiniz.
-                  </Text>
-                </Flex>
-              </VStack>
-              <VStack h={'full'} alignItems={"flex-start"}gap={10}>
-                <Flex flexDirection={'column'} alignItems={'flex-start'}>
-                  <Image
-                    src={'/messages.png'}
-                    alt={'phone'}
-                    w='54px'
-                    h={'54px'}
-                  />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    Anlık Mesajlaşma
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    Whatsapp, Telegram ve Signal gibi kanallar<br/> aracılığıyla
-                    destek alabilir, bizimle iletişime<br/> geçebilirsiniz.
-                  </Text>
-                </Flex>
-                <Flex flexDirection={'column'} alignItems={'flex-start'}>
-                  <Image
-                    src={'/global.png'}
-                    alt={'phone'}
-                    w='54px'
-                    h={'54px'}
-                  />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    E - Posta
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    E-posta yoluyla bize iletişim kurup<br/> sorunlarınızı
-                    çözebilirsiniz.
-                  </Text>
-                </Flex>
-              </VStack>
-              <VStack  alignItems={"flex-start"}gap={10}>
-                <Flex flexDirection={'column'} alignItems={'flex-start'}>
-                  <Image src={'/video.png'} alt={'phone'} w='54px' h={'54px'} />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    Görüntülü Görüşme
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    Uzmanlarımızla görüntülü görüşerek <br/> sorunlarınızı
-                    çözebilirsiniz.
-                  </Text>
-                </Flex>
-                <Flex flexDirection={'column'} alignItems={'flex-start'}>
-                  <Image
-                    src={'/global.png'}
-                    alt={'phone'}
-                    w='54px'
-                    h={'54px'}
-                  />
-                  <Text fontSize={'19px'} fontWeight={500} color={'white'}>
-                    724 Desk Uygulaması
-                  </Text>
-                  <Text fontSize={'12px'} fontWeight={400} color={'#C4C4C4'}>
-                    Web uygulamamız üzerinden bize ulaşıp <br/> destek talebinde
-                    bulunarak çözüm sürecinizi <br/> takip edebilirsiniz.
-                  </Text>
-                </Flex>
-              </VStack>
-            </HStack>
+                  <Flex flexDirection={'column'}>
+                    <Image src={items.image} alt={''} w='54px' h={'54px'} />
+                    <Text
+                      color={'white'}
+                      pt={'12px'}
+                      textStyle={'homePageText'}
+                    >
+                      {items.itemHead}
+                    </Text>
+                    <Text
+                      textStyle={'categoriesText'}
+                      color={'#C4C4C4'}
+                      maxW={'288px'}
+                      pt={'8px'}
+                    >
+                      {items.itemDesc}
+                    </Text>
+                  </Flex>
+                </VStack>
+              ))}
+            </SimpleGrid>
             <Button
               fontSize={'13px'}
+              top={'50px'}
               fontWeight={500}
               color={'white'}
+              lineHeight={'20px'}
+              letterSpacing={'0.5px'}
               border={'1px solid'}
               borderColor={'white'}
               _hover={{ opacity: 0.8 }}
-              bg={'transparent'} alignSelf={"flex-start"} w="195px" h={"36px"}
-             >
+              bg={'transparent'}
+              alignSelf={'flex-start'}
+              w='195px'
+              h={'36px'}
+              rounded={'5px'}
+            >
               Daha Fazla Bilgi
             </Button>
           </VStack>
@@ -187,3 +161,54 @@ export const Service = () => {
 }
 
 export default memo(Service)
+
+interface itemProps {
+  id: number
+  image: string
+  itemHead: string
+  itemDesc: string
+}
+
+const item: Array<itemProps> = [
+  {
+    id: 0,
+    image: '/phone-1.png',
+    itemHead: 'Telefon',
+    itemDesc:
+      'Telefon numaranız aracılığıyla uzmanlarımız size ulaşarak gerekli desteği sağlayacaktır.'
+  },
+  {
+    id: 1,
+    image: '/messages.png',
+    itemHead: 'Anlık Mesajlaşma',
+    itemDesc:
+      'Whatsapp, Telegram ve Signal gibi kanallar aracılığıyla destek alabilir, bizimle iletişime geçebilirsiniz.'
+  },
+  {
+    id: 2,
+    image: '/video.png',
+    itemHead: 'Görüntülü Görüşme',
+    itemDesc: 'Uzmanlarımızla görüntülü görüşerek sorunlarınızı çözebilirsiniz.'
+  },
+  {
+    id: 3,
+    image: '/global.png',
+    itemHead: 'Canlı Sohbet',
+    itemDesc:
+      'Canlı sohbet aracılığıyla eş zamanlı olarak uzmanlarımızdan destek alabilirsiniz.'
+  },
+  {
+    id: 4,
+    image: '/global.png',
+    itemHead: 'E-Posta',
+    itemDesc:
+      ' E-posta yoluyla bize iletişim kurup sorunlarınızı çözebilirsiniz.'
+  },
+  {
+    id: 5,
+    image: '/global.png',
+    itemHead: '724 Desk Uygulaması',
+    itemDesc:
+      'Web uygulamamız üzerinden bize ulaşıp destek talebinde bulunarak çözüm sürecinizi takip edebilirsiniz.'
+  }
+]

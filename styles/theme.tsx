@@ -134,6 +134,12 @@ export const theme = extendTheme({
       color: '#333333',
       fontWeight: 400,
       alignSelf: 'flex-start'
+    },
+    serviceHead: {
+      fontSize: "26px",
+      lineHeight: "150%",
+      fontWeight: 500,
+      fontStyle: "normal",
     }
   },
     components: {
