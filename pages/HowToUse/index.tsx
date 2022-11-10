@@ -16,13 +16,13 @@ export const HowToUse = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10} display={{base:"none",md:"flex"}}
+        pt={"114px"} display={{base:"none",md:"flex"}}
       >
         <Container maxW={"1200px"}>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text color={'#333333'} textStyle={"homePageText"}>
             Nasıl Kullanılır?
           </Text>
-          <Text fontSize={'12px'} fontWeight={'400'} color={'#959595'}>
+          <Text color={'#959595'} textStyle={"categoriesText"} pt={"3px"} pb={"32px"}>
             Projenin aşamalarını, nasıl kullanıldığını ve ilerleyişini
             inceleyin.
           </Text>

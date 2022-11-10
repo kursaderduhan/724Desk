@@ -30,7 +30,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
       }
       h={{ base: '967px', lg: '500px' }}
       w={'100%'}
-      px={{ base: '16px', lg: '120px' }}
+      px={{ base: '16px', lg: '0px' }}
       pt={{ base: '32px', lg: '82px' }}
     >
       <VStack w={'100%'}>
@@ -102,9 +102,11 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
             justifyContent={{ base: 'flex-start', lg: 'space-between' }}
             alignSelf={'flex-start'}
             alignItems={'flex-start'}
-            pl={{ base: '0px', lg: '117px' }} pt={{ base: "43px", lg: "0px" }} pr={{base:"0px", lg:"46px"}}
+            pl={{ base: '0px', lg: '117px' }}
+            pt={{ base: '43px', lg: '0px' }}
+            pr={{ base: '0px', lg: '46px' }}
           >
-            <VStack h={'full'} textStyle={'homePageSubText'} >
+            <VStack h={'full'} textStyle={'homePageSubText'}>
               <List spacing={2}>
                 <Link href={'/'}>
                   <ListItem
@@ -122,6 +124,15 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                     Hizmetler & Çözümler
                   </ListItem>
                 </Link>
+                <Link href={'/Reference'}>
+                  <ListItem
+                    cursor={'pointer'}
+                    onClick={() => pagesName.set('Referans')}
+                  >
+                    Referans Programı
+                  </ListItem>
+                </Link>
+                  <ListItem>Değerlendirmeler</ListItem>
                 <Link href={'/HowToUse'}>
                   <ListItem
                     cursor={'pointer'}
@@ -130,21 +141,12 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                     Nasıl Kullanılır?
                   </ListItem>
                 </Link>
-                <ListItem>Değerlendirmeler</ListItem>
                 <Link href={'/DeskToken'}>
                   <ListItem
                     cursor={'pointer'}
                     onClick={() => pagesName.set('Desk Token')}
                   >
                     Desk Token
-                  </ListItem>
-                </Link>
-                <Link href={'/Reference'}>
-                  <ListItem
-                    cursor={'pointer'}
-                    onClick={() => pagesName.set('Referans')}
-                  >
-                    Referans Programı
                   </ListItem>
                 </Link>
                 <Link href={'/Contact'}>
@@ -172,6 +174,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   </ListItem>
                 </Link>
                 <ListItem>Kariyer</ListItem>
+                  <ListItem>Network</ListItem>
                 <Link href={'/ForExperts'}>
                   <ListItem
                     cursor={'pointer'}
@@ -180,13 +183,15 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                     Uzmanlar
                   </ListItem>
                 </Link>
+                <ListItem>Siber Güvenlik</ListItem>
                 <ListItem>Sunucu Yönetimi</ListItem>
                 <ListItem>Yazılım Geliştirme</ListItem>
-                <ListItem>Network</ListItem>
-                <ListItem>Siber Güvenlik</ListItem>
               </List>
             </VStack>
-            <VStack alignItems={{base:"flex-start",lg:'flex-end'}} textStyle={'homePageSubText'}>
+            <VStack
+              alignItems={{ base: 'flex-start', lg: 'flex-end' }}
+              textStyle={'homePageSubText'}
+            >
               <List spacing={2}>
                 <ListItem>Site Haritası</ListItem>
                 {ListData.map((item, index) => {

@@ -3,24 +3,24 @@ import React, { memo } from 'react'
 
 export const Solve = () => {
   return (
-    <VStack w={'full'} py={{ base: 1, md: 100 }} pb={{base:2,md:400}}>
+    <VStack w={'full'} py={{ base: 1, lg: "48px" }} pb={{base:"82px",lg:"120px"}}>
       {result.map(result => (
-        <Flex w={'full'} justifyContent={'space-between'} key={result.key} flexDirection={{base:"column",md:"row"}} >
-          <HStack alignSelf={"flex-start"}>
-            <Image src={result.Image} alt={'ımg'} w={'43px'} h={'43px'} alignSelf={'flex-start'} />
+        <Flex w={'full'} justifyContent={'space-between'} key={result.key} flexDirection={{base:"column",lg:"row"}} pt={"72px"}>
+          <HStack alignSelf={"flex-start"} >
+            <Image src={result.Image} alt={'ımg'} w={'54px'} h={'54px'} alignSelf={'flex-start'} />
             <VStack alignItems={'flex-start'}>
-              <Text fontSize={'10px'} fontWeight={400} color={'#666666'}>
+              <Text textStyle={"smallText"} color={'#666666'}>
                 {result.area}
               </Text>
-              <Text fontSize={'23px'} fontWeight={500} color={'black'}>
+              <Text textStyle={"deskTokenHead"} color={'black'}>
                 {result.textHead}
               </Text>
-              <Text fontSize={'14px'} fontWeight={400} color={'#666666'} w={{base:"full",md:"522px"}}>
+              <Text textStyle={"subText"} color={'#666666'} maxW={{base:"full",lg:"522px"}}>
                 {result.textDown}
               </Text>
             </VStack>
           </HStack>
-          <Image src={result.ImageRight} alt={'ımg'} w={{ base: "273px", md: '491px' }} h={{base:"202px",md:'364px'}} alignSelf={"center"} />
+          <Image src={result.ImageRight} alt={'ımg'} pt={{ base: "16px",lg:"0px" }} w={{ base: "273px", lg: '491px' }} h={{base:"202px",lg:'364px'}} alignSelf={"center"} />
         </Flex>
       ))}
     </VStack>

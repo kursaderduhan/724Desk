@@ -12,54 +12,54 @@ import {
 export const ResultSolve = () => {
   return (
     <Flex
-      flexDirection={{ base: 'column', md: 'row' }}
+      flexDirection={{ base: 'column', lg: 'row' }}
       alignItems={'center'}
       w={'full'}
       justifyContent={'space-between'}
-      py={{base:1,md:50}}
+      py={{base:"16px", lg:"42px"}}
     >
-      <Box display={{ base: 'flex', md: 'none' }}>
+      <Box display={{ base: 'flex', lg: 'none' }}>
         <Image alt={'hand'} src={'/hpHandPhone.png'} w={'266px'} h={'342px'} />
       </Box>
-      <VStack alignItems={'flex-start'} w={{ base: '343px', md: '450px' }}>
+      <VStack alignItems={'flex-start'} w={{ base: '343px', lg: '450px' }}>
         <Text
           fontSize={'23px'}
           fontWeight={500}
           color={'#525252'}
-          display={{ base: 'flex', md: 'none' }}
+          display={{ base: 'flex', lg: 'none' }}
         >
           Çözüm Süreci
         </Text>
         {result.map(result => (
-          <HStack key={result.key}>
+          <Flex key={result.key} pt={"59px"} gap={"22px"}>
             <Image
               src={result.Image}
               alt={'ımg'}
-              w={'43px'}
-              h={'43px'}
+              w={'54px'}
+              h={'54px'}
               alignSelf={'flex-start'}
             />
             <VStack alignItems={'flex-start'}>
-              <Text fontSize={'10px'} fontWeight={400} color={'#666666'}>
+              <Text textStyle={"smallText"} color={'#666666'}>
                 {result.area}
               </Text>
-              <Text fontSize={'23px'} fontWeight={500} color={'black'}>
+              <Text textStyle={"deskTokenHead"} color={'black'}>
                 {result.textHead}
               </Text>
-              <Text fontSize={'12px'} fontWeight={400} color={'#666666'}>
+              <Text color={'#666666'} textStyle={"categoriesText"} maxW={"421px"} pt={"6px"}>
                 {result.textDown}
               </Text>
             </VStack>
-          </HStack>
+          </Flex>
         ))}
       </VStack>
-      <Flex gap={5} display={{base:"flex",md:"none"}}>
+      <Flex gap={"16px"} display={{base:"flex",lg:"none"}} pt={"42px"}>
         <Button variant={'globalButton'} w={'164px'}>
           Hemen Başla
         </Button>
         <Button w={'164px'}>Videolu Çözüm</Button>
       </Flex>
-      <Box display={{ base: 'none', md: 'flex' }}>
+      <Box display={{ base: 'none', lg: 'flex' }}>
         <Image alt={'hand'} src={'/hpHandPhone.png'} w={'493px'} h={'634px'} />
       </Box>
     </Flex>

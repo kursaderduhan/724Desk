@@ -2,11 +2,9 @@ import React, { memo } from 'react'
 import { Text, Box, Flex, Image, VStack } from '@chakra-ui/react'
 export const Learn = () => {
   return (
-    <VStack w={'full'} gap={5}>
+    <VStack w={'full'} gap={5} pt={{base:"82px",lg:"190px"}}>
       <Text
-        fontSize={'23px'}
-        fontWeight={500}
-        color={'#333333'}
+        color={'#333333'} textStyle={"deskTokenHead"}
         alignSelf={'flex-start'}
       >
         Nasıl Kullanacağını Öğren!
@@ -14,7 +12,7 @@ export const Learn = () => {
       <Flex
         bgImage={'/learnVideo.png'}
         bgSize={'cover'}
-        bgPos={'center'}
+        bgPos={'center'} mt={"32px"}
         w={'full'}
         h={{base:"194px",md:'676px'}}
         justifyContent={'center'}
