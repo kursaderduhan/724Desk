@@ -32,7 +32,7 @@ const Experts = () => {
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
         gap={5}
-        py={10} display={{base:"none",md:"flex"}}
+        py={10} display={{base:"none",lg:"flex"}}
       >
         <Container maxW={"1200px"}>
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
@@ -46,7 +46,7 @@ const Experts = () => {
       </HStack>
       <VStack bg={'#F7FCFE'} w={'full'} h={'full'}>
         <Container maxW={"1200px"}>
-          <VStack alignItems={'flex-start'} gap={5} py={10} display={{base:"none",md:"flex"}} flexDirection={"column"}>
+          <VStack alignItems={'flex-start'} gap={5} py={10} flexDirection={"column"}>
             <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
               Uzman Kategorileri
             </Text>
@@ -67,21 +67,21 @@ const Experts = () => {
                 Software Development
               </Button>
               <Button
-                rounded={10}
+                rounded={10}  display={{base:"none",lg:"flex"}}
                 fontSize={'14px'}
                 onClick={() => setCategoryName('Network')}
               >
                 Network
               </Button>
               <Button
-                rounded={10}
+                rounded={10} display={{base:"none",lg:"flex"}}
                 fontSize={'14px'}
                 onClick={() => setCategoryName('Cyber Security')}
               >
                 Cyber Security
               </Button>
               <Button
-                rounded={10}
+                rounded={10} display={{base:"none",lg:"flex"}}
                 fontSize={'14px'}
                 onClick={() => setCategoryName('Server Management')}
               >
@@ -91,12 +91,12 @@ const Experts = () => {
             <Text fontSize={'23px'} fontWeight={500} color={'#333333'}>
               <span>{categoryName}</span> Kategorisindeki Uzmanlarımız
             </Text>
-            <SimpleGrid columns={4} gap={4}>
+            <SimpleGrid columns={{base:2,md:2,lg:4}} gap={4}>
               {Item.map(ıtem => (
                 <Box
                   key={ıtem.key}
-                  w={'288px'}
-                  h={'408px'}
+                  w={{base:"164px",lg:'288px'}}
+                  h={{base:"247px",lg:'408px'}}
                   bg={'white'}
                   rounded={10}
                   py={2}
@@ -106,8 +106,8 @@ const Experts = () => {
                       bgImage={ıtem.Image}
                       bgSize={'cover'}
                       bgPos={'center'}
-                      w={'256px'}
-                      h={'156px'}
+                      w={{base:"148px",lg:'256px'}}
+                      h={{base:"90px",lg:'156px'}}
                       alignItems={'flex-start'}
                       px={2}
                       justifyContent={'space-between'}
@@ -144,7 +144,7 @@ const Experts = () => {
                       </HStack>
                     </Flex>
                     <Text
-                      fontSize={'19px'}
+                      fontSize={{base:"15px",lg:'19px'}}
                       fontWeight={500}
                       color={'black'}
                       alignSelf={'flex-start'}
@@ -153,7 +153,7 @@ const Experts = () => {
                       {ıtem.fullName}
                     </Text>
                     <Text
-                      fontSize={'14px'}
+                      fontSize={{base:"12px",lg:'14px'}}
                       fontWeight={400}
                       alignSelf={'flex-start'}
                       px='5'
@@ -162,8 +162,8 @@ const Experts = () => {
                       {ıtem.expert}
                     </Text>
                     <Text
-                      fontSize={'14px'}
-                      fontWeight={400}
+                     fontSize={{base:"12px",lg:'14px'}}
+                      fontWeight={400} display={{base:"none",lg:"flex"}}
                       color={'#666666'}
                       alignSelf={'flex-start'}
                       px='5'
@@ -220,10 +220,10 @@ const Experts = () => {
           </VStack>
         </Container>
         <VStack gap={5} alignItems={"center"} display={"flex"} flexDirection={"column"}>
-          <Text fontSize={{base:"18px",md:'23px'}} color={'#333333'} fontWeight={500}>
+          <Text fontSize={{base:"18px",lg:'23px'}} color={'#333333'} fontWeight={500}>
             Bir sorunun mu var? Hemen Ticket Oluştur
           </Text>
-          <Flex flexDirection={{base:"column",md:"row"}}>
+          <Flex flexDirection={{base:"column",lg:"row"}}>
             <InputGroup flexDirection={'column'}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
@@ -233,7 +233,7 @@ const Experts = () => {
               <Input
                 type={'text'}
                 placeholder={'e.g. We need a help'}
-                w={{base:"320px",md:'389px'}}
+                w={{base:"320px",lg:'389px'}}
               />
             </InputGroup>
             <InputGroup flexDirection={'column'}>
@@ -245,11 +245,11 @@ const Experts = () => {
               <Input
                 type={'email'}
                 placeholder={'e.g. ferhattunali@gmail.com'}
-                w={{base:"320px",md:'389px'}}
+                w={{base:"320px",lg:'389px'}}
               />
             </InputGroup>
           </Flex>
-          <InputGroup flexDirection={'column'} alignItems={"flex-start"}>
+          <InputGroup flexDirection={'column'} alignItems={"flex-start"} w={{base:"320px",lg:'794px'}}>
             <FormLabel>
               <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                 Details
@@ -258,12 +258,12 @@ const Experts = () => {
             <Textarea
               placeholder='e.g. Can you help me, because i need your help in my situation'
               _placeholder={{ color: '#B3CBD4' }}
-              h={'283px'} w={{base:"320px",md:"full"}}
+              h={'283px'} w={{base:"320px",lg:"794px"}}
               resize={'none'}
             ></Textarea>
           </InputGroup>
-          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
-            <InputGroup flexDirection={'column'} w={{base:"320px",md:'389px'}}>
+          <Flex flexDirection={{base:"column",lg:"row"}} display={{base:"none",lg:"flex"}} gap={"16px"} alignItems={"center"}>
+            <InputGroup flexDirection={'column'} w={{base:"320px",lg:'389px'}}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Category
@@ -273,7 +273,7 @@ const Experts = () => {
                 <option>Crypto</option>
               </Select>
             </InputGroup>
-            <InputGroup flexDirection={'column'} w={{base:"320px",md:'389px'}}>
+            <InputGroup flexDirection={'column'} w={{base:"320px",lg:'389px'}}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Communication type
@@ -284,9 +284,9 @@ const Experts = () => {
               </Select>
             </InputGroup>
           </Flex>
-          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
-            <Flex gap={2}>
-              <InputGroup flexDirection={'column'} w={{base:"160px",md:'389px'}}>
+          <Flex flexDirection={{base:"column",lg:"row"}} alignItems={"center"} w={"full"} gap={"16px"} display={{base:"none",lg:"flex"}}>
+            <Flex w={{base:"320px",lg:'full'}} alignItems={"flex-start"} gap={"15px"}>
+              <InputGroup flexDirection={'column'} w={{base:"160px",lg:'187px'}} alignSelf={"flex-start"}>
                 <FormLabel>
                   <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                     Support time
@@ -295,37 +295,37 @@ const Experts = () => {
                 <Input
                   type={'date'}
                   placeholder={'Mon. 12:00 - 17:00...'}
-                  w={{base:"160px",md:'187px'}}
+                  w={{base:"160px",lg:'187px'}}
                 />
               </InputGroup>
-              <InputGroup flexDirection={'column'}>
+              <InputGroup flexDirection={'column'}  w={{base:"160px",lg:'187px'}}>
                 <FormLabel>
                   <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                     Time zone
                   </Text>
                 </FormLabel>
-                <Select placeholder={'Select option'} w={{base:"160px",md:'187px'}}>
+                <Select placeholder={'Select option'}>
                   <option>GMT +2</option>
                 </Select>
               </InputGroup>
             </Flex>
-            <InputGroup flexDirection={'column'}>
+            <InputGroup flexDirection={'column'}  w={{base:"160px",lg:'389px'}}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Approximate solution process
                 </Text>
               </FormLabel>
-              <Input placeholder={'3-5 hours'} w={{base:"320px",md:'389px'}} type={'text'} />
+              <Input placeholder={'3-5 hours'} w={{base:"320px",lg:'389px'}} type={'text'} />
             </InputGroup>
           </Flex>
-          <Flex flexDirection={{base:"column",md:"row"}} alignItems={"center"}>
+          <Flex w={"100%"} justifyContent={"flex-start"} display={{base:"none",lg:"flex"}} gap={"16px"}>
             <InputGroup flexDirection={'column'}>
               <FormLabel>
                 <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                   Priority status
                 </Text>
               </FormLabel>
-              <Select placeholder={'Select option'} w={{base:"320px",md:'389px'}}>
+              <Select placeholder={'Select option'} w={{base:"320px",lg:'389px'}}>
                 <option>Urgent</option>
               </Select>
             </InputGroup>
@@ -335,44 +335,44 @@ const Experts = () => {
                   Support language
                 </Text>
               </FormLabel>
-              <Select placeholder={'Select option'} w={{base:"320px",md:'389px'}}>
+              <Select placeholder={'Select option'} w={{base:"320px",lg:'389px'}}>
                 <option>Arabic</option>
               </Select>
             </InputGroup>
           </Flex>
-          <InputGroup flexDirection={'column'}>
+          <InputGroup flexDirection={'column'} alignSelf={"flex-start"} w={{base:"320px",lg:'389px'}} display={{base:"none",lg:"flex"}}>
             <FormLabel>
               <Text fontSize={'12px'} color={'#525252'} fontWeight={400}>
                 Priority status
               </Text>
             </FormLabel>
             <InputGroup >
-              <Input placeholder={'Select option'} w={{ base: "240px", md: '277px' }} type={'file'} />
-              <InputRightAddon w={{base:"80px",md:'112px'}} fontSize={'14px'} justifyContent={"center"} display={"flex"}>
+              <Input placeholder={'Select option'} w={{ base: "240px", lg: '277px' }} type={'file'} />
+              <InputRightAddon w={{base:"80px",lg:'112px'}} fontSize={'14px'} justifyContent={"center"} display={"flex"}>
                 Add sound
               </InputRightAddon>
             </InputGroup>
           </InputGroup>
           <Checkbox
-            fontSize={'14px'}
+            fontSize={'14px'} display={{base:"none",lg:"flex"}}
             color={'#525252'}
-            alignSelf={'flex-start'}
+            alignSelf={{base:"center",lg:'flex-start'}}
           >
             I agree <span style={{ color: '#2485E8' }}>User agreement</span>{' '}
           </Checkbox>
           <Text
             color={'#2485E8'}
             fontSize='12px'
-            fontWeight={400}
-            alignSelf='flex-start'
+            fontWeight={400} display={{base:"none",lg:"flex"}}
+            alignSelf={"flex-start"}
           >
             Less options
           </Text>
           <Button
             variant={'globalButton'}
-            w={'136px'}
+            w={{base:"343px",lg:'136px'}}
             fontSize={'13px'}
-            alignSelf={'flex-start'}
+            alignSelf={{base:"center",lg:'flex-start'}}
           >
             Gönder
           </Button>

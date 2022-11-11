@@ -5,7 +5,9 @@ import {
   Text,
   Container,
   Flex,
-  Icon
+  Icon,
+  HStack,
+  IconButton
 } from '@chakra-ui/react'
 import MostRead from '@components/DataBase/MostRead'
 import News from '@components/DataBase/News'
@@ -31,49 +33,60 @@ export const DataBase = () => {
         alignSelf={'flex-end'}
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
-        gap={5}
-        py={10}
-        display={{ base: 'none', md: 'flex' }}
+        display={{ base: 'none', lg: 'flex' }}
       >
-        <Container maxW={"1200px"}>
-          <Flex display={page}>
-            <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+        <Container maxW={'1200px'}>
+          <Flex display={page} pt={'114px'} pb={'32px'}>
+            <Text textStyle={'homePageText'} color={'#333333'}>
               724Desk Bilgi Bankası
             </Text>
-            <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
+            <Text textStyle={'categoriesText'} color={'#959595'}>
               İhtiyacın olan çözümlere ulaşabilir, daha önce yazılmış makaleleri
               inceleyerek sorunlarını çözebilirsin.
             </Text>
           </Flex>
-          <Flex display={dataBase} w={'full'} flexDirection={'row'}>
-            <Icon
+          <HStack display={dataBase} h={'full'} w={'full'}>
+            <IconButton
               aria-label='back'
               as={ChevronLeftIcon}
-              size={'md'}
+              boxSize={6}
               bg={'transparent'}
               _hover={{ bg: 'transparent', opacity: 0.8 }}
               onClick={() => closePage()}
               cursor={'pointer'}
             />
 
-            <Text fontSize={'15px'} fontWeight={500} color={'#333333'}>
+            <Text
+              textStyle={'homePageSubText'}
+              fontWeight={500}
+              color={'#333333'}
+            >
               724Desk Bilgi Bankası
             </Text>
-          </Flex>
+          </HStack>
         </Container>
       </VStack>
-      <VStack bg={'white'} w='full' py={{ base: 0, md: 50 }} display={page}>
-        <Container maxW={"1200px"}>
-          <MostRead changePage={() => changePage()} />
-          <News />
+      <VStack bg={'#F7FCFE'}>
+        <VStack
+          w='full'
+          pb={{ base: '82px', lg: '180px' }}
+          pt={{ base: '16px', lg: '42px' }}
+          display={page}
+        >
+          <Container maxW={'1200px'}>
+            <MostRead changePage={() => changePage()} />
+            <News />
+          </Container>
+        </VStack>
+        <VStack w='full' py={50} display={dataBase} bg={'#F7FCFE'}>
+          <Container maxW={'1200px'}>
+            <TrendPage />
+          </Container>
+        </VStack>
+        <Container maxW={'1200px'} bg={'#F7FCFE'}>
+          <Footer />
         </Container>
       </VStack>
-      <VStack bg={'white'} w='full' py={50} display={dataBase}>
-        <Container maxW={"1200px"}>
-          <TrendPage />
-        </Container>
-      </VStack>
-      <Footer />
     </Layout>
   )
 }

@@ -6,30 +6,55 @@ import {
   ListItem,
   UnorderedList,
   Flex,
-  Box
+  Box,
+  Button
 } from '@chakra-ui/react'
 import React, { memo } from 'react'
 
 export const TrendPage = () => {
   return (
     <VStack>
-      <Flex  w={"full"} justifyContent={"space-between"} flexDirection={{base:"column",md:"row"}} > 
-        <VStack alignItems={'flex-start'} w={{base:"full",md:'693px'}} gap={5}>
+      <Flex
+        w={'full'}
+        gap={{ base: '72px', lg: '126px' }}
+        justifyContent={'space-between'}
+        flexDirection={{ base: 'column', lg: 'row' }}
+      >
+        <VStack
+          alignItems={'flex-start'}
+          textStyle={'subText'}
+          maxW={{ base: 'full', lg: '693px' }}
+          gap={'42px'}
+          color={'#333333'}
+        >
           <VStack alignItems={'flex-start'} alignSelf={'flex-start'}>
-            <Text fontSize={{base:"23px",md:'33px'}} fontWeight={500} color={'#333333'}>
+            <Text
+              fontSize={{ base: '23px', lg: '33px' }}
+              textStyle={'bigText'}
+              color={'#333333'}
+            >
               Son Bir Haftada En Çok Yükselen Kripto Paralar
             </Text>
-            <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
+            <Text textStyle={'categoriesText'} color={'#959595'}>
               08/12/2022
             </Text>
           </VStack>
-          <Text>
+          <Text
+            pt={{ base: '24px', lg: '0px' }}
+            textStyle={'subText'}
+            color={'#333333'}
+          >
             En büyük kripto para listeleme platformlarından biri olan
             CoinGecko’dan alınan verilere göre, son bir haftada en çok yükselen
             kripto paralar şunlar: Son günlerin parlayan yıldızı Xido Finance
             XIDO %84 lük bir yükselişle geliyor. .
           </Text>
-          <Image src={'/expertsImg.png'} alt={''} w={{ base: "343px", md: '693px' }} h={{base:"192px",md:'390px'}} />
+          <Image
+            src={'/expertsImg.png'}
+            alt={''}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '192px', lg: '390px' }}
+          />
           <Text>
             En büyük kripto para listeleme platformlarından biri olan
             CoinGecko’dan alınan verilere göre, son bir haftada en çok yükselen
@@ -41,19 +66,26 @@ export const TrendPage = () => {
             kripto paralarda 5. sırada ise CELO ve GMT gelirken onu NEAR, XEC,
             CAKE ve DOGE takip ediyor.
           </Text>
-          <Text fontSize={{base:"19px",md:'23px'}} fontWeight={500} color={'#333333'}>
-            What Will I Learn?
-          </Text>
-          <Text fontSize={'14px'} fontWeight={400} color={'#333333'}>
-            The course is comprised of seven classes. Five of which include
-            “projects” where you’ll receive rewards for completing five
-            projects. You can also receive BUSD rewards for completing more than
-            one class. Below, we’ve listed the curriculum, related projects and
-            available rewards. Those wanting to receive rewards will need to
-            complete the course within two months of signing up. For additional
-            information, you can read our Affiliate Bootcamp Guide.
-          </Text>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <VStack alignItems={'flex-start'}>
+            <Text
+              fontSize={{ base: '19px', lg: '23px' }}
+              textStyle={'deskTokenHead'}
+              color={'#333333'}
+            >
+              What Will I Learn?
+            </Text>
+            <Text color={'#333333'} pt={'24px'}>
+              The course is comprised of seven classes. Five of which include
+              “projects” where you’ll receive rewards for completing five
+              projects. You can also receive BUSD rewards for completing more
+              than one class. Below, we’ve listed the curriculum, related
+              projects and available rewards. Those wanting to receive rewards
+              will need to complete the course within two months of signing up.
+              For additional information, you can read our Affiliate Bootcamp
+              Guide.
+            </Text>
+          </VStack>
+          <Text textStyle={'homePageText'} fontWeight={500} color={'#333333'}>
             Class 1: What does it mean to become a crypto Affiliate
           </Text>
           <UnorderedList>
@@ -62,7 +94,7 @@ export const TrendPage = () => {
               incentives up for grabs.{' '}
             </ListItem>
           </UnorderedList>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text textStyle={'homePageText'} fontWeight={500} color={'#333333'}>
             Class 2: Introduction to Binance trading products
           </Text>
           <UnorderedList>
@@ -79,7 +111,7 @@ export const TrendPage = () => {
               41~50%
             </ListItem>
           </UnorderedList>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text textStyle={'homePageText'} fontWeight={500} color={'#333333'}>
             Class 3: How to create quality and compelling content
           </Text>
           <UnorderedList>
@@ -97,7 +129,7 @@ export const TrendPage = () => {
               41~50%
             </ListItem>
           </UnorderedList>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text textStyle={'homePageText'} fontWeight={500} color={'#333333'}>
             Class 4: User-generated content for Binance Products
           </Text>
           <UnorderedList>
@@ -116,7 +148,7 @@ export const TrendPage = () => {
               41~50%
             </ListItem>
           </UnorderedList>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text textStyle={'homePageText'} fontWeight={500} color={'#333333'}>
             Class 5: How to effectively attract and invite new users
           </Text>
           <UnorderedList>
@@ -135,10 +167,14 @@ export const TrendPage = () => {
           <Image
             src={'/TrendPageImg.png'}
             alt={'ımg'}
-            w={{ base: "343px", md: '693px' }}
-            h={{base:"194px",md:'390px'}}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '194px', lg: '390px' }}
           />
-          <Text fontSize={{bsae:"19px",md:'23px'}} fontWeight={500} color={'#333333'}>
+          <Text
+            textStyle={'deskTokenHead'}
+            fontSize={{ base: '19px', lg: '23px' }}
+            color={'#333333'}
+          >
             How Does The Rewards Bootcamp Work?
           </Text>
           <UnorderedList spacing={2}>
@@ -163,7 +199,11 @@ export const TrendPage = () => {
             </ListItem>
           </UnorderedList>
         </VStack>
-        <VStack alignItems={{base:"center",md:"flex-start"}} gap={5}>
+        <VStack
+          alignItems={{ base: 'center', lg: 'flex-start' }}
+          pt={'42px'}
+          gap={5}
+        >
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Paylaş
           </Text>
@@ -195,7 +235,11 @@ export const TrendPage = () => {
             <Image src={'/be.png'} alt={'be'} w={'24px'} h={'24px'} />
             <Image src={'/link.png'} alt={'link'} w={'24px'} h={'24px'} />
           </HStack>
-          <Flex flexDirection={'column'} gap={5} display={{base:"none",md:"flex"}}>
+          <Flex
+            flexDirection={'column'}
+            gap={'75px'}
+            display={{ base: 'none', lg: 'flex' }}
+          >
             <HStack>
               <Image
                 src={'/circleOrange.png'}
@@ -203,7 +247,7 @@ export const TrendPage = () => {
                 w={'16px'}
                 h={'16px'}
               />
-              <Text color={'#F27C00'} fontSize={'12px'} fontWeight={'500'}>
+              <Text color={'#F27C00'} textStyle={"categoriesText"} fontWeight={'500'}>
                 Affiliate Rewards Bootcamp: Go From Zero to Crypto Influencer
               </Text>
             </HStack>
@@ -214,7 +258,7 @@ export const TrendPage = () => {
                 w={'16px'}
                 h={'16px'}
               />
-              <Text fontSize={'12px'} fontWeight={'500'} color={'#959595'}>
+              <Text textStyle={"categoriesText"} fontWeight={'500'} color={'#959595'}>
                 What Will I Learn?
               </Text>
             </HStack>
@@ -225,7 +269,7 @@ export const TrendPage = () => {
                 w={'16px'}
                 h={'16px'}
               />
-              <Text fontSize={'12px'} fontWeight={'500'} color={'#959595'}>
+              <Text textStyle={"categoriesText"} fontWeight={'500'} color={'#959595'}>
                 How Does The Rewards Bootcamp Work
               </Text>
             </HStack>
@@ -236,7 +280,7 @@ export const TrendPage = () => {
                 w={'16px'}
                 h={'16px'}
               />
-              <Text fontSize={'12px'} fontWeight={'500'} color={'#959595'}>
+              <Text textStyle={"categoriesText"} fontWeight={'500'} color={'#959595'}>
                 Exclusivity Pathway
               </Text>
             </HStack>
@@ -247,59 +291,100 @@ export const TrendPage = () => {
                 w={'16px'}
                 h={'16px'}
               />
-              <Text fontSize={'12px'} fontWeight={'500'} color={'#959595'}>
+              <Text textStyle={"categoriesText"} fontWeight={'500'} color={'#959595'}>
                 What Can You Expect as a Binance Affiliate
               </Text>
             </HStack>
           </Flex>
-          <Text fontSize={'19px'} fontWeight={'500'} color={'#333333'}>
+          <Text
+            fontSize={'19px'}
+            pt={'54px'}
+            fontWeight={'500'}
+            color={'#333333'}
+          >
             Benzer Gönderiler
           </Text>
           <Flex
             bgImage={'/ımg-1.png'}
-            w={{base:"343px",md:'389px'}}
-            h={{ base: "136px", md: '208px' }}
+            w={{ base: '343px', lg: '389px' }}
+            h={{ base: '136px', lg: '208px' }}
             rounded={10}
-            bgSize={'cover'} 
-            bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
+            bgSize={'cover'}
+            bgPos={'center'}
+            flexDirection={'column'}
+            alignSelf={'flex-end'}
+            justifyContent={'flex-end'}
+            p={"24px"}
           >
-            <Text fontSize={'15px'} color={'white'} fontWeight={'500'}>
+            <Text color={'white'} textStyle={"homePageSubText"} fontWeight={'500'}>
               Affiliate Rewards Bootcamp: Go From Zero to Crypto Influencer
             </Text>
-            <Text color={'#C4C4C4'} fontSize={'12px'} fontWeight={400}>
+            <Text color={'#C4C4C4'} textStyle={"categoriesText"} pt={"8px"}>
               08/12/2021
             </Text>
           </Flex>
           <Flex
             bgImage={'/ımg-2.png'}
-            w={{base:"343px",md:'389px'}}
-            h={{ base: "136px", md: '208px' }}
+            w={{ base: '343px', lg: '389px' }}
+            h={{ base: '136px', lg: '208px' }}
             rounded={10}
             bgSize={'cover'}
-            bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
+            bgPos={'center'}
+            flexDirection={'column'}
+            alignSelf={'flex-end'}
+            justifyContent={'flex-end'}
+            p={"24px"}
           >
-            <Text fontSize={'15px'} color={'white'} fontWeight={'500'}>
+            <Text textStyle={"homePageSubText"} color={'white'} fontWeight={'500'}>
               Affiliate Rewards Bootcamp: Go From Zero to Crypto Influencer
             </Text>
-            <Text color={'#C4C4C4'} fontSize={'12px'} fontWeight={400}>
+            <Text color={'#C4C4C4'} textStyle={"categoriesText"}  pt={"8px"}>
               08/12/2021
             </Text>
           </Flex>
           <Flex
             bgImage={'/ımg-3.png'}
-            w={{base:"343px",md:'389px'}}
-            h={{ base: "136px", md: '208px' }}
+            w={{ base: '343px', lg: '389px' }}
+            h={{ base: '136px', lg: '208px' }}
             rounded={10}
             bgSize={'cover'}
-            bgPos={'center'} flexDirection={"column"} alignSelf={"flex-end"} justifyContent={"flex-end"} p={5}
+            bgPos={'center'}
+            flexDirection={'column'}
+            alignSelf={'flex-end'}
+            justifyContent={'flex-end'}
+           p={"24px"}
           >
-            <Text fontSize={'15px'} color={'white'} fontWeight={'500'}>
+            <Text textStyle={"homePageSubText"} color={'white'} fontWeight={'500'}>
               Affiliate Rewards Bootcamp: Go From Zero to Crypto Influencer
             </Text>
-            <Text color={'#C4C4C4'} fontSize={'12px'} fontWeight={400}>
+            <Text color={'#C4C4C4'} textStyle={"categoriesText"}  pt={"8px"}>
               08/12/2021
             </Text>
           </Flex>
+        </VStack>
+        <VStack
+          display={{ base: 'flex', lg: 'none' }}
+          justifyContent={'center'}
+          flexDirection={'column'} pt={"54px"} gap={"16px"}
+        >
+          <Text textStyle={'categoriesText'} color={'#666666'}>
+            We are here to help!
+          </Text>
+          <Button
+            bg={'#F27C00'}
+            rounded={'5px'}
+            w={'132px'}
+            h={'32px'}
+            fontSize={'12px'}
+            color={'white'}
+            lineHeight={'150%'}
+            letterSpacing={'0.25px'}
+            fontStyle={'normal'} gap={"5px"} _hover={{opacity:0.8}}
+          >
+            <Image src={"/24-support.png"} alt={"icon"} w={"24px"} h={"24px"} />
+            Live Support
+          </Button>
+          <Text textStyle={"subText"} color={"#666666"}>Call or chat with a Tech Pro 24/7.</Text>
         </VStack>
       </Flex>
     </VStack>

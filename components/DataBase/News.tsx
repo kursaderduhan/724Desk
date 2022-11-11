@@ -3,25 +3,24 @@ import { Flex, SimpleGrid, Text, Image, VStack } from '@chakra-ui/react'
 
 export const News = () => {
   return (
-    <Flex w={'full'} py={10}>
-      <SimpleGrid columns={{base:1,md:3}} spacing={6}>
+    <Flex w={'full'} pt={{base:"54px", lg:"120px"}} >
+      <SimpleGrid columns={{base:1,lg:3}} spacing={"16px"} gridColumnGap={"16px"} gridRowGap={"64px"}>
         {news.map(news => (
           <VStack
             key={news.key}
             alignItems={'flex-start'}
-            w={'full'}
-            h={'full'}
-            _hover={{ scale: '1.02', opacity: '0.7' }}
+            w={'full'} p={"8px"}
+            h={'full'} _hover={{ transition: '0.8s', bg: '#E1EEF6',rounded:"10px" }}
             cursor={'pointer'}
           >
-            <Image src={news.Image} alt={'ımg'} w={{ base: "253px", md: '389px' }} h={{base:"136px",md:'208px'}} />
-            <Text fontSize={'15px'} fontWeight={500} color={'#333333'}>
+            <Image src={news.Image} alt={'ımg'} w={{ base: "253px", lg: '389px' }} h={{base:"136px",lg:'208px'}} />
+            <Text textStyle={"homePageSubText"} fontWeight={500} color={'#333333'} pt={"24px"}>
               {news.Title}
             </Text>
-            <Text color={'#959595'} fontSize={'12px'} fontWeight={400}>
+            <Text color={'#959595'} textStyle={"categoriesText"} pt={"12px"} maxW={"389px"}>
               {news.Description}
             </Text>
-            <Text fontSize={'12px'} fontWeight={400} color={'#525252'}>
+            <Text textStyle={"categoriesText"} color={'#525252'} pt={"12px"}>
               {news.Date}
             </Text>
           </VStack>
