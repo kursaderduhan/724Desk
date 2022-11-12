@@ -17,13 +17,13 @@ export const Experts = () => {
     <Layout>
       <HStack
         bgImage={{ base: '', lg: '/experts-bg1.png' }}
-        w={'full'}
+        w={'full'} bg={{base:"#F7FCFE",lg:""}}
         h={{ base: '', lg: '746px' }}
         bgSize={'cover'}
         bgPos={'right'}
       >
         <Container maxW={'1200px'}>
-          <VStack w={'full'} alignItems={{ base: 'center', lg: 'flex-start' }}>
+          <VStack w={'full'} alignItems={{ base: 'center', lg: 'flex-start' }} pt={{base:"16px",lg:"0px"}}>
             <Image
               src={'/expertsImg.png'}
               alt={''}
@@ -31,7 +31,6 @@ export const Experts = () => {
               h={{ base: '192px', lg: '390px' }}
               display={{ base: 'flex', lg: 'none' }}
             />
-
             <Text
               fontSize={{ base: '23px', lg: '33px' }}
               textStyle={'bigText'}
@@ -62,7 +61,7 @@ export const Experts = () => {
                 letterSpacing={'0.5px'}
                 color={'white'}
                 fontStyle={'normal'} bg={"#F27C00"} rounded={"5px"}
-                w={{ base: '343px', lg: '250px' }}
+                w={{ base: '343px', lg: '250px' }} _hover={{opacity:0.8}}
               >
                 Uzman Olmak İstiyorum
               </Button>
@@ -70,7 +69,7 @@ export const Experts = () => {
           </VStack>
         </Container>
       </HStack>
-      <Flex flexDirection={'column'} py={50}>
+      <Flex flexDirection={'column'} pt={{base:"82px",lg:"54px"}}  bg={"#F7FCFE"}>
         <Container maxW={'1200px'}>
           <WhyBeExpert />
         </Container>
