@@ -140,6 +140,12 @@ export const theme = extendTheme({
       lineHeight: "150%",
       fontWeight: 500,
       fontStyle: "normal",
+    },
+    signInHead:{
+      fontSize: "28px",
+      fontWeight: 500,
+      lineHeight: "42px",
+      fontStyle: "normal"
     }
   },
     components: {

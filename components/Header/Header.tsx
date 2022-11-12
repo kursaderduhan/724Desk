@@ -61,7 +61,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
             </Flex>
             
           <HStack display={'flex'} justifyContent={'flex-end'}>
-            <Link href={'/SignUp'}>
+            <Link href={'/SignIn'}>
               <Button
                 variant={'headerButton'}
                 bg={'light.100'}
@@ -70,7 +70,7 @@ export const Header = ({ headerProp = false }: { headerProp?: boolean }) => {
                 Giriş Yap
               </Button>
             </Link>
-            <Link href={'/SignIn'}>
+            <Link href={'/SignUp'}>
               <Button
                 variant={'headerButton'}
                 bg={'dark.200'}
