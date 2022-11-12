@@ -11,27 +11,27 @@ import {
 } from '@chakra-ui/react'
 export const WhyBeExpert = () => {
   return (
-    <Flex gap={20}>
+    <Flex>
       <Flex
         flexDirection={'column'}
-        w={{ base: '343px', md: '693px' }}
-        gap={10}
+        w={{ base: '343px', lg: '693px' }}
         justifyContent={'center'}
         alignItems={'center'}
       >
-        <Flex flexDirection={'column'} gap={10}>
+        <Flex flexDirection={'column'}>
           <Text
-            fontSize={{ base: '19px', md: '33px' }}
-            fontWeight={500}
+            fontSize={{ base: '19px', lg: '33px' }}
             color={'#333333'}
+            textStyle={'bigText'}
+            pt={{ base: '82px', lg: '54px' }} 
           >
             Neden Uzman Olmalıyım?
           </Text>
-          <Flex flexDirection={'column'} gap={5}>
+          <Flex flexDirection={'column'}>
             <Text
-              fontSize={{ base: '15px', md: '19px' }}
+              fontSize={{ base: '15px', lg: '19px' }}
               fontWeight={500}
-              color={'#333333'}
+              color={'#333333'} pt={{base:"16px",lg:"42px"}}
             >
               Support projemiz dünya çapında uzmanların oluşturduğu bir networke
               sahiptir.
@@ -41,10 +41,10 @@ export const WhyBeExpert = () => {
               fontWeight={'400'}
               color={'#666666'}
               spacing={3}
-              w={{ base: '343px', md: 'full' }}
+              w={{ base: '343px', lg: 'full' }}
             >
               <ListItem>
-                Öncelikle böyle bir platformda uzman olmak size büyük bir
+                Öncelikle böyle bir platforlga uzman olmak size büyük bir
                 saygınlık kazandıracaktır. Uzmanlarımız için özel olarak
                 paylaşacağımız bir link üzerinden uzmanlık profilinizi
                 paylaşabilirsiniz.
@@ -56,8 +56,8 @@ export const WhyBeExpert = () => {
               </ListItem>
               <ListItem>
                 Maddi kazanç sağlamak birçoğumuz için en önemli nokta olabilir.
-                Bu platformda paylaşacağınız uzmanlığınız size para
-                kazandıracak. Uzmanlarımız da kendi aralarında paylaşımda
+                Bu platforlga paylaşacağınız uzmanlığınız size para
+                kazandıracak. Uzmanlarımız da kendi aralarında paylaşılga
                 bulunabilecekler ve bir konu hakkında veya bilgi ihtiyacında
                 kuracağımız uzmanlar arası paylaşım sayfaları neticesinde bilgi
                 birikimlerini paylaşabileceklerdir.
@@ -67,7 +67,7 @@ export const WhyBeExpert = () => {
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
           <Text
-            fontSize={{ base: '19px', md: '33px' }}
+            fontSize={{ base: '19px', lg: '33px' }}
             fontWeight={500}
             color={'#333333'}
           >
@@ -76,15 +76,15 @@ export const WhyBeExpert = () => {
           <Image
             src={'/expertsImg.png'}
             alt={''}
-            w={{ base: '343px', md: '693px' }}
-            h={{ base: '192px', md: '390px' }}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '192px', lg: '390px' }}
           />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
             spacing={3}
-            w={{ base: '343px', md: 'full' }}
+            w={{ base: '343px', lg: 'full' }}
           >
             <ListItem>
               Bilişim teknolojileri alalında herhangi bir konuda uzmanlığı olan
@@ -100,7 +100,7 @@ export const WhyBeExpert = () => {
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
           <Text
-            fontSize={{ base: '19px', md: '33px' }}
+            fontSize={{ base: '19px', lg: '33px' }}
             fontWeight={500}
             color={'#333333'}
           >
@@ -109,15 +109,15 @@ export const WhyBeExpert = () => {
           <Image
             src={'/expertsImg.png'}
             alt={''}
-            w={{ base: '343px', md: '693px' }}
-            h={{ base: '192px', md: '390px' }}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '192px', lg: '390px' }}
           />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
             spacing={3}
-            w={{ base: '343px', md: 'full' }}
+            w={{ base: '343px', lg: 'full' }}
           >
             <ListItem>
               Bir konuda uzman mısınız? Herhangi bir teknoloji alanında herkese
@@ -145,7 +145,7 @@ export const WhyBeExpert = () => {
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
           <Text
-            fontSize={{ base: '19px', md: '33px' }}
+            fontSize={{ base: '19px', lg: '33px' }}
             fontWeight={500}
             color={'#333333'}
           >
@@ -154,15 +154,15 @@ export const WhyBeExpert = () => {
           <Image
             src={'/expertsImg.png'}
             alt={''}
-            w={{ base: '343px', md: '693px' }}
-            h={{ base: '192px', md: '390px' }}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '192px', lg: '390px' }}
           />
           <UnorderedList
             fontSize={'14px'}
             fontWeight={'400'}
             color={'#666666'}
             spacing={3}
-            w={{ base: '343px', md: 'full' }}
+            w={{ base: '343px', lg: 'full' }}
           >
             <ListItem>
               Uzmanlarımıza sağlıklı bir iş dağıtımı yapmak ve mevcut
@@ -195,7 +195,7 @@ export const WhyBeExpert = () => {
         </Flex>
         <Flex flexDirection={'column'} gap={10}>
           <Text
-            fontSize={{ base: '19px', md: '33px' }}
+            fontSize={{ base: '19px', lg: '33px' }}
             fontWeight={500}
             color={'#333333'}
           >
@@ -204,8 +204,8 @@ export const WhyBeExpert = () => {
           <Image
             src={'/expertsImg.png'}
             alt={''}
-            w={{ base: '343px', md: '693px' }}
-            h={{ base: '192px', md: '390px' }}
+            w={{ base: '343px', lg: '693px' }}
+            h={{ base: '192px', lg: '390px' }}
           />
           <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
             Bu kriterlerden birçoğunu aşağıdaki başlıklarda sizin için
@@ -357,7 +357,7 @@ export const WhyBeExpert = () => {
       <Flex
         flexDirection={'column'}
         gap={5}
-        display={{ base: 'none', md: 'flex' }}
+        display={{ base: 'none', lg: 'flex' }}
       >
         <HStack>
           <Image

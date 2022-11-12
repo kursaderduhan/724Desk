@@ -16,50 +16,53 @@ export const Experts = () => {
   return (
     <Layout>
       <HStack
-        bgImage={{ base: '', md: '/experts-bg1.png' }}
+        bgImage={{ base: '', lg: '/experts-bg1.png' }}
         w={'full'}
-        h={{ base: '', md: '746px' }}
+        h={{ base: '', lg: '746px' }}
         bgSize={'cover'}
         bgPos={'right'}
       >
-        <Container maxW={"1200px"}>
-          <VStack
-            w={'full'}
-            alignItems={{ base: 'center', md: 'flex-start' }}
-            gap={{base:2,md:10}}
-          >
+        <Container maxW={'1200px'}>
+          <VStack w={'full'} alignItems={{ base: 'center', lg: 'flex-start' }}>
             <Image
               src={'/expertsImg.png'}
               alt={''}
-              w={{ base: '343px', md: '693px' }}
-              h={{ base: '192px', md: '390px' }} display={{base:"flex",md:"none"}}
+              w={{ base: '343px', lg: '693px' }}
+              h={{ base: '192px', lg: '390px' }}
+              display={{ base: 'flex', lg: 'none' }}
             />
 
             <Text
-              fontSize={{ base: '23px', md: '33px' }}
-              fontWeight={500}
+              fontSize={{ base: '23px', lg: '33px' }}
+              textStyle={'bigText'}
               color={'#333333'}
-              textAlign={{ base: 'center', md: 'left' }}
+              pt={{ base: '16px', lg: '210px' }}
+              textAlign={{ base: 'center', lg: 'left' }}
+              maxW={'592px'}
             >
-              Para kazanarak bilgi birikiminizi <br /> artırabileceğiniz bir
-              topluluğun <br />
+              Para kazanarak bilgi birikiminizi artırabileceğiniz bir topluluğun
               içinde yer alın!
             </Text>
             <Text
-              fontSize={'14px'}
-              fontWeight={400}
+              pt={'12px'}
               color={'#666666'}
-              display={{ base: 'none', md: 'flex' }}
+              textStyle={'subText'}
+              display={{ base: 'none', lg: 'flex' }}
+              maxW={'592px'}
             >
               Uzmanlığınızı paylaşmak birçok ihtiyaç sahibinin bilgi
-              birikimizinden <br /> faydalanmasını sağlayacaktır. Böylece gelir
-              elde ederken insanlara yardımcı <br /> olmanın mutluluğunu
-              yaşayın.
+              birikimizinden faydalanmasını sağlayacaktır. Böylece gelir elde
+              ederken insanlara yardımcı olmanın mutluluğunu yaşayın.
             </Text>
             <Link href={'/BecomeAnExpert'}>
               <Button
-                variant={'globalButton'}
-                w={{ base: '343px', md: '250px' }}
+                fontSize={'13px'}
+                fontWeight={500} top={"42px"}
+                lineHeight={'20px'}
+                letterSpacing={'0.5px'}
+                color={'white'}
+                fontStyle={'normal'} bg={"#F27C00"} rounded={"5px"}
+                w={{ base: '343px', lg: '250px' }}
               >
                 Uzman Olmak İstiyorum
               </Button>
@@ -68,7 +71,7 @@ export const Experts = () => {
         </Container>
       </HStack>
       <Flex flexDirection={'column'} py={50}>
-        <Container maxW={"1200px"} >
+        <Container maxW={'1200px'}>
           <WhyBeExpert />
         </Container>
         <Footer />
