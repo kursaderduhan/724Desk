@@ -15,9 +15,12 @@ import {
 import Link from 'next/link'
 import { useStorken } from '@data/storken'
 export const SignUp = () => {
-  const [userChoose, setUserChoose] = useState<any>()
+  const [userChoose, setUserChoose] = useState<any>("Kullanıcı Adı")
   const pagesName = useStorken<any>('pagesName')
-
+  const [buttonColor,setButtonColor] = useState<number>(1)
+  const change = (id:number) => {
+    setButtonColor(id)
+  } 
   return (
     <Flex w={'full'} minH={'100vh'} alignItems={'center'}>
       <VStack w={'583px'} justifyContent={'center'} align={'center'} h={'full'}>
@@ -37,55 +40,37 @@ export const SignUp = () => {
             </Text>
             <HStack w={'full'} bg={'#D0DDE7'} rounded={5} mt={"8px"}>
               <ButtonGroup>
-                <Button bg={'#2C4EC6'} w={'75px'}>
+                {buttons.map(item => (
+                <Button bg={buttonColor === item.id ? '#2C4EC6' : "transparent"} w={'75px'}  key={item.id} onClick={() => change(item.id)} _hover={{opacity:0.8}}>
                   <Image
-                    src='/signUp-profile.png'
-                    alt={'profile'}
+                    src={item.image}
+                    alt={'ımg'} bg={"transparent"}
                     w={'24px'}
                     h={'24px'}
                   />
                 </Button>
-                <Button bg={'transparent'} w={'75px'}>
-                  <Image
-                    src='/signUp-sms.png'
-                    alt={'sms'}
-                    w={'24px'}
-                    h={'24px'}
-                  />
-                </Button>
-                <Button bg={'transparent'} w={'75px'}>
-                  <Image
-                    src='/signUp-call.png'
-                    alt={'call'}
-                    w={'24px'}
-                    h={'24px'}
-                  />
-                </Button>
-                <Button bg={'transparent'} w={'75px'}>
-                  <Image
-                    src={'/signUp-mobile.png'}
-                    alt={'mobile'}
-                    w={'24px'}
-                    h={'24px'}
-                  />
-                </Button>
+                ))}
               </ButtonGroup>
             </HStack>
           </Flex>
+          {choose.filter(itemText => itemText.id === buttonColor).map(items => (
+            <>
           <Text
             fontWeight={500} pt={"42px"}
             color={'#525252'} textStyle={"categoriesText"}
           >
-            Kullanıcı adı ile giriş
+            {items.textHead}
           </Text>
           <InputGroup flexDirection={'column'}>
             <FormLabel>
               <Text textStyle={"categoriesText"} color={'#525252'} pt={"16px"}>
-                Kullanıcı Adı
+                {items.choose}
               </Text>
             </FormLabel>
-            <Input placeholder={''} bg={'#F1F9FE'} mt={"4px"} />
+            <Input placeholder={''} _placeholder={{fontsize:"12px"}} type={items.id === 1 ? "text" : "number"} bg={'#F1F9FE'} mt={"4px"} />
           </InputGroup>
+          </>
+          ))}
           <Link href={'/'}>
             <Button
               bg={'#2C4EC6'}
@@ -185,4 +170,16 @@ const choose: Array<userChoose> = [
   { textHead: 'Sms ile giriş', choose: 'Sms', id: 2 },
   { textHead: 'Telefon numarası ile giriş', choose: 'Telefon Numarası', id: 3 },
   { textHead: '2Fa onayı ile giriş', choose: '2fa Şifresi', id: 4 }
+]
+
+interface buttonProps {
+  id:number
+  image: string
+}
+
+const buttons:Array<buttonProps> = [
+  {id: 1,image:"/signUp-profile.png"},
+  {id: 2,image:"/signUp-sms.png"},
+  {id: 3,image:"/signUp-call.png"},
+  {id: 4,image:"/signUp-mobile.png"},
 ]
