@@ -168,7 +168,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/DataBase'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Blog')}
+                      onClick={() => setPagesName.set('Blog')}
                     >
                       Blog
                     </ListItem>
@@ -178,7 +178,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/ForExperts'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Uzmanlar')}
+                      onClick={() => setPagesName.set('Uzmanlar')}
                     >
                       Uzmanlar
                     </ListItem>

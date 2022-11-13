@@ -18,8 +18,7 @@ import BurningMechanism from "@components/DeskToken/BurningMechanism";
 import HowToEarn from "@components/DeskToken/HowToEarn";
 import Footer from "@components/Footer/Footer";
 import Layout from "@components/Layout/Layout";
-const DeskToken = () => {
-  const [mobileScreen] = useMediaQuery("(min-width:572px)");
+export const DeskToken = () => {
   return (
     <Layout>
       <VStack overflow={"hidden"}>
@@ -49,7 +48,8 @@ const DeskToken = () => {
         </HStack>
         <VStack
           pt={{ base: "0px", lg: "42px" }}
-          pb={{ base: "82px", lg: "120px" }} gap={"120px"}
+          pb={{ base: "82px", lg: "120px" }}
+          gap={"120px"}
         >
           <Flex
             bg={"linear-gradient(98.25deg, #121A44 -1.61%, #701366 103.06%)"}
@@ -278,7 +278,8 @@ const DeskToken = () => {
                   <Text
                     fontSize={{ base: "24px", lg: "33px" }}
                     fontWeight={500}
-                    color={"white"} pt={"94px"}
+                    color={"white"}
+                    pt={"94px"}
                   >
                     Want to integrate DESK token into your platform?
                   </Text>
@@ -302,15 +303,28 @@ const DeskToken = () => {
               <VStack gap={10}>
                 <Text
                   fontSize={{ base: "24px", lg: "33px" }}
-                  fontWeight={500} lineHeight={"36px"} letterSpacing={"0.25px"}
+                  fontWeight={500}
+                  lineHeight={"36px"}
+                  letterSpacing={"0.25px"}
                   color={"white"}
                   textAlign={"center"}
+                  maxW={"792px"}
                 >
-                  Become a holder of the token that supports{" "}
-                  {mobileScreen ? null : <br />}
-                  the 724Desk ecosystem
+                  Become a holder of the token that supports the 724Desk
+                  ecosystem
                 </Text>
-                <Button variant={"globalButton"} h={"40px"} gap={2} w={"261px"} fontWeight={400} border={"none"} fontSize={"15px"} fontStyle={"normal"} lineHeight={"22px"} letterSpacing={"0.15px"}>
+                <Button
+                  variant={"globalButton"}
+                  h={"40px"}
+                  gap={2}
+                  w={"261px"}
+                  fontWeight={400}
+                  border={"none"}
+                  fontSize={"15px"}
+                  fontStyle={"normal"}
+                  lineHeight={"22px"}
+                  letterSpacing={"0.15px"}
+                >
                   <Image
                     src={"/deskToken.png"}
                     alt={"desk"}
