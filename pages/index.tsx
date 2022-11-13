@@ -30,13 +30,13 @@ import { useStorken } from '@data/storken'
 
 const Home: NextPage = () => {
   const router = useRouter()
-  const search = useStorken<any>("search")
+  const [search,setSearch] = useStorken<any>("search")
   function handleChange(event: any) {
-    search.set(event.target.value)
+    setSearch.set(event.target.value)
   }
   const searchPage = (e: any) => {
     if (e.key === 'Enter') {
-      search.v == '' ? alert('Arama Boş Olamaz') : router.push('/Search')
+      search == '' ? alert('Arama Boş Olamaz') : router.push('/Search')
     }
   }
   return (
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
                 placeholder='Problemlerinizi yazın ve arayın' _placeholder={{fontStyle:"normal",fontWeight:400,color:"#9B9DBB",lineHeight:"24px",fontSize:"16px"}}
                 type={'text'}
                 onChange={handleChange}
-                value={search.v.toLowerCase()} h="54px"
+                value={search.toLowerCase()} h="54px"
                 onKeyPress={e => searchPage(e)} bg={"#F0F1F3"} rounded={"10px"}
               />
             </InputGroup>

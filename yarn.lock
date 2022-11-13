@@ -2645,10 +2645,10 @@ storken-storage@1.0.9-beta.2:
   resolved "https://registry.yarnpkg.com/storken-storage/-/storken-storage-1.0.9-beta.2.tgz#ce310f331a0ddf65f8862b4faece3fa1b6949374"
   integrity sha512-1WWC5zFeeR/n80jg7C9KS5jgwdCOMLF0DQIs1wVryiHqZIdCbuPVgmaj8YGim/CFhWNUDgSgEPd9Ca9AWn1GEQ==
 
-storken@2.1.0-beta.19:
-  version "2.1.0-beta.19"
-  resolved "https://registry.yarnpkg.com/storken/-/storken-2.1.0-beta.19.tgz#bc9ee56ef85768c2b8948ee4cad22e5fbef423e1"
-  integrity sha512-gAK7kqcGWNzR1lz0doBTOK0wsym+V2+WkF/OC+SzR+ogeBwOqvs5ZOR7qCm5s0GsMnHlmOcSNUCPsd96HQ/Guw==
+storken@2.1.1-beta.0:
+  version "2.1.1-beta.0"
+  resolved "https://registry.yarnpkg.com/storken/-/storken-2.1.1-beta.0.tgz#ec6095b3ca9494c9c435edd01cef674db918544e"
+  integrity sha512-kVvmUOXMYvUn3mC6StIm0LYbWEiIEv0XvrEP0ruFWUPyhOJYk/Xqkwe1Ng5TRM4kQrlQNkhN9B6eJ55b0DZarg==
 
 string.prototype.matchall@^4.0.7:
   version "4.0.7"

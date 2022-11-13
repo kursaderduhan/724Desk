@@ -16,7 +16,7 @@ import Link from 'next/link'
 import { useStorken } from '@data/storken'
 export const SignIn = () => {
   const [userChoose, setUserChoose] = useState<any>("Kullanıcı Adı")
-  const pagesName = useStorken<any>('pagesName')
+  const [pagesName,setPagesName] = useStorken<any>('pagesName')
   const [buttonColor,setButtonColor] = useState<number>(1)
   const change = (id:number) => {
     setButtonColor(id)
@@ -79,7 +79,7 @@ export const SignIn = () => {
               fontSize={'13px'}
               fontWeight={500}
               _hover={{ opacity: 0.8 }}
-              onClick={() => pagesName.set('Ana Sayfa')} pos={"absolute"} top={"410px"} 
+              onClick={() => setPagesName.set('Ana Sayfa')} pos={"absolute"} top={"410px"} 
             >
               <Image src={'/lock.png'} alt={'lock'} w={'18px'} h={'18px'} />
               Giriş Yap

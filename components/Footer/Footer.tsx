@@ -19,8 +19,7 @@ import AboutUs from '@components/Documents/AboutUs'
 import UseTerms from '@components/Documents/UseTerms'
 import UserContract from '@components/Documents/UserContract'
 export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
-  const pagesName = useStorken<any>('pagesName')
-  const infoPage = useStorken<any>('infoPage')
+  const [pagesName,setPagesName] = useStorken<any>('pagesName')
   return (
     <Box
       bgGradient={
@@ -112,7 +111,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Ana Sayfa')}
+                      onClick={() => setPagesName.set('Ana Sayfa')}
                     >
                       Ana Sayfa
                     </ListItem>
@@ -120,7 +119,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/SerAndSol'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Servisler & Çözümler')}
+                      onClick={() => setPagesName.set('Servisler & Çözümler')}
                     >
                       Hizmetler & Çözümler
                     </ListItem>
@@ -128,7 +127,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/Reference'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Referans')}
+                      onClick={() => setPagesName.set('Referans')}
                     >
                       Referans Programı
                     </ListItem>
@@ -137,7 +136,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/HowToUse'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Nasıl Kullanılır')}
+                      onClick={() => setPagesName.set('Nasıl Kullanılır')}
                     >
                       Nasıl Kullanılır?
                     </ListItem>
@@ -145,7 +144,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/DeskToken'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Desk Token')}
+                      onClick={() => setPagesName.set('Desk Token')}
                     >
                       Desk Token
                     </ListItem>
@@ -153,7 +152,7 @@ export const Footer = ({ HomePage = false }: { HomePage?: boolean }) => {
                   <Link href={'/Contact'}>
                     <ListItem
                       cursor={'pointer'}
-                      onClick={() => pagesName.set('Contact')}
+                      onClick={() => setPagesName.set('Contact')}
                     >
                       İletişim
                     </ListItem>

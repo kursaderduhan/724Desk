@@ -122,9 +122,9 @@ const headerText: Array<headerProp> = [
 ]
 
 const MobileHeader = () => {
-  const pagesName = useStorken<any>('pagesName')
+  const [pagesName,setPagesName] = useStorken<any>('pagesName')
   const changePagesName = (heading: any) => {
-    pagesName.set(heading)
+    setPagesName.set(heading)
   }
 
   return (

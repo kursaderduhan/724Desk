@@ -22,7 +22,7 @@ import { ChevronDownIcon, SmallCloseIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import { useStorken } from '@data/storken'
 export const FeedBack = () => {
-  const pagesName = useStorken<string>('pagesName')
+  const [pagesName,setPagesName] = useStorken<string>('pagesName')
 
   return (
     <Flex
@@ -131,7 +131,7 @@ export const FeedBack = () => {
             pt={{ base: '82px', lg: '120px' }}
             pb={{ base: '24px', lg: '32px' }}
             cursor={'pointer'}
-            onClick={() => pagesName.set('Sıkça Sorulan Sorular')}
+            onClick={() => setPagesName.set('Sıkça Sorulan Sorular')}
           >
             Sıkça Sorulan Sorular
           </Text>

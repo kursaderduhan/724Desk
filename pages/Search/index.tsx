@@ -25,10 +25,10 @@ export const Search = () => {
   const [supportButton, setSupportButton] = useState<boolean>(false)
   const [feedBack, setFeedBack] = useState<boolean>(false)
   const [detailPage, setDetailPage] = useState<boolean>(false)
-  const searchPage = useStorken<string>('search')
-  let expr = new RegExp(searchPage.v.toLowerCase(), "")
-  const resultPage = item.filter(elem => Object.keys(searchPage.v).some(key => {
-    return elem.headName[Number(key)] == searchPage.v[Number(key)]
+  const [searchPage,setSearchPage] = useStorken<string>('search')
+  let expr = new RegExp(searchPage.toLowerCase(), "")
+  const resultPage = item.filter(elem => Object.keys(searchPage).some(key => {
+    return elem.headName[Number(key)] == searchPage[Number(key)]
   }))
   console.log("bu result:" , resultPage)
   return (
@@ -60,7 +60,7 @@ export const Search = () => {
             {!detailPage ? (
               <VStack>
                 <Text fontSize={{base:"19px",md:'23px'}} color={'#333333'} fontWeight={500}>
-                  “{searchPage.v}” ile ilgili makale sonuçları
+                  “{searchPage}” ile ilgili makale sonuçları
                 </Text>
                 <Text fontSize={{base:"12px",md:'15px'}} color={'#959595'} fontWeight={400}>
                   Bu anahtar kelime ile ilgili {resultPage.length != 0 && resultPage.length } arama sonucu  {resultPage.length == 0 ? "bulunamamıştır." : "bulunmuştur." }
