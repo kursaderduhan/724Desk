@@ -1,4 +1,4 @@
-import { HStack, Container, Text } from '@chakra-ui/react'
+import { HStack, Container, Text, Flex } from '@chakra-ui/react'
 import React from 'react'
 import Layout from '@components/Layout/Layout'
 import AboutUs from '@components/Documents/AboutUs'
@@ -67,7 +67,9 @@ const name = (pageData: any) => {
       </HStack>
       <Container maxW={"1200px"}>
         {result.map(resultPage => (
-          <>{resultPage.page}</>
+          <Flex key={resultPage.id}>
+          {resultPage.page}
+          </Flex>
         ))}
       </Container>
       <Footer />

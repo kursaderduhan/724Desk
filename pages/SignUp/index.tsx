@@ -18,7 +18,7 @@ import {
   Checkbox,
   Button
 } from '@chakra-ui/react'
-export const SignIn = () => {
+export const SignUp = () => {
   return (
     <Layout>
       <HStack
@@ -247,4 +247,4 @@ export const SignIn = () => {
   )
 }
 
-export default memo(SignIn)
+export default memo(SignUp)

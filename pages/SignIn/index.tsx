@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useStorken } from '@data/storken'
-export const SignUp = () => {
+export const SignIn = () => {
   const [userChoose, setUserChoose] = useState<any>("Kullanıcı Adı")
   const pagesName = useStorken<any>('pagesName')
   const [buttonColor,setButtonColor] = useState<number>(1)
@@ -54,7 +54,7 @@ export const SignUp = () => {
             </HStack>
           </Flex>
           {choose.filter(itemText => itemText.id === buttonColor).map(items => (
-            <>
+            <Flex key={items.id} flexDirection={"column"}>
           <Text
             fontWeight={500} pt={"42px"}
             color={'#525252'} textStyle={"categoriesText"}
@@ -69,7 +69,7 @@ export const SignUp = () => {
             </FormLabel>
             <Input placeholder={''} _placeholder={{fontsize:"12px"}} type={items.id === 1 ? "text" : "number"} bg={'#F1F9FE'} mt={"4px"} />
           </InputGroup>
-          </>
+          </Flex>
           ))}
           <Link href={'/'}>
             <Button
@@ -157,7 +157,7 @@ export const SignUp = () => {
   )
 }
 
-export default memo(SignUp)
+export default memo(SignIn)
 
 interface userChoose {
   textHead: string
