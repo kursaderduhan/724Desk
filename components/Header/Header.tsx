@@ -148,7 +148,7 @@ const MobileHeader = () => {
                 h={"100%"} px={5}
               >
                 <Box w={'100%'}>
-                  {pagesName.v == 'Ana Sayfa' ? (
+                  {pagesName == 'Ana Sayfa' ? (
                     <Image
                       src={'/724DeskLogo.png'}
                       alt={'desk-ıcon'}
@@ -157,7 +157,7 @@ const MobileHeader = () => {
                     />
                   ) : (
                     <Text fontSize={'15px'} fontWeight={500} color={'#333333'} lineHeight={"22.5px"} letterSpacing={"0.15px"} fontStyle={"normal"}>
-                      {pagesName.v}
+                      {pagesName}
                     </Text>
                   )}
                 </Box>

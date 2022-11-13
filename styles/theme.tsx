@@ -146,7 +146,14 @@ export const theme = extendTheme({
       fontWeight: 500,
       lineHeight: "42px",
       fontStyle: "normal"
-    }
+    },
+    deskToken:{
+      fontSize: "24px",
+      fontWeight: 500,
+      lineHeight: "36px",
+      letterSpacing: "0.25px",
+      fontSstyle:"normal"
+    },
   },
     components: {
       Button: {
