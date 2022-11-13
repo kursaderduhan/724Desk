@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
   Flex,
   Text,
@@ -8,12 +8,18 @@ import {
   Box,
   Container,
   IconButton,
-  SimpleGrid
+  SimpleGrid,
+  InputGroup,
+  InputLeftElement,
+  Input
 } from '@chakra-ui/react'
 import Layout from '@components/Layout/Layout'
 import { SearchIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+import { RiSearch2Line } from 'react-icons/ri'
+import Footer from '@components/Footer/Footer'
 export const Categories = () => {
+  const [searchSize, setSearchSize] = useState<boolean>(false)
   return (
     <Layout>
       <HStack
@@ -23,39 +29,58 @@ export const Categories = () => {
         alignSelf={'flex-end'}
         alignItems={'flex-start'}
         justifyContent={'flex-end'}
-        gap={5}
-        py={10}
       >
         <Container maxW={"1200px"}>
-          <Text fontSize={'19px'} fontWeight={500} color={'#333333'}>
+          <Text textStyle={"homePageText"} color={'#333333'} pb={"3px"}>
             Kategoriler
           </Text>
-          <HStack w={'full'} justifyContent={'space-between'}>
-            <Text fontSize={'12px'} fontWeight={400} color={'#959595'}>
+          <HStack w={'full'} justifyContent={'space-between'} alignItems={"center"}>
+            <Text color={'#959595'} textStyle={"categoriesText"} pb={"32px"}>
               Uzmanlarımız tarafından çözüme kavuşturulmuş problemleri
               inceleyerek kendi problemlerinizin çözümüne ulaşabilirsiniz.
             </Text>
-            <IconButton
-              as={SearchIcon}
-              aria-label={'search'}
-              w={'20px'}
-              h={'20px'}
-              _hover={{ opacity: 0.5 }}
-              _active={{ bg: 'transparent' }}
-            ></IconButton>
+            <InputGroup
+              w={searchSize == true ? '170px' : '20px'}
+              transition={'0.5s'} bottom={"32px"}
+            >
+              <InputLeftElement
+                aria-label={'search'}
+                _hover={{ opacity: 0.5 }}
+                h={'100%'}
+                _active={{ bg: 'transparent' }}
+                onClick={() =>
+                  searchSize ? setSearchSize(false) : setSearchSize(true)
+                }
+              >
+                <RiSearch2Line
+                  size={'28px'}
+                  color={searchSize ? 'black' : '#959595'}
+                />
+              </InputLeftElement>
+              <Input
+                bg={searchSize ? '#D2DFEB' : 'transparent'}
+                size={'lg'}
+                border={'none'}
+                alignItems={'center'}
+                w={searchSize ? '170px' : '20px'}
+                placeholder={'Ara'}
+                _placeholder={{ fontSize: '14px' }}
+              />
+            </InputGroup>
           </HStack>
         </Container>
       </HStack>
-      <Container maxW={"1200px"}>
-        <SimpleGrid w={'full'} columns={3} spacing={10} py={10}>
+      <VStack w={"100%"} bg={"#F7FCFE"}>
+      <Container maxW={"1200px"} centerContent>
+        <SimpleGrid w={'full'} columns={{base:1,lg:3}} spacing={10} pt={"42px"}>
           {categories.map(categories => (
             <Link href={categories.Link} key={categories.key}>
               <Box
                 cursor={'pointer'}
                 w={'389px'}
                 h={'328px'}
-                bg={categories.bg}
-                rounded={15}
+                bg={"white"}
+                rounded={15} _hover={{opacity:1.1}}
                 opacity={categories.opac}
               >
                 <HStack
@@ -77,10 +102,10 @@ export const Categories = () => {
                       w={'42px'}
                       h={'42px'}
                     />
-                    <Text fontSize={'23px'} fontWeight={500}>
+                    <Text textStyle={"deskTokenHead"}>
                       {categories.TextHead}
                     </Text>
-                    <Text fontSize={'12px'} fontWeight={400}>
+                    <Text textStyle={"categoriesText"}>
                       {categories.Description}
                     </Text>
                     <Flex>
@@ -94,7 +119,7 @@ export const Categories = () => {
                         w={'24px'}
                         h={'24px'}
                       />
-                      <Text color={categories.online ? 'gray' : '#56C568'}>
+                      <Text color={categories.online ? 'gray' : '#56C568'} textStyle={"categoriesText"}>
                         <span>{categories.activeExpert}</span> Uzman Aktif
                       </Text>
                     </Flex>
@@ -105,7 +130,7 @@ export const Categories = () => {
                         w={'17px'}
                         h={'10px'}
                       />
-                      <Text fontSize={'12px'} fontWeight={400}>
+                      <Text textStyle={"categoriesText"}>
                         {categories.choose}
                       </Text>
                     </Flex>
@@ -144,7 +169,9 @@ export const Categories = () => {
             </Link>
           ))}
         </SimpleGrid>
+        <Footer/>
       </Container>
+      </VStack>
     </Layout>
   )
 }
