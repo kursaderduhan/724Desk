@@ -154,6 +154,12 @@ export const theme = extendTheme({
       letterSpacing: "0.25px",
       fontSstyle:"normal"
     },
+    cryptoHead:{
+      fontSize: "46px",
+      fontWeight: 500,
+      lineHeight: "69px",
+      fontStyle:"normal"
+    } 
   },
     components: {
       Button: {
@@ -178,7 +184,8 @@ export const theme = extendTheme({
             letterSpacing: "0.15px",
             fontStyle: "normal",
             fontWeight: 400,
-            _hover:{opacity: 0.8}
+            _hover:{opacity: 0.8},
+            border:"none"
           }),
           walletButton: (props: any) => ({
             ...base.components.Button.variants.outline(props),
