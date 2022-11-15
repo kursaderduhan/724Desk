@@ -12,25 +12,11 @@ export const [Storken, { useStorken }] = createStore({
       loading: true,
       plugins: { storage },
     },
-    theme: {
-      plugins: { storage },
-    },
-    lang: {
-      plugins: { storage },
-    },
-    newsId: {
-      plugins: { storage },
-    },
-    NewsPage: {
-      plugins: { storage },
-    },
-    PostPanel: {
-      plugins: { storage },
-    },
   },
   initialValues: {
     pagesName: "Ana Sayfa" as any,
     search: "" as any,
+    key: 724 as number
   },
 })
 

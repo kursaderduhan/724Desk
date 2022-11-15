@@ -3,8 +3,32 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '@styles/theme'
+import { useRouter } from 'next/router'
+import { useStorken } from '@data/storken'
+import React, { useEffect, useState } from 'react'
+const unauthorizedPaths = ['/SignIn', '/SignUp']
+
+
+
 
 function MyApp ({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+  const [credentials, Credentials] = useStorken("credentials")
+  if (credentials) {
+    useEffect(() => {
+      console.log('credentials', credentials)
+      console.log('router.pathname', router.pathname)
+
+    }, [credentials])
+  }
+  else if (!credentials) {
+    console.log('credentials2', credentials)
+    useEffect(() => {
+      router.push('/SignIn')
+
+    }, [credentials])
+  }
+
   return (
     <>
       <Head>
