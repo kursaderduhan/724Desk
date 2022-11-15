@@ -10,7 +10,7 @@ import {
   FormLabel,
   Flex,
   Divider,
-  ButtonGroup,
+  ButtonGroup,useToast
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useStorken } from "@data/storken";
@@ -22,6 +22,7 @@ export const SignIn = () => {
   const [buttonColor, setButtonColor] = useState<number>(1);
   const [key, setkey] = useStorken<number>("key");
   const [value,setValue] = useState<number>()
+  const toast = useToast()
   const change = (id: number) => {
     setButtonColor(id);
   };
@@ -29,6 +30,18 @@ export const SignIn = () => {
     if (key == value) {
       router.push("/");
       setPagesName.set("Ana Sayfa");
+    }else {
+      toast({
+        description: "Şifre yanlış.",
+        status: 'error',
+        duration: 4000,
+        position: 'top',
+        isClosable: true,
+        containerStyle: {
+          background:'red',
+          borderRadius:"15px",
+        },
+      })
     }
   };
   const handleChange = (event:any) => setValue(event.target.value)
