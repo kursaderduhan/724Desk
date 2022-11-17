@@ -21,8 +21,20 @@ import { IoIosArrowDropdown } from 'react-icons/io'
 import { ChevronDownIcon, SmallCloseIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import { useStorken } from '@data/storken'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 export const FeedBack = () => {
   const [pagesName,setPagesName] = useStorken<string>('pagesName')
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    centerMode: true,
+  };
 
   return (
     <Flex
@@ -32,7 +44,6 @@ export const FeedBack = () => {
       pt={{ base: '82px', lg: '120px' }}
       pb={{ base: '82px', lg: '230px' }}
       bg={'#F7FCFE'}
-      alignItems={{ base: 'center', md: 'flex-start' }}
       gap={5}
     >
       <Container maxW={'1200px'}>
@@ -40,90 +51,30 @@ export const FeedBack = () => {
           Geri Dönüşler
         </Text>
       </Container>
-      <Flex
+      {/* <Flex 
         w={'90%'}
-        style={{
-          display: 'flex',
-          flexWrap: 'nowrap',
-          overflowX: 'auto',
-          WebkitOverflowScrolling: 'touch',
-          msOverflowStyle: '-ms-autohiding-scrollbar'
-        }}
-        flexDirection={{ base: 'row', md: 'row' }}
-        pl={{ lg: '180px' }}
-        pt={{ base: '24px', lg: '32px' }}
-        gap={'16px'}
-        justifyContent={'center'}
-        alignItems={'center'}
-      >
+        // style={{
+        //   display: 'flex',
+        //   flexWrap: 'nowrap',
+        //   overflowX: 'auto',
+        //   WebkitOverflowScrolling: 'touch',
+        //   msOverflowStyle: '-ms-autohiding-scrollbar'
+        // }}
+        // flexDirection={{ base: 'row', md: 'row' }}
+        // pl={{ lg: '180px' }}
+        // pt={{ base: '24px', lg: '32px' }}
+        // gap={'16px'}
+        // justifyContent={'center'}
+        // alignItems={'center'}
+          > */}
+        <Slider {...settings} >
         {Item.map(item => (
-          <Flex
-            style={{
-              display: 'flex',
-              flexWrap: 'nowrap'
-            }}
-            key={item.key}
-            bg={'#FFFFFF  '}
-            rounded={5}
-          >
-            <VStack w={'277px'} h={'214px'} p={6}>
-              <HStack w={'full'} justifyContent={'space-between'}>
-                <Avatar src={item.Image} size={'lg'} />
-                <VStack alignItems={'flex-end'}>
-                  <Text
-                    color={'#333333'}
-                    textStyle={'homePageSubText'}
-                    fontWeight={500}
-                  >
-                    {item.name}
-                  </Text>
-                  <Text textStyle={'categoriesText'} color={'#959595'}>
-                    {item.job}
-                  </Text>
-                  <Text textStyle={'smallText'} color={'#959595'}>
-                    {item.time}
-                  </Text>
-                </VStack>
-              </HStack>
-              <Text textStyle={'categoriesText'} color={'#333333'}>
-                {item.feedBack}
-              </Text>
-              <HStack w={'full'} justifyContent={'space-between'}>
-                <HStack>
-                  <Image src={item.star} alt={'star'} w={'16px'} h={'16px'} />
-                  <Image src={item.star} alt={'star'} w={'16px'} h={'16px'} />
-                  <Image src={item.star} alt={'star'} w={'16px'} h={'16px'} />
-                  <Image src={item.star} alt={'star'} w={'16px'} h={'16px'} />
-                  <Image
-                    src={item.starEmpty}
-                    alt={'star'}
-                    w={'16px'}
-                    h={'16px'}
-                  />
-                </HStack>
-                <HStack>
-                  <Image
-                    src={item.heartIcon}
-                    alt={'heart'}
-                    w={'16px'}
-                    h={'16px'}
-                  />
-                  <Text
-                    fontSize={'12px'}
-                    lineHeight={'16px'}
-                    fontStyle={'normal'}
-                    fontWeight={400}
-                    color={'#525252'}
-                  >
-                    {item.likeCounter}
-                  </Text>
-                </HStack>
-              </HStack>
-            </VStack>
-          </Flex>
+          <SliderItems key={item.key} feedBack={item.feedBack} heartIcon={item.heartIcon} Image={item.Image} likeCounter={item.likeCounter} starEmpty={item.starEmpty} 
+          star={item.star}
+          name={item.name} time={item.time} job={item.job} />
         ))}
-      </Flex>
-      <Container maxW={'1200px'}>
+        </Slider>
+       <Container maxW={'1200px'}>
         <Link href={'/PopulerQuestions'}>
           <Text
             color={'#525252'}
@@ -425,3 +376,80 @@ const Item: Array<ıtemProps> = [
     key: 5
   }
 ]
+
+
+interface sliderProp {
+  Image: string
+  name: string
+  job:string
+  time: string
+  feedBack: string
+  starEmpty:string
+  heartIcon: string
+  likeCounter: number
+  star:string
+}
+
+const SliderItems = ({...rest}:sliderProp) => {
+  return (
+    <Flex
+    bg={'#FFFFFF'}
+    rounded={5} {...rest}
+  >
+    <VStack w={'277px'} h={'214px'} p={6}>
+      <HStack w={'full'} justifyContent={'space-between'}>
+        <Avatar src={rest.Image} size={'lg'} />
+        <VStack >
+          <Text
+            color={'#333333'}
+            textStyle={'homePageSubText'}
+            fontWeight={500}
+          >
+            {rest.name}
+          </Text>
+          <Text textStyle={'categoriesText'} color={'#959595'}>
+            {rest.job}
+          </Text>
+          <Text textStyle={'smallText'} color={'#959595'}>
+            {rest.time}
+          </Text>
+        </VStack>
+      </HStack>
+      <Text textStyle={'categoriesText'} color={'#333333'}>
+        {rest.feedBack}
+      </Text>
+      <HStack w={'full'} justifyContent={'space-between'}>
+        <HStack>
+          <Image src={rest.star} alt={'star'} w={'16px'} h={'16px'} />
+          <Image src={rest.star} alt={'star'} w={'16px'} h={'16px'} />
+          <Image src={rest.star} alt={'star'} w={'16px'} h={'16px'} />
+          <Image src={rest.star} alt={'star'} w={'16px'} h={'16px'} />
+          <Image
+            src={rest.starEmpty}
+            alt={'star'}
+            w={'16px'}
+            h={'16px'}
+          />
+        </HStack>
+        <HStack>
+          <Image
+            src={rest.heartIcon}
+            alt={'heart'}
+            w={'16px'}
+            h={'16px'}
+          />
+          <Text
+            fontSize={'12px'}
+            lineHeight={'16px'}
+            fontStyle={'normal'}
+            fontWeight={400}
+            color={'#525252'}
+          >
+            {rest.likeCounter}
+          </Text>
+        </HStack>
+      </HStack>
+    </VStack>
+    </Flex>
+  )
+}
